@@ -1,0 +1,22 @@
+{
+  "id": "civilization",
+  "title": "Sid Meier's Civilization",
+  "date": "1991-09-01",
+  "tags": [
+    "4x",
+    "turn-based",
+    "empire-building",
+    "tech-tree"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "simcity",
+      "through": [
+        "simulation",
+        "management"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1y9x.jpg"
+}

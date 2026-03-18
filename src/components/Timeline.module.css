@@ -1,0 +1,32 @@
+.container {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.svg {
+  display: block;
+  cursor: grab;
+  background: var(--bg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.svg.ready {
+  opacity: 1;
+}
+
+.svg:active {
+  cursor: grabbing;
+}
+
+.loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}

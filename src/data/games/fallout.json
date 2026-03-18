@@ -1,0 +1,29 @@
+{
+  "id": "fallout",
+  "title": "Fallout",
+  "date": "1997-10-10",
+  "tags": [
+    "open-world",
+    "post-apocalyptic",
+    "turn-based-combat",
+    "moral-choices"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "ultima-iv",
+      "through": [
+        "open-world",
+        "moral-choices"
+      ]
+    },
+    {
+      "id": "wizardry",
+      "through": [
+        "party-based",
+        "turn-based"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8ado.jpg"
+}

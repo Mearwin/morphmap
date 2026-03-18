@@ -1,0 +1,29 @@
+{
+  "id": "splatoon",
+  "title": "Splatoon",
+  "date": "2015-05-28",
+  "tags": [
+    "fps",
+    "team-based",
+    "colorful",
+    "territory-control"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "team-fortress-2",
+      "through": [
+        "class-based",
+        "team-based",
+        "stylized"
+      ]
+    },
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "tight-controls"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob8ra.jpg"
+}

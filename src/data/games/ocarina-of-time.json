@@ -1,0 +1,30 @@
+{
+  "id": "ocarina-of-time",
+  "title": "The Legend of Zelda: Ocarina of Time",
+  "date": "1998-11-21",
+  "tags": [
+    "3d-adventure",
+    "lock-on-targeting",
+    "dungeons",
+    "open-world"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "the-legend-of-zelda",
+      "through": [
+        "exploration",
+        "dungeons",
+        "action-combat"
+      ]
+    },
+    {
+      "id": "super-mario-64",
+      "through": [
+        "3d-platformer",
+        "camera-control"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3nnx.jpg"
+}

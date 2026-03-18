@@ -1,0 +1,10 @@
+{
+  "id": "gta-vice-city",
+  "title": "Grand Theft Auto: Vice City",
+  "date": "2002-10-29",
+  "tags": ["open-world", "action-adventure", "crime", "sandbox"],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    { "id": "gta-iii", "through": ["open-world", "sandbox", "crime"] }
+  ]
+}

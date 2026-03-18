@@ -1,0 +1,27 @@
+{
+  "id": "donkey-kong",
+  "title": "Donkey Kong",
+  "date": "1981-07-09",
+  "tags": [
+    "arcade",
+    "platformer",
+    "jumping",
+    "level-based"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "pac-man",
+      "through": [
+        "arcade"
+      ]
+    },
+    {
+      "id": "space-invaders",
+      "through": [
+        "arcade"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4hs4.jpg"
+}

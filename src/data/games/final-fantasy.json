@@ -1,0 +1,30 @@
+{
+  "id": "final-fantasy",
+  "title": "Final Fantasy",
+  "date": "1987-12-18",
+  "tags": [
+    "jrpg",
+    "turn-based-combat",
+    "party-based",
+    "class-system"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "dragon-quest",
+      "through": [
+        "jrpg",
+        "turn-based-combat",
+        "overworld"
+      ]
+    },
+    {
+      "id": "wizardry",
+      "through": [
+        "party-based",
+        "dungeon-crawl"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2xv8.jpg"
+}

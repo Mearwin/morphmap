@@ -1,0 +1,23 @@
+{
+  "id": "portal",
+  "title": "Portal",
+  "date": "2007-10-10",
+  "tags": [
+    "puzzle",
+    "first-person",
+    "physics",
+    "narrative",
+    "humor"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "half-life-2",
+      "through": [
+        "physics-engine",
+        "narrative-driven"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coay61.jpg"
+}

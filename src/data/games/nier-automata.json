@@ -1,0 +1,29 @@
+{
+  "id": "nier-automata",
+  "title": "Nier: Automata",
+  "date": "2017-02-23",
+  "tags": [
+    "action-rpg",
+    "narrative",
+    "multiple-endings",
+    "genre-shifting"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "bayonetta",
+      "through": [
+        "action",
+        "spectacle-fighter",
+        "combo-system"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "through": [
+        "action-rpg"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5pcj.jpg"
+}

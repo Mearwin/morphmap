@@ -1,0 +1,28 @@
+{
+  "id": "crash-bandicoot",
+  "title": "Crash Bandicoot",
+  "date": "1996-09-09",
+  "tags": [
+    "3d-platformer",
+    "linear",
+    "collectibles",
+    "mascot"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "super-mario-64",
+      "through": [
+        "3d-platformer"
+      ]
+    },
+    {
+      "id": "sonic-the-hedgehog",
+      "through": [
+        "speed",
+        "level-design"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co555l.jpg"
+}

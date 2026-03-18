@@ -1,0 +1,14 @@
+{
+  "id": "tetris",
+  "title": "Tetris",
+  "date": "1985-06-06",
+  "tags": [
+    "puzzle",
+    "falling-blocks",
+    "high-score",
+    "addictive"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6o1v.jpg"
+}

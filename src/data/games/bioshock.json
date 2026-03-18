@@ -1,0 +1,37 @@
+{
+  "id": "bioshock",
+  "title": "BioShock",
+  "date": "2007-08-21",
+  "tags": [
+    "fps",
+    "immersive-sim",
+    "narrative-driven",
+    "environmental-storytelling"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "system-shock-2",
+      "through": [
+        "immersive-sim",
+        "fps",
+        "rpg-elements"
+      ]
+    },
+    {
+      "id": "deus-ex",
+      "through": [
+        "immersive-sim",
+        "player-choice"
+      ]
+    },
+    {
+      "id": "half-life",
+      "through": [
+        "narrative-driven",
+        "scripted-events"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co54xg.jpg"
+}

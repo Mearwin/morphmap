@@ -1,0 +1,21 @@
+{
+  "id": "pac-man",
+  "title": "Pac-Man",
+  "date": "1980-05-22",
+  "tags": [
+    "arcade",
+    "maze",
+    "power-ups",
+    "ghost-ai"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "pong",
+      "through": [
+        "arcade"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4ulc.jpg"
+}

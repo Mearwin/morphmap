@@ -1,0 +1,23 @@
+{
+  "id": "gta-san-andreas",
+  "title": "Grand Theft Auto: San Andreas",
+  "date": "2004-10-26",
+  "tags": [
+    "open-world",
+    "sandbox",
+    "rpg-elements",
+    "crime"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "gta-iii",
+      "through": [
+        "open-world",
+        "sandbox",
+        "crime"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2lb9.jpg"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "world-of-warcraft",
+  "title": "World of Warcraft",
+  "date": "2004-11-23",
+  "tags": [
+    "mmorpg",
+    "open-world",
+    "raids",
+    "social"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "warcraft-iii",
+      "through": [
+        "rts",
+        "narrative"
+      ]
+    },
+    {
+      "id": "diablo-ii",
+      "through": [
+        "loot",
+        "online-multiplayer"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "total-war-shogun-2",
+  "title": "Total War: Shogun 2",
+  "date": "2011-03-15",
+  "tags": [
+    "rts",
+    "turn-based-strategy",
+    "historical",
+    "large-scale-battles"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "total-war-rome",
+      "through": [
+        "rts",
+        "turn-based-strategy",
+        "large-scale-battles"
+      ]
+    },
+    {
+      "id": "civilization",
+      "through": [
+        "turn-based",
+        "empire-building"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cxxehczpnxqrssop7zud.jpg"
+}

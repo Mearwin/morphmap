@@ -1,0 +1,29 @@
+{
+  "id": "doom-2016",
+  "title": "Doom (2016)",
+  "date": "2016-05-13",
+  "tags": [
+    "fps",
+    "fast-paced",
+    "arena-combat",
+    "glory-kills"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "doom",
+      "through": [
+        "fps",
+        "fast-paced"
+      ]
+    },
+    {
+      "id": "quake",
+      "through": [
+        "arena-shooter",
+        "fast-paced"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1nc7.jpg"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "balatro",
+  "title": "Balatro",
+  "date": "2024-02-20",
+  "tags": [
+    "roguelike",
+    "card-game",
+    "poker",
+    "deck-building"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [
+    {
+      "id": "slay-the-spire",
+      "through": [
+        "roguelike",
+        "deck-building"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9f4g.jpg"
+}

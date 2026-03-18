@@ -1,0 +1,29 @@
+{
+  "id": "gone-home",
+  "title": "Gone Home",
+  "date": "2013-08-15",
+  "tags": [
+    "walking-sim",
+    "environmental-storytelling",
+    "exploration",
+    "narrative"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "myst",
+      "through": [
+        "exploration",
+        "atmospheric",
+        "first-person"
+      ]
+    },
+    {
+      "id": "bioshock",
+      "through": [
+        "environmental-storytelling"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/qwhxxrcxzw7inwfrfkbq.jpg"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "elden-ring-shadow-of-the-erdtree",
+  "title": "Elden Ring: Shadow of the Erdtree",
+  "date": "2024-06-21",
+  "tags": [
+    "open-world",
+    "action-rpg",
+    "difficulty",
+    "souls-like"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "elden-ring",
+      "through": [
+        "open-world",
+        "action-rpg",
+        "difficulty",
+        "souls-like"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co89ko.jpg"
+}

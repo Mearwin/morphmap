@@ -1,0 +1,11 @@
+{
+  "id": "devil-may-cry",
+  "title": "Devil May Cry",
+  "date": "2001-08-23",
+  "tags": ["hack-and-slash", "stylish-action", "combo-system", "gothic"],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    { "id": "castlevania-sotn", "through": ["gothic", "action-combat"] },
+    { "id": "resident-evil", "through": ["third-person", "horror-atmosphere"] }
+  ]
+}

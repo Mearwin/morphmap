@@ -1,0 +1,22 @@
+{
+  "id": "super-mario-64",
+  "title": "Super Mario 64",
+  "date": "1996-06-23",
+  "tags": [
+    "3d-platformer",
+    "open-level",
+    "camera-control",
+    "collectibles"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "power-ups",
+        "level-design"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5y6k.jpg"
+}

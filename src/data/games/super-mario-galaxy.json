@@ -1,0 +1,23 @@
+{
+  "id": "super-mario-galaxy",
+  "title": "Super Mario Galaxy",
+  "date": "2007-11-01",
+  "tags": [
+    "3d-platformer",
+    "gravity",
+    "creative-levels",
+    "collectibles"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "super-mario-64",
+      "through": [
+        "3d-platformer",
+        "open-level",
+        "collectibles"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co21ro.jpg"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "assassins-creed-ii",
+  "title": "Assassin's Creed II",
+  "date": "2009-11-17",
+  "tags": [
+    "open-world",
+    "parkour",
+    "stealth",
+    "historical"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "gta-iii",
+      "through": [
+        "open-world",
+        "sandbox"
+      ]
+    },
+    {
+      "id": "prince-of-persia-sot",
+      "through": [
+        "parkour",
+        "3d-platformer"
+      ]
+    },
+    {
+      "id": "thief",
+      "through": [
+        "stealth"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcf.jpg"
+}

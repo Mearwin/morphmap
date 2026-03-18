@@ -1,0 +1,28 @@
+{
+  "id": "metroid",
+  "title": "Metroid",
+  "date": "1986-08-06",
+  "tags": [
+    "exploration",
+    "backtracking",
+    "power-ups",
+    "nonlinear"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "side-scrolling",
+        "power-ups"
+      ]
+    },
+    {
+      "id": "the-legend-of-zelda",
+      "through": [
+        "exploration"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xe8.jpg"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "mega-man",
+  "title": "Mega Man",
+  "date": "1987-12-17",
+  "tags": [
+    "side-scrolling",
+    "boss-battles",
+    "nonlinear",
+    "power-absorption"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "side-scrolling",
+        "tight-controls"
+      ]
+    },
+    {
+      "id": "metroid",
+      "through": [
+        "nonlinear"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5x4b.jpg"
+}

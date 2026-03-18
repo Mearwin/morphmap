@@ -1,0 +1,30 @@
+{
+  "id": "super-meat-boy",
+  "title": "Super Meat Boy",
+  "date": "2010-10-20",
+  "tags": [
+    "precision-platformer",
+    "difficulty",
+    "tight-controls",
+    "indie"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "side-scrolling",
+        "tight-controls",
+        "level-design"
+      ]
+    },
+    {
+      "id": "mega-man",
+      "through": [
+        "side-scrolling",
+        "boss-battles"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5t36.jpg"
+}

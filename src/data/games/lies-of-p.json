@@ -1,0 +1,12 @@
+{
+  "id": "lies-of-p",
+  "title": "Lies of P",
+  "date": "2023-09-19",
+  "tags": ["soulslike", "action-rpg", "stamina-combat", "gothic"],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    { "id": "dark-souls", "through": ["soulslike", "stamina-combat", "bonfire-system"] },
+    { "id": "bloodborne", "through": ["aggressive-combat", "gothic-atmosphere"] },
+    { "id": "sekiro", "through": ["parry-system", "action-combat"] }
+  ]
+}

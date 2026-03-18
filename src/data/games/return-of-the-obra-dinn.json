@@ -1,0 +1,30 @@
+{
+  "id": "return-of-the-obra-dinn",
+  "title": "Return of the Obra Dinn",
+  "date": "2018-10-18",
+  "tags": [
+    "deduction",
+    "mystery",
+    "first-person",
+    "unique-art"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "myst",
+      "through": [
+        "puzzle",
+        "first-person",
+        "exploration"
+      ]
+    },
+    {
+      "id": "papers-please",
+      "through": [
+        "puzzle",
+        "moral-choices"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co27j9.jpg"
+}

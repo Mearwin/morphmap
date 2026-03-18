@@ -1,0 +1,66 @@
+import { useEffect, useRef } from 'react'
+import type { GameStoreState, TimeRange } from '../store/gameStoreReducer'
+
+export function parseHash(): { game: string | null; tag: string | null; timeRange: TimeRange | null; view: 'river' | 'lineage' | null } {
+  const hash = window.location.hash.slice(1)
+  if (!hash) return { game: null, tag: null, timeRange: null, view: null }
+  const params = new URLSearchParams(hash)
+  let timeRange: TimeRange | null = null
+  const from = params.get('from')
+  const to = params.get('to')
+  if (from && to) {
+    const f = parseInt(from, 10)
+    const t = parseInt(to, 10)
+    if (!isNaN(f) && !isNaN(t)) timeRange = { from: f, to: t }
+  }
+  const viewParam = params.get('view')
+  const view = viewParam === 'river' || viewParam === 'lineage' ? viewParam : null
+  return {
+    game: params.get('game'),
+    tag: params.get('tag'),
+    timeRange,
+    view,
+  }
+}
+
+export function buildHash(state: GameStoreState): string {
+  const params = new URLSearchParams()
+  if (state.selectedGameId) params.set('game', state.selectedGameId)
+  if (state.selectedTag) params.set('tag', state.selectedTag)
+  if (state.timeRange) {
+    params.set('from', String(state.timeRange.from))
+    params.set('to', String(state.timeRange.to))
+  }
+  if (state.viewMode !== 'timeline') params.set('view', state.viewMode)
+  const str = params.toString()
+  return str ? `#${str}` : ''
+}
+
+export function readInitialStateFromHash(): Partial<GameStoreState> {
+  const { game, tag, timeRange, view } = parseHash()
+  return {
+    ...(game ? { selectedGameId: game } : {}),
+    ...(tag ? { selectedTag: tag } : {}),
+    ...(timeRange ? { timeRange } : {}),
+    ...(view ? { viewMode: view } : {}),
+  }
+}
+
+export function useSyncHashWithState(state: GameStoreState) {
+  const isFirstRender = useRef(true)
+
+  useEffect(() => {
+    // Skip the first render to avoid overwriting the hash we just read
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+    const hash = buildHash(state)
+    if (hash) {
+      window.history.replaceState(null, '', hash)
+    } else {
+      // Clear hash without triggering a scroll
+      window.history.replaceState(null, '', window.location.pathname + window.location.search)
+    }
+  }, [state])
+}

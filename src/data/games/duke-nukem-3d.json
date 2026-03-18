@@ -1,0 +1,23 @@
+{
+  "id": "duke-nukem-3d",
+  "title": "Duke Nukem 3D",
+  "date": "1996-01-29",
+  "tags": [
+    "fps",
+    "humor",
+    "interactive-environments",
+    "level-design"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "doom",
+      "through": [
+        "fps",
+        "level-editor",
+        "fast-paced"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5rac.jpg"
+}

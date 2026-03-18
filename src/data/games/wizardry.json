@@ -1,0 +1,21 @@
+{
+  "id": "wizardry",
+  "title": "Wizardry: Proving Grounds of the Mad Overlord",
+  "date": "1981-09-01",
+  "tags": [
+    "dungeon-crawl",
+    "party-based",
+    "first-person",
+    "turn-based"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "dungeon-crawl"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coaku0.jpg"
+}

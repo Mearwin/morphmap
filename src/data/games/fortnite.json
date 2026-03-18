@@ -1,0 +1,31 @@
+{
+  "id": "fortnite",
+  "title": "Fortnite",
+  "date": "2017-09-26",
+  "tags": [
+    "battle-royale",
+    "building",
+    "free-to-play",
+    "cross-platform"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "pubg",
+      "through": [
+        "battle-royale",
+        "survival",
+        "last-man-standing"
+      ]
+    },
+    {
+      "id": "minecraft",
+      "through": [
+        "sandbox",
+        "crafting",
+        "creative"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5ztm.jpg"
+}

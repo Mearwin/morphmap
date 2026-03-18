@@ -1,0 +1,23 @@
+{
+  "id": "castlevania-sotn",
+  "title": "Castlevania: Symphony of the Night",
+  "date": "1997-03-20",
+  "tags": [
+    "metroidvania",
+    "exploration",
+    "rpg-elements",
+    "backtracking"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "metroid",
+      "through": [
+        "exploration",
+        "backtracking",
+        "nonlinear"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co53m8.jpg"
+}

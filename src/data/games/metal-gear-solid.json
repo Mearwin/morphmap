@@ -1,0 +1,22 @@
+{
+  "id": "metal-gear-solid",
+  "title": "Metal Gear Solid",
+  "date": "1998-09-03",
+  "tags": [
+    "stealth",
+    "cinematic",
+    "narrative-driven",
+    "boss-battles"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "the-legend-of-zelda",
+      "through": [
+        "exploration",
+        "action-combat"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobpal.jpg"
+}

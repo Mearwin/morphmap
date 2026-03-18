@@ -1,0 +1,29 @@
+{
+  "id": "demons-souls",
+  "title": "Demon's Souls",
+  "date": "2009-02-05",
+  "tags": [
+    "action-rpg",
+    "difficulty",
+    "world-tendency",
+    "souls-like"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "diablo",
+      "through": [
+        "action-rpg",
+        "loot"
+      ]
+    },
+    {
+      "id": "castlevania-sotn",
+      "through": [
+        "exploration",
+        "rpg-elements"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co27sk.jpg"
+}

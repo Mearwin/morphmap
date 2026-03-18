@@ -1,0 +1,11 @@
+{
+  "id": "spyro-the-dragon",
+  "title": "Spyro the Dragon",
+  "date": "1998-09-09",
+  "tags": ["3d-platformer", "collectathon", "open-world", "flying"],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    { "id": "super-mario-64", "through": ["3d-platforming", "open-world"] },
+    { "id": "crash-bandicoot", "through": ["platforming", "mascot"] }
+  ]
+}

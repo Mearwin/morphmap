@@ -1,0 +1,22 @@
+{
+  "id": "hearthstone",
+  "title": "Hearthstone",
+  "date": "2014-03-11",
+  "tags": [
+    "card-game",
+    "competitive",
+    "free-to-play",
+    "strategy"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "world-of-warcraft",
+      "through": [
+        "mmorpg",
+        "loot"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1sh2.jpg"
+}

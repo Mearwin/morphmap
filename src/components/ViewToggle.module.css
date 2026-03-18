@@ -1,0 +1,36 @@
+.toggle {
+  display: flex;
+  gap: 2px;
+  background: var(--bg);
+  border-radius: 999px;
+  padding: 2px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.pill {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  color: var(--text);
+}
+
+.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

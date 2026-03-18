@@ -1,0 +1,31 @@
+{
+  "id": "fallout-3",
+  "title": "Fallout 3",
+  "date": "2008-10-28",
+  "tags": [
+    "open-world",
+    "post-apocalyptic",
+    "fps-rpg",
+    "moral-choices"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "fallout",
+      "through": [
+        "open-world",
+        "post-apocalyptic",
+        "moral-choices"
+      ]
+    },
+    {
+      "id": "oblivion",
+      "through": [
+        "open-world",
+        "first-person-rpg",
+        "modding"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1ycw.jpg"
+}

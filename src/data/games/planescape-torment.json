@@ -1,0 +1,11 @@
+{
+  "id": "planescape-torment",
+  "title": "Planescape: Torment",
+  "date": "1999-12-12",
+  "tags": ["crpg", "narrative", "dialogue-heavy", "philosophical"],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    { "id": "baldurs-gate", "through": ["crpg", "infinity-engine"] },
+    { "id": "ultima-iv", "through": ["narrative-rpg", "moral-choices"] }
+  ]
+}

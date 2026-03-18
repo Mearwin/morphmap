@@ -1,0 +1,30 @@
+{
+  "id": "shovel-knight",
+  "title": "Shovel Knight",
+  "date": "2014-06-26",
+  "tags": [
+    "retro",
+    "side-scrolling",
+    "boss-battles",
+    "level-design"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "mega-man",
+      "through": [
+        "side-scrolling",
+        "boss-battles",
+        "nonlinear"
+      ]
+    },
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "side-scrolling",
+        "tight-controls"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobaa7.jpg"
+}

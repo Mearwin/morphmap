@@ -1,0 +1,31 @@
+{
+  "id": "dark-souls-iii",
+  "title": "Dark Souls III",
+  "date": "2016-03-24",
+  "tags": [
+    "action-rpg",
+    "difficulty",
+    "souls-like",
+    "boss-battles"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "dark-souls",
+      "through": [
+        "action-rpg",
+        "difficulty",
+        "souls-like"
+      ]
+    },
+    {
+      "id": "bloodborne",
+      "through": [
+        "action-rpg",
+        "gothic",
+        "souls-like"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9ed.jpg"
+}

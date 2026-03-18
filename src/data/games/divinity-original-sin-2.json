@@ -1,0 +1,29 @@
+{
+  "id": "divinity-original-sin-2",
+  "title": "Divinity: Original Sin 2",
+  "date": "2017-09-14",
+  "tags": [
+    "crpg",
+    "turn-based-combat",
+    "co-op",
+    "player-choice"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "baldurs-gate",
+      "through": [
+        "crpg",
+        "party-based",
+        "narrative"
+      ]
+    },
+    {
+      "id": "ultima-iv",
+      "through": [
+        "moral-choices"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2v1z.jpg"
+}

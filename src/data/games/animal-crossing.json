@@ -1,0 +1,23 @@
+{
+  "id": "animal-crossing",
+  "title": "Animal Crossing",
+  "date": "2001-04-14",
+  "tags": [
+    "life-sim",
+    "real-time-clock",
+    "collecting",
+    "relaxing"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "harvest-moon",
+      "through": [
+        "life-sim",
+        "daily-cycle",
+        "relationships"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa489.jpg"
+}

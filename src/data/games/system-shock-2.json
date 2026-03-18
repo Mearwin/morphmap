@@ -1,0 +1,28 @@
+{
+  "id": "system-shock-2",
+  "title": "System Shock 2",
+  "date": "1999-08-11",
+  "tags": [
+    "immersive-sim",
+    "fps",
+    "rpg-elements",
+    "survival-horror"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "half-life",
+      "through": [
+        "narrative-driven",
+        "scripted-events"
+      ]
+    },
+    {
+      "id": "doom",
+      "through": [
+        "fps"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4bak.jpg"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "tears-of-the-kingdom",
+  "title": "The Legend of Zelda: Tears of the Kingdom",
+  "date": "2023-05-12",
+  "tags": [
+    "open-world",
+    "physics",
+    "crafting",
+    "exploration"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "breath-of-the-wild",
+      "through": [
+        "open-world",
+        "exploration",
+        "physics"
+      ]
+    },
+    {
+      "id": "minecraft",
+      "through": [
+        "crafting",
+        "creative"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5vmg.jpg"
+}

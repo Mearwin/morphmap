@@ -1,0 +1,29 @@
+{
+  "id": "spelunky",
+  "title": "Spelunky",
+  "date": "2012-07-04",
+  "tags": [
+    "roguelike",
+    "procedural-generation",
+    "platformer",
+    "permadeath"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "procedural-generation",
+        "permadeath"
+      ]
+    },
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "side-scrolling",
+        "tight-controls"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co47m4.jpg"
+}

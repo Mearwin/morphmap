@@ -1,0 +1,37 @@
+{
+  "id": "dishonored",
+  "title": "Dishonored",
+  "date": "2012-10-09",
+  "tags": [
+    "immersive-sim",
+    "stealth",
+    "first-person",
+    "player-choice"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "thief",
+      "through": [
+        "stealth",
+        "immersive-sim",
+        "first-person"
+      ]
+    },
+    {
+      "id": "deus-ex",
+      "through": [
+        "immersive-sim",
+        "player-choice"
+      ]
+    },
+    {
+      "id": "bioshock",
+      "through": [
+        "immersive-sim",
+        "environmental-storytelling"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coabgu.jpg"
+}

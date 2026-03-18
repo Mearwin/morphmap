@@ -1,0 +1,21 @@
+{
+  "id": "command-and-conquer",
+  "title": "Command & Conquer",
+  "date": "1995-08-31",
+  "tags": [
+    "rts",
+    "base-building",
+    "resource-management",
+    "factions"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "civilization",
+      "through": [
+        "empire-building"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co88m7.jpg"
+}

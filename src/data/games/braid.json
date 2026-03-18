@@ -1,0 +1,28 @@
+{
+  "id": "braid",
+  "title": "Braid",
+  "date": "2008-08-06",
+  "tags": [
+    "puzzle-platformer",
+    "time-manipulation",
+    "indie",
+    "narrative"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "side-scrolling",
+        "level-design"
+      ]
+    },
+    {
+      "id": "prince-of-persia-sot",
+      "through": [
+        "time-rewind"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co25ni.jpg"
+}

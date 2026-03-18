@@ -1,0 +1,29 @@
+{
+  "id": "bloodborne",
+  "title": "Bloodborne",
+  "date": "2015-03-24",
+  "tags": [
+    "action-rpg",
+    "difficulty",
+    "gothic",
+    "souls-like"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "dark-souls",
+      "through": [
+        "action-rpg",
+        "difficulty",
+        "souls-like"
+      ]
+    },
+    {
+      "id": "resident-evil",
+      "through": [
+        "survival-horror"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob99l.jpg"
+}

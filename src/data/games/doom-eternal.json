@@ -1,0 +1,30 @@
+{
+  "id": "doom-eternal",
+  "title": "Doom Eternal",
+  "date": "2020-03-20",
+  "tags": [
+    "fps",
+    "fast-paced",
+    "arena-combat",
+    "resource-management"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "doom-2016",
+      "through": [
+        "fps",
+        "fast-paced",
+        "arena-combat"
+      ]
+    },
+    {
+      "id": "doom",
+      "through": [
+        "fps",
+        "fast-paced"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p5n.jpg"
+}

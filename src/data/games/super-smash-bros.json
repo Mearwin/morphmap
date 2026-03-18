@@ -1,0 +1,22 @@
+{
+  "id": "super-smash-bros",
+  "title": "Super Smash Bros.",
+  "date": "1999-01-21",
+  "tags": [
+    "fighting",
+    "platform-fighter",
+    "crossover",
+    "party-game"
+  ],
+  "primaryTag": "fighting",
+  "influencedBy": [
+    {
+      "id": "street-fighter-ii",
+      "through": [
+        "fighting",
+        "character-roster"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2tso.jpg"
+}

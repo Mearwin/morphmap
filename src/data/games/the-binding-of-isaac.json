@@ -1,0 +1,28 @@
+{
+  "id": "the-binding-of-isaac",
+  "title": "The Binding of Isaac",
+  "date": "2011-09-28",
+  "tags": [
+    "roguelike",
+    "procedural-generation",
+    "permadeath",
+    "item-synergy"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "procedural-generation",
+        "permadeath"
+      ]
+    },
+    {
+      "id": "the-legend-of-zelda",
+      "through": [
+        "dungeons"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1qll.jpg"
+}

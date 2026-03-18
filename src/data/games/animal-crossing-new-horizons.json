@@ -1,0 +1,30 @@
+{
+  "id": "animal-crossing-new-horizons",
+  "title": "Animal Crossing: New Horizons",
+  "date": "2020-03-20",
+  "tags": [
+    "life-sim",
+    "island-building",
+    "real-time-clock",
+    "relaxing"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "animal-crossing",
+      "through": [
+        "life-sim",
+        "real-time-clock",
+        "collecting"
+      ]
+    },
+    {
+      "id": "minecraft",
+      "through": [
+        "sandbox",
+        "creative"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wls.jpg"
+}

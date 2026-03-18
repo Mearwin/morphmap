@@ -1,0 +1,24 @@
+{
+  "id": "minecraft",
+  "title": "Minecraft",
+  "date": "2009-05-17",
+  "tags": [
+    "sandbox",
+    "procedural-generation",
+    "crafting",
+    "survival",
+    "creative"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "dwarf-fortress",
+      "through": [
+        "procedural-generation",
+        "sandbox",
+        "emergent-gameplay"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fu7.jpg"
+}

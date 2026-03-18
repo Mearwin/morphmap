@@ -1,0 +1,29 @@
+{
+  "id": "half-life",
+  "title": "Half-Life",
+  "date": "1998-11-19",
+  "tags": [
+    "fps",
+    "narrative-driven",
+    "scripted-events",
+    "no-cutscenes"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "quake",
+      "through": [
+        "fps",
+        "3d-graphics"
+      ]
+    },
+    {
+      "id": "doom",
+      "through": [
+        "fps",
+        "level-editor"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7zzj.jpg"
+}

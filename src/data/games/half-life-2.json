@@ -1,0 +1,24 @@
+{
+  "id": "half-life-2",
+  "title": "Half-Life 2",
+  "date": "2004-11-16",
+  "tags": [
+    "fps",
+    "physics-engine",
+    "narrative-driven",
+    "gravity-gun"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "half-life",
+      "through": [
+        "fps",
+        "narrative-driven",
+        "scripted-events",
+        "no-cutscenes"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1nmw.jpg"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ghost-of-tsushima",
+  "title": "Ghost of Tsushima",
+  "date": "2020-07-17",
+  "tags": [
+    "open-world",
+    "stealth",
+    "samurai",
+    "cinematic"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "assassins-creed-ii",
+      "through": [
+        "open-world",
+        "stealth",
+        "historical"
+      ]
+    },
+    {
+      "id": "red-dead-redemption-2",
+      "through": [
+        "open-world",
+        "narrative-driven"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2crj.jpg"
+}

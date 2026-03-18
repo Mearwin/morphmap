@@ -1,0 +1,11 @@
+{
+  "id": "fable",
+  "title": "Fable",
+  "date": "2004-09-14",
+  "tags": ["action-rpg", "moral-choice", "open-world", "humor"],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    { "id": "ocarina-of-time", "through": ["action-adventure", "open-world"] },
+    { "id": "baldurs-gate", "through": ["rpg", "choice-consequence"] }
+  ]
+}

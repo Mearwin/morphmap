@@ -1,0 +1,22 @@
+{
+  "id": "gta-iii",
+  "title": "Grand Theft Auto III",
+  "date": "2001-10-22",
+  "tags": [
+    "open-world",
+    "sandbox",
+    "third-person",
+    "crime"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "the-legend-of-zelda",
+      "through": [
+        "open-world",
+        "exploration"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2lb8.jpg"
+}

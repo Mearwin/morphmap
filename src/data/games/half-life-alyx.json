@@ -1,0 +1,31 @@
+{
+  "id": "half-life-alyx",
+  "title": "Half-Life: Alyx",
+  "date": "2020-03-23",
+  "tags": [
+    "vr",
+    "fps",
+    "narrative-driven",
+    "immersive"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "half-life-2",
+      "through": [
+        "fps",
+        "physics-engine",
+        "narrative-driven"
+      ]
+    },
+    {
+      "id": "half-life",
+      "through": [
+        "fps",
+        "narrative-driven",
+        "scripted-events"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co87vg.jpg"
+}

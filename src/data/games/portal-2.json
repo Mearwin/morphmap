@@ -1,0 +1,24 @@
+{
+  "id": "portal-2",
+  "title": "Portal 2",
+  "date": "2011-04-19",
+  "tags": [
+    "puzzle",
+    "co-op",
+    "physics",
+    "narrative",
+    "humor"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "portal",
+      "through": [
+        "puzzle",
+        "physics",
+        "humor"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8kgw.jpg"
+}

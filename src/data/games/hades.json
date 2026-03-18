@@ -1,0 +1,36 @@
+{
+  "id": "hades",
+  "title": "Hades",
+  "date": "2020-09-17",
+  "tags": [
+    "roguelike",
+    "action",
+    "narrative",
+    "mythology"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "procedural-generation",
+        "permadeath"
+      ]
+    },
+    {
+      "id": "the-binding-of-isaac",
+      "through": [
+        "roguelike",
+        "item-synergy"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "through": [
+        "action-rpg",
+        "difficulty"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9kr.jpg"
+}

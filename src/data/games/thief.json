@@ -1,0 +1,21 @@
+{
+  "id": "thief",
+  "title": "Thief: The Dark Project",
+  "date": "1998-11-30",
+  "tags": [
+    "stealth",
+    "first-person",
+    "immersive-sim",
+    "sound-design"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "doom",
+      "through": [
+        "fps"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co22ne.jpg"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "the-stanley-parable",
+  "title": "The Stanley Parable",
+  "date": "2013-10-17",
+  "tags": ["walking-sim", "meta-narrative", "humor", "choice"],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    { "id": "portal", "through": ["first-person", "humor", "narrator"] },
+    { "id": "the-secret-of-monkey-island", "through": ["humor", "meta-narrative"] }
+  ]
+}

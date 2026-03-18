@@ -1,0 +1,31 @@
+{
+  "id": "valheim",
+  "title": "Valheim",
+  "date": "2021-02-02",
+  "tags": [
+    "survival",
+    "crafting",
+    "co-op",
+    "viking"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "minecraft",
+      "through": [
+        "sandbox",
+        "crafting",
+        "survival"
+      ]
+    },
+    {
+      "id": "terraria",
+      "through": [
+        "sandbox",
+        "exploration",
+        "crafting"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob24q.jpg"
+}

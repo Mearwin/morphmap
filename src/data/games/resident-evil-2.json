@@ -1,0 +1,10 @@
+{
+  "id": "resident-evil-2",
+  "title": "Resident Evil 2",
+  "date": "1998-01-29",
+  "tags": ["survival-horror", "puzzle", "dual-scenarios", "zombies"],
+  "primaryTag": "survival-horror",
+  "influencedBy": [
+    { "id": "resident-evil", "through": ["survival-horror", "puzzle", "resource-management"] }
+  ]
+}

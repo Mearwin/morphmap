@@ -1,0 +1,28 @@
+{
+  "id": "gears-of-war",
+  "title": "Gears of War",
+  "date": "2006-11-07",
+  "tags": [
+    "third-person-shooter",
+    "cover-system",
+    "co-op",
+    "cinematic"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "resident-evil-4",
+      "through": [
+        "over-the-shoulder",
+        "action"
+      ]
+    },
+    {
+      "id": "halo",
+      "through": [
+        "console-shooter"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8wct.jpg"
+}

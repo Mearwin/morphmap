@@ -1,0 +1,29 @@
+{
+  "id": "subnautica",
+  "title": "Subnautica",
+  "date": "2018-01-23",
+  "tags": [
+    "survival",
+    "underwater",
+    "exploration",
+    "crafting"
+  ],
+  "primaryTag": "survival-horror",
+  "influencedBy": [
+    {
+      "id": "minecraft",
+      "through": [
+        "survival",
+        "crafting"
+      ]
+    },
+    {
+      "id": "amnesia",
+      "through": [
+        "survival-horror",
+        "atmospheric"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa938.jpg"
+}

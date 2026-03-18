@@ -1,0 +1,11 @@
+{
+  "id": "firewatch",
+  "title": "Firewatch",
+  "date": "2016-02-09",
+  "tags": ["walking-sim", "narrative", "exploration", "mystery"],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    { "id": "gone-home", "through": ["walking-sim", "environmental-storytelling"] },
+    { "id": "walking-dead-s1", "through": ["narrative", "dialogue-choices"] }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "deathloop",
+  "title": "Deathloop",
+  "date": "2021-09-14",
+  "tags": [
+    "fps",
+    "time-loop",
+    "immersive-sim",
+    "stealth"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "dishonored",
+      "through": [
+        "immersive-sim",
+        "stealth",
+        "first-person"
+      ]
+    },
+    {
+      "id": "majoras-mask",
+      "through": [
+        "time-loop"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4nzt.jpg"
+}

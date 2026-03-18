@@ -1,0 +1,35 @@
+{
+  "id": "god-of-war-2018",
+  "title": "God of War (2018)",
+  "date": "2018-04-20",
+  "tags": [
+    "action-adventure",
+    "narrative-driven",
+    "over-the-shoulder",
+    "mythology"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "the-last-of-us",
+      "through": [
+        "narrative-driven",
+        "cinematic"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "through": [
+        "difficulty",
+        "action-rpg"
+      ]
+    },
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "lock-on-targeting"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobkt6.jpg"
+}

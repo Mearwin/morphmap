@@ -1,0 +1,30 @@
+{
+  "id": "celeste",
+  "title": "Celeste",
+  "date": "2018-01-25",
+  "tags": [
+    "precision-platformer",
+    "narrative",
+    "assist-mode",
+    "tight-controls"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "super-meat-boy",
+      "through": [
+        "precision-platformer",
+        "difficulty",
+        "tight-controls"
+      ]
+    },
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "side-scrolling",
+        "level-design"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9dh.jpg"
+}

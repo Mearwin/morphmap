@@ -1,0 +1,29 @@
+{
+  "id": "undertale",
+  "title": "Undertale",
+  "date": "2015-09-15",
+  "tags": [
+    "narrative",
+    "moral-choices",
+    "bullet-hell",
+    "fourth-wall"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "final-fantasy",
+      "through": [
+        "jrpg",
+        "turn-based-combat"
+      ]
+    },
+    {
+      "id": "the-secret-of-monkey-island",
+      "through": [
+        "humor",
+        "narrative"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob1t2.jpg"
+}

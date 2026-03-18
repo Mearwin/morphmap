@@ -1,0 +1,28 @@
+{
+  "id": "outer-wilds",
+  "title": "Outer Wilds",
+  "date": "2019-05-28",
+  "tags": [
+    "exploration",
+    "time-loop",
+    "puzzle",
+    "space"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "myst",
+      "through": [
+        "exploration",
+        "puzzle"
+      ]
+    },
+    {
+      "id": "majoras-mask",
+      "through": [
+        "time-loop"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co65ac.jpg"
+}

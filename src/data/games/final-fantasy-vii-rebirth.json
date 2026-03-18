@@ -1,0 +1,29 @@
+{
+  "id": "final-fantasy-vii-rebirth",
+  "title": "Final Fantasy VII Rebirth",
+  "date": "2024-02-29",
+  "tags": [
+    "jrpg",
+    "action-rpg",
+    "open-world",
+    "cinematic"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "final-fantasy-vii",
+      "through": [
+        "jrpg",
+        "cinematic"
+      ]
+    },
+    {
+      "id": "the-witcher-3",
+      "through": [
+        "open-world",
+        "narrative"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9k6.jpg"
+}

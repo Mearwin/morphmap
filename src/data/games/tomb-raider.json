@@ -1,0 +1,11 @@
+{
+  "id": "tomb-raider",
+  "title": "Tomb Raider",
+  "date": "1996-10-25",
+  "tags": ["action-adventure", "3d-platforming", "exploration", "puzzle"],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    { "id": "super-mario-64", "through": ["3d-exploration", "3d-platforming"] },
+    { "id": "metroid", "through": ["exploration", "isolation"] }
+  ]
+}

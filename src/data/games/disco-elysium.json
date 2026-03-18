@@ -1,0 +1,28 @@
+{
+  "id": "disco-elysium",
+  "title": "Disco Elysium",
+  "date": "2019-10-15",
+  "tags": [
+    "crpg",
+    "narrative",
+    "dialogue",
+    "skill-checks"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "baldurs-gate",
+      "through": [
+        "crpg",
+        "narrative"
+      ]
+    },
+    {
+      "id": "fallout",
+      "through": [
+        "moral-choices"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ip6.jpg"
+}

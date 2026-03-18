@@ -1,0 +1,10 @@
+{
+  "id": "starfox-64",
+  "title": "Star Fox 64",
+  "date": "1997-04-27",
+  "tags": ["on-rails-shooter", "sci-fi", "branching-paths", "arcade"],
+  "primaryTag": "fps",
+  "influencedBy": [
+    { "id": "space-invaders", "through": ["shooter"] }
+  ]
+}

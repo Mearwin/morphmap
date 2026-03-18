@@ -1,0 +1,30 @@
+{
+  "id": "metroid-prime",
+  "title": "Metroid Prime",
+  "date": "2002-11-17",
+  "tags": [
+    "first-person",
+    "exploration",
+    "backtracking",
+    "scanning"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "metroid",
+      "through": [
+        "exploration",
+        "backtracking",
+        "power-ups"
+      ]
+    },
+    {
+      "id": "half-life",
+      "through": [
+        "fps",
+        "no-cutscenes"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3w4w.jpg"
+}

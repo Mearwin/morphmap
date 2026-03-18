@@ -1,0 +1,23 @@
+{
+  "id": "warcraft-iii",
+  "title": "Warcraft III: Reign of Chaos",
+  "date": "2002-07-03",
+  "tags": [
+    "rts",
+    "hero-units",
+    "custom-maps",
+    "narrative"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "starcraft",
+      "through": [
+        "rts",
+        "asymmetric-factions",
+        "multiplayer"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xuq.jpg"
+}

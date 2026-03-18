@@ -1,0 +1,11 @@
+{
+  "id": "final-fantasy-vi",
+  "title": "Final Fantasy VI",
+  "date": "1994-04-02",
+  "tags": ["jrpg", "turn-based", "ensemble-cast", "narrative"],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    { "id": "final-fantasy", "through": ["jrpg", "turn-based"] },
+    { "id": "dragon-quest", "through": ["jrpg", "party-system"] }
+  ]
+}

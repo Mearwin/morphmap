@@ -1,0 +1,22 @@
+{
+  "id": "stray",
+  "title": "Stray",
+  "date": "2022-07-19",
+  "tags": [
+    "adventure",
+    "exploration",
+    "atmospheric",
+    "cat"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "inside",
+      "through": [
+        "atmospheric",
+        "puzzle-platformer"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coaa4c.jpg"
+}

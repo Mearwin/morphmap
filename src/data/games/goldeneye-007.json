@@ -1,0 +1,27 @@
+{
+  "id": "goldeneye-007",
+  "title": "GoldenEye 007",
+  "date": "1997-08-25",
+  "tags": [
+    "fps",
+    "split-screen",
+    "stealth",
+    "console-shooter"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "doom",
+      "through": [
+        "fps"
+      ]
+    },
+    {
+      "id": "quake",
+      "through": [
+        "multiplayer"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa2kn.jpg"
+}

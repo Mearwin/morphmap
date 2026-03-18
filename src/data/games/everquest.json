@@ -1,0 +1,11 @@
+{
+  "id": "everquest",
+  "title": "EverQuest",
+  "date": "1999-03-16",
+  "tags": ["mmorpg", "mmo", "raiding", "persistent-world"],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    { "id": "ultima-iv", "through": ["rpg", "fantasy-world"] },
+    { "id": "diablo", "through": ["online-multiplayer", "loot"] }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "inside",
+  "title": "Inside",
+  "date": "2016-06-29",
+  "tags": [
+    "puzzle-platformer",
+    "atmospheric",
+    "wordless-narrative",
+    "cinematic"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "limbo",
+      "through": [
+        "puzzle-platformer",
+        "atmospheric",
+        "minimalist"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/y3a1qpmys1a6njhi100a.jpg"
+}

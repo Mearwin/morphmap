@@ -1,0 +1,22 @@
+{
+  "id": "asteroids",
+  "title": "Asteroids",
+  "date": "1979-11-01",
+  "tags": [
+    "arcade",
+    "vector-graphics",
+    "shooter",
+    "momentum"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "space-invaders",
+      "through": [
+        "arcade",
+        "shooter"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co58z9.jpg"
+}

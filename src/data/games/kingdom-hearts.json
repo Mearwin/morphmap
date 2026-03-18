@@ -1,0 +1,29 @@
+{
+  "id": "kingdom-hearts",
+  "title": "Kingdom Hearts",
+  "date": "2002-03-28",
+  "tags": [
+    "action-rpg",
+    "crossover",
+    "real-time-combat",
+    "cinematic"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "final-fantasy-vii",
+      "through": [
+        "jrpg",
+        "cinematic"
+      ]
+    },
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "lock-on-targeting",
+        "3d-adventure"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co30zf.jpg"
+}

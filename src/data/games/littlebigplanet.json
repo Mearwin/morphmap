@@ -1,0 +1,10 @@
+{
+  "id": "littlebigplanet",
+  "title": "LittleBigPlanet",
+  "date": "2008-10-27",
+  "tags": ["platformer", "user-generated-content", "co-op", "physics-based"],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    { "id": "super-mario-bros", "through": ["platforming", "level-design"] }
+  ]
+}

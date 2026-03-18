@@ -1,0 +1,24 @@
+{
+  "id": "diablo-ii",
+  "title": "Diablo II",
+  "date": "2000-06-29",
+  "tags": [
+    "action-rpg",
+    "loot",
+    "dungeon-crawl",
+    "online-multiplayer"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "diablo",
+      "through": [
+        "action-rpg",
+        "loot",
+        "dungeon-crawl",
+        "randomized-items"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3gfq.jpg"
+}

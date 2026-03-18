@@ -1,0 +1,22 @@
+{
+  "id": "sonic-the-hedgehog",
+  "title": "Sonic the Hedgehog",
+  "date": "1991-06-23",
+  "tags": [
+    "speed",
+    "momentum",
+    "side-scrolling",
+    "level-design"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "side-scrolling",
+        "level-design"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8ubt.jpg"
+}

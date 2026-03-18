@@ -1,0 +1,30 @@
+{
+  "id": "terraria",
+  "title": "Terraria",
+  "date": "2011-05-16",
+  "tags": [
+    "sandbox",
+    "crafting",
+    "exploration",
+    "side-scrolling"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "minecraft",
+      "through": [
+        "sandbox",
+        "crafting",
+        "survival"
+      ]
+    },
+    {
+      "id": "metroid",
+      "through": [
+        "exploration",
+        "backtracking"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coaamg.jpg"
+}

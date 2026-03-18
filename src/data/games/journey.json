@@ -1,0 +1,29 @@
+{
+  "id": "journey",
+  "title": "Journey",
+  "date": "2012-03-13",
+  "tags": [
+    "atmospheric",
+    "wordless-narrative",
+    "co-op",
+    "exploration"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "ico",
+      "through": [
+        "atmospheric",
+        "minimalist"
+      ]
+    },
+    {
+      "id": "shadow-of-the-colossus",
+      "through": [
+        "atmospheric",
+        "exploration"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2fro.jpg"
+}

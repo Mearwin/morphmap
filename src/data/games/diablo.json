@@ -1,0 +1,29 @@
+{
+  "id": "diablo",
+  "title": "Diablo",
+  "date": "1996-12-31",
+  "tags": [
+    "action-rpg",
+    "loot",
+    "dungeon-crawl",
+    "randomized-items"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "procedural-generation",
+        "dungeon-crawl"
+      ]
+    },
+    {
+      "id": "nethack",
+      "through": [
+        "dungeon-crawl",
+        "permadeath"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6kl3.jpg"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "dayz",
+  "title": "DayZ",
+  "date": "2013-12-16",
+  "tags": [
+    "survival",
+    "open-world",
+    "multiplayer",
+    "permadeath"
+  ],
+  "primaryTag": "survival-horror",
+  "influencedBy": [
+    {
+      "id": "minecraft",
+      "through": [
+        "survival",
+        "sandbox"
+      ]
+    },
+    {
+      "id": "amnesia",
+      "through": [
+        "survival-horror",
+        "atmospheric"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2k9a.jpg"
+}

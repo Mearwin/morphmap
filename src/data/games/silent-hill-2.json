@@ -1,0 +1,28 @@
+{
+  "id": "silent-hill-2",
+  "title": "Silent Hill 2",
+  "date": "2001-09-24",
+  "tags": [
+    "survival-horror",
+    "psychological",
+    "narrative-driven",
+    "atmospheric"
+  ],
+  "primaryTag": "survival-horror",
+  "influencedBy": [
+    {
+      "id": "resident-evil",
+      "through": [
+        "survival-horror",
+        "puzzle-solving"
+      ]
+    },
+    {
+      "id": "alone-in-the-dark",
+      "through": [
+        "survival-horror"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3weh.jpg"
+}

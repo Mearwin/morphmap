@@ -1,0 +1,29 @@
+{
+  "id": "apex-legends",
+  "title": "Apex Legends",
+  "date": "2019-02-04",
+  "tags": [
+    "battle-royale",
+    "fps",
+    "hero-shooter",
+    "team-based"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "pubg",
+      "through": [
+        "battle-royale",
+        "survival"
+      ]
+    },
+    {
+      "id": "overwatch",
+      "through": [
+        "hero-shooter",
+        "class-based"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa93z.jpg"
+}

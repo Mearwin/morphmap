@@ -1,0 +1,23 @@
+{
+  "id": "monster-hunter-world",
+  "title": "Monster Hunter: World",
+  "date": "2018-01-26",
+  "tags": [
+    "action-rpg",
+    "co-op",
+    "boss-battles",
+    "loot"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "dark-souls",
+      "through": [
+        "action-rpg",
+        "difficulty",
+        "boss-battles"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rst.jpg"
+}

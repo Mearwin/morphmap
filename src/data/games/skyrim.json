@@ -1,0 +1,30 @@
+{
+  "id": "skyrim",
+  "title": "The Elder Scrolls V: Skyrim",
+  "date": "2011-11-11",
+  "tags": [
+    "open-world",
+    "first-person-rpg",
+    "modding",
+    "sandbox"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "oblivion",
+      "through": [
+        "open-world",
+        "first-person-rpg",
+        "modding"
+      ]
+    },
+    {
+      "id": "morrowind",
+      "through": [
+        "open-world",
+        "lore"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1tnw.jpg"
+}

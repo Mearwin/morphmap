@@ -1,0 +1,12 @@
+{
+  "id": "titanfall-2",
+  "title": "Titanfall 2",
+  "date": "2016-10-28",
+  "tags": ["fps", "mech-combat", "movement-shooter", "sci-fi"],
+  "primaryTag": "fps",
+  "influencedBy": [
+    { "id": "call-of-duty-4", "through": ["fps", "campaign-design"] },
+    { "id": "half-life-2", "through": ["fps", "set-piece-design", "level-variety"] },
+    { "id": "quake", "through": ["movement-shooter", "arena-fps"] }
+  ]
+}

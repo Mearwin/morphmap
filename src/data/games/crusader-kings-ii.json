@@ -1,0 +1,22 @@
+{
+  "id": "crusader-kings-ii",
+  "title": "Crusader Kings II",
+  "date": "2012-02-14",
+  "tags": [
+    "grand-strategy",
+    "medieval",
+    "dynasty",
+    "emergent-narrative"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "civilization",
+      "through": [
+        "empire-building",
+        "turn-based"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1mwa.jpg"
+}

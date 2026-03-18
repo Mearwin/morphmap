@@ -1,0 +1,29 @@
+{
+  "id": "factorio",
+  "title": "Factorio",
+  "date": "2016-02-25",
+  "tags": [
+    "automation",
+    "factory-building",
+    "logistics",
+    "sandbox"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "minecraft",
+      "through": [
+        "sandbox",
+        "crafting"
+      ]
+    },
+    {
+      "id": "dwarf-fortress",
+      "through": [
+        "simulation",
+        "emergent-gameplay"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1tfy.jpg"
+}

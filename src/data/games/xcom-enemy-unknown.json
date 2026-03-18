@@ -1,0 +1,27 @@
+{
+  "id": "xcom-enemy-unknown",
+  "title": "XCOM: Enemy Unknown",
+  "date": "2012-10-09",
+  "tags": [
+    "turn-based-strategy",
+    "tactical",
+    "permadeath",
+    "base-management"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "civilization",
+      "through": [
+        "turn-based"
+      ]
+    },
+    {
+      "id": "fallout",
+      "through": [
+        "turn-based-combat"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co29i2.jpg"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "rogue",
+  "title": "Rogue",
+  "date": "1980-06-15",
+  "tags": [
+    "procedural-generation",
+    "permadeath",
+    "dungeon-crawl",
+    "turn-based"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ma1.jpg"
+}

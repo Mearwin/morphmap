@@ -1,0 +1,11 @@
+{
+  "id": "god-of-war",
+  "title": "God of War",
+  "date": "2005-03-22",
+  "tags": ["hack-and-slash", "action-adventure", "combo-combat", "mythology"],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    { "id": "castlevania-sotn", "through": ["action-combat", "mythology"] },
+    { "id": "doom", "through": ["visceral-combat", "power-fantasy"] }
+  ]
+}

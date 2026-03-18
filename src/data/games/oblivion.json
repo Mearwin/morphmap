@@ -1,0 +1,24 @@
+{
+  "id": "oblivion",
+  "title": "The Elder Scrolls IV: Oblivion",
+  "date": "2006-03-20",
+  "tags": [
+    "open-world",
+    "first-person-rpg",
+    "radiant-ai",
+    "modding"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "morrowind",
+      "through": [
+        "open-world",
+        "first-person-rpg",
+        "lore",
+        "modding"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fpz.jpg"
+}

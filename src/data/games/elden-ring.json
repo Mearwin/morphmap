@@ -1,0 +1,36 @@
+{
+  "id": "elden-ring",
+  "title": "Elden Ring",
+  "date": "2022-02-25",
+  "tags": [
+    "open-world",
+    "action-rpg",
+    "difficulty",
+    "souls-like"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "dark-souls",
+      "through": [
+        "action-rpg",
+        "difficulty",
+        "souls-like"
+      ]
+    },
+    {
+      "id": "breath-of-the-wild",
+      "through": [
+        "open-world",
+        "exploration"
+      ]
+    },
+    {
+      "id": "skyrim",
+      "through": [
+        "open-world"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4jni.jpg"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "jak-and-daxter",
+  "title": "Jak and Daxter",
+  "date": "2001-12-03",
+  "tags": ["3d-platformer", "collectathon", "open-world", "seamless-world"],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    { "id": "super-mario-64", "through": ["3d-platforming", "open-world"] },
+    { "id": "banjo-kazooie", "through": ["collectathon", "humor"] },
+    { "id": "crash-bandicoot", "through": ["platforming"] }
+  ]
+}

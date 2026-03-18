@@ -1,0 +1,36 @@
+{
+  "id": "deus-ex",
+  "title": "Deus Ex",
+  "date": "2000-06-17",
+  "tags": [
+    "immersive-sim",
+    "fps",
+    "rpg-elements",
+    "player-choice"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "system-shock-2",
+      "through": [
+        "immersive-sim",
+        "rpg-elements"
+      ]
+    },
+    {
+      "id": "thief",
+      "through": [
+        "stealth",
+        "immersive-sim"
+      ]
+    },
+    {
+      "id": "half-life",
+      "through": [
+        "fps",
+        "narrative-driven"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co86dk.jpg"
+}

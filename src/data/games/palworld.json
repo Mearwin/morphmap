@@ -1,0 +1,29 @@
+{
+  "id": "palworld",
+  "title": "Palworld",
+  "date": "2024-01-19",
+  "tags": [
+    "creature-collection",
+    "survival",
+    "crafting",
+    "open-world"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "pokemon-red-blue",
+      "through": [
+        "creature-collection"
+      ]
+    },
+    {
+      "id": "minecraft",
+      "through": [
+        "survival",
+        "crafting",
+        "sandbox"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7n02.jpg"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "mortal-kombat",
+  "title": "Mortal Kombat",
+  "date": "1992-10-08",
+  "tags": [
+    "fighting",
+    "violent",
+    "fatalities",
+    "digitized-sprites"
+  ],
+  "primaryTag": "fighting",
+  "influencedBy": [
+    {
+      "id": "street-fighter-ii",
+      "through": [
+        "fighting",
+        "competitive",
+        "character-roster"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co69zh.jpg"
+}

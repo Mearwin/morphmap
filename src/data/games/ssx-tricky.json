@@ -1,0 +1,10 @@
+{
+  "id": "ssx-tricky",
+  "title": "SSX Tricky",
+  "date": "2001-11-05",
+  "tags": ["sports", "arcade", "snowboarding", "trick-system"],
+  "primaryTag": "fighting",
+  "influencedBy": [
+    { "id": "tony-hawks-pro-skater", "through": ["trick-system", "combo-system", "arcade-sports"] }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "pubg",
+  "title": "PlayerUnknown's Battlegrounds",
+  "date": "2017-03-23",
+  "tags": [
+    "battle-royale",
+    "fps",
+    "survival",
+    "last-man-standing"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "dayz",
+      "through": [
+        "survival",
+        "open-world",
+        "multiplayer"
+      ]
+    },
+    {
+      "id": "counter-strike",
+      "through": [
+        "fps",
+        "tactical"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coaam4.jpg"
+}

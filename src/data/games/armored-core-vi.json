@@ -1,0 +1,11 @@
+{
+  "id": "armored-core-vi",
+  "title": "Armored Core VI: Fires of Rubicon",
+  "date": "2023-08-25",
+  "tags": ["mech-combat", "action", "soulslike-design", "customization"],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    { "id": "dark-souls", "through": ["boss-design", "difficulty"] },
+    { "id": "sekiro", "through": ["aggressive-combat", "stagger-system"] }
+  ]
+}

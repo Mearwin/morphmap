@@ -1,0 +1,31 @@
+{
+  "id": "dota-2",
+  "title": "Dota 2",
+  "date": "2013-07-09",
+  "tags": [
+    "moba",
+    "competitive",
+    "esports",
+    "team-based"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "warcraft-iii",
+      "through": [
+        "rts",
+        "hero-units",
+        "custom-maps"
+      ]
+    },
+    {
+      "id": "league-of-legends",
+      "through": [
+        "moba",
+        "competitive",
+        "esports"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobfk4.jpg"
+}

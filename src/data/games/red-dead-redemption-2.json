@@ -1,0 +1,37 @@
+{
+  "id": "red-dead-redemption-2",
+  "title": "Red Dead Redemption 2",
+  "date": "2018-10-26",
+  "tags": [
+    "open-world",
+    "narrative-driven",
+    "western",
+    "simulation"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "red-dead-redemption",
+      "through": [
+        "open-world",
+        "western",
+        "narrative-driven"
+      ]
+    },
+    {
+      "id": "gta-san-andreas",
+      "through": [
+        "open-world",
+        "sandbox"
+      ]
+    },
+    {
+      "id": "the-last-of-us",
+      "through": [
+        "narrative-driven",
+        "cinematic"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1q1f.jpg"
+}

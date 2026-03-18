@@ -1,0 +1,23 @@
+{
+  "id": "the-sims",
+  "title": "The Sims",
+  "date": "2000-02-04",
+  "tags": [
+    "life-sim",
+    "sandbox",
+    "simulation",
+    "social"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "simcity",
+      "through": [
+        "simulation",
+        "sandbox",
+        "management"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8j9a.jpg"
+}

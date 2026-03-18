@@ -1,0 +1,24 @@
+{
+  "id": "doom",
+  "title": "Doom",
+  "date": "1993-12-10",
+  "tags": [
+    "fps",
+    "fast-paced",
+    "modding",
+    "level-editor",
+    "multiplayer"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "wolfenstein-3d",
+      "through": [
+        "fps",
+        "first-person",
+        "fast-paced"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6wn4.jpg"
+}

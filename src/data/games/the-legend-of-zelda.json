@@ -1,0 +1,21 @@
+{
+  "id": "the-legend-of-zelda",
+  "title": "The Legend of Zelda",
+  "date": "1986-02-21",
+  "tags": [
+    "open-world",
+    "exploration",
+    "dungeons",
+    "action-combat"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "ultima-iv",
+      "through": [
+        "open-world"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1uii.jpg"
+}

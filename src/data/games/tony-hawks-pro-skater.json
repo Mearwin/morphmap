@@ -1,0 +1,10 @@
+{
+  "id": "tony-hawks-pro-skater",
+  "title": "Tony Hawk's Pro Skater",
+  "date": "1999-09-29",
+  "tags": ["sports", "arcade", "combo-system", "score-attack"],
+  "primaryTag": "fighting",
+  "influencedBy": [
+    { "id": "sonic-the-hedgehog", "through": ["speed", "momentum"] }
+  ]
+}

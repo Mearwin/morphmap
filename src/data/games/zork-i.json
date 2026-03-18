@@ -1,0 +1,8 @@
+{
+  "id": "zork-i",
+  "title": "Zork I",
+  "date": "1980-12-01",
+  "tags": ["interactive-fiction", "text-adventure", "puzzle", "exploration"],
+  "primaryTag": "puzzle",
+  "influencedBy": []
+}

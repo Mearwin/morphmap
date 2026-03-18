@@ -1,0 +1,29 @@
+{
+  "id": "inscryption",
+  "title": "Inscryption",
+  "date": "2021-10-19",
+  "tags": [
+    "card-game",
+    "horror",
+    "meta-narrative",
+    "roguelike"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [
+    {
+      "id": "slay-the-spire",
+      "through": [
+        "roguelike",
+        "deck-building"
+      ]
+    },
+    {
+      "id": "undertale",
+      "through": [
+        "fourth-wall",
+        "narrative"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co401c.jpg"
+}

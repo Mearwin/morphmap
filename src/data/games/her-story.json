@@ -1,0 +1,22 @@
+{
+  "id": "her-story",
+  "title": "Her Story",
+  "date": "2015-06-24",
+  "tags": [
+    "fmv",
+    "detective",
+    "nonlinear",
+    "narrative"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "myst",
+      "through": [
+        "exploration",
+        "first-person"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co28x9.jpg"
+}

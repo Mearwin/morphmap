@@ -1,0 +1,23 @@
+{
+  "id": "star-wars-kotor",
+  "title": "Star Wars: Knights of the Old Republic",
+  "date": "2003-07-15",
+  "tags": [
+    "crpg",
+    "moral-choices",
+    "party-based",
+    "narrative"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "baldurs-gate",
+      "through": [
+        "crpg",
+        "real-time-with-pause",
+        "party-based"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmz.jpg"
+}

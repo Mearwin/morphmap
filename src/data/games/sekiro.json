@@ -1,0 +1,28 @@
+{
+  "id": "sekiro",
+  "title": "Sekiro: Shadows Die Twice",
+  "date": "2019-03-22",
+  "tags": [
+    "action",
+    "difficulty",
+    "parry-system",
+    "stealth"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "dark-souls",
+      "through": [
+        "difficulty",
+        "souls-like"
+      ]
+    },
+    {
+      "id": "metal-gear-solid",
+      "through": [
+        "stealth"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2a23.jpg"
+}

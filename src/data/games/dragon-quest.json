@@ -1,0 +1,29 @@
+{
+  "id": "dragon-quest",
+  "title": "Dragon Quest",
+  "date": "1986-05-27",
+  "tags": [
+    "jrpg",
+    "turn-based-combat",
+    "overworld",
+    "level-up"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "ultima-iv",
+      "through": [
+        "open-world",
+        "tile-based"
+      ]
+    },
+    {
+      "id": "wizardry",
+      "through": [
+        "dungeon-crawl",
+        "turn-based"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7wt9.jpg"
+}

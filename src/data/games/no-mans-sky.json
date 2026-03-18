@@ -1,0 +1,23 @@
+{
+  "id": "no-mans-sky",
+  "title": "No Man's Sky",
+  "date": "2016-08-09",
+  "tags": [
+    "space",
+    "procedural-generation",
+    "exploration",
+    "survival"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "minecraft",
+      "through": [
+        "sandbox",
+        "procedural-generation",
+        "survival"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coacrk.jpg"
+}

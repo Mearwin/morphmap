@@ -1,0 +1,29 @@
+{
+  "id": "lethal-company",
+  "title": "Lethal Company",
+  "date": "2023-10-23",
+  "tags": [
+    "co-op",
+    "horror",
+    "survival",
+    "indie"
+  ],
+  "primaryTag": "survival-horror",
+  "influencedBy": [
+    {
+      "id": "amnesia",
+      "through": [
+        "survival-horror",
+        "defenseless"
+      ]
+    },
+    {
+      "id": "dayz",
+      "through": [
+        "survival",
+        "multiplayer"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5ive.jpg"
+}

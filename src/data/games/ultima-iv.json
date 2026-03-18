@@ -1,0 +1,22 @@
+{
+  "id": "ultima-iv",
+  "title": "Ultima IV: Quest of the Avatar",
+  "date": "1985-09-16",
+  "tags": [
+    "open-world",
+    "moral-choices",
+    "party-based",
+    "tile-based"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "wizardry",
+      "through": [
+        "dungeon-crawl",
+        "party-based"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2cqa.jpg"
+}

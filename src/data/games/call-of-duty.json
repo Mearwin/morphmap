@@ -1,0 +1,29 @@
+{
+  "id": "call-of-duty",
+  "title": "Call of Duty",
+  "date": "2003-10-29",
+  "tags": [
+    "fps",
+    "cinematic",
+    "world-war-ii",
+    "scripted-events"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "half-life",
+      "through": [
+        "scripted-events",
+        "narrative-driven"
+      ]
+    },
+    {
+      "id": "halo",
+      "through": [
+        "fps",
+        "console-shooter"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2n19.jpg"
+}

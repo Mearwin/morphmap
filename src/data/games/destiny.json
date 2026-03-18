@@ -1,0 +1,36 @@
+{
+  "id": "destiny",
+  "title": "Destiny",
+  "date": "2014-09-09",
+  "tags": [
+    "fps",
+    "mmo-lite",
+    "loot",
+    "co-op"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "halo",
+      "through": [
+        "fps",
+        "sci-fi",
+        "console-shooter"
+      ]
+    },
+    {
+      "id": "diablo-ii",
+      "through": [
+        "loot"
+      ]
+    },
+    {
+      "id": "world-of-warcraft",
+      "through": [
+        "mmorpg",
+        "raids"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rco.jpg"
+}

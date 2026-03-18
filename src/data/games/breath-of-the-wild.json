@@ -1,0 +1,43 @@
+{
+  "id": "breath-of-the-wild",
+  "title": "The Legend of Zelda: Breath of the Wild",
+  "date": "2017-03-03",
+  "tags": [
+    "open-world",
+    "exploration",
+    "physics",
+    "emergent-gameplay"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "the-legend-of-zelda",
+      "through": [
+        "open-world",
+        "exploration",
+        "dungeons"
+      ]
+    },
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "3d-adventure",
+        "dungeons"
+      ]
+    },
+    {
+      "id": "skyrim",
+      "through": [
+        "open-world"
+      ]
+    },
+    {
+      "id": "minecraft",
+      "through": [
+        "sandbox",
+        "crafting"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co67oa.jpg"
+}

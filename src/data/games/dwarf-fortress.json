@@ -1,0 +1,35 @@
+{
+  "id": "dwarf-fortress",
+  "title": "Dwarf Fortress",
+  "date": "2006-08-08",
+  "tags": [
+    "simulation",
+    "procedural-generation",
+    "sandbox",
+    "emergent-gameplay"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "procedural-generation"
+      ]
+    },
+    {
+      "id": "nethack",
+      "through": [
+        "emergent-gameplay",
+        "procedural-generation"
+      ]
+    },
+    {
+      "id": "simcity",
+      "through": [
+        "simulation",
+        "management"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2yqt.jpg"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "slay-the-spire",
+  "title": "Slay the Spire",
+  "date": "2019-01-23",
+  "tags": [
+    "roguelike",
+    "deck-building",
+    "strategy",
+    "procedural-generation"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "procedural-generation",
+        "permadeath"
+      ]
+    },
+    {
+      "id": "ftl",
+      "through": [
+        "roguelike",
+        "permadeath"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1iyf.jpg"
+}

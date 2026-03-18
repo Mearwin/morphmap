@@ -1,0 +1,21 @@
+{
+  "id": "ico",
+  "title": "Ico",
+  "date": "2001-12-06",
+  "tags": [
+    "escort",
+    "atmospheric",
+    "puzzle-platformer",
+    "minimalist"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "3d-adventure"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3r78.jpg"
+}

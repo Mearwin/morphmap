@@ -1,0 +1,28 @@
+{
+  "id": "ftl",
+  "title": "FTL: Faster Than Light",
+  "date": "2012-09-14",
+  "tags": [
+    "roguelike",
+    "permadeath",
+    "real-time-with-pause",
+    "space"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "procedural-generation",
+        "permadeath"
+      ]
+    },
+    {
+      "id": "nethack",
+      "through": [
+        "emergent-gameplay"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9chw.jpg"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "warcraft",
+  "title": "Warcraft: Orcs & Humans",
+  "date": "1994-11-23",
+  "tags": ["rts", "base-building", "resource-management", "fantasy"],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    { "id": "civilization", "through": ["strategy", "resource-management"] }
+  ]
+}

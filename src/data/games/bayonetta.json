@@ -1,0 +1,21 @@
+{
+  "id": "bayonetta",
+  "title": "Bayonetta",
+  "date": "2009-10-29",
+  "tags": [
+    "action",
+    "combo-system",
+    "spectacle-fighter",
+    "boss-battles"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "street-fighter-ii",
+      "through": [
+        "combo-system"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8nf4.jpg"
+}

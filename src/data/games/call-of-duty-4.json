@@ -1,0 +1,36 @@
+{
+  "id": "call-of-duty-4",
+  "title": "Call of Duty 4: Modern Warfare",
+  "date": "2007-11-05",
+  "tags": [
+    "fps",
+    "cinematic",
+    "multiplayer",
+    "progression-system"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "call-of-duty",
+      "through": [
+        "fps",
+        "cinematic",
+        "scripted-events"
+      ]
+    },
+    {
+      "id": "counter-strike",
+      "through": [
+        "tactical",
+        "competitive"
+      ]
+    },
+    {
+      "id": "halo",
+      "through": [
+        "console-shooter"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2adc.jpg"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "team-fortress-2",
+  "title": "Team Fortress 2",
+  "date": "2007-10-10",
+  "tags": [
+    "fps",
+    "class-based",
+    "team-based",
+    "stylized"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "quake",
+      "through": [
+        "fps",
+        "multiplayer",
+        "modding"
+      ]
+    },
+    {
+      "id": "counter-strike",
+      "through": [
+        "team-based",
+        "competitive"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6rzl.jpg"
+}

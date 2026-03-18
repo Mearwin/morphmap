@@ -1,0 +1,23 @@
+{
+  "id": "warcraft-ii",
+  "title": "Warcraft II: Tides of Darkness",
+  "date": "1995-12-09",
+  "tags": [
+    "rts",
+    "base-building",
+    "multiplayer",
+    "fantasy"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "command-and-conquer",
+      "through": [
+        "rts",
+        "base-building",
+        "resource-management"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wix.jpg"
+}

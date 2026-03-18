@@ -1,0 +1,11 @@
+{
+  "id": "chrono-trigger",
+  "title": "Chrono Trigger",
+  "date": "1995-03-11",
+  "tags": ["jrpg", "turn-based", "time-travel", "new-game-plus", "multiple-endings"],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    { "id": "final-fantasy", "through": ["jrpg", "turn-based"] },
+    { "id": "dragon-quest", "through": ["jrpg", "party-system"] }
+  ]
+}

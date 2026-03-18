@@ -1,0 +1,11 @@
+{
+  "id": "what-remains-of-edith-finch",
+  "title": "What Remains of Edith Finch",
+  "date": "2017-04-25",
+  "tags": ["walking-sim", "narrative", "anthology", "exploration"],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    { "id": "gone-home", "through": ["walking-sim", "environmental-storytelling"] },
+    { "id": "journey", "through": ["emotional-experience", "linear-narrative"] }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "ori-and-the-blind-forest",
+  "title": "Ori and the Blind Forest",
+  "date": "2015-03-11",
+  "tags": ["metroidvania", "platformer", "art-style", "emotional-narrative"],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    { "id": "metroid", "through": ["metroidvania", "exploration"] },
+    { "id": "castlevania-sotn", "through": ["metroidvania", "ability-gating"] },
+    { "id": "limbo", "through": ["atmospheric-platformer", "art-style"] }
+  ]
+}

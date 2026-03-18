@@ -1,0 +1,24 @@
+{
+  "id": "quake",
+  "title": "Quake",
+  "date": "1996-06-22",
+  "tags": [
+    "fps",
+    "3d-graphics",
+    "multiplayer",
+    "modding",
+    "arena-shooter"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "doom",
+      "through": [
+        "fps",
+        "modding",
+        "fast-paced"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6751.jpg"
+}

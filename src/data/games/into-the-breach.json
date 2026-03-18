@@ -1,0 +1,29 @@
+{
+  "id": "into-the-breach",
+  "title": "Into the Breach",
+  "date": "2018-02-27",
+  "tags": [
+    "turn-based-strategy",
+    "puzzle",
+    "roguelike",
+    "mech"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "ftl",
+      "through": [
+        "roguelike",
+        "permadeath"
+      ]
+    },
+    {
+      "id": "xcom-enemy-unknown",
+      "through": [
+        "turn-based-strategy",
+        "tactical"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2gjp.jpg"
+}

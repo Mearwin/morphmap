@@ -1,0 +1,30 @@
+{
+  "id": "mass-effect",
+  "title": "Mass Effect",
+  "date": "2007-11-20",
+  "tags": [
+    "action-rpg",
+    "narrative",
+    "moral-choices",
+    "squad-based"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "star-wars-kotor",
+      "through": [
+        "crpg",
+        "moral-choices",
+        "narrative"
+      ]
+    },
+    {
+      "id": "baldurs-gate",
+      "through": [
+        "party-based",
+        "narrative"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7c1f.jpg"
+}

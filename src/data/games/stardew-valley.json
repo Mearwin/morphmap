@@ -1,0 +1,30 @@
+{
+  "id": "stardew-valley",
+  "title": "Stardew Valley",
+  "date": "2016-02-26",
+  "tags": [
+    "farming",
+    "life-sim",
+    "crafting",
+    "relationships"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "harvest-moon",
+      "through": [
+        "farming",
+        "life-sim",
+        "daily-cycle",
+        "relationships"
+      ]
+    },
+    {
+      "id": "minecraft",
+      "through": [
+        "crafting"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa93h.jpg"
+}

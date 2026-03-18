@@ -1,0 +1,29 @@
+{
+  "id": "baldurs-gate",
+  "title": "Baldur's Gate",
+  "date": "1998-12-21",
+  "tags": [
+    "crpg",
+    "real-time-with-pause",
+    "party-based",
+    "narrative"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "ultima-iv",
+      "through": [
+        "open-world",
+        "moral-choices"
+      ]
+    },
+    {
+      "id": "wizardry",
+      "through": [
+        "party-based",
+        "dungeon-crawl"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co20gb.jpg"
+}

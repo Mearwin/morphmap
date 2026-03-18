@@ -1,0 +1,39 @@
+{
+  "id": "dark-souls",
+  "title": "Dark Souls",
+  "date": "2011-09-22",
+  "tags": [
+    "action-rpg",
+    "difficulty",
+    "interconnected-world",
+    "souls-like"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "demons-souls",
+      "through": [
+        "action-rpg",
+        "difficulty",
+        "souls-like"
+      ]
+    },
+    {
+      "id": "metroid",
+      "through": [
+        "exploration",
+        "backtracking",
+        "nonlinear"
+      ]
+    },
+    {
+      "id": "castlevania-sotn",
+      "through": [
+        "exploration",
+        "rpg-elements",
+        "backtracking"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1x78.jpg"
+}

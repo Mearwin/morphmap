@@ -1,0 +1,22 @@
+{
+  "id": "red-dead-redemption",
+  "title": "Red Dead Redemption",
+  "date": "2010-05-18",
+  "tags": [
+    "open-world",
+    "western",
+    "narrative-driven",
+    "sandbox"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "gta-san-andreas",
+      "through": [
+        "open-world",
+        "sandbox"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2lcv.jpg"
+}

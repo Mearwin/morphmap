@@ -1,0 +1,28 @@
+{
+  "id": "counter-strike",
+  "title": "Counter-Strike",
+  "date": "2000-11-08",
+  "tags": [
+    "fps",
+    "tactical",
+    "team-based",
+    "competitive"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "half-life",
+      "through": [
+        "fps"
+      ]
+    },
+    {
+      "id": "quake",
+      "through": [
+        "multiplayer",
+        "arena-shooter"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co81pl.jpg"
+}

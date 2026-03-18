@@ -1,0 +1,31 @@
+{
+  "id": "starcraft",
+  "title": "StarCraft",
+  "date": "1998-03-31",
+  "tags": [
+    "rts",
+    "asymmetric-factions",
+    "esports",
+    "multiplayer"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "warcraft-ii",
+      "through": [
+        "rts",
+        "base-building",
+        "multiplayer"
+      ]
+    },
+    {
+      "id": "command-and-conquer",
+      "through": [
+        "rts",
+        "factions",
+        "resource-management"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9n6m.jpg"
+}

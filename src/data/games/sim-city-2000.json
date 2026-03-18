@@ -1,0 +1,10 @@
+{
+  "id": "sim-city-2000",
+  "title": "SimCity 2000",
+  "date": "1993-12-21",
+  "tags": ["city-builder", "simulation", "management", "isometric"],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    { "id": "simcity", "through": ["city-builder", "simulation"] }
+  ]
+}

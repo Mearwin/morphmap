@@ -1,0 +1,70 @@
+.container {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 32px;
+}
+
+.columns {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+  margin: auto;
+  position: relative;
+  min-height: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  position: relative;
+}
+
+.depthLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.svgOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.edgePath {
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 1.5;
+  opacity: 0.4;
+}
+
+.tagPill {
+  font-size: 9px;
+  fill: var(--text-muted);
+}
+
+.tagPillBg {
+  fill: var(--surface);
+  stroke: var(--border);
+  stroke-width: 0.5;
+  rx: 3;
+}
+
+.emptyMessage {
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: center;
+  padding: 48px 24px;
+  margin: auto;
+}

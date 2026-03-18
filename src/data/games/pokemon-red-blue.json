@@ -1,0 +1,23 @@
+{
+  "id": "pokemon-red-blue",
+  "title": "Pokemon Red/Blue",
+  "date": "1996-02-27",
+  "tags": [
+    "jrpg",
+    "creature-collection",
+    "turn-based-combat",
+    "trading"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "dragon-quest",
+      "through": [
+        "jrpg",
+        "turn-based-combat",
+        "overworld"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co93dr.jpg"
+}

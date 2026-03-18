@@ -1,0 +1,22 @@
+{
+  "id": "harvest-moon",
+  "title": "Harvest Moon",
+  "date": "1996-08-09",
+  "tags": [
+    "farming",
+    "life-sim",
+    "daily-cycle",
+    "relationships"
+  ],
+  "primaryTag": "sandbox",
+  "influencedBy": [
+    {
+      "id": "simcity",
+      "through": [
+        "simulation",
+        "management"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co43o8.jpg"
+}

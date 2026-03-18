@@ -1,0 +1,23 @@
+{
+  "id": "unreal-tournament",
+  "title": "Unreal Tournament",
+  "date": "1999-11-30",
+  "tags": [
+    "fps",
+    "arena-shooter",
+    "multiplayer",
+    "fast-paced"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "quake",
+      "through": [
+        "arena-shooter",
+        "multiplayer",
+        "fast-paced"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1i2j.jpg"
+}

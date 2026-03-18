@@ -1,0 +1,29 @@
+{
+  "id": "total-war-rome",
+  "title": "Rome: Total War",
+  "date": "2004-09-22",
+  "tags": [
+    "rts",
+    "turn-based-strategy",
+    "historical",
+    "large-scale-battles"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "civilization",
+      "through": [
+        "turn-based",
+        "empire-building"
+      ]
+    },
+    {
+      "id": "age-of-empires-ii",
+      "through": [
+        "historical",
+        "rts"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1zt9.jpg"
+}

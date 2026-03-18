@@ -1,0 +1,22 @@
+{
+  "id": "resident-evil-4",
+  "title": "Resident Evil 4",
+  "date": "2005-01-11",
+  "tags": [
+    "survival-horror",
+    "over-the-shoulder",
+    "action",
+    "qte"
+  ],
+  "primaryTag": "survival-horror",
+  "influencedBy": [
+    {
+      "id": "resident-evil",
+      "through": [
+        "survival-horror",
+        "resource-management"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2wk8.jpg"
+}

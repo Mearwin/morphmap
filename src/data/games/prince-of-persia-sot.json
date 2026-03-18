@@ -1,0 +1,27 @@
+{
+  "id": "prince-of-persia-sot",
+  "title": "Prince of Persia: The Sands of Time",
+  "date": "2003-11-21",
+  "tags": [
+    "3d-platformer",
+    "time-rewind",
+    "parkour",
+    "puzzle-platformer"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "super-mario-64",
+      "through": [
+        "3d-platformer"
+      ]
+    },
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "3d-adventure"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4t8l.jpg"
+}

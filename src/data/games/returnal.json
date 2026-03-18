@@ -1,0 +1,28 @@
+{
+  "id": "returnal",
+  "title": "Returnal",
+  "date": "2021-04-30",
+  "tags": [
+    "roguelike",
+    "third-person-shooter",
+    "sci-fi",
+    "bullet-hell"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [
+    {
+      "id": "hades",
+      "through": [
+        "roguelike",
+        "action"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "through": [
+        "difficulty"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co56kr.jpg"
+}

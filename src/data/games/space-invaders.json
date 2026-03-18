@@ -1,0 +1,22 @@
+{
+  "id": "space-invaders",
+  "title": "Space Invaders",
+  "date": "1978-06-01",
+  "tags": [
+    "arcade",
+    "shooter",
+    "high-score",
+    "wave-based"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "pong",
+      "through": [
+        "arcade",
+        "competitive"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9i9u.jpg"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "walking-dead-s1",
+  "title": "The Walking Dead: Season One",
+  "date": "2012-04-24",
+  "tags": [
+    "narrative",
+    "choices-matter",
+    "episodic",
+    "emotional"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "the-secret-of-monkey-island",
+      "through": [
+        "narrative",
+        "point-and-click"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1v55.jpg"
+}

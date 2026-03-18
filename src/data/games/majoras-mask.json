@@ -1,0 +1,23 @@
+{
+  "id": "majoras-mask",
+  "title": "The Legend of Zelda: Majora's Mask",
+  "date": "2000-04-27",
+  "tags": [
+    "time-loop",
+    "dark-narrative",
+    "dungeons",
+    "masks"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "3d-adventure",
+        "lock-on-targeting",
+        "dungeons"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3pah.jpg"
+}

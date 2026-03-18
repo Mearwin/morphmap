@@ -1,0 +1,38 @@
+{
+  "id": "hollow-knight",
+  "title": "Hollow Knight",
+  "date": "2017-02-24",
+  "tags": [
+    "metroidvania",
+    "exploration",
+    "tight-controls",
+    "atmospheric"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "metroid",
+      "through": [
+        "exploration",
+        "backtracking",
+        "nonlinear"
+      ]
+    },
+    {
+      "id": "castlevania-sotn",
+      "through": [
+        "metroidvania",
+        "exploration",
+        "rpg-elements"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "through": [
+        "difficulty",
+        "interconnected-world"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobfzp.jpg"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "dead-cells",
+  "title": "Dead Cells",
+  "date": "2018-08-07",
+  "tags": [
+    "roguelike",
+    "metroidvania",
+    "action",
+    "procedural-generation"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "procedural-generation",
+        "permadeath"
+      ]
+    },
+    {
+      "id": "castlevania-sotn",
+      "through": [
+        "metroidvania",
+        "exploration"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "through": [
+        "difficulty",
+        "action-rpg"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7jfv.jpg"
+}

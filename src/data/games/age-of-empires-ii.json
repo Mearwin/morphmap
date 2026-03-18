@@ -1,0 +1,30 @@
+{
+  "id": "age-of-empires-ii",
+  "title": "Age of Empires II: The Age of Kings",
+  "date": "1999-09-30",
+  "tags": [
+    "rts",
+    "historical",
+    "base-building",
+    "civilizations"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "command-and-conquer",
+      "through": [
+        "rts",
+        "base-building",
+        "resource-management"
+      ]
+    },
+    {
+      "id": "civilization",
+      "through": [
+        "empire-building",
+        "tech-tree"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co55xo.jpg"
+}

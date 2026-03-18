@@ -1,0 +1,30 @@
+{
+  "id": "resident-evil-4-remake",
+  "title": "Resident Evil 4 (Remake)",
+  "date": "2023-03-24",
+  "tags": [
+    "survival-horror",
+    "over-the-shoulder",
+    "action",
+    "remake"
+  ],
+  "primaryTag": "survival-horror",
+  "influencedBy": [
+    {
+      "id": "resident-evil-4",
+      "through": [
+        "survival-horror",
+        "over-the-shoulder",
+        "action"
+      ]
+    },
+    {
+      "id": "the-last-of-us",
+      "through": [
+        "cinematic",
+        "narrative-driven"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6bo0.jpg"
+}

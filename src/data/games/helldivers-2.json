@@ -1,0 +1,28 @@
+{
+  "id": "helldivers-2",
+  "title": "Helldivers 2",
+  "date": "2024-02-08",
+  "tags": [
+    "co-op",
+    "third-person-shooter",
+    "friendly-fire",
+    "live-service"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "left-4-dead",
+      "through": [
+        "co-op"
+      ]
+    },
+    {
+      "id": "halo",
+      "through": [
+        "sci-fi",
+        "console-shooter"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coabbf.jpg"
+}

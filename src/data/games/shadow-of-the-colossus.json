@@ -1,0 +1,29 @@
+{
+  "id": "shadow-of-the-colossus",
+  "title": "Shadow of the Colossus",
+  "date": "2005-10-18",
+  "tags": [
+    "boss-battles",
+    "atmospheric",
+    "minimalist",
+    "exploration"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "ico",
+      "through": [
+        "atmospheric",
+        "minimalist"
+      ]
+    },
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "3d-adventure",
+        "lock-on-targeting"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1ozz.jpg"
+}

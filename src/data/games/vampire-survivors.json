@@ -1,0 +1,22 @@
+{
+  "id": "vampire-survivors",
+  "title": "Vampire Survivors",
+  "date": "2022-10-20",
+  "tags": [
+    "roguelike",
+    "bullet-hell",
+    "auto-attack",
+    "horde-survival"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [
+    {
+      "id": "the-binding-of-isaac",
+      "through": [
+        "roguelike",
+        "item-synergy"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4bzv.jpg"
+}

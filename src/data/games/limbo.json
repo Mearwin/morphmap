@@ -1,0 +1,29 @@
+{
+  "id": "limbo",
+  "title": "Limbo",
+  "date": "2010-07-21",
+  "tags": [
+    "puzzle-platformer",
+    "atmospheric",
+    "minimalist",
+    "indie"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "braid",
+      "through": [
+        "puzzle-platformer",
+        "indie"
+      ]
+    },
+    {
+      "id": "ico",
+      "through": [
+        "atmospheric",
+        "minimalist"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1qrs.jpg"
+}

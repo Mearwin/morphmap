@@ -1,0 +1,22 @@
+{
+  "id": "myst",
+  "title": "Myst",
+  "date": "1993-09-24",
+  "tags": [
+    "puzzle",
+    "exploration",
+    "atmospheric",
+    "first-person"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "the-secret-of-monkey-island",
+      "through": [
+        "narrative",
+        "inventory-puzzles"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1y96.jpg"
+}

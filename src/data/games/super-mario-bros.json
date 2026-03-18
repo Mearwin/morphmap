@@ -1,0 +1,22 @@
+{
+  "id": "super-mario-bros",
+  "title": "Super Mario Bros.",
+  "date": "1985-09-13",
+  "tags": [
+    "side-scrolling",
+    "power-ups",
+    "level-design",
+    "tight-controls"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "donkey-kong",
+      "through": [
+        "platformer",
+        "jumping"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co43q4.jpg"
+}

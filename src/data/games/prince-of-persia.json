@@ -1,0 +1,11 @@
+{
+  "id": "prince-of-persia",
+  "title": "Prince of Persia",
+  "date": "1989-10-03",
+  "tags": ["platformer", "rotoscoped-animation", "precise-controls", "traps"],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    { "id": "donkey-kong", "through": ["platforming"] },
+    { "id": "super-mario-bros", "through": ["platforming", "level-design"] }
+  ]
+}

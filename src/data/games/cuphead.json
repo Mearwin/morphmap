@@ -1,0 +1,29 @@
+{
+  "id": "cuphead",
+  "title": "Cuphead",
+  "date": "2017-09-29",
+  "tags": [
+    "boss-rush",
+    "difficulty",
+    "retro-art",
+    "side-scrolling"
+  ],
+  "primaryTag": "platformer",
+  "influencedBy": [
+    {
+      "id": "mega-man",
+      "through": [
+        "side-scrolling",
+        "boss-battles"
+      ]
+    },
+    {
+      "id": "super-meat-boy",
+      "through": [
+        "difficulty",
+        "tight-controls"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co62ao.jpg"
+}

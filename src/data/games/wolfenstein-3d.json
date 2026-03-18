@@ -1,0 +1,14 @@
+{
+  "id": "wolfenstein-3d",
+  "title": "Wolfenstein 3D",
+  "date": "1992-05-05",
+  "tags": [
+    "fps",
+    "fast-paced",
+    "first-person",
+    "shooter"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6yw5.jpg"
+}

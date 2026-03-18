@@ -1,0 +1,29 @@
+{
+  "id": "uncharted-2",
+  "title": "Uncharted 2: Among Thieves",
+  "date": "2009-10-13",
+  "tags": [
+    "cinematic",
+    "third-person",
+    "set-pieces",
+    "narrative-driven"
+  ],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    {
+      "id": "gears-of-war",
+      "through": [
+        "cover-system",
+        "cinematic"
+      ]
+    },
+    {
+      "id": "prince-of-persia-sot",
+      "through": [
+        "3d-platformer",
+        "parkour"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1tnb.jpg"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "nethack",
+  "title": "NetHack",
+  "date": "1987-07-28",
+  "tags": [
+    "procedural-generation",
+    "permadeath",
+    "emergent-gameplay",
+    "dungeon-crawl"
+  ],
+  "primaryTag": "roguelike",
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "procedural-generation",
+        "permadeath",
+        "dungeon-crawl"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1syp.jpg"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "the-witness",
+  "title": "The Witness",
+  "date": "2016-01-26",
+  "tags": [
+    "puzzle",
+    "exploration",
+    "open-world",
+    "line-puzzles"
+  ],
+  "primaryTag": "puzzle",
+  "influencedBy": [
+    {
+      "id": "myst",
+      "through": [
+        "puzzle",
+        "exploration",
+        "atmospheric"
+      ]
+    },
+    {
+      "id": "braid",
+      "through": [
+        "puzzle-platformer",
+        "indie"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3hih.jpg"
+}

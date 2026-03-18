@@ -1,0 +1,30 @@
+{
+  "id": "league-of-legends",
+  "title": "League of Legends",
+  "date": "2009-10-27",
+  "tags": [
+    "moba",
+    "competitive",
+    "team-based",
+    "esports"
+  ],
+  "primaryTag": "strategy",
+  "influencedBy": [
+    {
+      "id": "warcraft-iii",
+      "through": [
+        "rts",
+        "hero-units",
+        "custom-maps"
+      ]
+    },
+    {
+      "id": "starcraft",
+      "through": [
+        "esports",
+        "multiplayer"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobpn7.jpg"
+}

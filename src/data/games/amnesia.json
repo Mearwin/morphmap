@@ -1,0 +1,30 @@
+{
+  "id": "amnesia",
+  "title": "Amnesia: The Dark Descent",
+  "date": "2010-09-08",
+  "tags": [
+    "survival-horror",
+    "defenseless",
+    "sanity-mechanic",
+    "atmospheric"
+  ],
+  "primaryTag": "survival-horror",
+  "influencedBy": [
+    {
+      "id": "silent-hill-2",
+      "through": [
+        "survival-horror",
+        "psychological",
+        "atmospheric"
+      ]
+    },
+    {
+      "id": "resident-evil",
+      "through": [
+        "survival-horror",
+        "resource-management"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1qq5.jpg"
+}

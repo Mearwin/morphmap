@@ -1,0 +1,23 @@
+{
+  "id": "resident-evil",
+  "title": "Resident Evil",
+  "date": "1996-03-22",
+  "tags": [
+    "survival-horror",
+    "fixed-camera",
+    "resource-management",
+    "puzzle-solving"
+  ],
+  "primaryTag": "survival-horror",
+  "influencedBy": [
+    {
+      "id": "alone-in-the-dark",
+      "through": [
+        "survival-horror",
+        "fixed-camera",
+        "puzzle-solving"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co82br.jpg"
+}

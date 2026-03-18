@@ -1,0 +1,30 @@
+{
+  "id": "overwatch",
+  "title": "Overwatch",
+  "date": "2016-05-24",
+  "tags": [
+    "fps",
+    "class-based",
+    "team-based",
+    "hero-shooter"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "team-fortress-2",
+      "through": [
+        "class-based",
+        "team-based",
+        "stylized"
+      ]
+    },
+    {
+      "id": "counter-strike",
+      "through": [
+        "competitive",
+        "fps"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rcb.jpg"
+}

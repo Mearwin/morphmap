@@ -1,0 +1,27 @@
+{
+  "id": "left-4-dead",
+  "title": "Left 4 Dead",
+  "date": "2008-11-17",
+  "tags": [
+    "fps",
+    "co-op",
+    "zombies",
+    "ai-director"
+  ],
+  "primaryTag": "fps",
+  "influencedBy": [
+    {
+      "id": "half-life-2",
+      "through": [
+        "fps"
+      ]
+    },
+    {
+      "id": "counter-strike",
+      "through": [
+        "team-based"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1qrm.jpg"
+}

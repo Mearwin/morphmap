@@ -1,0 +1,23 @@
+{
+  "id": "tekken-3",
+  "title": "Tekken 3",
+  "date": "1997-03-20",
+  "tags": [
+    "fighting",
+    "3d-fighting",
+    "combo-system",
+    "character-roster"
+  ],
+  "primaryTag": "fighting",
+  "influencedBy": [
+    {
+      "id": "street-fighter-ii",
+      "through": [
+        "fighting",
+        "combo-system",
+        "competitive"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8d7r.jpg"
+}

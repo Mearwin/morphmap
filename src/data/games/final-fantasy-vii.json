@@ -1,0 +1,23 @@
+{
+  "id": "final-fantasy-vii",
+  "title": "Final Fantasy VII",
+  "date": "1997-01-31",
+  "tags": [
+    "jrpg",
+    "cinematic",
+    "turn-based-combat",
+    "materia-system"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "final-fantasy",
+      "through": [
+        "jrpg",
+        "turn-based-combat",
+        "party-based"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4xgb.jpg"
+}

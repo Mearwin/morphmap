@@ -1,0 +1,11 @@
+{
+  "id": "okami",
+  "title": "Okami",
+  "date": "2006-04-20",
+  "tags": ["action-adventure", "cel-shading", "open-world", "mythology"],
+  "primaryTag": "action-adventure",
+  "influencedBy": [
+    { "id": "ocarina-of-time", "through": ["action-adventure", "dungeon-design", "open-world"] },
+    { "id": "the-legend-of-zelda", "through": ["exploration", "puzzle-combat"] }
+  ]
+}

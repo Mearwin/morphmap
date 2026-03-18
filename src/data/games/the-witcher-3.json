@@ -1,0 +1,36 @@
+{
+  "id": "the-witcher-3",
+  "title": "The Witcher 3: Wild Hunt",
+  "date": "2015-05-19",
+  "tags": [
+    "open-world",
+    "narrative",
+    "moral-choices",
+    "action-rpg"
+  ],
+  "primaryTag": "rpg",
+  "influencedBy": [
+    {
+      "id": "skyrim",
+      "through": [
+        "open-world",
+        "first-person-rpg"
+      ]
+    },
+    {
+      "id": "mass-effect",
+      "through": [
+        "narrative",
+        "moral-choices"
+      ]
+    },
+    {
+      "id": "baldurs-gate",
+      "through": [
+        "narrative",
+        "party-based"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coaarl.jpg"
+}

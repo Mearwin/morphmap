@@ -1,0 +1,23 @@
+{
+  "id": "guilty-gear-strive",
+  "title": "Guilty Gear -Strive-",
+  "date": "2021-06-11",
+  "tags": [
+    "fighting",
+    "anime",
+    "combo-system",
+    "rollback-netcode"
+  ],
+  "primaryTag": "fighting",
+  "influencedBy": [
+    {
+      "id": "street-fighter-ii",
+      "through": [
+        "fighting",
+        "combo-system",
+        "competitive"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2lby.jpg"
+}
