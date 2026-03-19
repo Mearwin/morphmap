@@ -6,9 +6,10 @@
     "4x",
     "turn-based",
     "empire-building",
-    "tech-tree"
+    "tech-tree",
+    "simulation",
+    "management"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "simcity",

@@ -6,9 +6,12 @@
     "fps",
     "mmo-lite",
     "loot",
-    "co-op"
+    "co-op",
+    "sci-fi",
+    "console-shooter",
+    "mmorpg",
+    "raids"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "halo",

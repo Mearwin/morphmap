@@ -6,9 +6,9 @@
     "action",
     "difficulty",
     "parry-system",
-    "stealth"
+    "stealth",
+    "souls-like"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "dark-souls",

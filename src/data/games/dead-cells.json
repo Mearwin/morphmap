@@ -6,9 +6,12 @@
     "roguelike",
     "metroidvania",
     "action",
-    "procedural-generation"
+    "procedural-generation",
+    "permadeath",
+    "exploration",
+    "difficulty",
+    "action-rpg"
   ],
-  "primaryTag": "roguelike",
   "influencedBy": [
     {
       "id": "rogue",

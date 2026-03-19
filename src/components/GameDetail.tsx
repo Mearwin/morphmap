@@ -1,21 +1,23 @@
 import { useMemo, useState, useEffect, useRef, useCallback } from 'react'
-import type { Game } from '../types'
+import type { Entity } from '../types'
 import { useGameStore } from '../store/useGameStore'
+import { useDataset } from '../dataset/DatasetContext'
 import { exportSubgraphAsPng } from '../utils/exportSubgraph'
 import styles from './GameDetail.module.css'
 
 interface Props {
-  game: Game | null
+  game: Entity | null
 }
 
 export function GameDetail({ game }: Props) {
   const { games, derived, dispatch } = useGameStore()
-  const [displayedGame, setDisplayedGame] = useState<Game | null>(game)
+  const { influenceLabel, influencedLabel, gameColors } = useDataset()
+  const [displayedGame, setDisplayedGame] = useState<Entity | null>(game)
   const [animState, setAnimState] = useState<'entering' | 'visible' | 'exiting' | 'hidden'>(
     game ? 'entering' : 'hidden'
   )
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined)
-  const [prevGame, setPrevGame] = useState<Game | null>(game)
+  const [prevGame, setPrevGame] = useState<Entity | null>(game)
 
   // Track the previous game id so imgFailed can be reset without an effect
   const [imgFailedForId, setImgFailedForId] = useState<string | null>(null)
@@ -54,7 +56,7 @@ export function GameDetail({ game }: Props) {
     () => displayedGame
       ? displayedGame.influencedBy
           .map(inf => games.find(g => g.id === inf.id))
-          .filter(Boolean) as Game[]
+          .filter(Boolean) as Entity[]
       : [],
     [displayedGame, games]
   )
@@ -66,15 +68,28 @@ export function GameDetail({ game }: Props) {
       if (!displayedGame) return []
       const childIds = derived.adjacency.forward.get(displayedGame.id)
       if (!childIds) return []
-      return [...childIds].map(id => gameMap.get(id)).filter(Boolean) as Game[]
+      return [...childIds].map(id => gameMap.get(id)).filter(Boolean) as Entity[]
     },
     [displayedGame, derived.adjacency, gameMap]
   )
 
   const handleExport = useCallback(() => {
     if (!displayedGame) return
-    exportSubgraphAsPng(displayedGame.id, games, derived.links)
-  }, [displayedGame, games, derived.links])
+    exportSubgraphAsPng(displayedGame.id, games, derived.links, gameColors)
+  }, [displayedGame, games, derived.links, gameColors])
+
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyEmbed = useCallback(() => {
+    if (!displayedGame) return
+    const origin = window.location.origin
+    const src = `${origin}/#game=${displayedGame.id}&embed=true`
+    const iframe = `<iframe src="${src}" width="800" height="500" style="border:1px solid #1e1e2e;border-radius:8px" loading="lazy"></iframe>`
+    navigator.clipboard.writeText(iframe).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }, [displayedGame])
 
   if (animState === 'hidden' || !displayedGame) return null
 
@@ -93,7 +108,7 @@ export function GameDetail({ game }: Props) {
       <div className={styles.header}>
         <span
           className={styles.dot}
-          style={{ background: `var(--cat-${displayedGame.primaryTag})` }}
+          style={{ background: gameColors.get(displayedGame.id) ?? '#6b6b80' }}
         />
         <h3 className={styles.title}>{displayedGame.title}</h3>
         <span className={styles.year}>{displayedGame.date.slice(0, 4)}</span>
@@ -106,7 +121,7 @@ export function GameDetail({ game }: Props) {
         </button>
       </div>
 
-      {displayedGame.imageUrl && !imgFailed && (
+      {typeof displayedGame.imageUrl === 'string' && displayedGame.imageUrl && !imgFailed && (
         <img
           src={displayedGame.imageUrl}
           alt={`${displayedGame.title} cover art`}
@@ -124,7 +139,7 @@ export function GameDetail({ game }: Props) {
 
       {ancestors.length > 0 && (
         <div className={styles.section}>
-          <div className={styles.sectionLabel}>Influenced by</div>
+          <div className={styles.sectionLabel}>{influenceLabel}</div>
           {ancestors.map(a => (
             <button
               key={a.id}
@@ -139,7 +154,7 @@ export function GameDetail({ game }: Props) {
 
       {descendants.length > 0 && (
         <div className={styles.section}>
-          <div className={styles.sectionLabel}>Influenced</div>
+          <div className={styles.sectionLabel}>{influencedLabel}</div>
           {descendants.map(d => (
             <button
               key={d.id}
@@ -162,6 +177,9 @@ export function GameDetail({ game }: Props) {
           </button>
           <button className={styles.exportBtn} onClick={handleExport} style={{ marginTop: 6 }}>
             Export lineage as PNG
+          </button>
+          <button className={styles.exportBtn} onClick={handleCopyEmbed} style={{ marginTop: 6 }}>
+            {copied ? 'Copied!' : 'Copy embed code'}
           </button>
         </div>
       )}

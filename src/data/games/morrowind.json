@@ -6,9 +6,11 @@
     "open-world",
     "first-person-rpg",
     "lore",
-    "modding"
+    "modding",
+    "moral-choices",
+    "crpg",
+    "narrative"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "ultima-iv",

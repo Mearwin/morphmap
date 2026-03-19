@@ -6,9 +6,10 @@
     "boss-rush",
     "difficulty",
     "retro-art",
-    "side-scrolling"
+    "side-scrolling",
+    "boss-battles",
+    "tight-controls"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "mega-man",

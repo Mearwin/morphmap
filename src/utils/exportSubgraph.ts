@@ -1,5 +1,4 @@
-import type { Game, Link } from '../types'
-import { TAG_COLORS } from '../types'
+import type { Entity, Link } from '../types'
 import { THEME } from '../constants'
 import { influenceStrokeWidth } from './labelPlacement'
 import { computeControlPoint } from './curve'
@@ -17,19 +16,18 @@ interface LayoutNode {
   id: string
   title: string
   year: string
-  primaryTag: string
   x: number
   y: number
   isSelected: boolean
 }
 
 /**
- * Build a simple left-to-right layout: ancestors → selected → descendants,
+ * Build a simple left-to-right layout: ancestors -> selected -> descendants,
  * each column sorted by date. No dependency on timeline node positions.
  */
 function layoutSubgraph(
   selectedId: string,
-  games: Game[],
+  games: Entity[],
   links: Link[],
 ): { nodes: LayoutNode[]; subLinks: Link[] } {
   const adj = buildAdjacency(links)
@@ -58,7 +56,6 @@ function layoutSubgraph(
       id: g.id,
       title: g.title,
       year: g.date.slice(0, 4),
-      primaryTag: g.primaryTag,
       x: ancestorColX,
       y: PAD + HEADER_HEIGHT + i * ROW_HEIGHT,
       isSelected: false,
@@ -72,7 +69,6 @@ function layoutSubgraph(
     id: selectedGame.id,
     title: selectedGame.title,
     year: selectedGame.date.slice(0, 4),
-    primaryTag: selectedGame.primaryTag,
     x: selectedColX,
     y: selectedY,
     isSelected: true,
@@ -86,7 +82,6 @@ function layoutSubgraph(
       id: g.id,
       title: g.title,
       year: g.date.slice(0, 4),
-      primaryTag: g.primaryTag,
       x: descendantColX,
       y: PAD + HEADER_HEIGHT + i * ROW_HEIGHT,
       isSelected: false,
@@ -107,8 +102,9 @@ function layoutSubgraph(
 
 export function exportSubgraphAsPng(
   selectedId: string,
-  games: Game[],
+  games: Entity[],
   links: Link[],
+  gameColors: Map<string, string>,
 ) {
   const { nodes, subLinks } = layoutSubgraph(selectedId, games, links)
   if (nodes.length === 0) return
@@ -136,7 +132,7 @@ export function exportSubgraphAsPng(
   // Header
   const selectedNode = nodes.find(n => n.isSelected)
   if (selectedNode) {
-    const dotColor = TAG_COLORS[selectedNode.primaryTag] || THEME.textMuted
+    const dotColor = gameColors.get(selectedNode.id) ?? THEME.textMuted
     ctx.fillStyle = dotColor
     ctx.beginPath()
     ctx.arc(PAD, HEADER_HEIGHT / 2, 5, 0, Math.PI * 2)
@@ -176,7 +172,7 @@ export function exportSubgraphAsPng(
 
   // Draw nodes
   for (const node of nodes) {
-    const color = TAG_COLORS[node.primaryTag] || THEME.textMuted
+    const color = gameColors.get(node.id) ?? THEME.textMuted
     const r = node.isSelected ? NODE_RADIUS * 1.5 : NODE_RADIUS
 
     ctx.beginPath()

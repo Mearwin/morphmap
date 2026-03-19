@@ -6,9 +6,12 @@
     "fps",
     "cinematic",
     "multiplayer",
-    "progression-system"
+    "progression-system",
+    "scripted-events",
+    "tactical",
+    "competitive",
+    "console-shooter"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "call-of-duty",

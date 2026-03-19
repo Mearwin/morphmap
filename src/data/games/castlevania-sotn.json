@@ -6,9 +6,9 @@
     "metroidvania",
     "exploration",
     "rpg-elements",
-    "backtracking"
+    "backtracking",
+    "nonlinear"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "metroid",

@@ -6,9 +6,9 @@
     "immersive-sim",
     "stealth",
     "first-person",
-    "player-choice"
+    "player-choice",
+    "environmental-storytelling"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "thief",

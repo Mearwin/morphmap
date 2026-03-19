@@ -6,9 +6,9 @@
     "open-world",
     "moral-choices",
     "party-based",
-    "tile-based"
+    "tile-based",
+    "dungeon-crawl"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "wizardry",

@@ -6,9 +6,10 @@
     "open-world",
     "post-apocalyptic",
     "turn-based-combat",
-    "moral-choices"
+    "moral-choices",
+    "party-based",
+    "turn-based"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "ultima-iv",

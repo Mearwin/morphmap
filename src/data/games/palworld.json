@@ -6,9 +6,9 @@
     "creature-collection",
     "survival",
     "crafting",
-    "open-world"
+    "open-world",
+    "sandbox"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "pokemon-red-blue",

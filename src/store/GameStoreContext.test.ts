@@ -6,6 +6,8 @@ const initial: GameStoreState = {
   selectedTag: null,
   timeRange: null,
   viewMode: 'timeline' as const,
+  embed: false,
+  depth: null,
 }
 
 describe('gameStoreReducer', () => {

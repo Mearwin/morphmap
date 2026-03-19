@@ -1,0 +1,26 @@
+{
+  "id": "donkey-kong-country",
+  "title": "Donkey Kong Country",
+  "date": "1994-11-21",
+  "tags": [
+    "platformer",
+    "pre-rendered-graphics",
+    "co-op",
+    "level-design"
+  ],
+  "influencedBy": [
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "platformer",
+        "level-design"
+      ]
+    },
+    {
+      "id": "donkey-kong",
+      "through": [
+        "platformer"
+      ]
+    }
+  ]
+}

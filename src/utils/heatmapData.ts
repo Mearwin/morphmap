@@ -45,7 +45,9 @@ export function buildDecadeBuckets(games: Game[], links: Link[]): DecadeBucket[]
     if (!bucket) continue
 
     bucket.totalInfluences++
-    bucket.byTag[target.primaryTag] = (bucket.byTag[target.primaryTag] ?? 0) + 1
+    for (const tag of target.tags) {
+      bucket.byTag[tag] = (bucket.byTag[tag] ?? 0) + 1
+    }
   }
 
   return [...buckets.values()].sort((a, b) => a.decade - b.decade)

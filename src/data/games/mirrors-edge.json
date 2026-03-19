@@ -1,0 +1,29 @@
+{
+  "id": "mirrors-edge",
+  "title": "Mirror's Edge",
+  "date": "2008-11-11",
+  "tags": [
+    "parkour",
+    "first-person",
+    "traversal",
+    "minimalist",
+    "physics",
+    "acrobatics"
+  ],
+  "influencedBy": [
+    {
+      "id": "half-life-2",
+      "through": [
+        "first-person",
+        "physics"
+      ]
+    },
+    {
+      "id": "prince-of-persia-sot",
+      "through": [
+        "parkour",
+        "acrobatics"
+      ]
+    }
+  ]
+}

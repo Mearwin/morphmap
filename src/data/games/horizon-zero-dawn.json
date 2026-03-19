@@ -1,0 +1,28 @@
+{
+  "id": "horizon-zero-dawn",
+  "title": "Horizon Zero Dawn",
+  "date": "2017-02-28",
+  "tags": [
+    "open-world",
+    "action-rpg",
+    "robot-dinosaurs",
+    "bow-combat",
+    "exploration"
+  ],
+  "influencedBy": [
+    {
+      "id": "breath-of-the-wild",
+      "through": [
+        "open-world",
+        "exploration"
+      ]
+    },
+    {
+      "id": "monster-hunter-world",
+      "through": [
+        "bow-combat",
+        "action-rpg"
+      ]
+    }
+  ]
+}

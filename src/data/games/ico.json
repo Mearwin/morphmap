@@ -6,9 +6,9 @@
     "escort",
     "atmospheric",
     "puzzle-platformer",
-    "minimalist"
+    "minimalist",
+    "3d-adventure"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "ocarina-of-time",

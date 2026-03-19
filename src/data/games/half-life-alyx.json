@@ -6,9 +6,10 @@
     "vr",
     "fps",
     "narrative-driven",
-    "immersive"
+    "immersive",
+    "physics-engine",
+    "scripted-events"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "half-life-2",

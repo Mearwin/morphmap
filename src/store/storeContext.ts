@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import type { Game, Link } from '../types'
+import type { Entity, Link } from '../types'
 import type { Adjacency } from '../utils/graph'
 import type { GameStoreState, GameStoreAction } from './gameStoreReducer'
 
@@ -13,7 +13,7 @@ export type GameStoreDerived = {
 export type GameStoreContextValue = {
   state: GameStoreState
   derived: GameStoreDerived
-  games: Game[]
+  games: Entity[]
   dispatch: React.Dispatch<GameStoreAction>
 }
 

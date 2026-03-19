@@ -1,0 +1,28 @@
+{
+  "id": "kingdom-come-deliverance",
+  "title": "Kingdom Come: Deliverance",
+  "date": "2018-02-13",
+  "tags": [
+    "open-world",
+    "rpg",
+    "historical",
+    "realistic-combat",
+    "first-person"
+  ],
+  "influencedBy": [
+    {
+      "id": "skyrim",
+      "through": [
+        "open-world",
+        "rpg",
+        "first-person"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "through": [
+        "realistic-combat"
+      ]
+    }
+  ]
+}

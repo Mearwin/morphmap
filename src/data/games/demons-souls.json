@@ -6,9 +6,11 @@
     "action-rpg",
     "difficulty",
     "world-tendency",
-    "souls-like"
+    "souls-like",
+    "loot",
+    "exploration",
+    "rpg-elements"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "diablo",

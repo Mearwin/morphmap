@@ -6,9 +6,10 @@
     "survival",
     "underwater",
     "exploration",
-    "crafting"
+    "crafting",
+    "survival-horror",
+    "atmospheric"
   ],
-  "primaryTag": "survival-horror",
   "influencedBy": [
     {
       "id": "minecraft",

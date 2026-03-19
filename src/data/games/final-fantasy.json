@@ -6,9 +6,10 @@
     "jrpg",
     "turn-based-combat",
     "party-based",
-    "class-system"
+    "class-system",
+    "overworld",
+    "dungeon-crawl"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "dragon-quest",

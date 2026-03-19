@@ -8,7 +8,6 @@
     "power-ups",
     "ghost-ai"
   ],
-  "primaryTag": "puzzle",
   "influencedBy": [
     {
       "id": "pong",

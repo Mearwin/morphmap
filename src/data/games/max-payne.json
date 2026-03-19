@@ -1,0 +1,26 @@
+{
+  "id": "max-payne",
+  "title": "Max Payne",
+  "date": "2001-07-23",
+  "tags": [
+    "third-person-shooter",
+    "shooter",
+    "bullet-time",
+    "noir",
+    "narrative"
+  ],
+  "influencedBy": [
+    {
+      "id": "half-life",
+      "through": [
+        "narrative"
+      ]
+    },
+    {
+      "id": "doom",
+      "through": [
+        "shooter"
+      ]
+    }
+  ]
+}

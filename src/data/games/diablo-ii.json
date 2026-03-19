@@ -6,9 +6,9 @@
     "action-rpg",
     "loot",
     "dungeon-crawl",
-    "online-multiplayer"
+    "online-multiplayer",
+    "randomized-items"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "diablo",

@@ -1,11 +1,11 @@
 import { useReducer, useMemo, type ReactNode } from 'react'
-import type { Game } from '../types'
+import type { Entity } from '../types'
 import { buildLinks, buildAdjacency, getAncestors, getDescendants } from '../utils/graph'
 import { gameStoreReducer } from './gameStoreReducer'
 import { GameStoreContext, type GameStoreDerived } from './storeContext'
 import { readInitialStateFromHash, useSyncHashWithState } from '../hooks/useHashState'
 
-export function GameStoreProvider({ games, children }: { games: Game[]; children: ReactNode }) {
+export function GameStoreProvider({ games, children }: { games: Entity[]; children: ReactNode }) {
   const [state, dispatch] = useReducer(gameStoreReducer, undefined, () => {
     const hashState = readInitialStateFromHash()
     // Validate game ID from URL hash against actual dataset
@@ -17,6 +17,8 @@ export function GameStoreProvider({ games, children }: { games: Game[]; children
       selectedTag: null,
       timeRange: null,
       viewMode: 'timeline' as const,
+      embed: false,
+      depth: null,
       ...hashState,
     }
   })

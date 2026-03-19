@@ -2,10 +2,29 @@
   "id": "fable",
   "title": "Fable",
   "date": "2004-09-14",
-  "tags": ["action-rpg", "moral-choice", "open-world", "humor"],
-  "primaryTag": "rpg",
+  "tags": [
+    "action-rpg",
+    "moral-choice",
+    "open-world",
+    "humor",
+    "action-adventure",
+    "rpg",
+    "choice-consequence"
+  ],
   "influencedBy": [
-    { "id": "ocarina-of-time", "through": ["action-adventure", "open-world"] },
-    { "id": "baldurs-gate", "through": ["rpg", "choice-consequence"] }
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "action-adventure",
+        "open-world"
+      ]
+    },
+    {
+      "id": "baldurs-gate",
+      "through": [
+        "rpg",
+        "choice-consequence"
+      ]
+    }
   ]
 }

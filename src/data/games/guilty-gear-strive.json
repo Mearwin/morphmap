@@ -6,9 +6,9 @@
     "fighting",
     "anime",
     "combo-system",
-    "rollback-netcode"
+    "rollback-netcode",
+    "competitive"
   ],
-  "primaryTag": "fighting",
   "influencedBy": [
     {
       "id": "street-fighter-ii",

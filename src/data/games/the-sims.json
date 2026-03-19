@@ -6,9 +6,9 @@
     "life-sim",
     "sandbox",
     "simulation",
-    "social"
+    "social",
+    "management"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "simcity",

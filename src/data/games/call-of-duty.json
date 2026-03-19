@@ -6,9 +6,10 @@
     "fps",
     "cinematic",
     "world-war-ii",
-    "scripted-events"
+    "scripted-events",
+    "narrative-driven",
+    "console-shooter"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "half-life",

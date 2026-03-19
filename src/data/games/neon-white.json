@@ -2,11 +2,35 @@
   "id": "neon-white",
   "title": "Neon White",
   "date": "2022-06-16",
-  "tags": ["fps", "speedrun", "card-mechanics", "platforming"],
-  "primaryTag": "fps",
+  "tags": [
+    "fps",
+    "speedrun",
+    "card-mechanics",
+    "platforming",
+    "fast-fps",
+    "movement",
+    "precision-platforming"
+  ],
   "influencedBy": [
-    { "id": "doom-2016", "through": ["fast-fps", "movement"] },
-    { "id": "celeste", "through": ["precision-platforming", "speedrun"] },
-    { "id": "slay-the-spire", "through": ["card-mechanics"] }
+    {
+      "id": "doom-2016",
+      "through": [
+        "fast-fps",
+        "movement"
+      ]
+    },
+    {
+      "id": "celeste",
+      "through": [
+        "precision-platforming",
+        "speedrun"
+      ]
+    },
+    {
+      "id": "slay-the-spire",
+      "through": [
+        "card-mechanics"
+      ]
+    }
   ]
 }

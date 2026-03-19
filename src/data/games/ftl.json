@@ -6,9 +6,10 @@
     "roguelike",
     "permadeath",
     "real-time-with-pause",
-    "space"
+    "space",
+    "procedural-generation",
+    "emergent-gameplay"
   ],
-  "primaryTag": "roguelike",
   "influencedBy": [
     {
       "id": "rogue",

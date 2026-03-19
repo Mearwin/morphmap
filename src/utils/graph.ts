@@ -1,11 +1,11 @@
-import { type Game, type Link } from '../types'
+import { type Entity, type Link } from '../types'
 
 export type Adjacency = {
   forward: Map<string, Set<string>>  // source -> targets
   reverse: Map<string, Set<string>>  // target -> sources
 }
 
-export function buildLinks(games: Game[]): Link[] {
+export function buildLinks(games: Entity[]): Link[] {
   const gameIds = new Set(games.map(g => g.id))
   const links: Link[] = []
   for (const game of games) {
@@ -62,7 +62,7 @@ export function getDescendants(gameId: string, links: Link[], adj?: Adjacency): 
   return descendants
 }
 
-export function getAllTags(games: Game[]): string[] {
+export function getAllTags(games: Entity[]): string[] {
   const tagSet = new Set<string>()
   for (const game of games) {
     for (const tag of game.tags) tagSet.add(tag)

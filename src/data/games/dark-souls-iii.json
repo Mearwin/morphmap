@@ -6,9 +6,9 @@
     "action-rpg",
     "difficulty",
     "souls-like",
-    "boss-battles"
+    "boss-battles",
+    "gothic"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "dark-souls",

@@ -6,9 +6,10 @@
     "immersive-sim",
     "fps",
     "rpg-elements",
-    "player-choice"
+    "player-choice",
+    "stealth",
+    "narrative-driven"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "system-shock-2",

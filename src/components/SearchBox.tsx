@@ -1,10 +1,12 @@
 import { useState, useMemo, forwardRef, useCallback } from 'react'
 import { useGameStore } from '../store/useGameStore'
+import { useDataset } from '../dataset/DatasetContext'
 import { fuzzyFilter } from '../utils/fuzzy'
 import styles from './SearchBox.module.css'
 
 export const SearchBox = forwardRef<HTMLInputElement>(function SearchBox(_props, ref) {
   const { games, dispatch } = useGameStore()
+  const { entityLabelPlural } = useDataset()
   const [query, setQuery] = useState('')
   const [activeIndex, setActiveIndex] = useState(-1)
 
@@ -40,8 +42,8 @@ export const SearchBox = forwardRef<HTMLInputElement>(function SearchBox(_props,
         ref={ref}
         className={styles.input}
         type="text"
-        placeholder="Search games... ( / )"
-        aria-label="Search games"
+        placeholder={`Search ${entityLabelPlural}... ( / )`}
+        aria-label={`Search ${entityLabelPlural}`}
         aria-expanded={query.length >= 1}
         aria-controls={query.length >= 1 ? 'search-results' : undefined}
         aria-activedescendant={activeIndex >= 0 ? `search-result-${activeIndex}` : undefined}

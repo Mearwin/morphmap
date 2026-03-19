@@ -6,9 +6,9 @@
     "fighting",
     "platform-fighter",
     "crossover",
-    "party-game"
+    "party-game",
+    "character-roster"
   ],
-  "primaryTag": "fighting",
   "influencedBy": [
     {
       "id": "street-fighter-ii",

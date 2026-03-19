@@ -2,10 +2,29 @@
   "id": "ninja-gaiden",
   "title": "Ninja Gaiden",
   "date": "2004-03-02",
-  "tags": ["action", "hack-and-slash", "difficulty", "combo-combat"],
-  "primaryTag": "action-adventure",
+  "tags": [
+    "action",
+    "hack-and-slash",
+    "difficulty",
+    "combo-combat",
+    "stylish-action",
+    "3d-combat",
+    "lock-on"
+  ],
   "influencedBy": [
-    { "id": "devil-may-cry", "through": ["stylish-action", "combo-combat"] },
-    { "id": "ocarina-of-time", "through": ["3d-combat", "lock-on"] }
+    {
+      "id": "devil-may-cry",
+      "through": [
+        "stylish-action",
+        "combo-combat"
+      ]
+    },
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "3d-combat",
+        "lock-on"
+      ]
+    }
   ]
 }

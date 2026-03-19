@@ -6,9 +6,10 @@
     "fps",
     "physics-engine",
     "narrative-driven",
-    "gravity-gun"
+    "gravity-gun",
+    "scripted-events",
+    "no-cutscenes"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "half-life",

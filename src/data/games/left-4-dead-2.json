@@ -1,0 +1,21 @@
+{
+  "id": "left-4-dead-2",
+  "title": "Left 4 Dead 2",
+  "date": "2009-11-17",
+  "tags": [
+    "fps",
+    "co-op",
+    "zombies",
+    "ai-director"
+  ],
+  "influencedBy": [
+    {
+      "id": "left-4-dead",
+      "through": [
+        "co-op",
+        "zombies",
+        "ai-director"
+      ]
+    }
+  ]
+}

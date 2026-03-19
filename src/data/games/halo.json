@@ -6,9 +6,11 @@
     "fps",
     "console-shooter",
     "vehicles",
-    "sci-fi"
+    "sci-fi",
+    "narrative-driven",
+    "multiplayer",
+    "split-screen"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "half-life",

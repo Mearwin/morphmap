@@ -6,9 +6,11 @@
     "co-op",
     "horror",
     "survival",
-    "indie"
+    "indie",
+    "survival-horror",
+    "defenseless",
+    "multiplayer"
   ],
-  "primaryTag": "survival-horror",
   "influencedBy": [
     {
       "id": "amnesia",

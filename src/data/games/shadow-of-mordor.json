@@ -2,10 +2,31 @@
   "id": "shadow-of-mordor",
   "title": "Middle-earth: Shadow of Mordor",
   "date": "2014-09-30",
-  "tags": ["action-adventure", "open-world", "nemesis-system", "hack-and-slash"],
-  "primaryTag": "action-adventure",
+  "tags": [
+    "action-adventure",
+    "open-world",
+    "nemesis-system",
+    "hack-and-slash",
+    "stealth",
+    "parkour",
+    "melee-combat",
+    "difficulty"
+  ],
   "influencedBy": [
-    { "id": "assassins-creed-ii", "through": ["open-world", "stealth", "parkour"] },
-    { "id": "dark-souls", "through": ["melee-combat", "difficulty"] }
+    {
+      "id": "assassins-creed-ii",
+      "through": [
+        "open-world",
+        "stealth",
+        "parkour"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "through": [
+        "melee-combat",
+        "difficulty"
+      ]
+    }
   ]
 }

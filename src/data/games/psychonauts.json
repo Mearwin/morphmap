@@ -1,0 +1,28 @@
+{
+  "id": "psychonauts",
+  "title": "Psychonauts",
+  "date": "2005-04-19",
+  "tags": [
+    "3d-platformer",
+    "narrative",
+    "humor",
+    "level-variety",
+    "3d-platforming"
+  ],
+  "influencedBy": [
+    {
+      "id": "banjo-kazooie",
+      "through": [
+        "3d-platforming",
+        "humor"
+      ]
+    },
+    {
+      "id": "the-secret-of-monkey-island",
+      "through": [
+        "humor",
+        "narrative"
+      ]
+    }
+  ]
+}

@@ -6,9 +6,9 @@
     "3d-platformer",
     "gravity",
     "creative-levels",
-    "collectibles"
+    "collectibles",
+    "open-level"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "super-mario-64",

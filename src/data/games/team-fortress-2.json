@@ -6,9 +6,11 @@
     "fps",
     "class-based",
     "team-based",
-    "stylized"
+    "stylized",
+    "multiplayer",
+    "modding",
+    "competitive"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "quake",

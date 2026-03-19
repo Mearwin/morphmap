@@ -6,9 +6,11 @@
     "puzzle",
     "exploration",
     "open-world",
-    "line-puzzles"
+    "line-puzzles",
+    "atmospheric",
+    "puzzle-platformer",
+    "indie"
   ],
-  "primaryTag": "puzzle",
   "influencedBy": [
     {
       "id": "myst",

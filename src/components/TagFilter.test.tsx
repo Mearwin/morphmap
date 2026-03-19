@@ -20,7 +20,7 @@ describe('TagFilter', () => {
 
   it('has group role with label', () => {
     renderWithStore(<TagFilter />)
-    expect(screen.getByRole('group', { name: /filter by game mechanic/i })).toBeDefined()
+    expect(screen.getByRole('group', { name: /filter by game tag/i })).toBeDefined()
   })
 
   it('toggles aria-pressed on click', () => {

@@ -6,9 +6,11 @@
     "life-sim",
     "island-building",
     "real-time-clock",
-    "relaxing"
+    "relaxing",
+    "collecting",
+    "sandbox",
+    "creative"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "animal-crossing",

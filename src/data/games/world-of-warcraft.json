@@ -6,9 +6,12 @@
     "mmorpg",
     "open-world",
     "raids",
-    "social"
+    "social",
+    "rts",
+    "narrative",
+    "loot",
+    "online-multiplayer"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "warcraft-iii",

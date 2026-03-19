@@ -6,7 +6,7 @@ import type { ScaleTime } from 'd3-scale'
 import { useGameStore } from '../store/useGameStore'
 import { useTimeline } from '../hooks/useTimeline'
 import type { GameNode as GameNodeType } from '../types'
-import { TAG_COLORS } from '../types'
+import { useDataset } from '../dataset/DatasetContext'
 import { TIMELINE, NODE, LINE, LABEL, MINIMAP, THEME } from '../constants'
 import { isInViewport } from '../hooks/useViewport'
 import { computeLinkLabel, resolveOverlaps, influenceStrokeWidth, type LabelInfo } from '../utils/labelPlacement'
@@ -24,6 +24,7 @@ interface CanvasTimelineProps {
 
 export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
   const { games, derived, dispatch, state } = useGameStore()
+  const { gameColors } = useDataset()
   const containerRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const transformRef = useRef<ZoomTransform>(zoomIdentity)
@@ -44,6 +45,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     selectedGameId: string | null
     derived: typeof derived
     xScale: ScaleTime<number, number>
+    gameColors: Map<string, string>
   }>(null!)
 
   const { selectedGameId, selectedTag, timeRange } = state
@@ -100,7 +102,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 
   // Update data ref so the stable draw function always reads current values
   useEffect(() => {
-    dataRef.current = { filteredNodes, filteredLinks, linkLabels, nodeMap, nodes, selectedGameId, derived, xScale }
+    dataRef.current = { filteredNodes, filteredLinks, linkLabels, nodeMap, nodes, selectedGameId, derived, xScale, gameColors }
   })
 
   // Stable draw function — reads all mutable data from refs, never changes identity
@@ -110,7 +112,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const { filteredNodes, filteredLinks, linkLabels, nodeMap, nodes, selectedGameId, derived, xScale } = dataRef.current
+    const { filteredNodes, filteredLinks, linkLabels, nodeMap, nodes, selectedGameId, derived, xScale, gameColors } = dataRef.current
     const dpr = window.devicePixelRatio || 1
     const { width, height } = dimensionsRef.current
     const transform = transformRef.current
@@ -179,7 +181,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
         || (derived.connectedSet?.has(node.id) ?? false)
       const isHovered = node.id === hoveredRef.current
       const opacity = isHighlighted ? 1 : 0.1
-      const color = TAG_COLORS[node.primaryTag] || THEME.textMuted
+      const color = gameColors.get(node.id) ?? THEME.textMuted
       const radius = isSelected ? node.radius * NODE.SELECTED_SCALE : node.radius
 
       ctx.globalAlpha = opacity
@@ -244,7 +246,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 
     // Draw minimap (in screen space)
     if (nodes.length > 0) {
-      drawMinimap(ctx, nodes, transform, width, height)
+      drawMinimap(ctx, nodes, transform, width, height, gameColors)
     }
   }, []) // stable — reads everything from refs
 
@@ -443,6 +445,7 @@ function drawMinimap(
   transform: ZoomTransform,
   viewWidth: number,
   viewHeight: number,
+  gameColors: Map<string, string>,
 ) {
   const bounds = computeMinimapBounds(nodes)
   const { offsetX, offsetY, scaleX, scaleY, viewportRect } = computeMinimapLayout(bounds, transform, viewWidth, viewHeight, 280)
@@ -468,7 +471,7 @@ function drawMinimap(
   for (const n of nodes) {
     const cx = offsetX + toMinimapX(n.x, bounds, scaleX)
     const cy = offsetY + toMinimapY(n.y, bounds, scaleY)
-    ctx.fillStyle = TAG_COLORS[n.primaryTag] || THEME.textMuted
+    ctx.fillStyle = gameColors.get(n.id) ?? THEME.textMuted
     ctx.beginPath()
     ctx.arc(cx, cy, 1.2, 0, Math.PI * 2)
     ctx.fill()
@@ -486,11 +489,19 @@ function drawMinimap(
   ctx.restore()
 }
 
-function lighten(hex: string): string {
-  // Simple lighten by blending toward white ~30%
-  const r = parseInt(hex.slice(1, 3), 16)
-  const g = parseInt(hex.slice(3, 5), 16)
-  const b = parseInt(hex.slice(5, 7), 16)
+function lighten(color: string): string {
+  // Handle HSL strings from tagColor system
+  const hslMatch = color.match(/hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/)
+  if (hslMatch) {
+    const h = hslMatch[1]
+    const s = hslMatch[2]
+    const l = Math.min(100, parseInt(hslMatch[3]) + 15)
+    return `hsl(${h}, ${s}%, ${l}%)`
+  }
+  // Fallback: hex lighten by blending toward white ~30%
+  const r = parseInt(color.slice(1, 3), 16)
+  const g = parseInt(color.slice(3, 5), 16)
+  const b = parseInt(color.slice(5, 7), 16)
   const blend = (c: number) => Math.min(255, Math.round(c + (255 - c) * 0.3))
   return `rgb(${blend(r)},${blend(g)},${blend(b)})`
 }

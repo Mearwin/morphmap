@@ -6,9 +6,10 @@
     "roguelike",
     "procedural-generation",
     "platformer",
-    "permadeath"
+    "permadeath",
+    "side-scrolling",
+    "tight-controls"
   ],
-  "primaryTag": "roguelike",
   "influencedBy": [
     {
       "id": "rogue",

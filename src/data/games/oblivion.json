@@ -6,9 +6,9 @@
     "open-world",
     "first-person-rpg",
     "radiant-ai",
-    "modding"
+    "modding",
+    "lore"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "morrowind",

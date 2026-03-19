@@ -2,11 +2,35 @@
   "id": "ratchet-and-clank",
   "title": "Ratchet & Clank",
   "date": "2002-11-04",
-  "tags": ["3d-platformer", "action", "weapons", "humor"],
-  "primaryTag": "platformer",
+  "tags": [
+    "3d-platformer",
+    "action",
+    "weapons",
+    "humor",
+    "3d-platforming",
+    "platforming",
+    "level-design"
+  ],
   "influencedBy": [
-    { "id": "super-mario-64", "through": ["3d-platforming"] },
-    { "id": "crash-bandicoot", "through": ["platforming", "level-design"] },
-    { "id": "jak-and-daxter", "through": ["3d-platformer", "action"] }
+    {
+      "id": "super-mario-64",
+      "through": [
+        "3d-platforming"
+      ]
+    },
+    {
+      "id": "crash-bandicoot",
+      "through": [
+        "platforming",
+        "level-design"
+      ]
+    },
+    {
+      "id": "jak-and-daxter",
+      "through": [
+        "3d-platformer",
+        "action"
+      ]
+    }
   ]
 }

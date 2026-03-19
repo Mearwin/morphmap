@@ -1,0 +1,28 @@
+{
+  "id": "animal-crossing-wild-world",
+  "title": "Animal Crossing: Wild World",
+  "date": "2005-11-23",
+  "tags": [
+    "life-sim",
+    "real-time-clock",
+    "social",
+    "portable",
+    "daily-routine"
+  ],
+  "influencedBy": [
+    {
+      "id": "animal-crossing",
+      "through": [
+        "life-sim",
+        "real-time-clock"
+      ]
+    },
+    {
+      "id": "harvest-moon",
+      "through": [
+        "life-sim",
+        "daily-routine"
+      ]
+    }
+  ]
+}

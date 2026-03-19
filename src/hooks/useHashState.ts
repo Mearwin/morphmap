@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 import type { GameStoreState, TimeRange } from '../store/gameStoreReducer'
 
-export function parseHash(): { game: string | null; tag: string | null; timeRange: TimeRange | null; view: 'river' | 'lineage' | null } {
+export function parseHash(): { game: string | null; tag: string | null; timeRange: TimeRange | null; view: 'river' | 'lineage' | null; embed: boolean; depth: number | null } {
   const hash = window.location.hash.slice(1)
-  if (!hash) return { game: null, tag: null, timeRange: null, view: null }
+  if (!hash) return { game: null, tag: null, timeRange: null, view: null, embed: false, depth: null }
   const params = new URLSearchParams(hash)
   let timeRange: TimeRange | null = null
   const from = params.get('from')
@@ -15,11 +15,20 @@ export function parseHash(): { game: string | null; tag: string | null; timeRang
   }
   const viewParam = params.get('view')
   const view = viewParam === 'river' || viewParam === 'lineage' ? viewParam : null
+  const embed = params.get('embed') === 'true'
+  const depthParam = params.get('depth')
+  let depth: number | null = null
+  if (depthParam !== null) {
+    const d = parseInt(depthParam, 10)
+    if (!isNaN(d)) depth = d
+  }
   return {
     game: params.get('game'),
     tag: params.get('tag'),
     timeRange,
     view,
+    embed,
+    depth,
   }
 }
 
@@ -32,17 +41,21 @@ export function buildHash(state: GameStoreState): string {
     params.set('to', String(state.timeRange.to))
   }
   if (state.viewMode !== 'timeline') params.set('view', state.viewMode)
+  if (state.embed) params.set('embed', 'true')
+  if (state.depth !== null) params.set('depth', String(state.depth))
   const str = params.toString()
   return str ? `#${str}` : ''
 }
 
 export function readInitialStateFromHash(): Partial<GameStoreState> {
-  const { game, tag, timeRange, view } = parseHash()
+  const { game, tag, timeRange, view, embed, depth } = parseHash()
   return {
     ...(game ? { selectedGameId: game } : {}),
     ...(tag ? { selectedTag: tag } : {}),
     ...(timeRange ? { timeRange } : {}),
     ...(view ? { viewMode: view } : {}),
+    ...(embed ? { embed } : {}),
+    ...(depth !== null ? { depth } : {}),
   }
 }
 

@@ -1,0 +1,40 @@
+{
+  "id": "tunic",
+  "title": "Tunic",
+  "date": "2022-03-16",
+  "tags": [
+    "action-adventure",
+    "zelda-like",
+    "cryptic",
+    "isometric",
+    "exploration",
+    "puzzle-combat",
+    "cryptic-design",
+    "difficulty",
+    "discovery",
+    "hidden-knowledge"
+  ],
+  "influencedBy": [
+    {
+      "id": "the-legend-of-zelda",
+      "through": [
+        "exploration",
+        "puzzle-combat"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "through": [
+        "cryptic-design",
+        "difficulty"
+      ]
+    },
+    {
+      "id": "outer-wilds",
+      "through": [
+        "discovery",
+        "hidden-knowledge"
+      ]
+    }
+  ]
+}

@@ -6,9 +6,11 @@
     "first-person",
     "exploration",
     "backtracking",
-    "scanning"
+    "scanning",
+    "power-ups",
+    "fps",
+    "no-cutscenes"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "metroid",

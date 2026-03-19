@@ -6,9 +6,10 @@
     "fps",
     "humor",
     "interactive-environments",
-    "level-design"
+    "level-design",
+    "level-editor",
+    "fast-paced"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "doom",

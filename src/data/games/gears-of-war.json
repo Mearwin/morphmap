@@ -6,9 +6,11 @@
     "third-person-shooter",
     "cover-system",
     "co-op",
-    "cinematic"
+    "cinematic",
+    "over-the-shoulder",
+    "action",
+    "console-shooter"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "resident-evil-4",

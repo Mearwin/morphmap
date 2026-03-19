@@ -6,9 +6,11 @@
     "deduction",
     "mystery",
     "first-person",
-    "unique-art"
+    "unique-art",
+    "puzzle",
+    "exploration",
+    "moral-choices"
   ],
-  "primaryTag": "puzzle",
   "influencedBy": [
     {
       "id": "myst",

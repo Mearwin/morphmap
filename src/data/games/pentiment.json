@@ -1,0 +1,27 @@
+{
+  "id": "pentiment",
+  "title": "Pentiment",
+  "date": "2022-11-15",
+  "tags": [
+    "narrative",
+    "historical",
+    "mystery",
+    "choice-consequence"
+  ],
+  "influencedBy": [
+    {
+      "id": "disco-elysium",
+      "through": [
+        "narrative",
+        "choice-consequence"
+      ]
+    },
+    {
+      "id": "her-story",
+      "through": [
+        "mystery",
+        "narrative"
+      ]
+    }
+  ]
+}

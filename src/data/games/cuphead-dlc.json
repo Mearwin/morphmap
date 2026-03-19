@@ -1,0 +1,20 @@
+{
+  "id": "cuphead-dlc",
+  "title": "Cuphead: The Delicious Last Course",
+  "date": "2022-06-30",
+  "tags": [
+    "platformer",
+    "boss-rush",
+    "co-op",
+    "hand-drawn-animation"
+  ],
+  "influencedBy": [
+    {
+      "id": "cuphead",
+      "through": [
+        "boss-rush",
+        "hand-drawn-animation"
+      ]
+    }
+  ]
+}

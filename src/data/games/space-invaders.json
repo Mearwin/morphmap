@@ -6,9 +6,9 @@
     "arcade",
     "shooter",
     "high-score",
-    "wave-based"
+    "wave-based",
+    "competitive"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "pong",

@@ -6,9 +6,12 @@
     "action-rpg",
     "difficulty",
     "interconnected-world",
-    "souls-like"
+    "souls-like",
+    "exploration",
+    "backtracking",
+    "nonlinear",
+    "rpg-elements"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "demons-souls",

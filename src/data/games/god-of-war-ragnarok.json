@@ -1,0 +1,23 @@
+{
+  "id": "god-of-war-ragnarok",
+  "title": "God of War Ragnarok",
+  "date": "2022-11-09",
+  "tags": [
+    "action-adventure",
+    "narrative",
+    "mythology",
+    "melee-combat",
+    "puzzle"
+  ],
+  "influencedBy": [
+    {
+      "id": "god-of-war-2018",
+      "through": [
+        "action-adventure",
+        "narrative",
+        "mythology",
+        "melee-combat"
+      ]
+    }
+  ]
+}

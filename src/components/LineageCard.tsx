@@ -1,14 +1,15 @@
 import { useState } from 'react'
-import type { Game } from '../types'
+import type { Entity } from '../types'
 import styles from './LineageCard.module.css'
 
 interface Props {
-  game: Game
+  game: Entity
+  color: string
   isSelected: boolean
   onClick: (id: string) => void
 }
 
-export function LineageCard({ game, isSelected, onClick }: Props) {
+export function LineageCard({ game, color, isSelected, onClick }: Props) {
   const [imgFailed, setImgFailed] = useState(false)
 
   return (
@@ -17,10 +18,10 @@ export function LineageCard({ game, isSelected, onClick }: Props) {
       onClick={() => onClick(game.id)}
       aria-label={`${game.title} (${game.date.slice(0, 4)})${isSelected ? ', selected' : ''}`}
     >
-      <div className={styles.tagBar} style={{ background: `var(--cat-${game.primaryTag})` }} />
-      {game.imageUrl && !imgFailed ? (
+      <div className={styles.tagBar} style={{ background: color }} />
+      {typeof game.imageUrl === 'string' && game.imageUrl && !imgFailed ? (
         <img
-          src={game.imageUrl}
+          src={game.imageUrl as string}
           alt=""
           className={styles.cover}
           loading="lazy"
@@ -29,7 +30,7 @@ export function LineageCard({ game, isSelected, onClick }: Props) {
       ) : (
         <div
           className={styles.placeholder}
-          style={{ background: `var(--cat-${game.primaryTag})`, opacity: 0.15 }}
+          style={{ background: color, opacity: 0.15 }}
         >
           {game.title.charAt(0)}
         </div>

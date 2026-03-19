@@ -6,9 +6,10 @@
     "roguelike",
     "third-person-shooter",
     "sci-fi",
-    "bullet-hell"
+    "bullet-hell",
+    "action",
+    "difficulty"
   ],
-  "primaryTag": "roguelike",
   "influencedBy": [
     {
       "id": "hades",

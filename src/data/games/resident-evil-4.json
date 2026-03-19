@@ -6,9 +6,9 @@
     "survival-horror",
     "over-the-shoulder",
     "action",
-    "qte"
+    "qte",
+    "resource-management"
   ],
-  "primaryTag": "survival-horror",
   "influencedBy": [
     {
       "id": "resident-evil",

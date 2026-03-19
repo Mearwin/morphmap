@@ -6,9 +6,13 @@
     "battle-royale",
     "building",
     "free-to-play",
-    "cross-platform"
+    "cross-platform",
+    "survival",
+    "last-man-standing",
+    "sandbox",
+    "crafting",
+    "creative"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "pubg",

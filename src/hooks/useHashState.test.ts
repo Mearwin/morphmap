@@ -8,7 +8,7 @@ beforeEach(() => {
 
 describe('parseHash', () => {
   it('returns nulls when hash is empty', () => {
-    expect(parseHash()).toEqual({ game: null, tag: null, timeRange: null, view: null })
+    expect(parseHash()).toEqual({ game: null, tag: null, timeRange: null, view: null, embed: false, depth: null })
   })
 
   it('parses game id', () => {
@@ -63,10 +63,35 @@ describe('parseHash', () => {
     window.location.hash = '#view=unknown'
     expect(parseHash().view).toBeNull()
   })
+
+  it('parses embed=true', () => {
+    window.location.hash = '#embed=true'
+    expect(parseHash().embed).toBe(true)
+  })
+
+  it('returns embed false when no embed param', () => {
+    window.location.hash = '#game=doom'
+    expect(parseHash().embed).toBe(false)
+  })
+
+  it('parses depth=2', () => {
+    window.location.hash = '#depth=2'
+    expect(parseHash().depth).toBe(2)
+  })
+
+  it('returns null depth when no depth param', () => {
+    window.location.hash = '#game=doom'
+    expect(parseHash().depth).toBeNull()
+  })
+
+  it('returns null depth for non-numeric depth', () => {
+    window.location.hash = '#depth=abc'
+    expect(parseHash().depth).toBeNull()
+  })
 })
 
 describe('buildHash', () => {
-  const empty = { selectedGameId: null, selectedTag: null, timeRange: null, viewMode: 'timeline' as const }
+  const empty = { selectedGameId: null, selectedTag: null, timeRange: null, viewMode: 'timeline' as const, embed: false, depth: null }
 
   it('returns empty string for empty state', () => {
     expect(buildHash(empty)).toBe('')
@@ -104,12 +129,30 @@ describe('buildHash', () => {
       selectedTag: 'fps',
       timeRange: { from: 1993, to: 2000 },
       viewMode: 'timeline',
+      embed: false,
+      depth: null,
     })
     expect(hash).toContain('game=doom')
     expect(hash).toContain('tag=fps')
     expect(hash).toContain('from=1993')
     expect(hash).toContain('to=2000')
     expect(hash.startsWith('#')).toBe(true)
+  })
+
+  it('encodes embed=true', () => {
+    expect(buildHash({ ...empty, embed: true })).toContain('embed=true')
+  })
+
+  it('does not encode embed when false', () => {
+    expect(buildHash({ ...empty, embed: false })).not.toContain('embed')
+  })
+
+  it('encodes depth=2', () => {
+    expect(buildHash({ ...empty, depth: 2 })).toContain('depth=2')
+  })
+
+  it('does not encode depth when null', () => {
+    expect(buildHash({ ...empty, depth: null })).not.toContain('depth')
   })
 })
 
@@ -135,5 +178,10 @@ describe('readInitialStateFromHash', () => {
   it('returns viewMode when view=river in hash', () => {
     window.location.hash = '#view=river'
     expect(readInitialStateFromHash()).toEqual({ viewMode: 'river' })
+  })
+
+  it('returns embed and depth when present in hash', () => {
+    window.location.hash = '#game=doom&embed=true&depth=3'
+    expect(readInitialStateFromHash()).toEqual({ selectedGameId: 'doom', embed: true, depth: 3 })
   })
 })

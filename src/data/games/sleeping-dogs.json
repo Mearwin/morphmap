@@ -1,0 +1,27 @@
+{
+  "id": "sleeping-dogs",
+  "title": "Sleeping Dogs",
+  "date": "2012-08-14",
+  "tags": [
+    "open-world",
+    "action-adventure",
+    "martial-arts",
+    "crime",
+    "melee-combat"
+  ],
+  "influencedBy": [
+    {
+      "id": "gta-san-andreas",
+      "through": [
+        "open-world",
+        "crime"
+      ]
+    },
+    {
+      "id": "devil-may-cry",
+      "through": [
+        "melee-combat"
+      ]
+    }
+  ]
+}

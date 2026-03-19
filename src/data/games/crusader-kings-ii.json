@@ -6,9 +6,10 @@
     "grand-strategy",
     "medieval",
     "dynasty",
-    "emergent-narrative"
+    "emergent-narrative",
+    "empire-building",
+    "turn-based"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "civilization",

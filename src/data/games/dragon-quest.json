@@ -6,9 +6,12 @@
     "jrpg",
     "turn-based-combat",
     "overworld",
-    "level-up"
+    "level-up",
+    "open-world",
+    "tile-based",
+    "dungeon-crawl",
+    "turn-based"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "ultima-iv",

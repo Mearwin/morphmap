@@ -1,5 +1,6 @@
 import { useMemo, useState, useRef, useEffect } from 'react'
 import { useGameStore } from '../store/useGameStore'
+import { useDataset } from '../dataset/DatasetContext'
 import { getAllTags } from '../utils/graph'
 import styles from './TagFilter.module.css'
 
@@ -7,6 +8,7 @@ const VISIBLE_COUNT = 8
 
 export function TagFilter() {
   const { games, state, dispatch } = useGameStore()
+  const { entityLabel } = useDataset()
   const [expanded, setExpanded] = useState(false)
   const [search, setSearch] = useState('')
   const dropdownRef = useRef<HTMLDivElement>(null)
@@ -79,7 +81,7 @@ export function TagFilter() {
   }
 
   return (
-    <div className={styles.container} role="group" aria-label="Filter by game mechanic" ref={dropdownRef}>
+    <div className={styles.container} role="group" aria-label={`Filter by ${entityLabel} tag`} ref={dropdownRef}>
       <div className={styles.inline}>
         {visibleTags.map(renderChip)}
         {selectedInOverflow && renderChip(state.selectedTag!)}

@@ -1,19 +1,21 @@
 import { useEffect } from 'react'
+import { useDataset } from '../dataset/DatasetContext'
 import styles from './ShortcutOverlay.module.css'
-
-const shortcuts = [
-  { keys: ['/'], action: 'Focus search' },
-  { keys: ['Esc'], action: 'Deselect game / close panel' },
-  { keys: ['\u2190'], action: 'Navigate to ancestor' },
-  { keys: ['\u2192'], action: 'Navigate to descendant' },
-  { keys: ['\u2191', '\u2193'], action: 'Cycle connected games' },
-  { keys: ['H'], action: 'Toggle river view' },
-  { keys: ['?'], action: 'Toggle this overlay' },
-]
 
 type Props = { onClose: () => void }
 
 export function ShortcutOverlay({ onClose }: Props) {
+  const { entityLabel, entityLabelPlural } = useDataset()
+
+  const shortcuts = [
+    { keys: ['/'], action: 'Focus search' },
+    { keys: ['Esc'], action: `Deselect ${entityLabel} / close panel` },
+    { keys: ['\u2190'], action: 'Navigate to ancestor' },
+    { keys: ['\u2192'], action: 'Navigate to descendant' },
+    { keys: ['\u2191', '\u2193'], action: `Cycle connected ${entityLabelPlural}` },
+    { keys: ['H'], action: 'Toggle river view' },
+    { keys: ['?'], action: 'Toggle this overlay' },
+  ]
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape' || e.key === '?') {

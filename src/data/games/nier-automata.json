@@ -6,9 +6,11 @@
     "action-rpg",
     "narrative",
     "multiple-endings",
-    "genre-shifting"
+    "genre-shifting",
+    "action",
+    "spectacle-fighter",
+    "combo-system"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "bayonetta",

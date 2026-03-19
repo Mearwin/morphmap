@@ -6,9 +6,9 @@
     "jrpg",
     "creature-collection",
     "turn-based-combat",
-    "trading"
+    "trading",
+    "overworld"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "dragon-quest",

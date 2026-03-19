@@ -1,0 +1,22 @@
+{
+  "id": "doom-ii",
+  "title": "Doom II",
+  "date": "1994-09-30",
+  "tags": [
+    "fps",
+    "demons",
+    "level-design",
+    "modding",
+    "fast-combat"
+  ],
+  "influencedBy": [
+    {
+      "id": "doom",
+      "through": [
+        "fps",
+        "demons",
+        "fast-combat"
+      ]
+    }
+  ]
+}

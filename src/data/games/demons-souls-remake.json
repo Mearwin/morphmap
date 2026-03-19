@@ -1,0 +1,28 @@
+{
+  "id": "demons-souls-remake",
+  "title": "Demon's Souls Remake",
+  "date": "2020-11-12",
+  "tags": [
+    "soulslike",
+    "action-rpg",
+    "stamina-combat",
+    "next-gen",
+    "quality-of-life"
+  ],
+  "influencedBy": [
+    {
+      "id": "demons-souls",
+      "through": [
+        "soulslike",
+        "stamina-combat"
+      ]
+    },
+    {
+      "id": "dark-souls-iii",
+      "through": [
+        "soulslike",
+        "quality-of-life"
+      ]
+    }
+  ]
+}

@@ -1,10 +1,8 @@
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { TAG_CATEGORIES } from '../src/types.js'
 import { searchGame, delay } from './lib/wikidata.js'
 
 const GAMES_DIR = join(import.meta.dirname, '..', 'src', 'data', 'games')
-const VALID_PRIMARY_TAGS = new Set(TAG_CATEGORIES.map(c => c.id))
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/
 
 interface GameFile {
@@ -12,7 +10,6 @@ interface GameFile {
   title: string
   date: string
   tags: string[]
-  primaryTag: string
   influencedBy: { id: string; through: string[] }[]
 }
 
@@ -40,7 +37,6 @@ function validateStructural(games: GameFile[]): string[] {
     if (!game.title || typeof game.title !== 'string') errors.push(`${game.id}: missing title`)
     if (!DATE_RE.test(game.date)) errors.push(`${game.id}: invalid date "${game.date}"`)
     if (!Array.isArray(game.tags) || game.tags.length === 0) errors.push(`${game.id}: empty tags`)
-    if (!VALID_PRIMARY_TAGS.has(game.primaryTag)) errors.push(`${game.id}: invalid primaryTag "${game.primaryTag}"`)
 
     // influencedBy checks
     for (const inf of game.influencedBy) {

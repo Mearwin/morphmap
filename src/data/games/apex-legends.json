@@ -6,9 +6,10 @@
     "battle-royale",
     "fps",
     "hero-shooter",
-    "team-based"
+    "team-based",
+    "survival",
+    "class-based"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "pubg",

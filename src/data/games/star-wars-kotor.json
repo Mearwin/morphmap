@@ -6,9 +6,9 @@
     "crpg",
     "moral-choices",
     "party-based",
-    "narrative"
+    "narrative",
+    "real-time-with-pause"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "baldurs-gate",

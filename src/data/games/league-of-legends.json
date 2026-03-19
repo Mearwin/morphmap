@@ -6,9 +6,12 @@
     "moba",
     "competitive",
     "team-based",
-    "esports"
+    "esports",
+    "rts",
+    "hero-units",
+    "custom-maps",
+    "multiplayer"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "warcraft-iii",

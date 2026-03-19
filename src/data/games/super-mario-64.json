@@ -6,9 +6,10 @@
     "3d-platformer",
     "open-level",
     "camera-control",
-    "collectibles"
+    "collectibles",
+    "power-ups",
+    "level-design"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "super-mario-bros",

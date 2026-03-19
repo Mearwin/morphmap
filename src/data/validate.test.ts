@@ -114,6 +114,35 @@ describe('games.json validation', () => {
     expect(errors, errors.join('\n')).toEqual([])
   })
 
+  it('every influence source was released before the influenced game', () => {
+    const dateMap = new Map(games.map(g => [g.id, g.date]))
+    const errors: string[] = []
+    for (const g of games) {
+      for (const inf of g.influencedBy) {
+        const sourceDate = dateMap.get(inf.id)
+        if (sourceDate && sourceDate >= g.date) {
+          errors.push(`${g.id} (${g.date}) influenced by "${inf.id}" (${sourceDate}) which was not released before it`)
+        }
+      }
+    }
+    expect(errors, errors.join('\n')).toEqual([])
+  })
+
+  it('every through tag is present in the target game tags', () => {
+    const errors: string[] = []
+    for (const g of games) {
+      const tagSet = new Set(g.tags)
+      for (const inf of g.influencedBy) {
+        for (const t of inf.through) {
+          if (!tagSet.has(t)) {
+            errors.push(`${g.id}: through tag "${t}" (from ${inf.id}) not in own tags`)
+          }
+        }
+      }
+    }
+    expect(errors, errors.join('\n')).toEqual([])
+  })
+
   it('no influence cycles of length 1 (A influenced by B and B influenced by A)', () => {
     const errors: string[] = []
     const influenceMap = new Map<string, Set<string>>()

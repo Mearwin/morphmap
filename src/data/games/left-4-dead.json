@@ -6,9 +6,9 @@
     "fps",
     "co-op",
     "zombies",
-    "ai-director"
+    "ai-director",
+    "team-based"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "half-life-2",

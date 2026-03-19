@@ -1,0 +1,27 @@
+{
+  "id": "alan-wake",
+  "title": "Alan Wake",
+  "date": "2010-05-14",
+  "tags": [
+    "action-adventure",
+    "survival-horror",
+    "narrative",
+    "psychological"
+  ],
+  "influencedBy": [
+    {
+      "id": "silent-hill-2",
+      "through": [
+        "psychological",
+        "narrative"
+      ]
+    },
+    {
+      "id": "resident-evil-4",
+      "through": [
+        "action-adventure",
+        "survival-horror"
+      ]
+    }
+  ]
+}

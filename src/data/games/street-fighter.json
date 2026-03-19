@@ -2,7 +2,11 @@
   "id": "street-fighter",
   "title": "Street Fighter",
   "date": "1987-08-30",
-  "tags": ["fighting", "arcade", "competitive", "special-moves"],
-  "primaryTag": "fighting",
+  "tags": [
+    "fighting",
+    "arcade",
+    "competitive",
+    "special-moves"
+  ],
   "influencedBy": []
 }

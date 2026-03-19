@@ -1,0 +1,23 @@
+{
+  "id": "phoenix-wright",
+  "title": "Phoenix Wright: Ace Attorney",
+  "date": "2001-10-12",
+  "tags": [
+    "visual-novel",
+    "puzzle",
+    "courtroom",
+    "narrative",
+    "adventure",
+    "humor"
+  ],
+  "influencedBy": [
+    {
+      "id": "the-secret-of-monkey-island",
+      "through": [
+        "adventure",
+        "humor",
+        "puzzle"
+      ]
+    }
+  ]
+}

@@ -6,9 +6,13 @@
     "narrative-driven",
     "survival",
     "stealth",
-    "cinematic"
+    "cinematic",
+    "set-pieces",
+    "survival-horror",
+    "over-the-shoulder",
+    "escort",
+    "atmospheric"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "uncharted-2",

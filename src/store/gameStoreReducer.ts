@@ -5,6 +5,8 @@ export type GameStoreState = {
   selectedTag: string | null
   timeRange: TimeRange | null
   viewMode: 'timeline' | 'river' | 'lineage'
+  embed: boolean
+  depth: number | null
 }
 
 export type GameStoreAction =

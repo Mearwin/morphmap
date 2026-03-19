@@ -6,9 +6,10 @@
     "turn-based-strategy",
     "puzzle",
     "roguelike",
-    "mech"
+    "mech",
+    "permadeath",
+    "tactical"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "ftl",

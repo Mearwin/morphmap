@@ -6,9 +6,11 @@
     "narrative",
     "moral-choices",
     "bullet-hell",
-    "fourth-wall"
+    "fourth-wall",
+    "jrpg",
+    "turn-based-combat",
+    "humor"
   ],
-  "primaryTag": "puzzle",
   "influencedBy": [
     {
       "id": "final-fantasy",

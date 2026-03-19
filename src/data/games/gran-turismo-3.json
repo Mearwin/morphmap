@@ -1,0 +1,21 @@
+{
+  "id": "gran-turismo-3",
+  "title": "Gran Turismo 3: A-Spec",
+  "date": "2001-04-28",
+  "tags": [
+    "racing",
+    "simulation",
+    "car-collection",
+    "realistic-physics"
+  ],
+  "influencedBy": [
+    {
+      "id": "gran-turismo",
+      "through": [
+        "racing",
+        "simulation",
+        "car-collection"
+      ]
+    }
+  ]
+}

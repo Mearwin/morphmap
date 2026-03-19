@@ -4,7 +4,7 @@ import { scaleLinear } from 'd3-scale'
 import { useGameStore } from '../store/useGameStore'
 import { buildLinks } from '../utils/graph'
 import { buildRiverData, type EraCategoryCell } from '../utils/riverData'
-import { TAG_CATEGORIES, TAG_COLORS } from '../types'
+import { useDataset } from '../dataset/DatasetContext'
 import { THEME } from '../constants'
 import { RiverPopover } from './RiverPopover'
 import { roundRect } from '../utils/canvas'
@@ -27,6 +27,7 @@ type HoverState = {
 
 export function InfluenceRiver() {
   const { games, state, dispatch } = useGameStore()
+  const { categories, categoryColors } = useDataset()
   const { selectedTag } = state
   const containerRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -127,7 +128,7 @@ export function InfluenceRiver() {
       const hasHover = hovered !== null
 
       ctx.globalAlpha = hasHover ? (isHovered ? 1 : 0.25) : 0.85
-      ctx.fillStyle = TAG_COLORS[catId] || THEME.textMuted
+      ctx.fillStyle = categoryColors[catId] || THEME.textMuted
       ctx.beginPath()
       areaGen(layer as [number, number][])
       ctx.fill()
@@ -159,7 +160,7 @@ export function InfluenceRiver() {
     // Hover label
     if (hovered) {
       const slice = slices[hovered.eraIndex]
-      const catLabel = TAG_CATEGORIES.find(c => c.id === hovered.categoryId)?.label ?? hovered.categoryId
+      const catLabel = categories.find(c => c.id === hovered.categoryId)?.label ?? hovered.categoryId
       const cell = slice?.byCategory[hovered.categoryId]
       if (slice && cell) {
         const x = xScale(slice.eraMid)
@@ -186,7 +187,7 @@ export function InfluenceRiver() {
         }
       }
     }
-  }, [riverData, stackData])
+  }, [riverData, stackData, categoryColors, categories])
 
   // Sync draw ref and schedule redraw when draw function changes
   useEffect(() => {

@@ -6,9 +6,9 @@
     "exploration",
     "backtracking",
     "power-ups",
-    "nonlinear"
+    "nonlinear",
+    "side-scrolling"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "super-mario-bros",

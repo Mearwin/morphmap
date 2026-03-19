@@ -6,9 +6,9 @@
     "action-rpg",
     "difficulty",
     "souls-like",
-    "multiplayer"
+    "multiplayer",
+    "interconnected-world"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "dark-souls",

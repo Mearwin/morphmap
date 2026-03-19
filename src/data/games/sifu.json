@@ -1,0 +1,40 @@
+{
+  "id": "sifu",
+  "title": "Sifu",
+  "date": "2022-02-08",
+  "tags": [
+    "action",
+    "martial-arts",
+    "roguelite",
+    "aging-mechanic",
+    "difficulty",
+    "pattern-learning",
+    "melee-combat",
+    "combo-system",
+    "die-and-retry",
+    "fast-paced"
+  ],
+  "influencedBy": [
+    {
+      "id": "dark-souls",
+      "through": [
+        "difficulty",
+        "pattern-learning"
+      ]
+    },
+    {
+      "id": "devil-may-cry",
+      "through": [
+        "melee-combat",
+        "combo-system"
+      ]
+    },
+    {
+      "id": "hotline-miami",
+      "through": [
+        "die-and-retry",
+        "fast-paced"
+      ]
+    }
+  ]
+}

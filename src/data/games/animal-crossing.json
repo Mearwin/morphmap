@@ -6,9 +6,10 @@
     "life-sim",
     "real-time-clock",
     "collecting",
-    "relaxing"
+    "relaxing",
+    "daily-cycle",
+    "relationships"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "harvest-moon",

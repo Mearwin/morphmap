@@ -6,9 +6,9 @@
     "fighting",
     "3d-fighting",
     "combo-system",
-    "character-roster"
+    "character-roster",
+    "competitive"
   ],
-  "primaryTag": "fighting",
   "influencedBy": [
     {
       "id": "street-fighter-ii",

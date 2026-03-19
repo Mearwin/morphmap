@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { TAG_CATEGORIES } from '../types'
+import { useDataset } from '../dataset/DatasetContext'
 import type { EraCategoryCell } from '../utils/riverData'
 import styles from './RiverPopover.module.css'
 
@@ -14,9 +14,9 @@ interface Props {
 }
 
 export function RiverPopover({ categoryId, eraLabel, cell, x, y, onClose, onSelectGame }: Props) {
-  const category = TAG_CATEGORIES.find(c => c.id === categoryId)
-  const label = category?.label ?? categoryId
-  const color = category?.color ?? '#6b7280'
+  const { entityLabelPlural, categories, categoryColors } = useDataset()
+  const tagLabel = categories.find(c => c.id === categoryId)?.label ?? categoryId
+  const tagColor = categoryColors[categoryId] || '#6b6b80'
 
   // Escape to close
   useEffect(() => {
@@ -42,8 +42,8 @@ export function RiverPopover({ categoryId, eraLabel, cell, x, y, onClose, onSele
       <div className={styles.backdrop} onClick={onClose} />
       <div className={styles.popover} style={popoverStyle}>
         <div className={styles.header}>
-          <span className={styles.dot} style={{ background: color }} />
-          <span className={styles.categoryName}>{label}</span>
+          <span className={styles.dot} style={{ background: tagColor }} />
+          <span className={styles.categoryName}>{tagLabel}</span>
           <span className={styles.era}>{eraLabel}</span>
         </div>
         <div className={styles.count}>
@@ -51,7 +51,7 @@ export function RiverPopover({ categoryId, eraLabel, cell, x, y, onClose, onSele
         </div>
         <div className={styles.gameList}>
           {cell.games.length === 0 && (
-            <span className={styles.empty}>No games in this era</span>
+            <span className={styles.empty}>No {entityLabelPlural} in this era</span>
           )}
           {cell.games.map(g => (
             <button

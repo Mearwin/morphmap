@@ -6,9 +6,10 @@
     "3d-platformer",
     "linear",
     "collectibles",
-    "mascot"
+    "mascot",
+    "speed",
+    "level-design"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "super-mario-64",

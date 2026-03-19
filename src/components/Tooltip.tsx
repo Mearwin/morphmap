@@ -1,6 +1,6 @@
 import { useRef, useCallback } from 'react'
 import type { GameNode } from '../types'
-import { TAG_CATEGORIES } from '../types'
+import { useDataset } from '../dataset/DatasetContext'
 import styles from './Tooltip.module.css'
 
 interface Props {
@@ -13,7 +13,7 @@ const OFFSET = 12
 const MARGIN = 8
 
 export function Tooltip({ node, x, y }: Props) {
-  const categoryLabel = TAG_CATEGORIES.find(c => c.id === node.primaryTag)?.label ?? node.primaryTag
+  const { gameColors } = useDataset()
   const ref = useRef<HTMLDivElement>(null)
 
   // Position with boundary detection via callback ref + inline style
@@ -45,11 +45,10 @@ export function Tooltip({ node, x, y }: Props) {
       style={{ left: x + OFFSET, top: y - OFFSET }}
     >
       <div className={styles.header}>
-        <span className={styles.dot} style={{ background: `var(--cat-${node.primaryTag})` }} />
+        <span className={styles.dot} style={{ background: gameColors.get(node.id) ?? '#6b6b80' }} />
         <span className={styles.title}>{node.title}</span>
         <span className={styles.year}>{node.date.slice(0, 4)}</span>
       </div>
-      <div className={styles.category}>{categoryLabel}</div>
       {node.tags.length > 0 && (
         <div className={styles.tags}>
           {node.tags.map(tag => (

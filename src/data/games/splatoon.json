@@ -6,9 +6,11 @@
     "fps",
     "team-based",
     "colorful",
-    "territory-control"
+    "territory-control",
+    "class-based",
+    "stylized",
+    "tight-controls"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "team-fortress-2",

@@ -2,10 +2,29 @@
   "id": "banjo-kazooie",
   "title": "Banjo-Kazooie",
   "date": "1998-06-29",
-  "tags": ["3d-platformer", "collectathon", "open-world", "humor"],
-  "primaryTag": "platformer",
+  "tags": [
+    "3d-platformer",
+    "collectathon",
+    "open-world",
+    "humor",
+    "3d-platforming",
+    "collectibles",
+    "platforming"
+  ],
   "influencedBy": [
-    { "id": "super-mario-64", "through": ["3d-platforming", "open-world", "collectibles"] },
-    { "id": "donkey-kong", "through": ["platforming"] }
+    {
+      "id": "super-mario-64",
+      "through": [
+        "3d-platforming",
+        "open-world",
+        "collectibles"
+      ]
+    },
+    {
+      "id": "donkey-kong",
+      "through": [
+        "platforming"
+      ]
+    }
   ]
 }

@@ -6,9 +6,10 @@
     "fps",
     "class-based",
     "team-based",
-    "hero-shooter"
+    "hero-shooter",
+    "stylized",
+    "competitive"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "team-fortress-2",

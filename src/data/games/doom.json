@@ -7,9 +7,9 @@
     "fast-paced",
     "modding",
     "level-editor",
-    "multiplayer"
+    "multiplayer",
+    "first-person"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "wolfenstein-3d",

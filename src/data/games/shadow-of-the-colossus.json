@@ -6,9 +6,10 @@
     "boss-battles",
     "atmospheric",
     "minimalist",
-    "exploration"
+    "exploration",
+    "3d-adventure",
+    "lock-on-targeting"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "ico",

@@ -6,9 +6,13 @@
     "metroidvania",
     "exploration",
     "tight-controls",
-    "atmospheric"
+    "atmospheric",
+    "backtracking",
+    "nonlinear",
+    "rpg-elements",
+    "difficulty",
+    "interconnected-world"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "metroid",

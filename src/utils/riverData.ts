@@ -1,5 +1,4 @@
-import type { Game, Link } from '../types'
-import { TAG_CATEGORIES } from '../types'
+import type { Entity, Link } from '../types'
 
 const ERA_SIZE = 5
 const FIRST_ERA = 1970
@@ -31,13 +30,25 @@ export type RiverData = {
 }
 
 export function buildRiverData(
-  games: Game[],
+  games: Entity[],
   links: Link[],
   selectedTag: string | null,
+  topN: number = 10,
 ): RiverData {
-  const categoryIds = TAG_CATEGORIES.map(c => c.id)
-  const gameById = new Map<string, Game>()
+  const gameById = new Map<string, Entity>()
   for (const g of games) gameById.set(g.id, g)
+
+  // Compute top N tags by frequency
+  const tagCounts: Record<string, number> = {}
+  for (const g of games) {
+    for (const t of g.tags) {
+      tagCounts[t] = (tagCounts[t] || 0) + 1
+    }
+  }
+  const categoryIds = Object.entries(tagCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, topN)
+    .map(([tag]) => tag)
 
   // Build era boundaries
   const slices: EraSlice[] = []
@@ -65,7 +76,7 @@ export function buildRiverData(
     if (slice) gameToSlice.set(game.id, slice)
   }
 
-  // Count influences received per category per era
+  // Count influences received per tag per era
   const filteredLinks = selectedTag
     ? links.filter(l => l.through.includes(selectedTag))
     : links
@@ -81,25 +92,28 @@ export function buildRiverData(
     if (!target) continue
     const slice = gameToSlice.get(link.target)
     if (!slice) continue
-    const cell = slice.byCategory[target.primaryTag]
-    if (cell) cell.count++
+    // A game contributes to a tag's stream if it has that tag
+    for (const tag of target.tags) {
+      const cell = slice.byCategory[tag]
+      if (cell) cell.count++
+    }
   }
 
   // Populate game lists for each cell
   for (const game of games) {
     const slice = gameToSlice.get(game.id)
     if (!slice) continue
-    const cell = slice.byCategory[game.primaryTag]
-    if (!cell) continue
     const incoming = incomingCounts.get(game.id) ?? 0
-    // Only include games that received at least one influence (relevant to the river)
-    // But also include games with no incoming if they exist in the era (for context in popover)
-    cell.games.push({
-      id: game.id,
-      title: game.title,
-      year: parseInt(game.date.slice(0, 4), 10),
-      incomingCount: incoming,
-    })
+    for (const tag of game.tags) {
+      const cell = slice.byCategory[tag]
+      if (!cell) continue
+      cell.games.push({
+        id: game.id,
+        title: game.title,
+        year: parseInt(game.date.slice(0, 4), 10),
+        incomingCount: incoming,
+      })
+    }
   }
 
   // Sort game lists by incoming count descending

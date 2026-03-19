@@ -1,0 +1,28 @@
+{
+  "id": "dragon-age-origins",
+  "title": "Dragon Age: Origins",
+  "date": "2009-11-03",
+  "tags": [
+    "crpg",
+    "tactical-combat",
+    "narrative",
+    "choice-consequence",
+    "party-based"
+  ],
+  "influencedBy": [
+    {
+      "id": "baldurs-gate",
+      "through": [
+        "crpg",
+        "party-based"
+      ]
+    },
+    {
+      "id": "star-wars-kotor",
+      "through": [
+        "narrative",
+        "choice-consequence"
+      ]
+    }
+  ]
+}

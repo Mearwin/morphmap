@@ -143,4 +143,16 @@
     border-top: 1px solid var(--border);
     border-radius: 12px 12px 0 0;
   }
+
+  .coverImage {
+    width: 80px;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 8px;
+    aspect-ratio: 264 / 374;
+  }
+
+  .section {
+    clear: both;
+  }
 }

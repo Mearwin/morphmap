@@ -6,9 +6,9 @@
     "fps",
     "time-loop",
     "immersive-sim",
-    "stealth"
+    "stealth",
+    "first-person"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "dishonored",

@@ -6,9 +6,9 @@
     "crpg",
     "narrative",
     "dialogue",
-    "skill-checks"
+    "skill-checks",
+    "moral-choices"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "baldurs-gate",

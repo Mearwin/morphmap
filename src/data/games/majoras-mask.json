@@ -6,9 +6,10 @@
     "time-loop",
     "dark-narrative",
     "dungeons",
-    "masks"
+    "masks",
+    "3d-adventure",
+    "lock-on-targeting"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "ocarina-of-time",

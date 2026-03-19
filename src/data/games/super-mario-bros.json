@@ -6,9 +6,10 @@
     "side-scrolling",
     "power-ups",
     "level-design",
-    "tight-controls"
+    "tight-controls",
+    "platformer",
+    "jumping"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "donkey-kong",

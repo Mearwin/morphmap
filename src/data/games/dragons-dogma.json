@@ -1,0 +1,38 @@
+{
+  "id": "dragons-dogma",
+  "title": "Dragon's Dogma",
+  "date": "2012-05-22",
+  "tags": [
+    "action-rpg",
+    "open-world",
+    "pawn-system",
+    "monster-climbing",
+    "action-combat",
+    "difficulty",
+    "scale",
+    "rpg"
+  ],
+  "influencedBy": [
+    {
+      "id": "dark-souls",
+      "through": [
+        "action-combat",
+        "difficulty"
+      ]
+    },
+    {
+      "id": "shadow-of-the-colossus",
+      "through": [
+        "monster-climbing",
+        "scale"
+      ]
+    },
+    {
+      "id": "oblivion",
+      "through": [
+        "open-world",
+        "rpg"
+      ]
+    }
+  ]
+}

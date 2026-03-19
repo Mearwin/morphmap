@@ -6,9 +6,11 @@
     "survival",
     "open-world",
     "multiplayer",
-    "permadeath"
+    "permadeath",
+    "sandbox",
+    "survival-horror",
+    "atmospheric"
   ],
-  "primaryTag": "survival-horror",
   "influencedBy": [
     {
       "id": "minecraft",

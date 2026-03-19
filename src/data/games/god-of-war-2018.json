@@ -6,9 +6,12 @@
     "action-adventure",
     "narrative-driven",
     "over-the-shoulder",
-    "mythology"
+    "mythology",
+    "cinematic",
+    "difficulty",
+    "action-rpg",
+    "lock-on-targeting"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "the-last-of-us",

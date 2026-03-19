@@ -6,9 +6,9 @@
     "open-world",
     "sandbox",
     "third-person",
-    "crime"
+    "crime",
+    "exploration"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "the-legend-of-zelda",

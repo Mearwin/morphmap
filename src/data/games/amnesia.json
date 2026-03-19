@@ -6,9 +6,10 @@
     "survival-horror",
     "defenseless",
     "sanity-mechanic",
-    "atmospheric"
+    "atmospheric",
+    "psychological",
+    "resource-management"
   ],
-  "primaryTag": "survival-horror",
   "influencedBy": [
     {
       "id": "silent-hill-2",

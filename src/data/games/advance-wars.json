@@ -1,0 +1,22 @@
+{
+  "id": "advance-wars",
+  "title": "Advance Wars",
+  "date": "2001-09-10",
+  "tags": [
+    "turn-based-strategy",
+    "tactics",
+    "grid-based",
+    "military",
+    "turn-based",
+    "strategy"
+  ],
+  "influencedBy": [
+    {
+      "id": "civilization",
+      "through": [
+        "turn-based",
+        "strategy"
+      ]
+    }
+  ]
+}

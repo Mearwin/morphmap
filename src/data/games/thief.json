@@ -6,9 +6,9 @@
     "stealth",
     "first-person",
     "immersive-sim",
-    "sound-design"
+    "sound-design",
+    "fps"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "doom",

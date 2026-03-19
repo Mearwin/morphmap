@@ -4,6 +4,9 @@ import gamesData from './data/games.json'
 import type { Game } from './types'
 import { GameStoreProvider } from './store/GameStoreContext'
 import { useGameStore } from './store/useGameStore'
+import { DatasetProvider } from './dataset/DatasetContext'
+import { useDataset } from './dataset/DatasetContext'
+import { gamesDatasetConfig } from './dataset/games'
 import { Timeline } from './components/Timeline'
 import { TagFilter } from './components/TagFilter'
 import { SearchBox } from './components/SearchBox'
@@ -24,10 +27,14 @@ const LazyTooltip = lazy(() =>
 const LazyLineageView = lazy(() =>
   import('./components/LineageView').then(m => ({ default: m.LineageView }))
 )
+const LazyEmbedView = lazy(() =>
+  import('./components/EmbedView').then(m => ({ default: m.EmbedView }))
+)
 const games: Game[] = gamesData as Game[]
 
 function AppInner() {
   const { state, games, derived, dispatch } = useGameStore()
+  const dataset = useDataset()
   const searchInputRef = useRef<HTMLInputElement>(null)
 
   useKeyboardNav({
@@ -108,7 +115,7 @@ function AppInner() {
       </div>
 
       <Legend />
-      <div className="stats">{games.length} games, {derived.links.length} connections</div>
+      <div className="stats">{games.length} {dataset.entityLabelPlural}, {derived.links.length} connections</div>
 
       {hovered && (
         <ErrorBoundary fallback={null}>
@@ -132,12 +139,30 @@ function AppInner() {
   )
 }
 
+function EmbedOrApp() {
+  const { state } = useGameStore()
+
+  if (state.embed) {
+    return (
+      <ErrorBoundary>
+        <Suspense fallback={null}>
+          <LazyEmbedView />
+        </Suspense>
+      </ErrorBoundary>
+    )
+  }
+
+  return <AppInner />
+}
+
 function App() {
   return (
     <ErrorBoundary>
-      <GameStoreProvider games={games}>
-        <AppInner />
-      </GameStoreProvider>
+      <DatasetProvider config={gamesDatasetConfig}>
+        <GameStoreProvider games={games}>
+          <EmbedOrApp />
+        </GameStoreProvider>
+      </DatasetProvider>
     </ErrorBoundary>
   )
 }

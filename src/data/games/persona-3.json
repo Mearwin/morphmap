@@ -1,0 +1,29 @@
+{
+  "id": "persona-3",
+  "title": "Persona 3",
+  "date": "2006-07-13",
+  "tags": [
+    "jrpg",
+    "social-sim",
+    "dungeon-crawl",
+    "time-management",
+    "narrative",
+    "daily-routine"
+  ],
+  "influencedBy": [
+    {
+      "id": "final-fantasy-vii",
+      "through": [
+        "jrpg",
+        "narrative"
+      ]
+    },
+    {
+      "id": "harvest-moon",
+      "through": [
+        "social-sim",
+        "daily-routine"
+      ]
+    }
+  ]
+}

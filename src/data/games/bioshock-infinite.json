@@ -1,0 +1,29 @@
+{
+  "id": "bioshock-infinite",
+  "title": "BioShock Infinite",
+  "date": "2013-03-26",
+  "tags": [
+    "fps",
+    "narrative",
+    "dystopia",
+    "companion-ai",
+    "set-piece-design"
+  ],
+  "influencedBy": [
+    {
+      "id": "bioshock",
+      "through": [
+        "fps",
+        "narrative",
+        "dystopia"
+      ]
+    },
+    {
+      "id": "half-life-2",
+      "through": [
+        "fps",
+        "set-piece-design"
+      ]
+    }
+  ]
+}

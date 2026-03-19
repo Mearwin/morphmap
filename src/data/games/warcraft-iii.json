@@ -6,9 +6,10 @@
     "rts",
     "hero-units",
     "custom-maps",
-    "narrative"
+    "narrative",
+    "asymmetric-factions",
+    "multiplayer"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "starcraft",

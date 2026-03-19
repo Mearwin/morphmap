@@ -68,14 +68,13 @@ async function main() {
   }
 
   // Map genres
-  const { tags, primaryTag } = mapGenres(match.genres)
+  const { tags } = mapGenres(match.genres)
 
   const game = {
     id,
     title: match.title,
     date: match.date ?? '0000-01-01',
     tags,
-    primaryTag,
     influencedBy: [] as { id: string; through: string[] }[],
   }
 
@@ -85,7 +84,6 @@ async function main() {
   console.log(`  Title:      ${game.title}`)
   console.log(`  Date:       ${game.date}`)
   console.log(`  Tags:       ${game.tags.join(', ')}`)
-  console.log(`  PrimaryTag: ${game.primaryTag}`)
   console.log(`  Influences: (empty — fill in manually)`)
 
   if (match.date === null) {

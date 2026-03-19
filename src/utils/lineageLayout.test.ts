@@ -69,6 +69,57 @@ describe('buildLineageData', () => {
     expect(result.edges).toHaveLength(0)
   })
 
+  it('limits ancestor depth when maxDepth is set', () => {
+    // Chain: A -> B -> C -> D (selected). maxDepth=1 -> only C as ancestor
+    const games = new Map<string, Game>([
+      ['a', { id: 'a', title: 'A', date: '1980-01-01', tags: [], primaryTag: 'fps', influencedBy: [] }],
+      ['b', { id: 'b', title: 'B', date: '1985-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'a', through: ['t'] }] }],
+      ['c', { id: 'c', title: 'C', date: '1990-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'b', through: ['t'] }] }],
+      ['d', { id: 'd', title: 'D', date: '1995-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'c', through: ['t'] }] }],
+    ])
+    const links = buildLinks([...games.values()])
+    const adj = buildAdjacency(links)
+    const result = buildLineageData('d', games, links, adj, 1)
+    const allIds = result.columns.flatMap(c => c.games.map(g => g.id))
+    expect(allIds).toContain('d')
+    expect(allIds).toContain('c')
+    expect(allIds).not.toContain('b')
+    expect(allIds).not.toContain('a')
+  })
+
+  it('limits descendant depth when maxDepth is set', () => {
+    // Same chain. Selected=A, maxDepth=2 -> B and C included, D excluded
+    const games = new Map<string, Game>([
+      ['a', { id: 'a', title: 'A', date: '1980-01-01', tags: [], primaryTag: 'fps', influencedBy: [] }],
+      ['b', { id: 'b', title: 'B', date: '1985-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'a', through: ['t'] }] }],
+      ['c', { id: 'c', title: 'C', date: '1990-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'b', through: ['t'] }] }],
+      ['d', { id: 'd', title: 'D', date: '1995-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'c', through: ['t'] }] }],
+    ])
+    const links = buildLinks([...games.values()])
+    const adj = buildAdjacency(links)
+    const result = buildLineageData('a', games, links, adj, 2)
+    const allIds = result.columns.flatMap(c => c.games.map(g => g.id))
+    expect(allIds).toContain('a')
+    expect(allIds).toContain('b')
+    expect(allIds).toContain('c')
+    expect(allIds).not.toContain('d')
+  })
+
+  it('returns full lineage when maxDepth is undefined', () => {
+    const games = new Map<string, Game>([
+      ['a', { id: 'a', title: 'A', date: '1980-01-01', tags: [], primaryTag: 'fps', influencedBy: [] }],
+      ['b', { id: 'b', title: 'B', date: '1985-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'a', through: ['t'] }] }],
+      ['c', { id: 'c', title: 'C', date: '1990-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'b', through: ['t'] }] }],
+    ])
+    const links = buildLinks([...games.values()])
+    const adj = buildAdjacency(links)
+    const result = buildLineageData('c', games, links, adj)
+    const allIds = result.columns.flatMap(c => c.games.map(g => g.id))
+    expect(allIds).toContain('a')
+    expect(allIds).toContain('b')
+    expect(allIds).toContain('c')
+  })
+
   it('sorts games within a column by date', () => {
     const diamond: Game[] = [
       makeGame('a', '1990-01-01'),

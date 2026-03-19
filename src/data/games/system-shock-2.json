@@ -6,9 +6,10 @@
     "immersive-sim",
     "fps",
     "rpg-elements",
-    "survival-horror"
+    "survival-horror",
+    "narrative-driven",
+    "scripted-events"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "half-life",

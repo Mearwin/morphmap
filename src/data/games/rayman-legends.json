@@ -1,0 +1,30 @@
+{
+  "id": "rayman-legends",
+  "title": "Rayman Legends",
+  "date": "2013-08-29",
+  "tags": [
+    "platformer",
+    "co-op",
+    "rhythm",
+    "art-style",
+    "platforming",
+    "level-design",
+    "user-generated-content"
+  ],
+  "influencedBy": [
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "platforming",
+        "level-design"
+      ]
+    },
+    {
+      "id": "littlebigplanet",
+      "through": [
+        "co-op",
+        "user-generated-content"
+      ]
+    }
+  ]
+}

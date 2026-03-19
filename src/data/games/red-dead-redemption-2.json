@@ -6,9 +6,10 @@
     "open-world",
     "narrative-driven",
     "western",
-    "simulation"
+    "simulation",
+    "sandbox",
+    "cinematic"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "red-dead-redemption",

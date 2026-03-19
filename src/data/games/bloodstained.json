@@ -1,0 +1,29 @@
+{
+  "id": "bloodstained",
+  "title": "Bloodstained: Ritual of the Night",
+  "date": "2019-06-18",
+  "tags": [
+    "metroidvania",
+    "action-rpg",
+    "exploration",
+    "gothic",
+    "rpg-progression"
+  ],
+  "influencedBy": [
+    {
+      "id": "castlevania-sotn",
+      "through": [
+        "metroidvania",
+        "gothic",
+        "rpg-progression"
+      ]
+    },
+    {
+      "id": "hollow-knight",
+      "through": [
+        "metroidvania",
+        "exploration"
+      ]
+    }
+  ]
+}

@@ -6,9 +6,9 @@
     "jrpg",
     "cinematic",
     "turn-based-combat",
-    "materia-system"
+    "materia-system",
+    "party-based"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "final-fantasy",

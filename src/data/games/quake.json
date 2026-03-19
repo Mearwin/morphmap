@@ -7,9 +7,9 @@
     "3d-graphics",
     "multiplayer",
     "modding",
-    "arena-shooter"
+    "arena-shooter",
+    "fast-paced"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "doom",

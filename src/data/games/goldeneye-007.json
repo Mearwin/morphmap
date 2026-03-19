@@ -6,9 +6,9 @@
     "fps",
     "split-screen",
     "stealth",
-    "console-shooter"
+    "console-shooter",
+    "multiplayer"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "doom",

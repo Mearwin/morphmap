@@ -6,9 +6,10 @@
     "farming",
     "life-sim",
     "daily-cycle",
-    "relationships"
+    "relationships",
+    "simulation",
+    "management"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "simcity",

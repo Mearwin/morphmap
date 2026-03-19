@@ -7,9 +7,9 @@
     "procedural-generation",
     "crafting",
     "survival",
-    "creative"
+    "creative",
+    "emergent-gameplay"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "dwarf-fortress",

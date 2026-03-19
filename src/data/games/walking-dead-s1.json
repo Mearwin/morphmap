@@ -6,9 +6,9 @@
     "narrative",
     "choices-matter",
     "episodic",
-    "emotional"
+    "emotional",
+    "point-and-click"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "the-secret-of-monkey-island",

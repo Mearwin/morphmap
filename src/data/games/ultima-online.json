@@ -2,10 +2,29 @@
   "id": "ultima-online",
   "title": "Ultima Online",
   "date": "1997-09-24",
-  "tags": ["mmorpg", "mmo", "sandbox", "pvp", "persistent-world"],
-  "primaryTag": "rpg",
+  "tags": [
+    "mmorpg",
+    "mmo",
+    "sandbox",
+    "pvp",
+    "persistent-world",
+    "rpg",
+    "open-world",
+    "emergent-gameplay"
+  ],
   "influencedBy": [
-    { "id": "ultima-iv", "through": ["rpg", "open-world"] },
-    { "id": "nethack", "through": ["emergent-gameplay"] }
+    {
+      "id": "ultima-iv",
+      "through": [
+        "rpg",
+        "open-world"
+      ]
+    },
+    {
+      "id": "nethack",
+      "through": [
+        "emergent-gameplay"
+      ]
+    }
   ]
 }

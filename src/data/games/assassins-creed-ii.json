@@ -6,9 +6,10 @@
     "open-world",
     "parkour",
     "stealth",
-    "historical"
+    "historical",
+    "sandbox",
+    "3d-platformer"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "gta-iii",

@@ -6,9 +6,9 @@
     "open-world",
     "first-person-rpg",
     "modding",
-    "sandbox"
+    "sandbox",
+    "lore"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "oblivion",

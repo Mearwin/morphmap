@@ -6,9 +6,11 @@
     "crpg",
     "real-time-with-pause",
     "party-based",
-    "narrative"
+    "narrative",
+    "open-world",
+    "moral-choices",
+    "dungeon-crawl"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "ultima-iv",

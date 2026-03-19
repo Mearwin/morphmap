@@ -6,9 +6,9 @@
     "farming",
     "life-sim",
     "crafting",
-    "relationships"
+    "relationships",
+    "daily-cycle"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "harvest-moon",

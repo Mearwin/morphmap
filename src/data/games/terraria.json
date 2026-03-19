@@ -6,9 +6,10 @@
     "sandbox",
     "crafting",
     "exploration",
-    "side-scrolling"
+    "side-scrolling",
+    "survival",
+    "backtracking"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "minecraft",

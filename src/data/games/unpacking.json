@@ -1,0 +1,20 @@
+{
+  "id": "unpacking",
+  "title": "Unpacking",
+  "date": "2021-11-02",
+  "tags": [
+    "puzzle",
+    "narrative",
+    "relaxation",
+    "environmental-storytelling"
+  ],
+  "influencedBy": [
+    {
+      "id": "gone-home",
+      "through": [
+        "environmental-storytelling",
+        "narrative"
+      ]
+    }
+  ]
+}

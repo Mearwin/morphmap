@@ -8,7 +8,6 @@
     "emergent-gameplay",
     "dungeon-crawl"
   ],
-  "primaryTag": "roguelike",
   "influencedBy": [
     {
       "id": "rogue",

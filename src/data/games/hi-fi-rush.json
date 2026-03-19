@@ -2,11 +2,35 @@
   "id": "hi-fi-rush",
   "title": "Hi-Fi Rush",
   "date": "2023-01-25",
-  "tags": ["rhythm-action", "hack-and-slash", "cel-shading", "humor"],
-  "primaryTag": "action-adventure",
+  "tags": [
+    "rhythm-action",
+    "hack-and-slash",
+    "cel-shading",
+    "humor",
+    "stylish-action",
+    "combo-combat",
+    "rhythm-mechanics"
+  ],
   "influencedBy": [
-    { "id": "devil-may-cry", "through": ["stylish-action", "combo-combat"] },
-    { "id": "guitar-hero", "through": ["rhythm-mechanics"] },
-    { "id": "bayonetta", "through": ["stylish-action", "humor"] }
+    {
+      "id": "devil-may-cry",
+      "through": [
+        "stylish-action",
+        "combo-combat"
+      ]
+    },
+    {
+      "id": "guitar-hero",
+      "through": [
+        "rhythm-mechanics"
+      ]
+    },
+    {
+      "id": "bayonetta",
+      "through": [
+        "stylish-action",
+        "humor"
+      ]
+    }
   ]
 }

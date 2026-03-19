@@ -6,9 +6,12 @@
     "3d-adventure",
     "lock-on-targeting",
     "dungeons",
-    "open-world"
+    "open-world",
+    "exploration",
+    "action-combat",
+    "3d-platformer",
+    "camera-control"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "the-legend-of-zelda",

@@ -6,9 +6,9 @@
     "adventure",
     "exploration",
     "atmospheric",
-    "cat"
+    "cat",
+    "puzzle-platformer"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "inside",

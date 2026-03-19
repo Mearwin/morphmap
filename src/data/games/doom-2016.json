@@ -6,9 +6,9 @@
     "fps",
     "fast-paced",
     "arena-combat",
-    "glory-kills"
+    "glory-kills",
+    "arena-shooter"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "doom",

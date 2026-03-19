@@ -6,9 +6,11 @@
     "action-rpg",
     "crossover",
     "real-time-combat",
-    "cinematic"
+    "cinematic",
+    "jrpg",
+    "lock-on-targeting",
+    "3d-adventure"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "final-fantasy-vii",

@@ -6,9 +6,10 @@
     "survival-horror",
     "over-the-shoulder",
     "action",
-    "remake"
+    "remake",
+    "cinematic",
+    "narrative-driven"
   ],
-  "primaryTag": "survival-horror",
   "influencedBy": [
     {
       "id": "resident-evil-4",

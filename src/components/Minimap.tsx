@@ -6,12 +6,13 @@ import { computeMinimapBounds, computeMinimapLayout, toMinimapX, toMinimapY } fr
 
 interface Props {
   nodes: GameNode[]
+  gameColors: Map<string, string>
   transform: ZoomTransform
   viewWidth: number
   viewHeight: number
 }
 
-export const Minimap = memo(function Minimap({ nodes, transform, viewWidth, viewHeight }: Props) {
+export const Minimap = memo(function Minimap({ nodes, gameColors, transform, viewWidth, viewHeight }: Props) {
   const clipId = useId()
   const bounds = useMemo(() => computeMinimapBounds(nodes), [nodes])
   const layout = computeMinimapLayout(bounds, transform, viewWidth, viewHeight)
@@ -40,7 +41,7 @@ export const Minimap = memo(function Minimap({ nodes, transform, viewWidth, view
             cx={toMinimapX(n.x, bounds, scaleX)}
             cy={toMinimapY(n.y, bounds, scaleY)}
             r={1.2}
-            fill={`var(--cat-${n.primaryTag})`}
+            fill={gameColors.get(n.id) ?? '#6b6b80'}
             opacity={0.7}
           />
         ))}

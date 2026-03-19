@@ -26,6 +26,7 @@ function bfsDepths(
   selectedId: string,
   directionMap: Map<string, Set<string>>,
   sign: 1 | -1,
+  maxDepth?: number,
 ): Map<string, number> {
   const depths = new Map<string, number>()
   const queue: [string, number][] = [[selectedId, 0]]
@@ -38,7 +39,9 @@ function bfsDepths(
         visited.add(neighbor)
         const neighborDepth = depth + sign
         depths.set(neighbor, neighborDepth)
-        queue.push([neighbor, neighborDepth])
+        if (maxDepth === undefined || Math.abs(neighborDepth) < maxDepth) {
+          queue.push([neighbor, neighborDepth])
+        }
       }
     }
   }
@@ -50,9 +53,10 @@ export function buildLineageData(
   gameMap: Map<string, Game>,
   links: Link[],
   adjacency: Adjacency,
+  maxDepth?: number,
 ): LineageData {
-  const ancestorDepths = bfsDepths(selectedId, adjacency.reverse, -1)
-  const descendantDepths = bfsDepths(selectedId, adjacency.forward, 1)
+  const ancestorDepths = bfsDepths(selectedId, adjacency.reverse, -1, maxDepth)
+  const descendantDepths = bfsDepths(selectedId, adjacency.forward, 1, maxDepth)
 
   const allDepths = new Map<string, number>([[selectedId, 0]])
   for (const [id, depth] of ancestorDepths) allDepths.set(id, depth)

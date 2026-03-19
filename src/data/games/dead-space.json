@@ -1,0 +1,30 @@
+{
+  "id": "dead-space",
+  "title": "Dead Space",
+  "date": "2008-10-13",
+  "tags": [
+    "survival-horror",
+    "sci-fi",
+    "dismemberment",
+    "atmosphere",
+    "over-the-shoulder",
+    "sci-fi-horror",
+    "audio-logs"
+  ],
+  "influencedBy": [
+    {
+      "id": "resident-evil-4",
+      "through": [
+        "over-the-shoulder",
+        "survival-horror"
+      ]
+    },
+    {
+      "id": "system-shock-2",
+      "through": [
+        "sci-fi-horror",
+        "audio-logs"
+      ]
+    }
+  ]
+}

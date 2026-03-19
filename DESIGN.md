@@ -29,7 +29,8 @@ Morphmap is a static single-page application. There is no backend, no database, 
 
 - **React owns the DOM, D3 owns the math.** D3 is used for scales, force simulation, zoom behavior, axis rendering, and stack/area generation. React renders all SVG elements and manages all state. The two never fight over DOM ownership.
 - **No routing library.** The URL hash is manually synced with state via `useHashState`. This avoids a dependency for what is effectively a single-view app.
-- **No state management library.** `useReducer` + Context is sufficient. The state shape is small (4 fields) and only the store provider re-renders on changes.
+- **No state management library.** `useReducer` + Context is sufficient. The state shape is small (6 fields) and only the store provider re-renders on changes.
+- **Dataset abstraction.** A `DatasetContext` provides category definitions, colors, and labels, decoupling the visualization engine from the video game dataset. `Entity` is the base type; `Game extends Entity` adds game-specific fields.
 
 ---
 
@@ -106,7 +107,9 @@ GameStoreProvider (src/store/GameStoreContext.tsx)
   selectedGameId: string | null
   selectedTag: string | null
   timeRange: { from: number; to: number } | null
-  viewMode: 'timeline' | 'river'
+  viewMode: 'timeline' | 'river' | 'lineage'
+  embed: boolean        // true when rendering in iframe-friendly embed mode
+  depth: number | null  // max ancestor/descendant depth for embed mode
 }
 ```
 

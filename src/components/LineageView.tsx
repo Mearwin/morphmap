@@ -1,11 +1,17 @@
 import { useMemo, useRef, useEffect, useCallback } from 'react'
 import { useGameStore } from '../store/useGameStore'
+import { useDataset } from '../dataset/DatasetContext'
 import { buildLineageData } from '../utils/lineageLayout'
 import { LineageCard } from './LineageCard'
 import styles from './LineageView.module.css'
 
-export function LineageView() {
+interface LineageViewProps {
+  maxDepth?: number
+}
+
+export function LineageView({ maxDepth }: LineageViewProps) {
   const { state, games, derived, dispatch } = useGameStore()
+  const { gameColors } = useDataset()
   const containerRef = useRef<HTMLDivElement>(null)
   const cardRefs = useRef<Map<string, HTMLElement>>(new Map())
   const svgRef = useRef<SVGSVGElement>(null)
@@ -14,16 +20,15 @@ export function LineageView() {
 
   const lineage = useMemo(() => {
     if (!state.selectedGameId) return null
-    return buildLineageData(state.selectedGameId, gameMap, derived.links, derived.adjacency)
-  }, [state.selectedGameId, gameMap, derived.links, derived.adjacency])
+    return buildLineageData(state.selectedGameId, gameMap, derived.links, derived.adjacency, maxDepth)
+  }, [state.selectedGameId, gameMap, derived.links, derived.adjacency, maxDepth])
 
   const handleCardClick = useCallback((id: string) => {
-    // Deselect then reselect to trigger lineage rebuild around new center
-    dispatch({ type: 'SELECT_GAME', id: null })
-    requestAnimationFrame(() => {
-      dispatch({ type: 'SELECT_GAME', id })
-    })
-  }, [dispatch])
+    if (id === state.selectedGameId) return // already centered on this game
+    // Dispatch the new ID directly — the reducer will set it (not toggle,
+    // since it's a different ID than the current selection)
+    dispatch({ type: 'SELECT_GAME', id })
+  }, [dispatch, state.selectedGameId])
 
   // Scroll to center the selected column on mount/recenter
   useEffect(() => {
@@ -113,6 +118,7 @@ export function LineageView() {
         <div className={styles.emptyMessage}>
           <LineageCard
             game={game}
+            color={gameColors.get(game.id) ?? '#6b6b80'}
             isSelected={true}
             onClick={handleCardClick}
           />
@@ -141,6 +147,7 @@ export function LineageView() {
               >
                 <LineageCard
                   game={game}
+                  color={gameColors.get(game.id) ?? '#6b6b80'}
                   isSelected={game.id === lineage.selectedId}
                   onClick={handleCardClick}
                 />

@@ -6,9 +6,11 @@
     "precision-platformer",
     "difficulty",
     "tight-controls",
-    "indie"
+    "indie",
+    "side-scrolling",
+    "level-design",
+    "boss-battles"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "super-mario-bros",

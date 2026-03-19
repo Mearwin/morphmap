@@ -1,0 +1,28 @@
+{
+  "id": "xenoblade-chronicles",
+  "title": "Xenoblade Chronicles",
+  "date": "2010-06-10",
+  "tags": [
+    "jrpg",
+    "open-world",
+    "real-time-combat",
+    "exploration",
+    "epic-narrative"
+  ],
+  "influencedBy": [
+    {
+      "id": "final-fantasy-vii",
+      "through": [
+        "jrpg",
+        "epic-narrative"
+      ]
+    },
+    {
+      "id": "morrowind",
+      "through": [
+        "open-world",
+        "exploration"
+      ]
+    }
+  ]
+}

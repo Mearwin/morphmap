@@ -11,6 +11,7 @@ import type { GameNode as GameNodeType } from '../types'
 import { GameNode } from './GameNode'
 import { InfluenceLine } from './InfluenceLine'
 import { Minimap } from './Minimap'
+import { useDataset } from '../dataset/DatasetContext'
 import { TIMELINE, LABEL, LINE, THEME } from '../constants'
 import { useViewport, isInViewport } from '../hooks/useViewport'
 import { computeLinkLabel, resolveOverlaps, type LabelInfo } from '../utils/labelPlacement'
@@ -41,6 +42,7 @@ export function Timeline({ onHover }: TimelineProps = {}) {
 
 function SvgTimeline({ onHover }: TimelineProps) {
   const { games, derived, dispatch, state } = useGameStore()
+  const { gameColors } = useDataset()
   const { selectedGameId, selectedTag, timeRange } = state
   const containerRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
@@ -195,6 +197,7 @@ function SvgTimeline({ onHover }: TimelineProps) {
             <GameNode
               key={node.id}
               node={node}
+              color={gameColors.get(node.id) ?? '#6b6b80'}
               isSelected={isSelected}
               isHighlighted={isHighlighted}
               onSelect={handleSelectGame}
@@ -233,6 +236,7 @@ function SvgTimeline({ onHover }: TimelineProps) {
       {nodes.length > 0 && (
         <Minimap
           nodes={nodes}
+          gameColors={gameColors}
           transform={transform}
           viewWidth={dimensions.width}
           viewHeight={dimensions.height}

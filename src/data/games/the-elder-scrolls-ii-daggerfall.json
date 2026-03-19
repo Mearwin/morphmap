@@ -2,10 +2,27 @@
   "id": "the-elder-scrolls-ii-daggerfall",
   "title": "The Elder Scrolls II: Daggerfall",
   "date": "1996-08-31",
-  "tags": ["open-world", "rpg", "procedural-generation", "first-person"],
-  "primaryTag": "rpg",
+  "tags": [
+    "open-world",
+    "rpg",
+    "procedural-generation",
+    "first-person",
+    "dungeon-crawl"
+  ],
   "influencedBy": [
-    { "id": "ultima-iv", "through": ["open-world", "rpg"] },
-    { "id": "rogue", "through": ["procedural-generation", "dungeon-crawl"] }
+    {
+      "id": "ultima-iv",
+      "through": [
+        "open-world",
+        "rpg"
+      ]
+    },
+    {
+      "id": "rogue",
+      "through": [
+        "procedural-generation",
+        "dungeon-crawl"
+      ]
+    }
   ]
 }

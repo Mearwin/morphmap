@@ -1,6 +1,8 @@
 import { type ReactNode } from 'react'
 import { render, type RenderOptions } from '@testing-library/react'
 import { GameStoreProvider } from '../store/GameStoreContext'
+import { DatasetProvider } from '../dataset/DatasetContext'
+import { createGamesDatasetConfig } from '../dataset/games'
 import type { Game } from '../types'
 
 export const testGames: Game[] = [
@@ -30,8 +32,14 @@ export const testGames: Game[] = [
   },
 ]
 
+const testDatasetConfig = createGamesDatasetConfig(testGames)
+
 function Wrapper({ children }: { children: ReactNode }) {
-  return <GameStoreProvider games={testGames}>{children}</GameStoreProvider>
+  return (
+    <DatasetProvider config={testDatasetConfig}>
+      <GameStoreProvider games={testGames}>{children}</GameStoreProvider>
+    </DatasetProvider>
+  )
 }
 
 export function renderWithStore(ui: ReactNode, options?: Omit<RenderOptions, 'wrapper'>) {

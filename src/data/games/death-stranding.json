@@ -1,0 +1,31 @@
+{
+  "id": "death-stranding",
+  "title": "Death Stranding",
+  "date": "2019-11-08",
+  "tags": [
+    "open-world",
+    "traversal",
+    "strand-game",
+    "social",
+    "stealth",
+    "cinematic-storytelling",
+    "asynchronous-multiplayer",
+    "emotional-experience"
+  ],
+  "influencedBy": [
+    {
+      "id": "metal-gear-solid",
+      "through": [
+        "stealth",
+        "cinematic-storytelling"
+      ]
+    },
+    {
+      "id": "journey",
+      "through": [
+        "asynchronous-multiplayer",
+        "emotional-experience"
+      ]
+    }
+  ]
+}

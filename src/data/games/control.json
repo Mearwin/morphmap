@@ -1,0 +1,31 @@
+{
+  "id": "control",
+  "title": "Control",
+  "date": "2019-08-27",
+  "tags": [
+    "action-adventure",
+    "telekinesis",
+    "metroidvania",
+    "brutalist-architecture",
+    "powers",
+    "atmospheric-world",
+    "exploration",
+    "environmental-storytelling"
+  ],
+  "influencedBy": [
+    {
+      "id": "bioshock",
+      "through": [
+        "powers",
+        "atmospheric-world"
+      ]
+    },
+    {
+      "id": "metroid-prime",
+      "through": [
+        "exploration",
+        "environmental-storytelling"
+      ]
+    }
+  ]
+}

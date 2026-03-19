@@ -32,10 +32,10 @@ describe('buildRiverData', () => {
     const era95 = slices.find(s => s.eraStart === 1995)!
     expect(era95.byCategory['fps'].count).toBe(3)
 
-    // Zelda OoT (1998) in action-adventure, received 1 influence
-    expect(era95.byCategory['action-adventure'].count).toBe(1)
+    // Zelda OoT (1998) tagged action-rpg, received 1 influence
+    expect(era95.byCategory['action-rpg'].count).toBe(1)
 
-    // Mario (1985) in platformer, no incoming influences
+    // Mario (1985) tagged platformer, no incoming influences
     const era85 = slices.find(s => s.eraStart === 1985)!
     expect(era85.byCategory['platformer'].count).toBe(0)
   })
@@ -58,20 +58,22 @@ describe('buildRiverData', () => {
     expect(era95.byCategory['fps'].count).toBe(1)
   })
 
-  it('returns all 10 category ids', () => {
-    const { categoryIds } = buildRiverData(games, links, null)
-    expect(categoryIds).toHaveLength(10)
-    expect(categoryIds).toContain('fps')
-    expect(categoryIds).toContain('rpg')
+  it('derives category ids from game tags', () => {
+    const result = buildRiverData(games, links, null)
+    // 3 unique tags in test data: fps, platformer, action-rpg
+    expect(result.categoryIds).toHaveLength(3)
+    expect(result.categoryIds).toContain('fps')
+    expect(result.categoryIds).toContain('platformer')
+    expect(result.categoryIds).toContain('action-rpg')
   })
 
   it('handles empty inputs', () => {
-    const { slices } = buildRiverData([], [], null)
+    const { slices, categoryIds } = buildRiverData([], [], null)
     expect(slices.length).toBeGreaterThan(0)
+    expect(categoryIds).toHaveLength(0)
+    // All slices should have empty byCategory
     for (const slice of slices) {
-      for (const catId of Object.keys(slice.byCategory)) {
-        expect(slice.byCategory[catId].count).toBe(0)
-      }
+      expect(Object.keys(slice.byCategory)).toHaveLength(0)
     }
   })
 })

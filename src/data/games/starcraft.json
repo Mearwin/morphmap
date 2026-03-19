@@ -6,9 +6,11 @@
     "rts",
     "asymmetric-factions",
     "esports",
-    "multiplayer"
+    "multiplayer",
+    "base-building",
+    "factions",
+    "resource-management"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "warcraft-ii",

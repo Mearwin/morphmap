@@ -2,10 +2,29 @@
   "id": "planescape-torment",
   "title": "Planescape: Torment",
   "date": "1999-12-12",
-  "tags": ["crpg", "narrative", "dialogue-heavy", "philosophical"],
-  "primaryTag": "rpg",
+  "tags": [
+    "crpg",
+    "narrative",
+    "dialogue-heavy",
+    "philosophical",
+    "infinity-engine",
+    "narrative-rpg",
+    "moral-choices"
+  ],
   "influencedBy": [
-    { "id": "baldurs-gate", "through": ["crpg", "infinity-engine"] },
-    { "id": "ultima-iv", "through": ["narrative-rpg", "moral-choices"] }
+    {
+      "id": "baldurs-gate",
+      "through": [
+        "crpg",
+        "infinity-engine"
+      ]
+    },
+    {
+      "id": "ultima-iv",
+      "through": [
+        "narrative-rpg",
+        "moral-choices"
+      ]
+    }
   ]
 }

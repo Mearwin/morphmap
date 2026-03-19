@@ -6,9 +6,10 @@
     "stealth",
     "cinematic",
     "narrative-driven",
-    "boss-battles"
+    "boss-battles",
+    "exploration",
+    "action-combat"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "the-legend-of-zelda",

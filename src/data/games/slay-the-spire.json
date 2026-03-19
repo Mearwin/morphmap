@@ -6,9 +6,9 @@
     "roguelike",
     "deck-building",
     "strategy",
-    "procedural-generation"
+    "procedural-generation",
+    "permadeath"
   ],
-  "primaryTag": "roguelike",
   "influencedBy": [
     {
       "id": "rogue",

@@ -6,9 +6,11 @@
     "cinematic",
     "third-person",
     "set-pieces",
-    "narrative-driven"
+    "narrative-driven",
+    "cover-system",
+    "3d-platformer",
+    "parkour"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "gears-of-war",

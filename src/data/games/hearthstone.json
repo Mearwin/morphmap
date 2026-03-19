@@ -6,9 +6,10 @@
     "card-game",
     "competitive",
     "free-to-play",
-    "strategy"
+    "strategy",
+    "mmorpg",
+    "loot"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "world-of-warcraft",

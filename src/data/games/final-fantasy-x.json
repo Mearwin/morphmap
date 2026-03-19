@@ -2,10 +2,28 @@
   "id": "final-fantasy-x",
   "title": "Final Fantasy X",
   "date": "2001-07-19",
-  "tags": ["jrpg", "turn-based", "voice-acting", "linear-narrative"],
-  "primaryTag": "rpg",
+  "tags": [
+    "jrpg",
+    "turn-based",
+    "voice-acting",
+    "linear-narrative",
+    "cinematic-storytelling",
+    "visible-encounters"
+  ],
   "influencedBy": [
-    { "id": "final-fantasy-vii", "through": ["jrpg", "cinematic-storytelling"] },
-    { "id": "chrono-trigger", "through": ["jrpg", "visible-encounters"] }
+    {
+      "id": "final-fantasy-vii",
+      "through": [
+        "jrpg",
+        "cinematic-storytelling"
+      ]
+    },
+    {
+      "id": "chrono-trigger",
+      "through": [
+        "jrpg",
+        "visible-encounters"
+      ]
+    }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "id": "geometry-wars",
+  "title": "Geometry Wars: Retro Evolved",
+  "date": "2005-11-22",
+  "tags": [
+    "twin-stick-shooter",
+    "arcade",
+    "score-attack",
+    "neon",
+    "shooter"
+  ],
+  "influencedBy": [
+    {
+      "id": "asteroids",
+      "through": [
+        "arcade",
+        "shooter"
+      ]
+    }
+  ]
+}

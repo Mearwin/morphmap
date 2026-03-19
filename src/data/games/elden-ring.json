@@ -6,9 +6,9 @@
     "open-world",
     "action-rpg",
     "difficulty",
-    "souls-like"
+    "souls-like",
+    "exploration"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "dark-souls",

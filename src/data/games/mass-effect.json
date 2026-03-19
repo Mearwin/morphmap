@@ -6,9 +6,10 @@
     "action-rpg",
     "narrative",
     "moral-choices",
-    "squad-based"
+    "squad-based",
+    "crpg",
+    "party-based"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "star-wars-kotor",

@@ -1,0 +1,30 @@
+{
+  "id": "the-last-of-us-part-ii",
+  "title": "The Last of Us Part II",
+  "date": "2020-06-19",
+  "tags": [
+    "action-adventure",
+    "stealth",
+    "narrative",
+    "survival",
+    "cinematic-action",
+    "set-pieces"
+  ],
+  "influencedBy": [
+    {
+      "id": "the-last-of-us",
+      "through": [
+        "narrative",
+        "survival",
+        "stealth"
+      ]
+    },
+    {
+      "id": "uncharted-2",
+      "through": [
+        "cinematic-action",
+        "set-pieces"
+      ]
+    }
+  ]
+}

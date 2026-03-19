@@ -2,9 +2,21 @@
   "id": "super-metroid",
   "title": "Super Metroid",
   "date": "1994-03-19",
-  "tags": ["metroidvania", "exploration", "atmosphere", "sequence-breaking"],
-  "primaryTag": "platformer",
+  "tags": [
+    "metroidvania",
+    "exploration",
+    "atmosphere",
+    "sequence-breaking",
+    "isolation"
+  ],
   "influencedBy": [
-    { "id": "metroid", "through": ["metroidvania", "exploration", "isolation"] }
+    {
+      "id": "metroid",
+      "through": [
+        "metroidvania",
+        "exploration",
+        "isolation"
+      ]
+    }
   ]
 }

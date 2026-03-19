@@ -1,0 +1,30 @@
+{
+  "id": "monster-hunter",
+  "title": "Monster Hunter",
+  "date": "2004-03-11",
+  "tags": [
+    "action-rpg",
+    "co-op",
+    "boss-hunting",
+    "weapon-variety",
+    "loot",
+    "action-combat",
+    "lock-on"
+  ],
+  "influencedBy": [
+    {
+      "id": "diablo",
+      "through": [
+        "loot",
+        "co-op"
+      ]
+    },
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "action-combat",
+        "lock-on"
+      ]
+    }
+  ]
+}

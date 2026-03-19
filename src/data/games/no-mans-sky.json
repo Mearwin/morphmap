@@ -6,9 +6,9 @@
     "space",
     "procedural-generation",
     "exploration",
-    "survival"
+    "survival",
+    "sandbox"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "minecraft",

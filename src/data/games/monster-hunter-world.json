@@ -6,9 +6,9 @@
     "action-rpg",
     "co-op",
     "boss-battles",
-    "loot"
+    "loot",
+    "difficulty"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "dark-souls",

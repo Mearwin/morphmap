@@ -1,8 +1,6 @@
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { TAG_CATEGORIES } from '../src/types.js'
 
-const VALID_PRIMARY_TAGS = new Set(TAG_CATEGORIES.map(c => c.id))
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/
 
 interface GameFile {
@@ -10,7 +8,6 @@ interface GameFile {
   title: string
   date: string
   tags: string[]
-  primaryTag: string
   influencedBy: { id: string; through: string[] }[]
   imageUrl?: string
 }
@@ -51,9 +48,6 @@ export function buildGames(gamesDir: string): GameFile[] {
     if (!Array.isArray(game.tags) || game.tags.length === 0) {
       throw new Error(`${file}: "tags" must be a non-empty array`)
     }
-    if (!VALID_PRIMARY_TAGS.has(game.primaryTag)) {
-      throw new Error(`${file}: invalid "primaryTag" "${game.primaryTag}" (valid: ${[...VALID_PRIMARY_TAGS].join(', ')})`)
-    }
     if (!Array.isArray(game.influencedBy)) {
       throw new Error(`${file}: "influencedBy" must be an array`)
     }
@@ -86,6 +80,12 @@ if (isMain) {
       }
       if (!Array.isArray(inf.through) || inf.through.length === 0) {
         errors.push(`${game.id}: influence from "${inf.id}" has empty through`)
+      }
+      const tagSet = new Set(game.tags)
+      for (const t of inf.through) {
+        if (!tagSet.has(t)) {
+          errors.push(`${game.id}: through tag "${t}" (from ${inf.id}) not in own tags`)
+        }
       }
     }
   }

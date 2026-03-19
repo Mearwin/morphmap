@@ -6,9 +6,11 @@
     "crpg",
     "turn-based-combat",
     "co-op",
-    "narrative"
+    "narrative",
+    "party-based",
+    "player-choice",
+    "moral-choices"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "baldurs-gate",

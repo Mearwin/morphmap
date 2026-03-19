@@ -6,9 +6,11 @@
     "card-game",
     "horror",
     "meta-narrative",
-    "roguelike"
+    "roguelike",
+    "deck-building",
+    "fourth-wall",
+    "narrative"
   ],
-  "primaryTag": "roguelike",
   "influencedBy": [
     {
       "id": "slay-the-spire",

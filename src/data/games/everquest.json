@@ -2,10 +2,30 @@
   "id": "everquest",
   "title": "EverQuest",
   "date": "1999-03-16",
-  "tags": ["mmorpg", "mmo", "raiding", "persistent-world"],
-  "primaryTag": "rpg",
+  "tags": [
+    "mmorpg",
+    "mmo",
+    "raiding",
+    "persistent-world",
+    "rpg",
+    "fantasy-world",
+    "online-multiplayer",
+    "loot"
+  ],
   "influencedBy": [
-    { "id": "ultima-iv", "through": ["rpg", "fantasy-world"] },
-    { "id": "diablo", "through": ["online-multiplayer", "loot"] }
+    {
+      "id": "ultima-iv",
+      "through": [
+        "rpg",
+        "fantasy-world"
+      ]
+    },
+    {
+      "id": "diablo",
+      "through": [
+        "online-multiplayer",
+        "loot"
+      ]
+    }
   ]
 }

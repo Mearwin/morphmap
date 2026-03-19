@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
 import { scaleTime } from 'd3-scale'
-import { type Game, type GameNode, TAG_CATEGORIES } from '../types'
+import type { Entity, GameNode } from '../types'
+import { useDataset } from '../dataset/DatasetContext'
 import { FORCE, TIMELINE, NODE } from '../constants'
 
-export function useTimeline(games: Game[], width: number, height: number) {
+export function useTimeline(games: Entity[], width: number, height: number) {
+  const { tagPositions } = useDataset()
   const [nodes, setNodes] = useState<GameNode[]>([])
   const workerRef = useRef<Worker | null>(null)
 
@@ -16,81 +18,28 @@ export function useTimeline(games: Game[], width: number, height: number) {
     return scaleTime<number>().domain([minDate, maxDate]).range([TIMELINE.SCALE_PADDING, virtualWidth - TIMELINE.SCALE_PADDING])
   }, [games, width])
 
-  // Compute deterministic Y positions: category bands + tag-popularity ordering within each band
+  // Compute deterministic Y positions using tag-derived positions
   const gameNodeMap = useMemo(() => {
     if (games.length === 0 || width === 0 || height === 0) return null
 
-    // Global tag frequency counts
-    const tagCounts: Record<string, number> = {}
+    const padding = TIMELINE.TAG_Y_PADDING
+    const usableHeight = height - padding * 2
+
+    const map = new Map<string, GameNode>()
     for (const g of games) {
-      for (const tag of g.tags) {
-        tagCounts[tag] = (tagCounts[tag] || 0) + 1
-      }
-    }
+      const tagPos = tagPositions.get(g.id) ?? 0.5
+      const y = padding + tagPos * usableHeight
 
-    // Score each game by its most popular tag
-    function getPopularityScore(g: Game): number {
-      let max = 0
-      for (const tag of g.tags) {
-        max = Math.max(max, tagCounts[tag] || 0)
-      }
-      return max
-    }
-
-    // Group games by primaryTag category
-    const categoryGroups = new Map<string, Game[]>()
-    for (const g of games) {
-      const group = categoryGroups.get(g.primaryTag) || []
-      group.push(g)
-      categoryGroups.set(g.primaryTag, group)
-    }
-
-    // Sort each group by popularity score (desc), then by date for ties
-    for (const group of categoryGroups.values()) {
-      group.sort((a, b) => {
-        const scoreDiff = getPopularityScore(b) - getPopularityScore(a)
-        if (scoreDiff !== 0) return scoreDiff
-        return a.date.localeCompare(b.date)
+      map.set(g.id, {
+        ...g,
+        x: xScale(new Date(g.date)),
+        y,
+        radius: NODE.RADIUS,
       })
     }
 
-    // Layout: each category gets an equal vertical band with gaps between them
-    const padding = TIMELINE.TAG_Y_PADDING
-    const usableHeight = height - padding * 2
-    const bandGap = 20
-    const totalGaps = (TAG_CATEGORIES.length - 1) * bandGap
-    const bandHeight = (usableHeight - totalGaps) / TAG_CATEGORIES.length
-
-    const map = new Map<string, GameNode>()
-    for (let catIdx = 0; catIdx < TAG_CATEGORIES.length; catIdx++) {
-      const cat = TAG_CATEGORIES[catIdx]
-      const bandTop = padding + catIdx * (bandHeight + bandGap)
-      const bandCenter = bandTop + bandHeight / 2
-      const group = categoryGroups.get(cat.id) || []
-
-      // Compute spacing to fit all games within the band
-      const maxSpread = bandHeight - NODE.RADIUS * 2
-      const idealSpacing = NODE.RADIUS * 3
-      const spacing = group.length > 1
-        ? Math.min(idealSpacing, maxSpread / (group.length - 1))
-        : 0
-
-      for (let i = 0; i < group.length; i++) {
-        const g = group[i]
-        const offset = (i - (group.length - 1) / 2) * spacing
-        const y = bandCenter + offset
-
-        map.set(g.id, {
-          ...g,
-          x: xScale(new Date(g.date)),
-          y,
-          radius: NODE.RADIUS,
-        })
-      }
-    }
-
     return map
-  }, [games, width, height, xScale])
+  }, [games, width, height, xScale, tagPositions])
 
   useEffect(() => {
     if (!gameNodeMap) return

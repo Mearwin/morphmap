@@ -7,9 +7,10 @@
     "first-person",
     "physics",
     "narrative",
-    "humor"
+    "humor",
+    "physics-engine",
+    "narrative-driven"
   ],
-  "primaryTag": "puzzle",
   "influencedBy": [
     {
       "id": "half-life-2",

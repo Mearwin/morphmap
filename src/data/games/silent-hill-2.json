@@ -6,9 +6,9 @@
     "survival-horror",
     "psychological",
     "narrative-driven",
-    "atmospheric"
+    "atmospheric",
+    "puzzle-solving"
   ],
-  "primaryTag": "survival-horror",
   "influencedBy": [
     {
       "id": "resident-evil",

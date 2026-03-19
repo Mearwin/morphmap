@@ -6,9 +6,11 @@
     "precision-platformer",
     "narrative",
     "assist-mode",
-    "tight-controls"
+    "tight-controls",
+    "difficulty",
+    "side-scrolling",
+    "level-design"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "super-meat-boy",

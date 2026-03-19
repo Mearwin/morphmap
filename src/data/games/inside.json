@@ -6,9 +6,9 @@
     "puzzle-platformer",
     "atmospheric",
     "wordless-narrative",
-    "cinematic"
+    "cinematic",
+    "minimalist"
   ],
-  "primaryTag": "puzzle",
   "influencedBy": [
     {
       "id": "limbo",

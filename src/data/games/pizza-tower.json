@@ -1,0 +1,26 @@
+{
+  "id": "pizza-tower",
+  "title": "Pizza Tower",
+  "date": "2023-01-26",
+  "tags": [
+    "platformer",
+    "speedrun",
+    "score-attack",
+    "wario-inspired"
+  ],
+  "influencedBy": [
+    {
+      "id": "wario-ware",
+      "through": [
+        "wario-inspired"
+      ]
+    },
+    {
+      "id": "celeste",
+      "through": [
+        "platformer",
+        "speedrun"
+      ]
+    }
+  ]
+}

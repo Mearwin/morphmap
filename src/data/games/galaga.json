@@ -2,9 +2,20 @@
   "id": "galaga",
   "title": "Galaga",
   "date": "1981-09-01",
-  "tags": ["arcade", "shooter", "wave-based", "high-score"],
-  "primaryTag": "fps",
+  "tags": [
+    "arcade",
+    "shooter",
+    "wave-based",
+    "high-score"
+  ],
   "influencedBy": [
-    { "id": "space-invaders", "through": ["arcade", "shooter", "wave-based"] }
+    {
+      "id": "space-invaders",
+      "through": [
+        "arcade",
+        "shooter",
+        "wave-based"
+      ]
+    }
   ]
 }

@@ -1,12 +1,12 @@
 import { useEffect, useMemo } from 'react'
 import type { GameStoreAction } from '../store/gameStoreReducer'
-import type { Link, Game } from '../types'
+import type { Link, Entity } from '../types'
 
-type GameMap = Map<string, Game>
+type EntityMap = Map<string, Entity>
 
 type Params = {
   selectedGameId: string | null
-  games: Game[]
+  games: Entity[]
   links: Link[]
   dispatch: React.Dispatch<GameStoreAction>
   searchInputRef: React.RefObject<HTMLInputElement | null>
@@ -22,7 +22,7 @@ export function getDirectNeighbors(gameId: string, links: Link[]): { ancestors: 
   return { ancestors, descendants }
 }
 
-export function sortByDate(ids: string[], games: Game[] | GameMap): string[] {
+export function sortByDate(ids: string[], games: Entity[] | EntityMap): string[] {
   const gameMap = games instanceof Map ? games : new Map(games.map(g => [g.id, g]))
   return ids.slice().sort((a, b) => {
     const ga = gameMap.get(a)
@@ -33,7 +33,7 @@ export function sortByDate(ids: string[], games: Game[] | GameMap): string[] {
 }
 
 /** Pick the neighbor whose date is closest to the selected game's date. */
-export function closestByDate(selectedId: string, neighborIds: string[], games: Game[] | GameMap): string | null {
+export function closestByDate(selectedId: string, neighborIds: string[], games: Entity[] | EntityMap): string | null {
   if (neighborIds.length === 0) return null
   const gameMap = games instanceof Map ? games : new Map(games.map(g => [g.id, g]))
   const selectedDate = new Date(gameMap.get(selectedId)?.date ?? '').getTime()

@@ -6,9 +6,9 @@
     "jrpg",
     "action-rpg",
     "open-world",
-    "cinematic"
+    "cinematic",
+    "narrative"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "final-fantasy-vii",

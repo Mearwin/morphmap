@@ -2,10 +2,28 @@
   "id": "medal-of-honor",
   "title": "Medal of Honor",
   "date": "1999-10-31",
-  "tags": ["fps", "world-war-2", "cinematic", "stealth"],
-  "primaryTag": "fps",
+  "tags": [
+    "fps",
+    "world-war-2",
+    "cinematic",
+    "stealth",
+    "cinematic-action",
+    "scripted-sequences"
+  ],
   "influencedBy": [
-    { "id": "goldeneye-007", "through": ["fps", "cinematic-action"] },
-    { "id": "half-life", "through": ["fps", "scripted-sequences"] }
+    {
+      "id": "goldeneye-007",
+      "through": [
+        "fps",
+        "cinematic-action"
+      ]
+    },
+    {
+      "id": "half-life",
+      "through": [
+        "fps",
+        "scripted-sequences"
+      ]
+    }
   ]
 }

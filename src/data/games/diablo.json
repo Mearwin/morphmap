@@ -6,9 +6,10 @@
     "action-rpg",
     "loot",
     "dungeon-crawl",
-    "randomized-items"
+    "randomized-items",
+    "procedural-generation",
+    "permadeath"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "rogue",

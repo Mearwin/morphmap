@@ -6,9 +6,13 @@
     "roguelike",
     "action",
     "narrative",
-    "mythology"
+    "mythology",
+    "procedural-generation",
+    "permadeath",
+    "item-synergy",
+    "action-rpg",
+    "difficulty"
   ],
-  "primaryTag": "roguelike",
   "influencedBy": [
     {
       "id": "rogue",

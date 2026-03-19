@@ -6,9 +6,10 @@
     "open-world",
     "narrative",
     "moral-choices",
-    "action-rpg"
+    "action-rpg",
+    "first-person-rpg",
+    "party-based"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "skyrim",

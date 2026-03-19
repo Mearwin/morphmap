@@ -1,0 +1,27 @@
+{
+  "id": "satisfactory",
+  "title": "Satisfactory",
+  "date": "2020-06-08",
+  "tags": [
+    "factory-building",
+    "first-person",
+    "exploration",
+    "automation"
+  ],
+  "influencedBy": [
+    {
+      "id": "factorio",
+      "through": [
+        "factory-building",
+        "automation"
+      ]
+    },
+    {
+      "id": "minecraft",
+      "through": [
+        "first-person",
+        "exploration"
+      ]
+    }
+  ]
+}

@@ -6,9 +6,10 @@
     "fps",
     "tactical",
     "team-based",
-    "competitive"
+    "competitive",
+    "multiplayer",
+    "arena-shooter"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "half-life",

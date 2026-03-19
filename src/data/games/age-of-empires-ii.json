@@ -6,9 +6,11 @@
     "rts",
     "historical",
     "base-building",
-    "civilizations"
+    "civilizations",
+    "resource-management",
+    "empire-building",
+    "tech-tree"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "command-and-conquer",

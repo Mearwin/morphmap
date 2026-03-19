@@ -6,9 +6,9 @@
     "rts",
     "base-building",
     "resource-management",
-    "factions"
+    "factions",
+    "empire-building"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "civilization",

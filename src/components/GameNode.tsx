@@ -5,14 +5,14 @@ import styles from './GameNode.module.css'
 
 interface Props {
   node: GameNodeType
+  color: string
   isSelected: boolean
   isHighlighted: boolean
   onSelect: (id: string | null) => void
   onHover?: (node: GameNodeType | null, pos: { clientX: number; clientY: number }) => void
 }
 
-export const GameNode = memo(function GameNode({ node, isSelected, isHighlighted, onSelect, onHover }: Props) {
-  const color = `var(--cat-${node.primaryTag})`
+export const GameNode = memo(function GameNode({ node, color, isSelected, isHighlighted, onSelect, onHover }: Props) {
   const opacity = isHighlighted ? 1 : 0.1
 
   return (

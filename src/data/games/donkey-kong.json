@@ -8,7 +8,6 @@
     "jumping",
     "level-based"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "pac-man",

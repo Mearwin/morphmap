@@ -1,0 +1,30 @@
+{
+  "id": "spec-ops-the-line",
+  "title": "Spec Ops: The Line",
+  "date": "2012-06-26",
+  "tags": [
+    "fps",
+    "narrative",
+    "moral-choice",
+    "war",
+    "military-shooter",
+    "narrative-twist",
+    "player-complicity"
+  ],
+  "influencedBy": [
+    {
+      "id": "call-of-duty-4",
+      "through": [
+        "fps",
+        "military-shooter"
+      ]
+    },
+    {
+      "id": "bioshock",
+      "through": [
+        "narrative-twist",
+        "player-complicity"
+      ]
+    }
+  ]
+}

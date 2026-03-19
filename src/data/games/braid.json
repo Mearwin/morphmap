@@ -6,9 +6,11 @@
     "puzzle-platformer",
     "time-manipulation",
     "indie",
-    "narrative"
+    "narrative",
+    "side-scrolling",
+    "level-design",
+    "time-rewind"
   ],
-  "primaryTag": "puzzle",
   "influencedBy": [
     {
       "id": "super-mario-bros",

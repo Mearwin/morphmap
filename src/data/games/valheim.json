@@ -6,9 +6,10 @@
     "survival",
     "crafting",
     "co-op",
-    "viking"
+    "viking",
+    "sandbox",
+    "exploration"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "minecraft",

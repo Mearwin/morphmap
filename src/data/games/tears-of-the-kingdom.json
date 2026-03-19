@@ -6,9 +6,9 @@
     "open-world",
     "physics",
     "crafting",
-    "exploration"
+    "exploration",
+    "creative"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "breath-of-the-wild",

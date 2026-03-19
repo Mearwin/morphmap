@@ -6,9 +6,10 @@
     "open-world",
     "post-apocalyptic",
     "fps-rpg",
-    "moral-choices"
+    "moral-choices",
+    "first-person-rpg",
+    "modding"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "fallout",

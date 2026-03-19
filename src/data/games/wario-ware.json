@@ -1,0 +1,22 @@
+{
+  "id": "wario-ware",
+  "title": "WarioWare, Inc.: Mega Microgames!",
+  "date": "2003-03-21",
+  "tags": [
+    "microgames",
+    "party",
+    "reflexes",
+    "humor",
+    "quick-gameplay",
+    "score-attack"
+  ],
+  "influencedBy": [
+    {
+      "id": "tetris",
+      "through": [
+        "quick-gameplay",
+        "score-attack"
+      ]
+    }
+  ]
+}

@@ -6,9 +6,11 @@
     "fps",
     "immersive-sim",
     "narrative-driven",
-    "environmental-storytelling"
+    "environmental-storytelling",
+    "rpg-elements",
+    "player-choice",
+    "scripted-events"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "system-shock-2",

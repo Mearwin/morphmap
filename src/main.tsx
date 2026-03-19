@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { TAG_CATEGORIES } from './types'
+import { TAG_CATEGORIES } from './data/categories'
 import { THEME } from './constants'
 import App from './App.tsx'
 

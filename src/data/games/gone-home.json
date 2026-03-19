@@ -6,9 +6,10 @@
     "walking-sim",
     "environmental-storytelling",
     "exploration",
-    "narrative"
+    "narrative",
+    "atmospheric",
+    "first-person"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "myst",

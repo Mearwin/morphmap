@@ -1,0 +1,21 @@
+{
+  "id": "pikmin",
+  "title": "Pikmin",
+  "date": "2001-10-26",
+  "tags": [
+    "strategy",
+    "real-time",
+    "puzzle",
+    "nature",
+    "exploration"
+  ],
+  "influencedBy": [
+    {
+      "id": "the-legend-of-zelda",
+      "through": [
+        "exploration",
+        "puzzle"
+      ]
+    }
+  ]
+}

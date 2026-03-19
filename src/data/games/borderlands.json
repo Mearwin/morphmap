@@ -1,0 +1,29 @@
+{
+  "id": "borderlands",
+  "title": "Borderlands",
+  "date": "2009-10-20",
+  "tags": [
+    "fps",
+    "looter-shooter",
+    "co-op",
+    "cel-shading",
+    "loot",
+    "randomized-gear"
+  ],
+  "influencedBy": [
+    {
+      "id": "diablo-ii",
+      "through": [
+        "loot",
+        "randomized-gear"
+      ]
+    },
+    {
+      "id": "halo",
+      "through": [
+        "fps",
+        "co-op"
+      ]
+    }
+  ]
+}

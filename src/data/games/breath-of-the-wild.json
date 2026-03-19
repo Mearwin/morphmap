@@ -6,9 +6,12 @@
     "open-world",
     "exploration",
     "physics",
-    "emergent-gameplay"
+    "emergent-gameplay",
+    "dungeons",
+    "3d-adventure",
+    "sandbox",
+    "crafting"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "the-legend-of-zelda",

@@ -1,0 +1,22 @@
+{
+  "id": "path-of-exile",
+  "title": "Path of Exile",
+  "date": "2013-10-23",
+  "tags": [
+    "action-rpg",
+    "loot",
+    "dark-fantasy",
+    "skill-tree",
+    "free-to-play"
+  ],
+  "influencedBy": [
+    {
+      "id": "diablo-ii",
+      "through": [
+        "action-rpg",
+        "loot",
+        "dark-fantasy"
+      ]
+    }
+  ]
+}

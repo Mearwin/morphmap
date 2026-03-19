@@ -6,9 +6,10 @@
     "fps",
     "narrative-driven",
     "scripted-events",
-    "no-cutscenes"
+    "no-cutscenes",
+    "3d-graphics",
+    "level-editor"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "quake",

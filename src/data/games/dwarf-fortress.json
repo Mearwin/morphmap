@@ -6,9 +6,9 @@
     "simulation",
     "procedural-generation",
     "sandbox",
-    "emergent-gameplay"
+    "emergent-gameplay",
+    "management"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "rogue",

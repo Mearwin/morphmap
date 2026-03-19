@@ -6,9 +6,10 @@
     "co-op",
     "third-person-shooter",
     "friendly-fire",
-    "live-service"
+    "live-service",
+    "sci-fi",
+    "console-shooter"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "left-4-dead",

@@ -1,0 +1,20 @@
+{
+  "id": "cities-skylines",
+  "title": "Cities: Skylines",
+  "date": "2015-03-10",
+  "tags": [
+    "city-builder",
+    "simulation",
+    "modding",
+    "management"
+  ],
+  "influencedBy": [
+    {
+      "id": "sim-city-2000",
+      "through": [
+        "city-builder",
+        "simulation"
+      ]
+    }
+  ]
+}

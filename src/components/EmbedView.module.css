@@ -1,0 +1,44 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.year {
+  color: var(--text-muted);
+}
+
+.badge {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+.badge:hover {
+  opacity: 1;
+}
+
+.body {
+  flex: 1;
+  overflow: auto;
+}

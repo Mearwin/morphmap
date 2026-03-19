@@ -6,9 +6,9 @@
     "roguelike",
     "bullet-hell",
     "auto-attack",
-    "horde-survival"
+    "horde-survival",
+    "item-synergy"
   ],
-  "primaryTag": "roguelike",
   "influencedBy": [
     {
       "id": "the-binding-of-isaac",

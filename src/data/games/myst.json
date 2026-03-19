@@ -6,9 +6,10 @@
     "puzzle",
     "exploration",
     "atmospheric",
-    "first-person"
+    "first-person",
+    "narrative",
+    "inventory-puzzles"
   ],
-  "primaryTag": "puzzle",
   "influencedBy": [
     {
       "id": "the-secret-of-monkey-island",

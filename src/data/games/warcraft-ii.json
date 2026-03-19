@@ -6,9 +6,9 @@
     "rts",
     "base-building",
     "multiplayer",
-    "fantasy"
+    "fantasy",
+    "resource-management"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "command-and-conquer",

@@ -6,9 +6,10 @@
     "jrpg",
     "social-sim",
     "turn-based-combat",
-    "stylish"
+    "stylish",
+    "cinematic",
+    "creature-collection"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "final-fantasy-vii",

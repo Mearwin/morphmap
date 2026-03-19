@@ -6,9 +6,9 @@
     "3d-platformer",
     "time-rewind",
     "parkour",
-    "puzzle-platformer"
+    "puzzle-platformer",
+    "3d-adventure"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "super-mario-64",

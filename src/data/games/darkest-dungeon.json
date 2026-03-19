@@ -1,0 +1,30 @@
+{
+  "id": "darkest-dungeon",
+  "title": "Darkest Dungeon",
+  "date": "2016-01-19",
+  "tags": [
+    "roguelite",
+    "dungeon-crawl",
+    "difficulty",
+    "stress-system",
+    "party-management",
+    "turn-based"
+  ],
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "roguelite",
+        "dungeon-crawl"
+      ]
+    },
+    {
+      "id": "xcom-enemy-unknown",
+      "through": [
+        "turn-based",
+        "party-management",
+        "difficulty"
+      ]
+    }
+  ]
+}

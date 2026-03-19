@@ -6,9 +6,10 @@
     "fighting",
     "violent",
     "fatalities",
-    "digitized-sprites"
+    "digitized-sprites",
+    "competitive",
+    "character-roster"
   ],
-  "primaryTag": "fighting",
   "influencedBy": [
     {
       "id": "street-fighter-ii",

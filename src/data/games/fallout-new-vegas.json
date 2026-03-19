@@ -1,0 +1,29 @@
+{
+  "id": "fallout-new-vegas",
+  "title": "Fallout: New Vegas",
+  "date": "2010-10-19",
+  "tags": [
+    "open-world",
+    "rpg",
+    "post-apocalyptic",
+    "choice-consequence",
+    "narrative"
+  ],
+  "influencedBy": [
+    {
+      "id": "fallout-3",
+      "through": [
+        "open-world",
+        "rpg",
+        "post-apocalyptic"
+      ]
+    },
+    {
+      "id": "planescape-torment",
+      "through": [
+        "narrative",
+        "choice-consequence"
+      ]
+    }
+  ]
+}

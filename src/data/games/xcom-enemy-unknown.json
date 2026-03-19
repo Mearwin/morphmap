@@ -6,9 +6,10 @@
     "turn-based-strategy",
     "tactical",
     "permadeath",
-    "base-management"
+    "base-management",
+    "turn-based",
+    "turn-based-combat"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "civilization",

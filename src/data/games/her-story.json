@@ -6,9 +6,10 @@
     "fmv",
     "detective",
     "nonlinear",
-    "narrative"
+    "narrative",
+    "exploration",
+    "first-person"
   ],
-  "primaryTag": "puzzle",
   "influencedBy": [
     {
       "id": "myst",

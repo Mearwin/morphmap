@@ -1,0 +1,27 @@
+{
+  "id": "cocoon",
+  "title": "Cocoon",
+  "date": "2023-09-29",
+  "tags": [
+    "puzzle",
+    "world-within-world",
+    "exploration",
+    "minimalist"
+  ],
+  "influencedBy": [
+    {
+      "id": "inside",
+      "through": [
+        "puzzle",
+        "minimalist"
+      ]
+    },
+    {
+      "id": "the-witness",
+      "through": [
+        "puzzle",
+        "exploration"
+      ]
+    }
+  ]
+}

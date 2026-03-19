@@ -6,9 +6,9 @@
     "action-rpg",
     "difficulty",
     "gothic",
-    "souls-like"
+    "souls-like",
+    "survival-horror"
   ],
-  "primaryTag": "rpg",
   "influencedBy": [
     {
       "id": "dark-souls",

@@ -6,9 +6,10 @@
     "retro",
     "side-scrolling",
     "boss-battles",
-    "level-design"
+    "level-design",
+    "nonlinear",
+    "tight-controls"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "mega-man",

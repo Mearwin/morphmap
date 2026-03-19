@@ -6,9 +6,11 @@
     "automation",
     "factory-building",
     "logistics",
-    "sandbox"
+    "sandbox",
+    "crafting",
+    "simulation",
+    "emergent-gameplay"
   ],
-  "primaryTag": "sandbox",
   "influencedBy": [
     {
       "id": "minecraft",

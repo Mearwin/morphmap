@@ -6,9 +6,10 @@
     "rts",
     "turn-based-strategy",
     "historical",
-    "large-scale-battles"
+    "large-scale-battles",
+    "turn-based",
+    "empire-building"
   ],
-  "primaryTag": "strategy",
   "influencedBy": [
     {
       "id": "total-war-rome",

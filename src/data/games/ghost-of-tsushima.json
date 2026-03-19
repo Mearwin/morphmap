@@ -6,9 +6,10 @@
     "open-world",
     "stealth",
     "samurai",
-    "cinematic"
+    "cinematic",
+    "historical",
+    "narrative-driven"
   ],
-  "primaryTag": "action-adventure",
   "influencedBy": [
     {
       "id": "assassins-creed-ii",

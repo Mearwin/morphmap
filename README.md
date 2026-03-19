@@ -20,6 +20,9 @@ Morphmap renders 178 iconic games (1972-2024) on a zoomable timeline. Curved inf
 - **Minimap** -- corner overview for orientation in a large graph
 - **Hover tooltips** -- quick game info before committing to a click
 - **Influence strength** -- line thickness reflects how many mechanics a connection carries
+- **Lineage view** -- dedicated column layout showing a game's full ancestor/descendant tree with SVG connectors
+- **Embeddable subgraphs** -- iframe-friendly embed mode via URL hash (`#game=doom&embed=true&depth=2`) with compact header and depth-limited lineage
+- **Export** -- export a game's lineage subgraph as PNG, or copy an `<iframe>` embed snippet to clipboard
 - **Dual renderer** -- SVG for small datasets, Canvas for 400+ nodes
 
 ## Getting Started
@@ -105,19 +108,35 @@ Run `npm test` after editing to verify.
 | `H` | Toggle river view |
 | `?` | Toggle shortcut overlay |
 
+## Embed Mode
+
+Morphmap supports an iframe-embeddable view for blog posts, wikis, or documentation. Add `embed=true` to the URL hash to render a minimal page with just the lineage graph:
+
+```
+https://your-domain/#game=dark-souls&embed=true
+https://your-domain/#game=dark-souls&embed=true&depth=2
+```
+
+- `embed=true` -- renders only the lineage view with a compact header (no toolbar, search, filters, or legend)
+- `depth=N` -- limits the ancestor/descendant traversal to N generations (optional, shows full lineage if omitted)
+- The header shows the game title, year, category dot, and a "Morphmap" badge linking to the full app
+
+The "Copy embed code" button in the detail panel generates the `<iframe>` snippet.
+
 ## Project Structure
 
 ```
 src/
-  components/      UI components (Timeline, GameNode, InfluenceLine, InfluenceRiver, etc.)
+  components/      UI components (Timeline, GameNode, InfluenceLine, InfluenceRiver, LineageView, EmbedView, etc.)
   data/            Static dataset, categories, validation tests
+  dataset/         Dataset abstraction layer (DatasetContext, config interface)
   hooks/           Custom hooks (useTimeline, useViewport, useKeyboardNav, etc.)
   store/           React Context store (reducer, provider, context)
-  utils/           Pure functions (graph, fuzzy search, label placement, river data, etc.)
+  utils/           Pure functions (graph, fuzzy search, label placement, river data, lineage layout, etc.)
   workers/         Web Worker for D3 force simulation
-  types.ts         Core TypeScript types, re-exports TAG_CATEGORIES
+  types.ts         Core TypeScript types (Entity, Game, GameNode, Link)
   constants.ts     All magic numbers (force config, rendering params, theme colors)
-  App.tsx          Root component
+  App.tsx          Root component with embed mode routing
   main.tsx         Entry point, CSS variable injection
 ```
 

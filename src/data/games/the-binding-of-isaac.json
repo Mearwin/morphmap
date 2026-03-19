@@ -6,9 +6,9 @@
     "roguelike",
     "procedural-generation",
     "permadeath",
-    "item-synergy"
+    "item-synergy",
+    "dungeons"
   ],
-  "primaryTag": "roguelike",
   "influencedBy": [
     {
       "id": "rogue",

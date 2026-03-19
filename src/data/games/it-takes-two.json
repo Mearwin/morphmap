@@ -2,11 +2,36 @@
   "id": "it-takes-two",
   "title": "It Takes Two",
   "date": "2021-03-26",
-  "tags": ["co-op", "platformer", "action-adventure", "split-screen"],
-  "primaryTag": "platformer",
+  "tags": [
+    "co-op",
+    "platformer",
+    "action-adventure",
+    "split-screen",
+    "platforming",
+    "level-variety",
+    "puzzle-mechanics"
+  ],
   "influencedBy": [
-    { "id": "littlebigplanet", "through": ["co-op", "platforming"] },
-    { "id": "super-mario-galaxy", "through": ["platforming", "level-variety"] },
-    { "id": "portal-2", "through": ["co-op", "puzzle-mechanics"] }
+    {
+      "id": "littlebigplanet",
+      "through": [
+        "co-op",
+        "platforming"
+      ]
+    },
+    {
+      "id": "super-mario-galaxy",
+      "through": [
+        "platforming",
+        "level-variety"
+      ]
+    },
+    {
+      "id": "portal-2",
+      "through": [
+        "co-op",
+        "puzzle-mechanics"
+      ]
+    }
   ]
 }

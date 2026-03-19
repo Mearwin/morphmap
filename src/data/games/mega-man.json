@@ -6,9 +6,9 @@
     "side-scrolling",
     "boss-battles",
     "nonlinear",
-    "power-absorption"
+    "power-absorption",
+    "tight-controls"
   ],
-  "primaryTag": "platformer",
   "influencedBy": [
     {
       "id": "super-mario-bros",

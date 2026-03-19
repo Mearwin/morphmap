@@ -6,9 +6,11 @@
     "battle-royale",
     "fps",
     "survival",
-    "last-man-standing"
+    "last-man-standing",
+    "open-world",
+    "multiplayer",
+    "tactical"
   ],
-  "primaryTag": "fps",
   "influencedBy": [
     {
       "id": "dayz",

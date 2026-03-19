@@ -1,0 +1,21 @@
+{
+  "id": "saints-row-2",
+  "title": "Saints Row 2",
+  "date": "2008-10-14",
+  "tags": [
+    "open-world",
+    "sandbox",
+    "humor",
+    "crime"
+  ],
+  "influencedBy": [
+    {
+      "id": "gta-san-andreas",
+      "through": [
+        "open-world",
+        "sandbox",
+        "crime"
+      ]
+    }
+  ]
+}

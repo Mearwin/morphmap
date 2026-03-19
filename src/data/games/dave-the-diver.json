@@ -1,0 +1,20 @@
+{
+  "id": "dave-the-diver",
+  "title": "Dave the Diver",
+  "date": "2023-06-28",
+  "tags": [
+    "adventure",
+    "fishing",
+    "restaurant-management",
+    "pixel-art"
+  ],
+  "influencedBy": [
+    {
+      "id": "stardew-valley",
+      "through": [
+        "fishing",
+        "pixel-art"
+      ]
+    }
+  ]
+}

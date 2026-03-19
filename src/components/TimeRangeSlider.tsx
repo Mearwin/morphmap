@@ -1,12 +1,13 @@
 import { useCallback, useMemo } from 'react'
 import { useGameStore } from '../store/useGameStore'
+import { useDataset } from '../dataset/DatasetContext'
 import styles from './TimeRangeSlider.module.css'
-
-const MIN_YEAR = 1972
-const MAX_YEAR = 2024
 
 export function TimeRangeSlider() {
   const { state, dispatch } = useGameStore()
+  const { timeRange: datasetTimeRange } = useDataset()
+  const MIN_YEAR = datasetTimeRange.min
+  const MAX_YEAR = datasetTimeRange.max
   const fromYear = state.timeRange?.from ?? MIN_YEAR
   const toYear = state.timeRange?.to ?? MAX_YEAR
 

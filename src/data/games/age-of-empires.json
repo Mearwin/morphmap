@@ -2,10 +2,27 @@
   "id": "age-of-empires",
   "title": "Age of Empires",
   "date": "1997-10-15",
-  "tags": ["rts", "historical", "base-building", "resource-management"],
-  "primaryTag": "strategy",
+  "tags": [
+    "rts",
+    "historical",
+    "base-building",
+    "resource-management",
+    "technology-progression"
+  ],
   "influencedBy": [
-    { "id": "warcraft", "through": ["rts", "base-building"] },
-    { "id": "civilization", "through": ["historical", "technology-progression"] }
+    {
+      "id": "warcraft",
+      "through": [
+        "rts",
+        "base-building"
+      ]
+    },
+    {
+      "id": "civilization",
+      "through": [
+        "historical",
+        "technology-progression"
+      ]
+    }
   ]
 }

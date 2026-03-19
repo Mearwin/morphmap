@@ -1,0 +1,28 @@
+{
+  "id": "deep-rock-galactic",
+  "title": "Deep Rock Galactic",
+  "date": "2020-05-13",
+  "tags": [
+    "fps",
+    "co-op",
+    "procedural-generation",
+    "mining",
+    "class-based"
+  ],
+  "influencedBy": [
+    {
+      "id": "left-4-dead",
+      "through": [
+        "co-op",
+        "class-based"
+      ]
+    },
+    {
+      "id": "minecraft",
+      "through": [
+        "mining",
+        "procedural-generation"
+      ]
+    }
+  ]
+}

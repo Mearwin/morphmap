@@ -1,0 +1,29 @@
+{
+  "id": "fire-emblem",
+  "title": "Fire Emblem: The Blazing Blade",
+  "date": "2003-04-25",
+  "tags": [
+    "tactical-rpg",
+    "permadeath",
+    "grid-based",
+    "narrative",
+    "turn-based-strategy",
+    "rpg"
+  ],
+  "influencedBy": [
+    {
+      "id": "advance-wars",
+      "through": [
+        "turn-based-strategy",
+        "grid-based"
+      ]
+    },
+    {
+      "id": "final-fantasy",
+      "through": [
+        "rpg",
+        "narrative"
+      ]
+    }
+  ]
+}
