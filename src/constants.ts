@@ -13,7 +13,7 @@ export const FORCE = {
 export const TIMELINE = {
   SCALE_PADDING: 100,
   DATE_PAD_DAYS: 365,
-  TAG_Y_PADDING: 60,
+  TAG_Y_PADDING: 30,
   WIDTH_MULTIPLIER: 3,
   ZOOM_MIN: 0.2,
   ZOOM_MAX: 5,

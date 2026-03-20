@@ -9,19 +9,9 @@ export interface Entity {
   title: string
   date: string
   tags: string[]
-  primaryTag: string
   influencedBy: Influence[]
   [key: string]: unknown
 }
-
-export type TagCategory = {
-  id: string
-  label: string
-  color: string
-}
-
-// Re-export from canonical data file so existing imports keep working
-export { TAG_CATEGORIES, TAG_COLORS } from './data/categories'
 
 /** Layout-positioned entity for rendering */
 export interface EntityNode extends Entity {
@@ -49,4 +39,3 @@ export interface Link {
   target: string
   through: string[]
 }
-

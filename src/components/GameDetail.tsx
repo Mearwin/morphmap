@@ -3,6 +3,7 @@ import type { Entity } from '../types'
 import { useGameStore } from '../store/useGameStore'
 import { useDataset } from '../dataset/DatasetContext'
 import { exportSubgraphAsPng } from '../utils/exportSubgraph'
+import { ColorExplainer } from './ColorExplainer'
 import styles from './GameDetail.module.css'
 
 interface Props {
@@ -136,6 +137,8 @@ export function GameDetail({ game }: Props) {
           <span key={tag} className={styles.tag}>{tag}</span>
         ))}
       </div>
+
+      <ColorExplainer game={displayedGame} />
 
       {ancestors.length > 0 && (
         <div className={styles.section}>

@@ -1,5 +1,3 @@
-import type { TagCategory } from '../types'
-
 export interface DatasetConfig {
   /** Human-readable name, e.g. "Video Games" */
   name: string
@@ -7,18 +5,14 @@ export interface DatasetConfig {
   entityLabel: string
   /** Plural label, e.g. "games" */
   entityLabelPlural: string
-  /** Category taxonomy for primaryTag grouping */
-  categories: TagCategory[]
-  /** Category id -> hex color lookup (derived from categories) */
-  categoryColors: Record<string, string>
+  /** Per-game HSL color derived from tags */
+  gameColors: Map<string, string>
+  /** Per-game Y-axis position [0, 1] derived from tags */
+  tagPositions: Map<string, number>
   /** Label for the "influenced by" relationship, e.g. "Influenced by" */
   influenceLabel: string
   /** Label for the forward relationship, e.g. "Influenced" */
   influencedLabel: string
   /** Time axis extent for this dataset */
   timeRange: { min: number; max: number }
-  /** Per-entity color lookup (computed from tags). Optional — falls back to categoryColors[primaryTag] */
-  gameColors: Map<string, string>
-  /** Per-entity normalized tag position [0,1]. Optional — used for layout hinting */
-  tagPositions: Map<string, number>
 }

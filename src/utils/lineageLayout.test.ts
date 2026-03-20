@@ -8,7 +8,6 @@ const makeGame = (id: string, date: string, influencedBy: { id: string; through:
   title: id.charAt(0).toUpperCase() + id.slice(1),
   date,
   tags: ['action'],
-  primaryTag: 'fps',
   influencedBy,
 })
 
@@ -72,10 +71,10 @@ describe('buildLineageData', () => {
   it('limits ancestor depth when maxDepth is set', () => {
     // Chain: A -> B -> C -> D (selected). maxDepth=1 -> only C as ancestor
     const games = new Map<string, Game>([
-      ['a', { id: 'a', title: 'A', date: '1980-01-01', tags: [], primaryTag: 'fps', influencedBy: [] }],
-      ['b', { id: 'b', title: 'B', date: '1985-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'a', through: ['t'] }] }],
-      ['c', { id: 'c', title: 'C', date: '1990-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'b', through: ['t'] }] }],
-      ['d', { id: 'd', title: 'D', date: '1995-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'c', through: ['t'] }] }],
+      ['a', { id: 'a', title: 'A', date: '1980-01-01', tags: [], influencedBy: [] }],
+      ['b', { id: 'b', title: 'B', date: '1985-01-01', tags: [], influencedBy: [{ id: 'a', through: ['t'] }] }],
+      ['c', { id: 'c', title: 'C', date: '1990-01-01', tags: [], influencedBy: [{ id: 'b', through: ['t'] }] }],
+      ['d', { id: 'd', title: 'D', date: '1995-01-01', tags: [], influencedBy: [{ id: 'c', through: ['t'] }] }],
     ])
     const links = buildLinks([...games.values()])
     const adj = buildAdjacency(links)
@@ -90,10 +89,10 @@ describe('buildLineageData', () => {
   it('limits descendant depth when maxDepth is set', () => {
     // Same chain. Selected=A, maxDepth=2 -> B and C included, D excluded
     const games = new Map<string, Game>([
-      ['a', { id: 'a', title: 'A', date: '1980-01-01', tags: [], primaryTag: 'fps', influencedBy: [] }],
-      ['b', { id: 'b', title: 'B', date: '1985-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'a', through: ['t'] }] }],
-      ['c', { id: 'c', title: 'C', date: '1990-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'b', through: ['t'] }] }],
-      ['d', { id: 'd', title: 'D', date: '1995-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'c', through: ['t'] }] }],
+      ['a', { id: 'a', title: 'A', date: '1980-01-01', tags: [], influencedBy: [] }],
+      ['b', { id: 'b', title: 'B', date: '1985-01-01', tags: [], influencedBy: [{ id: 'a', through: ['t'] }] }],
+      ['c', { id: 'c', title: 'C', date: '1990-01-01', tags: [], influencedBy: [{ id: 'b', through: ['t'] }] }],
+      ['d', { id: 'd', title: 'D', date: '1995-01-01', tags: [], influencedBy: [{ id: 'c', through: ['t'] }] }],
     ])
     const links = buildLinks([...games.values()])
     const adj = buildAdjacency(links)
@@ -107,9 +106,9 @@ describe('buildLineageData', () => {
 
   it('returns full lineage when maxDepth is undefined', () => {
     const games = new Map<string, Game>([
-      ['a', { id: 'a', title: 'A', date: '1980-01-01', tags: [], primaryTag: 'fps', influencedBy: [] }],
-      ['b', { id: 'b', title: 'B', date: '1985-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'a', through: ['t'] }] }],
-      ['c', { id: 'c', title: 'C', date: '1990-01-01', tags: [], primaryTag: 'fps', influencedBy: [{ id: 'b', through: ['t'] }] }],
+      ['a', { id: 'a', title: 'A', date: '1980-01-01', tags: [], influencedBy: [] }],
+      ['b', { id: 'b', title: 'B', date: '1985-01-01', tags: [], influencedBy: [{ id: 'a', through: ['t'] }] }],
+      ['c', { id: 'c', title: 'C', date: '1990-01-01', tags: [], influencedBy: [{ id: 'b', through: ['t'] }] }],
     ])
     const links = buildLinks([...games.values()])
     const adj = buildAdjacency(links)

@@ -3,11 +3,11 @@ import { buildRiverData } from './riverData'
 import type { Game, Link } from '../types'
 
 const games: Game[] = [
-  { id: 'doom', title: 'Doom', date: '1993-12-10', tags: ['fps'], primaryTag: 'fps', influencedBy: [] },
-  { id: 'quake', title: 'Quake', date: '1996-06-22', tags: ['fps'], primaryTag: 'fps', influencedBy: [{ id: 'doom', through: ['fps', 'modding'] }] },
-  { id: 'half-life', title: 'Half-Life', date: '1998-11-19', tags: ['fps'], primaryTag: 'fps', influencedBy: [{ id: 'quake', through: ['fps'] }, { id: 'doom', through: ['fps'] }] },
-  { id: 'mario', title: 'Super Mario Bros.', date: '1985-09-13', tags: ['platformer'], primaryTag: 'platformer', influencedBy: [] },
-  { id: 'zelda-oot', title: 'Zelda: Ocarina of Time', date: '1998-11-21', tags: ['action-rpg'], primaryTag: 'action-adventure', influencedBy: [{ id: 'mario', through: ['exploration'] }] },
+  { id: 'doom', title: 'Doom', date: '1993-12-10', tags: ['fps'], influencedBy: [] },
+  { id: 'quake', title: 'Quake', date: '1996-06-22', tags: ['fps'], influencedBy: [{ id: 'doom', through: ['fps', 'modding'] }] },
+  { id: 'half-life', title: 'Half-Life', date: '1998-11-19', tags: ['fps'], influencedBy: [{ id: 'quake', through: ['fps'] }, { id: 'doom', through: ['fps'] }] },
+  { id: 'mario', title: 'Super Mario Bros.', date: '1985-09-13', tags: ['platformer'], influencedBy: [] },
+  { id: 'zelda-oot', title: 'Zelda: Ocarina of Time', date: '1998-11-21', tags: ['action-rpg'], influencedBy: [{ id: 'mario', through: ['exploration'] }] },
 ]
 
 const links: Link[] = [

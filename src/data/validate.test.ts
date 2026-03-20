@@ -1,8 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import games from './games.json'
-import { TAG_CATEGORIES } from '../types'
 
-const validPrimaryTags = new Set(TAG_CATEGORIES.map(c => c.id))
 const gameIds = new Set(games.map(g => g.id))
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/
 
@@ -24,7 +22,6 @@ describe('games.json validation', () => {
       if (typeof g.title !== 'string' || g.title === '') errors.push(`${g.id}: missing title`)
       if (typeof g.date !== 'string') errors.push(`${g.id}: missing date`)
       if (!Array.isArray(g.tags)) errors.push(`${g.id}: tags is not an array`)
-      if (typeof g.primaryTag !== 'string') errors.push(`${g.id}: missing primaryTag`)
       if (!Array.isArray(g.influencedBy)) errors.push(`${g.id}: influencedBy is not an array`)
     }
     expect(errors, errors.join('\n')).toEqual([])
@@ -40,16 +37,6 @@ describe('games.json validation', () => {
       const d = new Date(g.date)
       if (isNaN(d.getTime())) {
         errors.push(`${g.id}: date "${g.date}" does not parse`)
-      }
-    }
-    expect(errors, errors.join('\n')).toEqual([])
-  })
-
-  it('every primaryTag is a known category', () => {
-    const errors: string[] = []
-    for (const g of games) {
-      if (!validPrimaryTags.has(g.primaryTag)) {
-        errors.push(`${g.id}: unknown primaryTag "${g.primaryTag}" (valid: ${[...validPrimaryTags].join(', ')})`)
       }
     }
     expect(errors, errors.join('\n')).toEqual([])

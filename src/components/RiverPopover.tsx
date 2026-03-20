@@ -4,7 +4,9 @@ import type { EraCategoryCell } from '../utils/riverData'
 import styles from './RiverPopover.module.css'
 
 interface Props {
-  categoryId: string
+  tagId: string
+  tagLabel: string
+  tagColor: string
   eraLabel: string
   cell: EraCategoryCell
   x: number
@@ -13,12 +15,9 @@ interface Props {
   onSelectGame: (id: string) => void
 }
 
-export function RiverPopover({ categoryId, eraLabel, cell, x, y, onClose, onSelectGame }: Props) {
-  const { entityLabelPlural, categories, categoryColors } = useDataset()
-  const tagLabel = categories.find(c => c.id === categoryId)?.label ?? categoryId
-  const tagColor = categoryColors[categoryId] || '#6b6b80'
+export function RiverPopover({ tagId, tagLabel, tagColor, eraLabel, cell, x, y, onClose, onSelectGame }: Props) {
+  const { entityLabelPlural } = useDataset()
 
-  // Escape to close
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
@@ -31,7 +30,6 @@ export function RiverPopover({ categoryId, eraLabel, cell, x, y, onClose, onSele
     return () => window.removeEventListener('keydown', handleKeyDown, true)
   }, [onClose])
 
-  // Position: keep popover on screen
   const popoverStyle: React.CSSProperties = {
     left: Math.min(x, window.innerWidth - 300),
     top: Math.min(y, window.innerHeight - 340),

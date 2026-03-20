@@ -12,7 +12,6 @@ const makeGame = (id: string, influencedBy: { id: string; through: string[] }[] 
   title: id,
   date: '2000-01-01',
   tags: ['action'],
-  primaryTag: 'fps',
   influencedBy,
 })
 

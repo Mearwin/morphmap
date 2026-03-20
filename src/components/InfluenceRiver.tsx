@@ -5,6 +5,7 @@ import { useGameStore } from '../store/useGameStore'
 import { buildLinks } from '../utils/graph'
 import { buildRiverData, type EraCategoryCell } from '../utils/riverData'
 import { useDataset } from '../dataset/DatasetContext'
+import { hslFromPosition } from '../utils/tagColor'
 import { THEME } from '../constants'
 import { RiverPopover } from './RiverPopover'
 import { roundRect } from '../utils/canvas'
@@ -13,7 +14,9 @@ import styles from './InfluenceRiver.module.css'
 const MARGINS = { left: 40, right: 40, top: 30, bottom: 50 } as const
 
 type PopoverState = {
-  categoryId: string
+  tagId: string
+  tagLabel: string
+  tagColor: string
   eraLabel: string
   cell: EraCategoryCell
   x: number
@@ -27,7 +30,7 @@ type HoverState = {
 
 export function InfluenceRiver() {
   const { games, state, dispatch } = useGameStore()
-  const { categories, categoryColors } = useDataset()
+  const { gameColors } = useDataset()
   const { selectedTag } = state
   const containerRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -43,11 +46,24 @@ export function InfluenceRiver() {
     [games, links, selectedTag],
   )
 
+  // Compute tag colors for streams
+  const tagColorMap = useMemo(() => {
+    const allTags = new Set<string>()
+    for (const g of games) for (const t of g.tags) allTags.add(t)
+    const sortedTags = [...allTags].sort()
+    const tagIndex = new Map(sortedTags.map((t, i) => [t, i]))
+    const totalTags = sortedTags.length
+    const colors = new Map<string, string>()
+    for (const tag of sortedTags) {
+      colors.set(tag, hslFromPosition(tagIndex.get(tag)! / totalTags))
+    }
+    return colors
+  }, [games])
+
   // Build D3 stack data
   const stackData = useMemo(() => {
     const { slices, categoryIds } = riverData
 
-    // Convert slices to D3-stackable rows
     const rows = slices.map(slice => {
       const row: Record<string, number> = { eraMid: slice.eraMid }
       for (const catId of categoryIds) {
@@ -69,7 +85,6 @@ export function InfluenceRiver() {
     rafRef.current = requestAnimationFrame(() => drawRef.current())
   }, [])
 
-  // Core draw
   const draw = useCallback(() => {
     const canvas = canvasRef.current
     if (!canvas) return
@@ -91,13 +106,11 @@ export function InfluenceRiver() {
     const plotW = width - MARGINS.left - MARGINS.right
     const plotH = height - MARGINS.top - MARGINS.bottom
 
-    // X scale: era midpoints to horizontal
     const eraMids = slices.map(s => s.eraMid)
     const xScale = scaleLinear()
       .domain([eraMids[0], eraMids[eraMids.length - 1]])
       .range([MARGINS.left, MARGINS.left + plotW])
 
-    // Y scale: find stack extent and map to plot area
     let yMin = Infinity
     let yMax = -Infinity
     for (const layer of stackData) {
@@ -106,13 +119,11 @@ export function InfluenceRiver() {
         if (point[1] > yMax) yMax = point[1]
       }
     }
-    // Add some padding
     const yPad = (yMax - yMin) * 0.08 || 1
     const yScale = scaleLinear()
       .domain([yMin - yPad, yMax + yPad])
       .range([MARGINS.top + plotH, MARGINS.top])
 
-    // Draw streams
     const areaGen = area<[number, number]>()
       .x((_d, i) => xScale(eraMids[i]))
       .y0(d => yScale(d[0]))
@@ -123,19 +134,16 @@ export function InfluenceRiver() {
     for (let layerIdx = 0; layerIdx < stackData.length; layerIdx++) {
       const layer = stackData[layerIdx]
       const catId = layer.key
-
       const isHovered = hovered?.categoryId === catId
       const hasHover = hovered !== null
-
       ctx.globalAlpha = hasHover ? (isHovered ? 1 : 0.25) : 0.85
-      ctx.fillStyle = categoryColors[catId] || THEME.textMuted
+      ctx.fillStyle = tagColorMap.get(catId) ?? THEME.textMuted
       ctx.beginPath()
       areaGen(layer as [number, number][])
       ctx.fill()
     }
     ctx.globalAlpha = 1
 
-    // Draw time axis
     ctx.fillStyle = THEME.textMuted
     ctx.font = '11px Inter, -apple-system, sans-serif'
     ctx.textAlign = 'center'
@@ -143,7 +151,6 @@ export function InfluenceRiver() {
 
     for (const slice of slices) {
       const x = xScale(slice.eraMid)
-      // Tick line
       ctx.strokeStyle = THEME.border
       ctx.lineWidth = 1
       ctx.setLineDash([2, 4])
@@ -152,15 +159,13 @@ export function InfluenceRiver() {
       ctx.lineTo(x, MARGINS.top + plotH)
       ctx.stroke()
       ctx.setLineDash([])
-      // Label
       ctx.fillStyle = THEME.textMuted
       ctx.fillText(String(slice.eraStart), x, MARGINS.top + plotH + 10)
     }
 
-    // Hover label
     if (hovered) {
       const slice = slices[hovered.eraIndex]
-      const catLabel = categories.find(c => c.id === hovered.categoryId)?.label ?? hovered.categoryId
+      const catLabel = hovered.categoryId
       const cell = slice?.byCategory[hovered.categoryId]
       if (slice && cell) {
         const x = xScale(slice.eraMid)
@@ -168,17 +173,14 @@ export function InfluenceRiver() {
         if (layer) {
           const point = layer[hovered.eraIndex]
           const y = yScale((point[0] + point[1]) / 2)
-
           const text = `${catLabel} \u2014 ${cell.count} influence${cell.count !== 1 ? 's' : ''}`
           const textWidth = ctx.measureText(text).width + 16
-
           ctx.fillStyle = THEME.surface
           ctx.strokeStyle = THEME.border
           ctx.lineWidth = 1
           roundRect(ctx, x - textWidth / 2, y - 24, textWidth, 22, 4)
           ctx.fill()
           ctx.stroke()
-
           ctx.fillStyle = THEME.text
           ctx.font = '12px Inter, -apple-system, sans-serif'
           ctx.textAlign = 'center'
@@ -187,19 +189,16 @@ export function InfluenceRiver() {
         }
       }
     }
-  }, [riverData, stackData, categoryColors, categories])
+  }, [riverData, stackData, tagColorMap])
 
-  // Sync draw ref and schedule redraw when draw function changes
   useEffect(() => {
     drawRef.current = draw
     scheduleRedraw()
   }, [draw, scheduleRedraw])
 
-  // Resize observer
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
-
     const observer = new ResizeObserver(entries => {
       const entry = entries[0]
       if (!entry) return
@@ -214,30 +213,24 @@ export function InfluenceRiver() {
       }
       scheduleRedraw()
     })
-
     observer.observe(container)
     return () => observer.disconnect()
   }, [scheduleRedraw])
 
-  // Hit testing: find which category + era the cursor is over
   const hitTest = useCallback((clientX: number, clientY: number): HoverState => {
     const canvas = canvasRef.current
     if (!canvas) return null
     const rect = canvas.getBoundingClientRect()
     const screenX = clientX - rect.left
     const screenY = clientY - rect.top
-
     const { width, height } = dimensionsRef.current
     const { slices } = riverData
-
     const plotW = width - MARGINS.left - MARGINS.right
     const plotH = height - MARGINS.top - MARGINS.bottom
-
     const eraMids = slices.map(s => s.eraMid)
     const xScale = scaleLinear()
       .domain([eraMids[0], eraMids[eraMids.length - 1]])
       .range([MARGINS.left, MARGINS.left + plotW])
-
     let yMin = Infinity
     let yMax = -Infinity
     for (const layer of stackData) {
@@ -250,23 +243,14 @@ export function InfluenceRiver() {
     const yScale = scaleLinear()
       .domain([yMin - yPad, yMax + yPad])
       .range([MARGINS.top + plotH, MARGINS.top])
-
-    // Find nearest era index
     let bestEraIdx = 0
     let bestEraDist = Infinity
     for (let i = 0; i < eraMids.length; i++) {
       const dist = Math.abs(xScale(eraMids[i]) - screenX)
-      if (dist < bestEraDist) {
-        bestEraDist = dist
-        bestEraIdx = i
-      }
+      if (dist < bestEraDist) { bestEraDist = dist; bestEraIdx = i }
     }
-
-    // Check if screenX is within plot bounds
     if (screenX < MARGINS.left - 10 || screenX > MARGINS.left + plotW + 10) return null
     if (screenY < MARGINS.top || screenY > MARGINS.top + plotH) return null
-
-    // Find which layer the screenY falls into at this era index
     for (const layer of stackData) {
       const point = layer[bestEraIdx]
       const y0 = yScale(point[0])
@@ -277,7 +261,6 @@ export function InfluenceRiver() {
         return { categoryId: layer.key, eraIndex: bestEraIdx }
       }
     }
-
     return null
   }, [riverData, stackData])
 
@@ -286,37 +269,31 @@ export function InfluenceRiver() {
     const prev = hoverRef.current
     if (hit?.categoryId !== prev?.categoryId || hit?.eraIndex !== prev?.eraIndex) {
       hoverRef.current = hit
-      if (canvasRef.current) {
-        canvasRef.current.style.cursor = hit ? 'pointer' : ''
-      }
+      if (canvasRef.current) { canvasRef.current.style.cursor = hit ? 'pointer' : '' }
       scheduleRedraw()
     }
   }, [hitTest, scheduleRedraw])
 
   const handleMouseLeave = useCallback(() => {
-    if (hoverRef.current) {
-      hoverRef.current = null
-      scheduleRedraw()
-    }
+    if (hoverRef.current) { hoverRef.current = null; scheduleRedraw() }
   }, [scheduleRedraw])
 
   const handleClick = useCallback((e: React.MouseEvent) => {
     const hit = hitTest(e.clientX, e.clientY)
-    if (!hit) {
-      setPopover(null)
-      return
-    }
+    if (!hit) { setPopover(null); return }
     const slice = riverData.slices[hit.eraIndex]
     if (!slice) return
     const cell = slice.byCategory[hit.categoryId]
     setPopover({
-      categoryId: hit.categoryId,
+      tagId: hit.categoryId,
+      tagLabel: hit.categoryId,
+      tagColor: tagColorMap.get(hit.categoryId) ?? '#6b7280',
       eraLabel: slice.eraLabel,
       cell,
       x: e.clientX + 12,
       y: e.clientY - 12,
     })
-  }, [hitTest, riverData])
+  }, [hitTest, riverData, tagColorMap])
 
   const handlePopoverSelectGame = useCallback((id: string) => {
     setPopover(null)
@@ -333,11 +310,13 @@ export function InfluenceRiver() {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         role="img"
-        aria-label="Influence river chart showing how influence connections flow into each game category over time."
+        aria-label="Influence river chart showing how influence connections flow into each tag over time."
       />
       {popover && (
         <RiverPopover
-          categoryId={popover.categoryId}
+          tagId={popover.tagId}
+          tagLabel={popover.tagLabel}
+          tagColor={popover.tagColor}
           eraLabel={popover.eraLabel}
           cell={popover.cell}
           x={popover.x}
@@ -349,4 +328,3 @@ export function InfluenceRiver() {
     </div>
   )
 }
-

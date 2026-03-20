@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback, useEffect, lazy, Suspense } from 'react'
+import { useRef, useState, useCallback, useEffect, useMemo, lazy, Suspense } from 'react'
 import { ViewToggle } from './components/ViewToggle'
 import gamesData from './data/games.json'
 import type { Game } from './types'
@@ -6,7 +6,7 @@ import { GameStoreProvider } from './store/GameStoreContext'
 import { useGameStore } from './store/useGameStore'
 import { DatasetProvider } from './dataset/DatasetContext'
 import { useDataset } from './dataset/DatasetContext'
-import { gamesDatasetConfig } from './dataset/games'
+import { createGamesDatasetConfig } from './dataset/games'
 import { Timeline } from './components/Timeline'
 import { TagFilter } from './components/TagFilter'
 import { SearchBox } from './components/SearchBox'
@@ -156,9 +156,11 @@ function EmbedOrApp() {
 }
 
 function App() {
+  const datasetConfig = useMemo(() => createGamesDatasetConfig(games), [])
+
   return (
     <ErrorBoundary>
-      <DatasetProvider config={gamesDatasetConfig}>
+      <DatasetProvider config={datasetConfig}>
         <GameStoreProvider games={games}>
           <EmbedOrApp />
         </GameStoreProvider>

@@ -11,7 +11,6 @@ export const testGames: Game[] = [
     title: 'Pong',
     date: '1972-11-29',
     tags: ['arcade', 'two-player'],
-    primaryTag: 'puzzle',
     influencedBy: [],
   },
   {
@@ -19,7 +18,6 @@ export const testGames: Game[] = [
     title: 'Space Invaders',
     date: '1978-06-01',
     tags: ['arcade', 'shooter'],
-    primaryTag: 'fps',
     influencedBy: [{ id: 'pong', through: ['arcade'] }],
   },
   {
@@ -27,7 +25,6 @@ export const testGames: Game[] = [
     title: 'Asteroids',
     date: '1979-11-01',
     tags: ['arcade', 'shooter', 'momentum'],
-    primaryTag: 'fps',
     influencedBy: [{ id: 'space-invaders', through: ['arcade', 'shooter'] }],
   },
 ]

@@ -1,0 +1,94 @@
+.container {
+  margin-bottom: 12px;
+}
+
+.label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.barArea {
+  position: relative;
+}
+
+.bar {
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.tagTick {
+  position: absolute;
+  top: -2px;
+  width: 2px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1px;
+  transform: translateX(-1px);
+  pointer-events: none;
+}
+
+.avgMarker {
+  position: absolute;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transform: translateX(-5px);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  /* Arrow below */
+}
+
+.avgMarker::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #fff;
+}
+
+.tagLabels {
+  position: relative;
+  height: 32px;
+  margin-top: 6px;
+}
+
+.tagLabel {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%) rotate(-35deg);
+  transform-origin: top center;
+  font-size: 9px;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.resultDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.resultText {
+  font-size: 10px;
+  color: var(--text-muted);
+}

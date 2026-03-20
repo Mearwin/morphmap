@@ -9,10 +9,10 @@ const links: Link[] = [
 ]
 
 const games: Game[] = [
-  { id: 'pong', title: 'Pong', date: '1972-11-29', tags: ['arcade'], primaryTag: 'puzzle', influencedBy: [] },
-  { id: 'breakout', title: 'Breakout', date: '1976-05-13', tags: ['arcade'], primaryTag: 'puzzle', influencedBy: [] },
-  { id: 'space-invaders', title: 'Space Invaders', date: '1978-06-01', tags: ['arcade'], primaryTag: 'fps', influencedBy: [] },
-  { id: 'asteroids', title: 'Asteroids', date: '1979-11-01', tags: ['arcade'], primaryTag: 'fps', influencedBy: [] },
+  { id: 'pong', title: 'Pong', date: '1972-11-29', tags: ['arcade'], influencedBy: [] },
+  { id: 'breakout', title: 'Breakout', date: '1976-05-13', tags: ['arcade'], influencedBy: [] },
+  { id: 'space-invaders', title: 'Space Invaders', date: '1978-06-01', tags: ['arcade'], influencedBy: [] },
+  { id: 'asteroids', title: 'Asteroids', date: '1979-11-01', tags: ['arcade'], influencedBy: [] },
 ]
 
 describe('getDirectNeighbors', () => {

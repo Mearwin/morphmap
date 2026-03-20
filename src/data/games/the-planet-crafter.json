@@ -1,0 +1,34 @@
+{
+  "id": "the-planet-crafter",
+  "title": "The Planet Crafter",
+  "date": "2024-04-10",
+  "tags": [
+    "survival",
+    "terraforming",
+    "open-world",
+    "exploration",
+    "crafting",
+    "base-building",
+    "sci-fi",
+    "first-person"
+  ],
+  "influencedBy": [
+    {
+      "id": "subnautica",
+      "through": [
+        "survival",
+        "exploration",
+        "crafting",
+        "base-building"
+      ]
+    },
+    {
+      "id": "no-mans-sky",
+      "through": [
+        "exploration",
+        "sci-fi",
+        "terraforming"
+      ]
+    }
+  ]
+}

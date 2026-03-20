@@ -13,8 +13,8 @@ describe('GameDetail', () => {
 
   it('renders game tags', () => {
     renderWithStore(<GameDetail game={testGames[0]} />)
-    expect(screen.getByText('arcade')).toBeDefined()
-    expect(screen.getByText('two-player')).toBeDefined()
+    expect(screen.getAllByText('arcade').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('two-player').length).toBeGreaterThan(0)
   })
 
   it('renders ancestors when present', () => {

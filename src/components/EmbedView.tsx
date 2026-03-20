@@ -1,9 +1,11 @@
 import { useGameStore } from '../store/useGameStore'
+import { useDataset } from '../dataset/DatasetContext'
 import { LineageView } from './LineageView'
 import styles from './EmbedView.module.css'
 
 export function EmbedView() {
   const { state, games } = useGameStore()
+  const { gameColors } = useDataset()
   const game = state.selectedGameId
     ? games.find(g => g.id === state.selectedGameId) ?? null
     : null
@@ -18,7 +20,6 @@ export function EmbedView() {
     )
   }
 
-  // Build the URL without embed param for the badge link
   const fullUrl = window.location.href.replace(/[&?]embed=true/, '').replace(/[&?]depth=\d+/, '')
 
   return (
@@ -27,7 +28,7 @@ export function EmbedView() {
         <span
           style={{
             width: 8, height: 8, borderRadius: '50%', flexShrink: 0,
-            background: `var(--cat-${game.primaryTag})`,
+            background: gameColors.get(game.id) ?? '#6b6b80',
           }}
         />
         <span className={styles.title}>{game.title}</span>
