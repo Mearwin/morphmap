@@ -21,7 +21,6 @@ describe('buildGames', () => {
       title: 'Dark Souls',
       date: '2011-09-22',
       tags: ['stamina-combat'],
-      primaryTag: 'rpg',
       influencedBy: [],
     }))
     writeFileSync(join(dir, 'pong.json'), JSON.stringify({
@@ -29,7 +28,6 @@ describe('buildGames', () => {
       title: 'Pong',
       date: '1972-11-29',
       tags: ['arcade'],
-      primaryTag: 'puzzle',
       influencedBy: [],
     }))
 
@@ -50,22 +48,9 @@ describe('buildGames', () => {
       id: 'no-title',
       date: '2020-01-01',
       tags: ['test'],
-      primaryTag: 'rpg',
       influencedBy: [],
     }))
     expect(() => buildGames(dir)).toThrow('title')
-  })
-
-  it('throws on invalid primaryTag', () => {
-    writeFileSync(join(dir, 'bad-tag.json'), JSON.stringify({
-      id: 'bad-tag',
-      title: 'Bad Tag',
-      date: '2020-01-01',
-      tags: ['test'],
-      primaryTag: 'not-a-category',
-      influencedBy: [],
-    }))
-    expect(() => buildGames(dir)).toThrow('primaryTag')
   })
 
   it('throws on invalid date format', () => {
@@ -74,7 +59,6 @@ describe('buildGames', () => {
       title: 'Bad Date',
       date: '2020/01/01',
       tags: ['test'],
-      primaryTag: 'rpg',
       influencedBy: [],
     }))
     expect(() => buildGames(dir)).toThrow('date')

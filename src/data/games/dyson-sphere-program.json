@@ -1,0 +1,30 @@
+{
+  "id": "dyson-sphere-program",
+  "title": "Dyson Sphere Program",
+  "date": "2021-01-20",
+  "tags": [
+    "factory-building",
+    "automation",
+    "sci-fi",
+    "simulation",
+    "logistics",
+    "exploration"
+  ],
+  "influencedBy": [
+    {
+      "id": "factorio",
+      "through": [
+        "factory-building",
+        "automation",
+        "logistics"
+      ]
+    },
+    {
+      "id": "satisfactory",
+      "through": [
+        "factory-building",
+        "exploration"
+      ]
+    }
+  ]
+}
