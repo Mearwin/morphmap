@@ -402,8 +402,8 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 
   const handleClick = useCallback((e: React.MouseEvent) => {
     const hit = hitTest(e.clientX, e.clientY)
-    dispatch({ type: 'SELECT_GAME', id: hit ? (hit.id === selectedGameId ? null : hit.id) : null })
-  }, [hitTest, dispatch, selectedGameId])
+    dispatch({ type: 'SELECT_GAME', id: hit?.id ?? null })
+  }, [hitTest, dispatch])
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     // Throttle hit testing to once per animation frame
