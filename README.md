@@ -4,15 +4,14 @@ An interactive visualization of video game history and influence. Explore how id
 
 ## Overview
 
-Morphmap renders 178 iconic games (1972-2024) on a zoomable timeline. Curved influence lines connect games to their ancestors, showing which specific mechanics and ideas were inherited. Select a game to reveal its full lineage; filter by tag to trace a single concept across decades.
+Morphmap renders games from 1972 to today on a zoomable timeline. Curved influence lines connect games to their ancestors, showing which specific mechanics and ideas were inherited. Select a game to reveal its full lineage; filter by tag to trace a single concept across decades.
 
 ## Features
 
-- **Zoomable timeline** -- games plotted by release date on X, grouped by category on Y
-- **Influence river** -- alternate streamgraph view showing how influence flows into each category over time (toggle with Graph/River button or `H` key)
-- **Influence graph** -- 293 curated influence relationships with "through" tags describing inherited ideas
+- **Zoomable timeline** -- games plotted by release date on X, arranged by tag similarity on Y
+- **Influence graph** -- curated influence relationships with "through" tags describing inherited ideas
 - **Game selection** -- click a node to highlight its full ancestor/descendant tree, dim everything else
-- **Tag filtering** -- 265 mechanic tags (permadeath, open-world, stamina-combat...) to filter the view
+- **Tag filtering** -- mechanic tags (permadeath, open-world, stamina-combat...) to filter the view
 - **Fuzzy search** -- find any game instantly with match highlighting
 - **Time range slider** -- filter to a specific era (e.g., 1990-2005)
 - **Keyboard navigation** -- arrow keys traverse the influence graph (closest in time), `/` focuses search, `?` shows shortcuts
@@ -44,6 +43,10 @@ Open the URL shown in the terminal (typically `http://localhost:5173`).
 | `npm run test` | Run all tests once |
 | `npm run test:watch` | Run tests in watch mode |
 | `npm run lint` | Lint with ESLint |
+| `npm run data:add` | Add a new game (fetches metadata from Wikidata) |
+| `npm run data:link` | Add influence relationships to a game |
+| `npm run data:audit` | Analyze the dataset for quality issues |
+| `npm run data:validate` | Validate all game files (optional `--online` for Wikidata checks) |
 
 ## Tech Stack
 
@@ -57,44 +60,85 @@ No backend. The entire dataset ships as a static JSON file.
 
 ## Data
 
-The dataset (`src/data/games.json`) contains 178 hand-curated games with:
+Each game lives as an individual JSON file in `src/data/games/`. These are aggregated into `src/data/games.json` at build time (this file is gitignored).
 
-- Real release dates
-- Mechanic/concept tags reflecting what each game is known for
-- A `primaryTag` from 10 broad categories (FPS, RPG, Strategy, Platformer, etc.) used for visual clustering
-- `influencedBy` relationships with `through` tags describing which ideas were inherited
+A game file looks like this:
 
-### Categories
+```json
+{
+  "id": "dark-souls",
+  "title": "Dark Souls",
+  "date": "2011-09-22",
+  "tags": ["action-rpg", "stamina-combat", "interconnected-world", "bonfires", "die-and-retry"],
+  "influencedBy": [
+    { "id": "demons-souls", "through": ["action-rpg", "stamina-combat", "bonfires", "die-and-retry"] },
+    { "id": "the-legend-of-zelda", "through": ["interconnected-world"] }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1x78.jpg"
+}
+```
 
-Categories are defined in `src/data/categories.ts` and re-exported from `src/types.ts`.
+- **id** -- URL-safe slug, must match the filename
+- **title** -- display name
+- **date** -- release date in YYYY-MM-DD format
+- **tags** -- freeform mechanic/concept tags describing what the game is known for
+- **influencedBy** -- list of ancestor games with `through` tags describing which ideas were inherited
+- **imageUrl** -- optional IGDB cover art URL
 
-| Category | Color | Count |
-|---|---|---|
-| FPS / Shooter | Red | 32 |
-| RPG | Yellow | 29 |
-| Action-Adventure | Orange | 28 |
-| Puzzle / Narrative | Purple | 18 |
-| Platformer | Cyan | 16 |
-| Strategy / Sim | Green | 15 |
-| Sandbox / Open World | Teal | 13 |
-| Roguelike / Procedural | Amber | 12 |
-| Survival / Horror | Slate | 10 |
-| Fighting / Sports | Pink | 5 |
+Tags are freeform (no fixed list). Colors are assigned automatically via spectral ordering based on tag co-occurrence.
 
 ### Contributing Data
 
-Edit `src/data/games.json` directly. A validation test suite (`src/data/validate.test.ts`) catches:
+There are two ways to contribute: adding new games and adding/updating influence relationships.
 
-- Duplicate IDs
-- Missing required fields
-- Invalid date formats
-- Unknown `primaryTag` values
-- Dangling `influencedBy` references
-- Self-references
-- Empty `through` arrays
-- Mutual influence cycles
+#### Adding a game
 
-Run `npm test` after editing to verify.
+The easiest way is with the CLI:
+
+```bash
+npm run data:add "Dark Souls"
+```
+
+This searches Wikidata for the game, fetches its release date and genres, and creates `src/data/games/{id}.json`. You can then edit the file to refine tags or add an `imageUrl`.
+
+To skip Wikidata and enter everything manually:
+
+```bash
+npm run data:add --skip-wikidata --title "My Game" --date "2024-01-15" --tags "action,adventure"
+```
+
+#### Adding influence relationships
+
+```bash
+npm run data:link dark-souls
+```
+
+In interactive mode, this prompts you to pick a source game and select which tags represent the inherited ideas. It validates that the source predates the target and auto-adds missing `through` tags to the game's tag list.
+
+You can also do it non-interactively:
+
+```bash
+npm run data:link dark-souls --from demons-souls --through "stamina-combat,die-and-retry"
+```
+
+Or just edit the game's JSON file directly.
+
+#### Validation
+
+A test suite (`src/data/validate.test.ts`) enforces:
+
+- No duplicate IDs
+- Required fields present with correct types
+- Valid YYYY-MM-DD dates
+- All `influencedBy` references point to existing games
+- No self-references
+- Non-empty `through` arrays
+- Every `through` tag appears in the game's own `tags` array
+- Influence sources predate the influenced game
+- No mutual influence cycles (A influenced by B and B influenced by A)
+- Image URLs must be IGDB CDN URLs if present
+
+Run `npm test` after any data change. Use `npm run data:audit` to find orphaned games, dead ends, and other quality issues.
 
 ## Keyboard Shortcuts
 
@@ -105,7 +149,6 @@ Run `npm test` after editing to verify.
 | `Left` | Navigate to closest ancestor |
 | `Right` | Navigate to closest descendant |
 | `Up` / `Down` | Cycle connected games |
-| `H` | Toggle river view |
 | `?` | Toggle shortcut overlay |
 
 ## Embed Mode
@@ -119,7 +162,7 @@ https://your-domain/#game=dark-souls&embed=true&depth=2
 
 - `embed=true` -- renders only the lineage view with a compact header (no toolbar, search, filters, or legend)
 - `depth=N` -- limits the ancestor/descendant traversal to N generations (optional, shows full lineage if omitted)
-- The header shows the game title, year, category dot, and a "Morphmap" badge linking to the full app
+- The header shows the game title, year, and a "Morphmap" badge linking to the full app
 
 The "Copy embed code" button in the detail panel generates the `<iframe>` snippet.
 
@@ -127,12 +170,12 @@ The "Copy embed code" button in the detail panel generates the `<iframe>` snippe
 
 ```
 src/
-  components/      UI components (Timeline, GameNode, InfluenceLine, InfluenceRiver, LineageView, EmbedView, etc.)
-  data/            Static dataset, categories, validation tests
+  components/      UI components (Timeline, GameNode, InfluenceLine, LineageView, EmbedView, etc.)
+  data/            Individual game JSON files, generated aggregate, validation tests
   dataset/         Dataset abstraction layer (DatasetContext, config interface)
   hooks/           Custom hooks (useTimeline, useViewport, useKeyboardNav, etc.)
   store/           React Context store (reducer, provider, context)
-  utils/           Pure functions (graph, fuzzy search, label placement, river data, lineage layout, etc.)
+  utils/           Pure functions (graph, fuzzy search, label placement, lineage layout, etc.)
   workers/         Web Worker for D3 force simulation
   types.ts         Core TypeScript types (Entity, Game, GameNode, Link)
   constants.ts     All magic numbers (force config, rendering params, theme colors)

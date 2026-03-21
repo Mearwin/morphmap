@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { GameStoreState, TimeRange } from '../store/gameStoreReducer'
 
-export function parseHash(): { game: string | null; tag: string | null; timeRange: TimeRange | null; view: 'river' | 'lineage' | null; embed: boolean; depth: number | null } {
+export function parseHash(): { game: string | null; tag: string | null; timeRange: TimeRange | null; view: 'lineage' | null; embed: boolean; depth: number | null } {
   const hash = window.location.hash.slice(1)
   if (!hash) return { game: null, tag: null, timeRange: null, view: null, embed: false, depth: null }
   const params = new URLSearchParams(hash)
@@ -14,7 +14,7 @@ export function parseHash(): { game: string | null; tag: string | null; timeRang
     if (!isNaN(f) && !isNaN(t)) timeRange = { from: f, to: t }
   }
   const viewParam = params.get('view')
-  const view = viewParam === 'river' || viewParam === 'lineage' ? viewParam : null
+  const view = viewParam === 'lineage' ? viewParam : null
   const embed = params.get('embed') === 'true'
   const depthParam = params.get('depth')
   let depth: number | null = null

@@ -123,48 +123,53 @@ export function GameDetail({ game }: Props) {
         transform: isVisible ? 'translateX(0)' : 'translateX(24px)',
       }}
     >
-      <div className={styles.header}>
-        <span
-          className={styles.dot}
-          style={{ background: gameColors.get(displayedGame.id) ?? '#6b6b80' }}
-        />
-        <h3 className={styles.title}>{displayedGame.title}</h3>
-        <span className={styles.year}>{displayedGame.date.slice(0, 4)}</span>
-        <button
-          className={styles.closeBtn}
-          onClick={() => dispatch({ type: 'SELECT_GAME', id: null })}
-          aria-label="Close detail panel"
-        >
-          &times;
-        </button>
+      <div className={styles.card}>
+        <div className={styles.header}>
+          <span
+            className={styles.dot}
+            style={{ background: gameColors.get(displayedGame.id) ?? '#6b6b80' }}
+          />
+          <h3 className={styles.title}>{displayedGame.title}</h3>
+          <span className={styles.year}>{displayedGame.date.slice(0, 4)}</span>
+          <button
+            className={styles.closeBtn}
+            onClick={() => dispatch({ type: 'SELECT_GAME', id: null })}
+            aria-label="Close detail panel"
+          >
+            &times;
+          </button>
+        </div>
+
+        {typeof displayedGame.imageUrl === 'string' && displayedGame.imageUrl && !imgFailed && (
+          <img
+            src={displayedGame.imageUrl}
+            alt={`${displayedGame.title} cover art`}
+            className={styles.coverImage}
+            loading="lazy"
+            onError={() => setImgFailedForId(displayedGame.id)}
+          />
+        )}
       </div>
 
-      {typeof displayedGame.imageUrl === 'string' && displayedGame.imageUrl && !imgFailed && (
-        <img
-          src={displayedGame.imageUrl}
-          alt={`${displayedGame.title} cover art`}
-          className={styles.coverImage}
-          loading="lazy"
-          onError={() => setImgFailedForId(displayedGame.id)}
-        />
-      )}
+      <div className={styles.card}>
+        <div className={styles.tags}>
+          {displayedGame.tags.map(tag => (
+            <span key={tag} className={styles.tag}>{tag}</span>
+          ))}
+        </div>
 
-      <div className={styles.tags}>
-        {displayedGame.tags.map(tag => (
-          <span key={tag} className={styles.tag}>{tag}</span>
-        ))}
+        <ColorExplainer game={displayedGame} />
       </div>
-
-      <ColorExplainer game={displayedGame} />
 
       {ancestors.length > 0 && (
-        <div className={styles.section}>
+        <div className={styles.card}>
           <div className={styles.sectionLabel}>{influenceLabel}</div>
           {ancestors.map(a => (
             <button
               key={a.id}
               className={styles.ancestor}
               onClick={() => dispatch({ type: 'SELECT_GAME', id: a.id })}
+              style={{ ['--game-color' as string]: gameColors.get(a.id) ?? 'var(--accent-secondary)' }}
             >
               {a.title} ({a.date.slice(0, 4)})
             </button>
@@ -173,13 +178,14 @@ export function GameDetail({ game }: Props) {
       )}
 
       {descendants.length > 0 && (
-        <div className={styles.section}>
+        <div className={styles.card}>
           <div className={styles.sectionLabel}>{influencedLabel}</div>
           {descendants.map(d => (
             <button
               key={d.id}
               className={styles.ancestor}
               onClick={() => dispatch({ type: 'SELECT_GAME', id: d.id })}
+              style={{ ['--game-color' as string]: gameColors.get(d.id) ?? 'var(--accent-secondary)' }}
             >
               {d.title} ({d.date.slice(0, 4)})
             </button>
@@ -188,7 +194,7 @@ export function GameDetail({ game }: Props) {
       )}
 
       {similarGames.length > 0 && (
-        <div className={styles.section}>
+        <div className={styles.card}>
           <div className={styles.sectionLabel}>Similar</div>
           {similarGames.map(({ game: g, score, shared }) => (
             <button
@@ -196,6 +202,7 @@ export function GameDetail({ game }: Props) {
               className={styles.ancestor}
               onClick={() => dispatch({ type: 'SELECT_GAME', id: g.id })}
               title={shared.join(', ')}
+              style={{ ['--game-color' as string]: gameColors.get(g.id) ?? 'var(--accent-secondary)' }}
             >
               {g.title} ({g.date.slice(0, 4)})
               <span className={styles.similarScore}>{Math.round(score * 100)}%</span>
@@ -205,7 +212,7 @@ export function GameDetail({ game }: Props) {
       )}
 
       {(ancestors.length > 0 || descendants.length > 0) && (
-        <div className={styles.section}>
+        <div className={styles.card}>
           <button
             className={styles.exportBtn}
             onClick={() => dispatch({ type: 'SET_VIEW_MODE', mode: 'lineage' })}

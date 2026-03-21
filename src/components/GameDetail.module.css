@@ -4,7 +4,10 @@
   right: 0;
   width: 320px;
   height: 100%;
-  padding: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   background: rgba(18, 18, 26, 0.75);
   backdrop-filter: blur(12px) saturate(1.2);
   -webkit-backdrop-filter: blur(12px) saturate(1.2);
@@ -20,6 +23,12 @@
   /* Entry: spring overshoot */
   transition: opacity 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
               transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 12px;
 }
 
 .header {
@@ -87,21 +96,20 @@
   font-size: 11px;
 }
 
-.section {
-  border-top: 1px solid var(--border);
-  padding-top: 10px;
+.card:nth-child(n+2) {
   opacity: 0;
   transform: translateY(6px);
-  animation: section-cascade 0.2s ease-out forwards;
+  animation: card-cascade 0.2s ease-out forwards;
 }
 
-.section:nth-child(2) { animation-delay: 30ms; }
-.section:nth-child(3) { animation-delay: 60ms; }
-.section:nth-child(4) { animation-delay: 90ms; }
-.section:nth-child(5) { animation-delay: 120ms; }
-.section:nth-child(6) { animation-delay: 150ms; }
+.card:nth-child(2) { animation-delay: 30ms; }
+.card:nth-child(3) { animation-delay: 60ms; }
+.card:nth-child(4) { animation-delay: 90ms; }
+.card:nth-child(5) { animation-delay: 120ms; }
+.card:nth-child(6) { animation-delay: 150ms; }
+.card:nth-child(7) { animation-delay: 180ms; }
 
-@keyframes section-cascade {
+@keyframes card-cascade {
   to {
     opacity: 1;
     transform: translateY(0);
@@ -109,7 +117,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .section {
+  .card:nth-child(n+2) {
     animation: none;
     opacity: 1;
     transform: none;
@@ -129,19 +137,21 @@
   font-size: 13px;
   color: var(--text);
   padding: 4px 8px;
-  margin: 0 -8px;
+  margin: 0;
   border: none;
+  border-left: 2px solid transparent;
   background: none;
-  border-radius: 6px;
+  border-radius: 0 6px 6px 0;
   cursor: pointer;
   text-align: left;
-  width: calc(100% + 16px);
-  transition: background 0.15s ease, color 0.15s ease;
+  width: 100%;
+  transition: background 0.15s ease, color 0.15s ease, border-left-color 0.15s ease;
 }
 
 .ancestor:hover {
   background: var(--accent-secondary-dim);
   color: var(--accent-secondary);
+  border-left-color: var(--game-color, var(--accent-secondary));
 }
 
 .similarScore {

@@ -13,7 +13,6 @@ export function ShortcutOverlay({ onClose }: Props) {
     { keys: ['\u2190'], action: 'Navigate to ancestor' },
     { keys: ['\u2192'], action: 'Navigate to descendant' },
     { keys: ['\u2191', '\u2193'], action: `Cycle connected ${entityLabelPlural}` },
-    { keys: ['R'], action: 'Toggle river view' },
     { keys: ['?'], action: 'Toggle this overlay' },
   ]
   useEffect(() => {

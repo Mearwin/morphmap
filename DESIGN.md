@@ -107,7 +107,7 @@ GameStoreProvider (src/store/GameStoreContext.tsx)
   selectedGameId: string | null
   selectedTag: string | null
   timeRange: { from: number; to: number } | null
-  viewMode: 'timeline' | 'river' | 'lineage'
+  viewMode: 'timeline' | 'lineage' | 'trends'
   embed: boolean        // true when rendering in iframe-friendly embed mode
   depth: number | null  // max ancestor/descendant depth for embed mode
 }
@@ -120,7 +120,7 @@ GameStoreProvider (src/store/GameStoreContext.tsx)
 | `SELECT_GAME` | Toggle game selection (same ID deselects) |
 | `SELECT_TAG` | Toggle tag filter (same tag deselects) |
 | `SET_TIME_RANGE` | Set year range filter, or null to clear |
-| `SET_VIEW_MODE` | Switch between timeline and river views |
+| `SET_VIEW_MODE` | Switch between timeline, lineage, and trends views |
 
 ### 3.2 Derived State
 
@@ -138,7 +138,7 @@ These are used by `GameNode` and `InfluenceLine` to determine highlight/dim stat
 - `readInitialStateFromHash()` -- called once at provider init to restore state from URL
 - `useSyncHashWithState(state)` -- effect that updates `window.location.hash` on state changes (skips first render to avoid overwriting the hash just read)
 
-Hash format: `#game=dark-souls&tag=stamina-combat&from=2000&to=2020&view=river`
+Hash format: `#game=dark-souls&tag=stamina-combat&from=2000&to=2020&view=lineage`
 
 ---
 
@@ -179,11 +179,10 @@ With 178 games and the configured forces, the simulation runs ~100-150 ticks bef
 
 The `Timeline` component acts as a router based on `viewMode` and dataset size:
 
-- **`viewMode === 'river'`**: renders `InfluenceRiver` (streamgraph)
 - **`viewMode === 'timeline'` + `games.length < 400`**: `SvgTimeline` (React SVG components)
 - **`viewMode === 'timeline'` + `games.length >= 400`**: `CanvasTimeline` (imperative Canvas 2D)
 
-All three renderers read from the same `useGameStore` context.
+Both renderers read from the same `useGameStore` context.
 
 ### 5.2 SVG Renderer (`SvgTimeline`)
 
@@ -213,26 +212,7 @@ Single `<canvas>` element with:
 
 Draw order: background -> time axis -> links -> nodes -> link labels -> minimap (in screen space).
 
-### 5.4 Influence River (`InfluenceRiver`)
-
-A Canvas-based streamgraph showing influence connections received per category over time.
-
-**Data pipeline** (`src/utils/riverData.ts`):
-
-1. Divide 1972-2024 into 5-year era buckets (~11 slices)
-2. For each era x category cell, count influence connections received by games in that cell
-3. When `selectedTag` is set, only count influences whose `through` includes that tag
-4. Store game lists per cell for the click popover
-
-**Rendering**:
-
-- D3 `stack()` with `stackOffsetWiggle` (streamgraph centering) and `stackOrderInsideOut` (largest streams in center)
-- D3 `area()` with `curveMonotoneX` for smooth curves, rendered via Canvas path API
-- 10 colored streams using `TAG_CATEGORIES` colors
-- Hover: dims non-hovered streams, shows count label at stream midpoint
-- Click: opens `RiverPopover` (React component over the canvas) showing games in that cell, clickable to switch to timeline view with that game selected
-
-### 5.5 Influence Lines
+### 5.4 Influence Lines
 
 Curved quadratic Bezier paths:
 
@@ -245,11 +225,11 @@ M source.x,source.y Q midX,controlY target.x,target.y
 - **Strength encoding**: line thickness interpolated from 0.5px (1 through-tag) to 3.5px (5+ through-tags)
 - **Highlight state**: when a game is selected, lineage links get `opacity: 0.6`, non-lineage links get `opacity: 0.03`
 
-### 5.6 Link Labels
+### 5.5 Link Labels
 
 When a game is selected, `computeLinkLabel` calculates label positions at the midpoint/control point of each highlighted link. `resolveOverlaps` uses a sweep-line algorithm (sorted by X, early-exit when no X-overlap possible) with 4 passes to push overlapping labels apart vertically.
 
-### 5.7 Minimap
+### 5.6 Minimap
 
 Both SVG and Canvas renderers share layout logic from `src/utils/minimapLayout.ts`:
 
@@ -272,17 +252,16 @@ App
 │       └── AppInner
 │           ├── header.top-bar
 │           │   ├── SearchBox (forwardRef for keyboard focus)
-│           │   ├── ViewToggle (Graph / River mode switch)
+│           │   ├── ViewToggle (Graph / Trends / Lineage mode switch)
 │           │   ├── TagFilter (chip list + overflow dropdown)
 │           │   └── TimeRangeSlider (dual-thumb range input)
 │           ├── div.main-area
 │           │   ├── ErrorBoundary
-│           │   │   └── Timeline -> InfluenceRiver | SvgTimeline | CanvasTimeline
+│           │   │   └── Timeline -> SvgTimeline | CanvasTimeline
 │           │   │       ├── GameNode (per node, SVG mode)
 │           │   │       ├── InfluenceLine (per link, SVG mode)
 │           │   │       ├── Minimap (SVG mode)
-│           │   │       └── RiverPopover (river mode, on click)
-│           │   └── ErrorBoundary > Suspense (timeline mode only)
+│           │   └── ErrorBoundary > Suspense
 │           │       └── LazyGameDetail (slide-in panel)
 │           ├── Legend (category color reference)
 │           ├── Stats line (game + connection count)
@@ -295,17 +274,15 @@ App
 
 **SearchBox** -- `forwardRef` so `useKeyboardNav` can focus it on `/`. Uses custom `fuzzyFilter` (not a library) that returns match indices for character-level highlighting. Keyboard navigation: ArrowUp/Down through results, Enter to select.
 
-**ViewToggle** -- Two-button radio group switching between `'timeline'` and `'river'` view modes.
+**ViewToggle** -- Radio group switching between `'timeline'`, `'trends'`, and `'lineage'` view modes.
 
 **TagFilter** -- Shows top 8 tags by frequency inline, remaining in a searchable dropdown. If the selected tag is in the overflow set, it's swapped into the visible row. Closes on outside click via `pointerdown` listener.
 
-**GameDetail** -- Lazy-loaded. Animated slide-in/fade with a 3-state machine (`entering` -> `visible` -> `exiting` -> `hidden`). Ancestor and descendant names are clickable buttons that dispatch `SELECT_GAME`, enabling graph traversal from the panel. Hidden in river mode.
+**GameDetail** -- Lazy-loaded. Animated slide-in/fade with a 3-state machine (`entering` -> `visible` -> `exiting` -> `hidden`). Ancestor and descendant names are clickable buttons that dispatch `SELECT_GAME`, enabling graph traversal from the panel.
 
 **Tooltip** -- Lazy-loaded. Positioned at cursor + offset. Shows game title, year, category label, tags, and influence count.
 
 **TimeRangeSlider** -- Two overlapping `<input type="range">` elements on a shared track. When both are at extremes (1972-2024), dispatches `null` to clear the filter.
-
-**RiverPopover** -- Shown on click in river mode. Displays category name, era label, influence count, and game list sorted by incoming influence count. Games are clickable (switches to timeline + selects game). Closes on Escape or outside click.
 
 ---
 
@@ -355,19 +332,15 @@ Shared between SVG `Minimap` component and Canvas `drawMinimap`:
 - `computeMinimapLayout` -- scales, offsets, viewport rectangle
 - `toMinimapX/Y` -- world-to-minimap coordinate conversion
 
-### 8.5 River Data (`src/utils/riverData.ts`)
-
-- `buildRiverData(games, links, selectedTag)` -- divides 1972-2024 into 5-year eras, counts influence connections received per category per era, populates game lists per cell for popovers. Respects `selectedTag` filter.
-
-### 8.6 Date Helpers (`src/utils/date.ts`)
+### 8.5 Date Helpers (`src/utils/date.ts`)
 
 - `getYear(dateStr)` -- extracts year from a YYYY-MM-DD string
 
-### 8.7 Curve Utilities (`src/utils/curve.ts`)
+### 8.6 Curve Utilities (`src/utils/curve.ts`)
 
 - Shared Bezier curve computation used by both SVG and Canvas influence line renderers
 
-### 8.8 Heatmap Data (`src/utils/heatmapData.ts`)
+### 8.7 Heatmap Data (`src/utils/heatmapData.ts`)
 
 - `buildDecadeBuckets` -- aggregates games and influence counts by decade (1970s-2020s), broken down by primary tag. Legacy utility, not currently used by the UI.
 
@@ -383,7 +356,7 @@ Shared between SVG `Minimap` component and Canvas `drawMinimap`:
 | Viewport culling | `SvgTimeline`, `CanvasTimeline` | Only renders nodes/links in view |
 | Canvas fallback | `CanvasTimeline` | Avoids 400+ SVG DOM nodes |
 | Memoized adjacency | `GameStoreContext` | `buildAdjacency` recomputed only when links change |
-| RAF-throttled hover | `CanvasTimeline`, `InfluenceRiver` | Hit test + redraw limited to 1/frame |
+| RAF-throttled hover | `CanvasTimeline` | Hit test + redraw limited to 1/frame |
 | Stable node references | `useTimeline` | Reuses GameNode objects when position unchanged |
 | Lazy loading | `GameDetail`, `Tooltip` | Code-split, loaded on first use |
 | Manual chunk splitting | `vite.config.ts` | Separates vendor-react and vendor-d3 bundles |
@@ -399,9 +372,6 @@ All expensive computations are wrapped in `useMemo` with precise dependency arra
 - `nodeMap` depends only on `nodes`
 - `visibleNodes` depends on `nodes` and `viewport`
 - `linkLabels` depends on selection state, filtered links, connected set, and node map
-- `riverData` depends on `games`, `links`, `selectedTag`
-- `stackData` depends on `riverData`
-
 ---
 
 ## 10. Theming
@@ -427,7 +397,6 @@ SVG components use CSS vars (`var(--cat-rpg)`, `var(--text-muted)`). Canvas comp
 | Label placement | `labelPlacement.test.ts` | Overlap resolution, stroke width calculation |
 | Minimap layout | `minimapLayout.test.ts` | Bounds computation, coordinate mapping |
 | Heatmap data | `heatmapData.test.ts` | Decade bucketing |
-| River data | `riverData.test.ts` | Era bucketing, influence counting, tag filtering |
 | Curve utils | `curve.test.ts` | Bezier curve computation |
 | Components | `GameNode.test.tsx`, `SearchBox.test.tsx`, `TagFilter.test.tsx`, `GameDetail.test.tsx` | Rendering, interaction, accessibility |
 | Hooks | `useViewport.test.ts`, `useKeyboardNav.test.ts`, `useHashState.test.ts` | Viewport math, key handling, closest-in-time nav, hash parsing/building |
@@ -470,13 +439,9 @@ src/
 │   └── useGameStore.ts         Context consumer hook
 │
 ├── components/
-│   ├── Timeline.tsx            View router (river / SVG / Canvas)
+│   ├── Timeline.tsx            View router (SVG / Canvas)
 │   ├── Timeline.module.css
 │   ├── CanvasTimeline.tsx      Canvas renderer (imperative drawing)
-│   ├── InfluenceRiver.tsx      Streamgraph river view (Canvas)
-│   ├── InfluenceRiver.module.css
-│   ├── RiverPopover.tsx        Click popover for river view
-│   ├── RiverPopover.module.css
 │   ├── GameNode.tsx            Individual game node (SVG)
 │   ├── GameNode.module.css
 │   ├── GameNode.test.tsx
@@ -497,7 +462,7 @@ src/
 │   ├── TimeRangeSlider.module.css
 │   ├── Legend.tsx              Category color legend
 │   ├── Legend.module.css
-│   ├── ViewToggle.tsx          Graph/River mode switch
+│   ├── ViewToggle.tsx          View mode switch (Graph/Trends/Lineage)
 │   ├── ViewToggle.module.css
 │   ├── ShortcutOverlay.tsx     Keyboard shortcut modal
 │   ├── ShortcutOverlay.module.css
@@ -522,8 +487,6 @@ src/
 │   ├── labelPlacement.test.ts
 │   ├── minimapLayout.ts        Shared minimap math (SVG + Canvas)
 │   ├── minimapLayout.test.ts
-│   ├── riverData.ts            River view era bucketing + influence counting
-│   ├── riverData.test.ts
 │   ├── curve.ts                Shared Bezier curve computation
 │   ├── curve.test.ts
 │   ├── date.ts                 Date helper (getYear)

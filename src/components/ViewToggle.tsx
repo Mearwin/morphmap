@@ -15,14 +15,6 @@ export function ViewToggle() {
         Graph
       </button>
       <button
-        className={`${styles.pill} ${state.viewMode === 'river' ? styles.active : ''}`}
-        role="radio"
-        aria-checked={state.viewMode === 'river'}
-        onClick={() => dispatch({ type: 'SET_VIEW_MODE', mode: 'river' })}
-      >
-        River
-      </button>
-      <button
         className={`${styles.pill} ${state.viewMode === 'trends' ? styles.active : ''}`}
         role="radio"
         aria-checked={state.viewMode === 'trends'}

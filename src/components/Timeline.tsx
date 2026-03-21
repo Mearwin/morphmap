@@ -17,7 +17,6 @@ import { useViewport, isInViewport } from '../hooks/useViewport'
 import { computeLinkLabel } from '../utils/labelPlacement'
 import { getYear } from '../utils/date'
 import { CanvasTimeline } from './CanvasTimeline'
-import { InfluenceRiver } from './InfluenceRiver'
 import styles from './Timeline.module.css'
 
 export interface HoverPos { clientX: number; clientY: number }
@@ -28,10 +27,6 @@ interface TimelineProps {
 
 export function Timeline({ onHover }: TimelineProps = {}) {
   const { games, state } = useGameStore()
-
-  if (state.viewMode === 'river') {
-    return <InfluenceRiver />
-  }
 
   if (games.length >= TIMELINE.CANVAS_THRESHOLD) {
     return <CanvasTimeline onHover={onHover} />

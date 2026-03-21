@@ -146,15 +146,17 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     ctx.globalAlpha = 1
 
     // Draw links
+    // Suppress selection-based dimming while zoom transition is in flight
+    const zoomInFlightForLinks = zoomingToRef.current != null
     for (const link of filteredLinks) {
       const source = nodeMap.get(link.source)
       const target = nodeMap.get(link.target)
       if (!source || !target) continue
       if (!isInViewport(source.x, source.y, linkViewport) && !isInViewport(target.x, target.y, linkViewport)) continue
 
-      const isHighlighted = selectedGameId != null
+      const isHighlighted = !zoomInFlightForLinks && selectedGameId != null
         && (derived.connectedLinks?.has(`${source.id}->${target.id}`) ?? false)
-      const opacity = selectedGameId
+      const opacity = (selectedGameId && !zoomInFlightForLinks)
         ? (isHighlighted ? LINE.OPACITY_HIGHLIGHTED : LINE.OPACITY_DIMMED)
         : LINE.OPACITY_DEFAULT
       const baseWidth = influenceStrokeWidth(link.through.length)
@@ -177,10 +179,13 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     ctx.globalAlpha = 1
 
     // Draw nodes
+    // Suppress selected styling while zoom transition is in flight (prevents flash at old position)
+    const zoomInFlight = zoomingToRef.current != null
+
     for (const node of filteredNodes) {
       if (!isInViewport(node.x, node.y, viewport)) continue
 
-      const isSelected = node.id === selectedGameId
+      const isSelected = node.id === selectedGameId && !zoomInFlight
       const isHighlighted = !selectedGameId || node.id === selectedGameId
         || (derived.connectedSet?.has(node.id) ?? false)
       const isHovered = node.id === hoveredRef.current
@@ -190,17 +195,17 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 
       ctx.globalAlpha = opacity
 
-      // Glow behind selected node
+      // Glow behind selected node (radial gradient — avoids canvas shadow artifacts)
       if (isSelected) {
-        ctx.save()
-        ctx.shadowColor = color
-        ctx.shadowBlur = 16
+        const glowRadius = radius * 3
+        const glow = ctx.createRadialGradient(node.x, node.y, radius * 0.5, node.x, node.y, glowRadius)
+        glow.addColorStop(0, color)
+        glow.addColorStop(1, 'rgba(0,0,0,0)')
+        ctx.globalAlpha = 0.25
+        ctx.fillStyle = glow
         ctx.beginPath()
-        ctx.arc(node.x, node.y, radius, 0, Math.PI * 2)
-        ctx.fillStyle = color
-        ctx.globalAlpha = 0.2
+        ctx.arc(node.x, node.y, glowRadius, 0, Math.PI * 2)
         ctx.fill()
-        ctx.restore()
         ctx.globalAlpha = opacity
       }
 
@@ -380,6 +385,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 
   // --- Zoom to selected game: use initialNodes for immediate zoom, no wait ---
   const lastZoomedIdRef = useRef<string | null>(null)
+  const zoomingToRef = useRef<string | null>(null)
 
   useEffect(() => {
     if (!selectedGameId || !canvasRef.current || !zoomRef.current) return
@@ -399,14 +405,22 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     const targetY = height / 2 - node.y * targetK
     const targetTransform = zoomIdentity.translate(targetX, targetY).scale(targetK)
 
+    // Suppress selected styling until zoom transition arrives — prevents flash at old position
+    zoomingToRef.current = selectedGameId
+
     select(canvasRef.current)
       .transition()
       .duration(500)
       .call(zoomRef.current.transform, targetTransform)
-  }, [selectedGameId, initialNodes, nodeMap])
+      .on('end', () => { zoomingToRef.current = null; scheduleRedraw() })
+      .on('interrupt', () => { zoomingToRef.current = null; scheduleRedraw() })
+  }, [selectedGameId, initialNodes, nodeMap, scheduleRedraw])
 
   useEffect(() => {
-    if (!selectedGameId) lastZoomedIdRef.current = null
+    if (!selectedGameId) {
+      lastZoomedIdRef.current = null
+      zoomingToRef.current = null
+    }
   }, [selectedGameId])
 
   // Hit testing for click/hover

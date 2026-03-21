@@ -50,17 +50,6 @@ describe('gameStoreReducer', () => {
     expect(next.timeRange).toBeNull()
   })
 
-  it('sets view mode to river', () => {
-    const next = gameStoreReducer(initial, { type: 'SET_VIEW_MODE', mode: 'river' })
-    expect(next.viewMode).toBe('river')
-  })
-
-  it('sets view mode back to timeline', () => {
-    const state = { ...initial, viewMode: 'river' as const }
-    const next = gameStoreReducer(state, { type: 'SET_VIEW_MODE', mode: 'timeline' })
-    expect(next.viewMode).toBe('timeline')
-  })
-
   it('sets view mode to lineage', () => {
     const next = gameStoreReducer(initial, { type: 'SET_VIEW_MODE', mode: 'lineage' })
     expect(next.viewMode).toBe('lineage')

@@ -44,16 +44,6 @@ describe('parseHash', () => {
     expect(parseHash().timeRange).toBeNull()
   })
 
-  it('parses view=river', () => {
-    window.location.hash = '#view=river'
-    expect(parseHash().view).toBe('river')
-  })
-
-  it('returns null view for non-river values', () => {
-    window.location.hash = '#view=other'
-    expect(parseHash().view).toBeNull()
-  })
-
   it('parses view=lineage', () => {
     window.location.hash = '#view=lineage'
     expect(parseHash().view).toBe('lineage')
@@ -109,10 +99,6 @@ describe('buildHash', () => {
     const hash = buildHash({ ...empty, timeRange: { from: 1990, to: 2000 } })
     expect(hash).toContain('from=1990')
     expect(hash).toContain('to=2000')
-  })
-
-  it('encodes river view', () => {
-    expect(buildHash({ ...empty, viewMode: 'river' })).toBe('#view=river')
   })
 
   it('encodes lineage view', () => {
@@ -173,11 +159,6 @@ describe('readInitialStateFromHash', () => {
       selectedTag: 'fps',
       timeRange: { from: 1993, to: 2000 },
     })
-  })
-
-  it('returns viewMode when view=river in hash', () => {
-    window.location.hash = '#view=river'
-    expect(readInitialStateFromHash()).toEqual({ viewMode: 'river' })
   })
 
   it('returns embed and depth when present in hash', () => {
