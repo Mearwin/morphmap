@@ -14,6 +14,8 @@ interface Props {
 
 export const GameNode = memo(function GameNode({ node, color, isSelected, isHighlighted, onSelect, onHover }: Props) {
   const opacity = isHighlighted ? 1 : 0.1
+  const gradId = `ng-${node.id}`
+  const radius = isSelected ? node.radius * NODE.SELECTED_SCALE : node.radius
 
   return (
     <g
@@ -54,19 +56,30 @@ export const GameNode = memo(function GameNode({ node, color, isSelected, isHigh
           className={styles.glow}
         />
       )}
+      <defs>
+        <radialGradient id={gradId} cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stopColor="#fff" stopOpacity={0.25} />
+          <stop offset="100%" stopColor={color} stopOpacity={0} />
+        </radialGradient>
+      </defs>
       <circle
-        r={(isSelected ? node.radius * NODE.SELECTED_SCALE : node.radius) + 4}
+        r={radius + 4}
         fill="none"
         stroke="var(--accent)"
         strokeWidth={2}
         className={styles.focusRing}
       />
       <circle
-        r={isSelected ? node.radius * NODE.SELECTED_SCALE : node.radius}
+        r={radius}
         fill={color}
         stroke={isSelected ? '#fff' : color}
         strokeWidth={isSelected ? NODE.STROKE_SELECTED : NODE.STROKE_DEFAULT}
         className={styles.circle}
+      />
+      <circle
+        r={radius}
+        fill={`url(#${gradId})`}
+        pointerEvents="none"
       />
       <text
         y={-node.radius * 2 + NODE.LABEL_OFFSET}

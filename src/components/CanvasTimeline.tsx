@@ -196,6 +196,18 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
       ctx.arc(node.x, node.y, radius, 0, Math.PI * 2)
       ctx.fillStyle = isHovered ? lighten(color) : color
       ctx.fill()
+
+      // Radial highlight for dimensionality
+      if (radius >= 3) {
+        const grad = ctx.createRadialGradient(
+          node.x - radius * 0.3, node.y - radius * 0.3, 0,
+          node.x, node.y, radius,
+        )
+        grad.addColorStop(0, 'rgba(255,255,255,0.25)')
+        grad.addColorStop(1, 'rgba(255,255,255,0)')
+        ctx.fillStyle = grad
+        ctx.fill()
+      }
       if (isSelected) {
         ctx.strokeStyle = '#fff'
         ctx.lineWidth = NODE.STROKE_SELECTED
