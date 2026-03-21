@@ -88,17 +88,22 @@ export function MetricsDashboard({ open, onClose }: { open: boolean; onClose: ()
         ))}
       </div>
 
-      {/* Clusters */}
+      {/* Tightly-Knit Groups */}
       <div className={styles.card}>
-        <div className={styles.cardTitle}>Clusters</div>
+        <div className={styles.cardTitle}>Tightly-Knit Groups</div>
         {metrics.clusters.map((cluster, i) => (
           <div key={i} className={styles.clusterCard}>
             <div className={styles.clusterStats}>
-              {cluster.games.length} games · {cluster.internalLinks} internal · {cluster.externalLinks} external links
+              {cluster.games.length} games · {Math.round(cluster.density * 100)}% dense · {cluster.internalLinks} links
             </div>
             <div className={styles.clusterPills}>
               {cluster.games.map(g => (
-                <span key={g.id} className={styles.clusterPill}>{g.title}</span>
+                <span
+                  key={g.id}
+                  className={`${styles.clusterPill}${g.id === cluster.hub.id ? ` ${styles.clusterPillHub}` : ''}`}
+                >
+                  {g.title}
+                </span>
               ))}
             </div>
           </div>

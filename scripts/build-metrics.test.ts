@@ -113,20 +113,32 @@ describe('computeDensestHubs', () => {
 })
 
 describe('computeClusters', () => {
-  it('finds connected components with >= 3 games', () => {
+  it('finds tightly-knit groups with >= 4 members (hub + 3 neighbors)', () => {
     const { links } = buildAdj()
     const result = computeClusters(games, links)
     for (const cluster of result) {
-      expect(cluster.games.length).toBeGreaterThanOrEqual(3)
+      expect(cluster.games.length).toBeGreaterThanOrEqual(4)
+      expect(cluster.hub).toBeDefined()
+      expect(cluster.density).toBeGreaterThan(0)
+      expect(cluster.density).toBeLessThanOrEqual(1)
       expect(cluster.internalLinks).toBeGreaterThan(0)
     }
   })
 
-  it('returns clusters sorted by size', () => {
+  it('returns clusters sorted by density', () => {
     const { links } = buildAdj()
     const result = computeClusters(games, links)
     for (let i = 1; i < result.length; i++) {
-      expect(result[i - 1].games.length).toBeGreaterThanOrEqual(result[i].games.length)
+      expect(result[i - 1].density).toBeGreaterThanOrEqual(result[i].density)
+    }
+  })
+
+  it('hub is included in the games list', () => {
+    const { links } = buildAdj()
+    const result = computeClusters(games, links)
+    for (const cluster of result) {
+      const ids = cluster.games.map(g => g.id)
+      expect(ids).toContain(cluster.hub.id)
     }
   })
 })

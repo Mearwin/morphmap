@@ -159,6 +159,12 @@
   color: var(--text);
 }
 
+.clusterPillHub {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: var(--accent);
+}
+
 .pairRow {
   display: flex;
   align-items: baseline;

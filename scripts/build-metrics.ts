@@ -44,9 +44,10 @@ export interface DensestHubEntry {
 }
 
 export interface ClusterEntry {
+  hub: { id: string; title: string }
   games: { id: string; title: string }[]
+  density: number
   internalLinks: number
-  externalLinks: number
 }
 
 export interface UnexpectedConnectionEntry {
@@ -282,69 +283,65 @@ export function computeClusters(
   games: GameFile[],
   links: LinkData[],
 ): ClusterEntry[] {
-  // Union-Find for connected components
-  const parent = new Map<string, string>()
-  const rank = new Map<string, number>()
   const gameMap = new Map(games.map(g => [g.id, g]))
 
-  for (const g of games) {
-    parent.set(g.id, g.id)
-    rank.set(g.id, 0)
-  }
-
-  function find(x: string): string {
-    if (parent.get(x) !== x) parent.set(x, find(parent.get(x)!))
-    return parent.get(x)!
-  }
-
-  function union(a: string, b: string): void {
-    const ra = find(a)
-    const rb = find(b)
-    if (ra === rb) return
-    const rankA = rank.get(ra)!
-    const rankB = rank.get(rb)!
-    if (rankA < rankB) parent.set(ra, rb)
-    else if (rankA > rankB) parent.set(rb, ra)
-    else { parent.set(rb, ra); rank.set(ra, rankA + 1) }
-  }
-
+  // Build bidirectional neighbor map (direct connections only)
+  const neighbors = new Map<string, Set<string>>()
+  for (const g of games) neighbors.set(g.id, new Set())
   for (const link of links) {
-    union(link.source, link.target)
+    neighbors.get(link.source)?.add(link.target)
+    neighbors.get(link.target)?.add(link.source)
   }
 
-  // Group games by component
-  const components = new Map<string, string[]>()
-  for (const g of games) {
-    const root = find(g.id)
-    if (!components.has(root)) components.set(root, [])
-    components.get(root)!.push(g.id)
-  }
+  // For each game with >= 3 neighbors, compute density of its neighborhood
+  // Density = actual edges among neighbors / possible edges among neighbors
+  const candidates: ClusterEntry[] = []
+  for (const game of games) {
+    const nbrs = neighbors.get(game.id)!
+    if (nbrs.size < 3) continue
 
-  // For each component with >= 3 games, compute internal/external links
-  const entries: ClusterEntry[] = []
-  for (const [, memberIds] of components) {
-    if (memberIds.length < 3) continue
+    const group = [game.id, ...nbrs]
+    const groupSet = new Set(group)
 
-    const memberSet = new Set(memberIds)
+    // Count edges within this group
     let internalLinks = 0
-    let externalLinks = 0
-
     for (const link of links) {
-      const srcIn = memberSet.has(link.source)
-      const tgtIn = memberSet.has(link.target)
-      if (srcIn && tgtIn) internalLinks++
-      else if (srcIn || tgtIn) externalLinks++
+      if (groupSet.has(link.source) && groupSet.has(link.target)) {
+        internalLinks++
+      }
     }
 
-    entries.push({
-      games: memberIds.map(id => ({ id, title: gameMap.get(id)!.title })),
+    // Possible edges in a group of n = n*(n-1)/2 (undirected)
+    const n = group.length
+    const possibleEdges = (n * (n - 1)) / 2
+    const density = Math.round((internalLinks / possibleEdges) * 100) / 100
+
+    candidates.push({
+      hub: { id: game.id, title: game.title },
+      games: group.map(id => ({ id, title: gameMap.get(id)!.title })),
+      density,
       internalLinks,
-      externalLinks,
     })
   }
 
-  entries.sort((a, b) => b.games.length - a.games.length)
-  return entries
+  // Sort by density (higher = tighter), then by group size
+  candidates.sort((a, b) => b.density - a.density || b.games.length - a.games.length)
+
+  // Deduplicate: skip clusters whose games are a subset of an already-picked one
+  const picked: ClusterEntry[] = []
+  for (const candidate of candidates) {
+    const candidateIds = new Set(candidate.games.map(g => g.id))
+    const isSubset = picked.some(p => {
+      const pIds = new Set(p.games.map(g => g.id))
+      return [...candidateIds].every(id => pIds.has(id))
+    })
+    if (!isSubset) {
+      picked.push(candidate)
+      if (picked.length >= 5) break
+    }
+  }
+
+  return picked
 }
 
 export function computeUnexpectedConnections(
