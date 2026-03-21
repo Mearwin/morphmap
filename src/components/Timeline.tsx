@@ -14,7 +14,7 @@ import { Minimap } from './Minimap'
 import { useDataset } from '../dataset/DatasetContext'
 import { TIMELINE, LABEL, LINE, THEME } from '../constants'
 import { useViewport, isInViewport } from '../hooks/useViewport'
-import { computeLinkLabel, resolveOverlaps, type LabelInfo } from '../utils/labelPlacement'
+import { computeLinkLabel } from '../utils/labelPlacement'
 import { getYear } from '../utils/date'
 import { CanvasTimeline } from './CanvasTimeline'
 import { InfluenceRiver } from './InfluenceRiver'
@@ -172,19 +172,25 @@ function SvgTimeline({ onHover }: TimelineProps) {
     if (!selectedGameId) lastZoomedIdRef.current = null
   }, [selectedGameId])
 
-  const linkLabels = useMemo(() => {
-    if (!selectedGameId || !connectedSet) return []
-    const raw: LabelInfo[] = []
-    for (const link of links) {
-      const source = nodeMap.get(link.source)
-      const target = nodeMap.get(link.target)
-      if (!source || !target) continue
-      if (!connectedSet.has(source.id) || !connectedSet.has(target.id)) continue
-      if (selectedTag && !link.through.includes(selectedTag)) continue
-      raw.push(computeLinkLabel(source, target, link.through))
-    }
-    return resolveOverlaps(raw)
-  }, [selectedGameId, selectedTag, links, connectedSet, nodeMap])
+  const [hoveredLink, setHoveredLink] = useState<{ source: string; target: string } | null>(null)
+
+  const handleHoverLink = useCallback((source: string, target: string) => {
+    setHoveredLink({ source, target })
+  }, [])
+
+  const handleLeaveLink = useCallback(() => {
+    setHoveredLink(null)
+  }, [])
+
+  const hoveredLabel = useMemo(() => {
+    if (!hoveredLink) return null
+    const source = nodeMap.get(hoveredLink.source)
+    const target = nodeMap.get(hoveredLink.target)
+    if (!source || !target) return null
+    const link = links.find(l => l.source === hoveredLink.source && l.target === hoveredLink.target)
+    if (!link) return null
+    return computeLinkLabel(source, target, link.through)
+  }, [hoveredLink, nodeMap, links])
 
   return (
     <div ref={containerRef} className={styles.container}>
@@ -221,6 +227,8 @@ function SvgTimeline({ onHover }: TimelineProps) {
             ? (isHighlighted ? LINE.OPACITY_HIGHLIGHTED : LINE.OPACITY_DIMMED)
             : LINE.OPACITY_DEFAULT
 
+          const isLinkHovered = hoveredLink?.source === source.id && hoveredLink?.target === target.id
+
           return (
             <InfluenceLine
               key={`${link.source}-${link.target}`}
@@ -229,6 +237,9 @@ function SvgTimeline({ onHover }: TimelineProps) {
               through={link.through}
               opacity={opacity}
               isHighlighted={isHighlighted}
+              isHovered={isLinkHovered}
+              onHoverLink={handleHoverLink}
+              onLeaveLink={handleLeaveLink}
             />
           )
         })}
@@ -255,12 +266,12 @@ function SvgTimeline({ onHover }: TimelineProps) {
           )
         })}
 
-        {linkLabels.map((label, i) => (
-          <g key={i} pointerEvents="none">
+        {hoveredLabel && (
+          <g pointerEvents="none">
             <rect
-              x={label.x - label.width / 2}
-              y={label.y - LABEL.PILL_HALF_HEIGHT}
-              width={label.width}
+              x={hoveredLabel.x - hoveredLabel.width / 2}
+              y={hoveredLabel.y - LABEL.PILL_HALF_HEIGHT}
+              width={hoveredLabel.width}
               height={LABEL.HEIGHT}
               rx={LABEL.PILL_RADIUS}
               fill="var(--surface)"
@@ -269,17 +280,17 @@ function SvgTimeline({ onHover }: TimelineProps) {
               opacity={LABEL.PILL_OPACITY}
             />
             <text
-              x={label.x}
-              y={label.y + LABEL.TEXT_Y_OFFSET}
+              x={hoveredLabel.x}
+              y={hoveredLabel.y + LABEL.TEXT_Y_OFFSET}
               textAnchor="middle"
               fontSize={LABEL.FONT_SIZE}
               fontWeight={LABEL.FONT_WEIGHT}
               fill="var(--accent)"
             >
-              {label.text}
+              {hoveredLabel.text}
             </text>
           </g>
-        ))}
+        )}
       </g>
 
       {nodes.length > 0 && (
