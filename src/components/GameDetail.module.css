@@ -140,8 +140,8 @@
 }
 
 .ancestor:hover {
-  background: var(--accent-dim);
-  color: var(--accent);
+  background: var(--accent-secondary-dim);
+  color: var(--accent-secondary);
 }
 
 .similarScore {

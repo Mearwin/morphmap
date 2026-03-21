@@ -1,0 +1,30 @@
+{
+  "id": "p-t",
+  "title": "P.T.",
+  "date": "2014-08-12",
+  "tags": [
+    "survival-horror",
+    "first-person",
+    "psychological",
+    "atmospheric",
+    "walking-sim"
+  ],
+  "influencedBy": [
+    {
+      "id": "silent-hill-2",
+      "through": [
+        "survival-horror",
+        "psychological",
+        "atmospheric"
+      ]
+    },
+    {
+      "id": "amnesia",
+      "through": [
+        "first-person",
+        "atmospheric"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2vyw.jpg"
+}

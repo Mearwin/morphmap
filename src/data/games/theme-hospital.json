@@ -1,0 +1,29 @@
+{
+  "id": "theme-hospital",
+  "title": "Theme Hospital",
+  "date": "1997-03-31",
+  "tags": [
+    "simulation",
+    "management",
+    "humor",
+    "isometric"
+  ],
+  "influencedBy": [
+    {
+      "id": "simcity",
+      "through": [
+        "simulation",
+        "management"
+      ]
+    },
+    {
+      "id": "sim-city-2000",
+      "through": [
+        "simulation",
+        "management",
+        "isometric"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co56ml.jpg"
+}

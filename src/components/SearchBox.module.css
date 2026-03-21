@@ -58,7 +58,7 @@
 }
 
 .highlight {
-  color: var(--accent);
+  color: var(--accent-secondary);
   font-weight: 600;
 }
 

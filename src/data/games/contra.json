@@ -1,0 +1,30 @@
+{
+  "id": "contra",
+  "title": "Contra",
+  "date": "1987-02-20",
+  "tags": [
+    "side-scrolling",
+    "co-op",
+    "arcade",
+    "action",
+    "shooter",
+    "difficulty"
+  ],
+  "influencedBy": [
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "side-scrolling",
+        "action"
+      ]
+    },
+    {
+      "id": "space-invaders",
+      "through": [
+        "shooter",
+        "arcade"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coac91.jpg"
+}

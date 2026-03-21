@@ -11,6 +11,8 @@ root.style.setProperty('--text', THEME.text)
 root.style.setProperty('--text-muted', THEME.textMuted)
 root.style.setProperty('--accent', THEME.accent)
 root.style.setProperty('--accent-dim', THEME.accentDim)
+root.style.setProperty('--accent-secondary', THEME.accentSecondary)
+root.style.setProperty('--accent-secondary-dim', THEME.accentSecondaryDim)
 root.style.setProperty('--border', THEME.border)
 
 createRoot(document.getElementById('root')!).render(

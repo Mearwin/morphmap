@@ -1,0 +1,29 @@
+{
+  "id": "crypt-of-the-necrodancer",
+  "title": "Crypt of the NecroDancer",
+  "date": "2015-04-23",
+  "tags": [
+    "roguelite",
+    "rhythm",
+    "dungeon-crawl",
+    "procedural-generation",
+    "indie"
+  ],
+  "influencedBy": [
+    {
+      "id": "dance-dance-revolution",
+      "through": [
+        "rhythm"
+      ]
+    },
+    {
+      "id": "spelunky",
+      "through": [
+        "roguelite",
+        "procedural-generation",
+        "dungeon-crawl"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobaog.jpg"
+}

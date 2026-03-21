@@ -1,0 +1,33 @@
+{
+  "id": "super-smash-bros-melee",
+  "title": "Super Smash Bros. Melee",
+  "date": "2001-11-21",
+  "tags": [
+    "fighting",
+    "platform-fighter",
+    "crossover",
+    "competitive",
+    "party-game",
+    "combo-system"
+  ],
+  "influencedBy": [
+    {
+      "id": "super-smash-bros",
+      "through": [
+        "fighting",
+        "platform-fighter",
+        "crossover",
+        "party-game"
+      ]
+    },
+    {
+      "id": "street-fighter-iii",
+      "through": [
+        "fighting",
+        "competitive",
+        "combo-system"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co21yv.jpg"
+}

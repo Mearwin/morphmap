@@ -1,0 +1,32 @@
+{
+  "id": "rust",
+  "title": "Rust",
+  "date": "2018-02-08",
+  "tags": [
+    "survival",
+    "multiplayer",
+    "sandbox",
+    "crafting",
+    "base-building",
+    "open-world"
+  ],
+  "influencedBy": [
+    {
+      "id": "dayz",
+      "through": [
+        "survival",
+        "multiplayer",
+        "sandbox"
+      ]
+    },
+    {
+      "id": "minecraft",
+      "through": [
+        "crafting",
+        "sandbox",
+        "base-building"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coajjj.jpg"
+}

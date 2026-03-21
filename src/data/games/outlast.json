@@ -1,0 +1,31 @@
+{
+  "id": "outlast",
+  "title": "Outlast",
+  "date": "2013-09-04",
+  "tags": [
+    "survival-horror",
+    "first-person",
+    "defenseless",
+    "found-footage",
+    "atmospheric"
+  ],
+  "influencedBy": [
+    {
+      "id": "amnesia",
+      "through": [
+        "survival-horror",
+        "first-person",
+        "defenseless",
+        "atmospheric"
+      ]
+    },
+    {
+      "id": "silent-hill",
+      "through": [
+        "survival-horror",
+        "atmospheric"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1yat.jpg"
+}

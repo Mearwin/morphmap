@@ -1,0 +1,31 @@
+{
+  "id": "don-t-starve",
+  "title": "Don't Starve",
+  "date": "2013-04-23",
+  "tags": [
+    "survival",
+    "crafting",
+    "roguelite",
+    "procedural-generation",
+    "permadeath",
+    "atmospheric"
+  ],
+  "influencedBy": [
+    {
+      "id": "minecraft",
+      "through": [
+        "survival",
+        "crafting"
+      ]
+    },
+    {
+      "id": "nethack",
+      "through": [
+        "roguelite",
+        "permadeath",
+        "procedural-generation"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1qqw.jpg"
+}

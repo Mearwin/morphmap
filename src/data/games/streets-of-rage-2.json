@@ -1,0 +1,30 @@
+{
+  "id": "streets-of-rage-2",
+  "title": "Streets of Rage 2",
+  "date": "1992-12-20",
+  "tags": [
+    "side-scrolling",
+    "co-op",
+    "beat-em-up",
+    "arcade",
+    "combo-system",
+    "fighting"
+  ],
+  "influencedBy": [
+    {
+      "id": "gauntlet",
+      "through": [
+        "co-op",
+        "arcade"
+      ]
+    },
+    {
+      "id": "street-fighter-ii",
+      "through": [
+        "combo-system",
+        "fighting"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4te1.jpg"
+}

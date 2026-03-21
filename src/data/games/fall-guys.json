@@ -1,0 +1,29 @@
+{
+  "id": "fall-guys",
+  "title": "Fall Guys",
+  "date": "2020-08-04",
+  "tags": [
+    "party-game",
+    "multiplayer",
+    "platformer",
+    "competitive",
+    "battle-royale"
+  ],
+  "influencedBy": [
+    {
+      "id": "wii-sports",
+      "through": [
+        "party-game",
+        "multiplayer"
+      ]
+    },
+    {
+      "id": "pubg",
+      "through": [
+        "battle-royale",
+        "competitive"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa7cs.jpg"
+}

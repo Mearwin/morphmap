@@ -1,0 +1,29 @@
+{
+  "id": "shin-megami-tensei-iii-nocturne",
+  "title": "Shin Megami Tensei III: Nocturne",
+  "date": "2003-02-20",
+  "tags": [
+    "jrpg",
+    "turn-based-combat",
+    "demon-collecting",
+    "difficulty",
+    "mythology"
+  ],
+  "influencedBy": [
+    {
+      "id": "dragon-quest",
+      "through": [
+        "jrpg",
+        "turn-based-combat"
+      ]
+    },
+    {
+      "id": "final-fantasy",
+      "through": [
+        "jrpg",
+        "mythology"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co9klt.jpg"
+}

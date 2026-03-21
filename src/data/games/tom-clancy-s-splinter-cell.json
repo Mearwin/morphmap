@@ -1,0 +1,30 @@
+{
+  "id": "tom-clancy-s-splinter-cell",
+  "title": "Tom Clancy's Splinter Cell",
+  "date": "2002-11-17",
+  "tags": [
+    "stealth",
+    "action",
+    "tactical",
+    "espionage",
+    "level-design"
+  ],
+  "influencedBy": [
+    {
+      "id": "thief",
+      "through": [
+        "stealth",
+        "level-design"
+      ]
+    },
+    {
+      "id": "metal-gear-solid",
+      "through": [
+        "stealth",
+        "action",
+        "espionage"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co95r1.jpg"
+}

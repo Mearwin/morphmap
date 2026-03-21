@@ -1,0 +1,29 @@
+{
+  "id": "boneworks",
+  "title": "Boneworks",
+  "date": "2019-12-10",
+  "tags": [
+    "vr",
+    "fps",
+    "physics",
+    "melee-combat",
+    "sandbox"
+  ],
+  "influencedBy": [
+    {
+      "id": "half-life-2",
+      "through": [
+        "fps",
+        "physics"
+      ]
+    },
+    {
+      "id": "portal",
+      "through": [
+        "physics",
+        "sandbox"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5xoo.jpg"
+}

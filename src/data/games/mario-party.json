@@ -1,0 +1,28 @@
+{
+  "id": "mario-party",
+  "title": "Mario Party",
+  "date": "1998-12-18",
+  "tags": [
+    "party-game",
+    "multiplayer",
+    "mini-games",
+    "competitive"
+  ],
+  "influencedBy": [
+    {
+      "id": "super-mario-64",
+      "through": [
+        "multiplayer",
+        "mini-games"
+      ]
+    },
+    {
+      "id": "gauntlet",
+      "through": [
+        "multiplayer",
+        "competitive"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co22qr.jpg"
+}

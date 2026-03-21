@@ -1,0 +1,32 @@
+{
+  "id": "hades-ii",
+  "title": "Hades II",
+  "date": "2024-05-06",
+  "tags": [
+    "roguelite",
+    "action-rpg",
+    "hack-and-slash",
+    "narrative",
+    "mythology"
+  ],
+  "influencedBy": [
+    {
+      "id": "hades",
+      "through": [
+        "roguelite",
+        "action-rpg",
+        "hack-and-slash",
+        "narrative",
+        "mythology"
+      ]
+    },
+    {
+      "id": "dead-cells",
+      "through": [
+        "roguelite",
+        "action-rpg"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coaknx.jpg"
+}

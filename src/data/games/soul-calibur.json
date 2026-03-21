@@ -1,0 +1,30 @@
+{
+  "id": "soul-calibur",
+  "title": "Soul Calibur",
+  "date": "1998-12-23",
+  "tags": [
+    "fighting",
+    "3d-fighting",
+    "weapon-based",
+    "competitive",
+    "character-roster"
+  ],
+  "influencedBy": [
+    {
+      "id": "virtua-fighter",
+      "through": [
+        "fighting",
+        "3d-fighting",
+        "competitive"
+      ]
+    },
+    {
+      "id": "street-fighter-ii",
+      "through": [
+        "fighting",
+        "character-roster"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1x6g.jpg"
+}

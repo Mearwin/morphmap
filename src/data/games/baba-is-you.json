@@ -1,0 +1,29 @@
+{
+  "id": "baba-is-you",
+  "title": "Baba Is You",
+  "date": "2019-03-13",
+  "tags": [
+    "puzzle",
+    "indie",
+    "minimalist",
+    "creative",
+    "rule-manipulation"
+  ],
+  "influencedBy": [
+    {
+      "id": "portal",
+      "through": [
+        "puzzle",
+        "creative"
+      ]
+    },
+    {
+      "id": "braid",
+      "through": [
+        "puzzle",
+        "indie"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2hqt.jpg"
+}

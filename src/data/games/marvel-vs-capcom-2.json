@@ -1,0 +1,33 @@
+{
+  "id": "marvel-vs-capcom-2",
+  "title": "Marvel vs. Capcom 2",
+  "date": "2000-02-24",
+  "tags": [
+    "fighting",
+    "crossover",
+    "combo-system",
+    "competitive",
+    "arcade",
+    "tag-team"
+  ],
+  "influencedBy": [
+    {
+      "id": "street-fighter-ii",
+      "through": [
+        "fighting",
+        "combo-system",
+        "competitive",
+        "arcade"
+      ]
+    },
+    {
+      "id": "street-fighter-iii",
+      "through": [
+        "fighting",
+        "combo-system",
+        "competitive"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co870e.jpg"
+}

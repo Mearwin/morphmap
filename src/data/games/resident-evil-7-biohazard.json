@@ -25,6 +25,14 @@
         "atmospheric",
         "horror"
       ]
+    },
+    {
+      "id": "p-t",
+      "through": [
+        "survival-horror",
+        "first-person",
+        "atmospheric"
+      ]
     }
   ],
   "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob0ry.jpg"

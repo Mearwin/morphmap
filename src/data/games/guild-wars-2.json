@@ -1,0 +1,30 @@
+{
+  "id": "guild-wars-2",
+  "title": "Guild Wars 2",
+  "date": "2012-08-28",
+  "tags": [
+    "mmorpg",
+    "open-world",
+    "exploration",
+    "action-combat",
+    "co-op"
+  ],
+  "influencedBy": [
+    {
+      "id": "world-of-warcraft",
+      "through": [
+        "mmorpg",
+        "open-world"
+      ]
+    },
+    {
+      "id": "everquest",
+      "through": [
+        "mmorpg",
+        "exploration",
+        "co-op"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co54tr.jpg"
+}

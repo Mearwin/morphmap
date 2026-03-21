@@ -8,7 +8,9 @@
     "dungeon-crawl",
     "time-management",
     "narrative",
-    "daily-routine"
+    "daily-routine",
+    "turn-based-combat",
+    "mythology"
   ],
   "influencedBy": [
     {
@@ -23,6 +25,14 @@
       "through": [
         "social-sim",
         "daily-routine"
+      ]
+    },
+    {
+      "id": "shin-megami-tensei-iii-nocturne",
+      "through": [
+        "jrpg",
+        "turn-based-combat",
+        "mythology"
       ]
     }
   ],

@@ -71,6 +71,8 @@ export const THEME = {
   textMuted: '#6b6b80',
   accent: '#6366f1',
   accentDim: 'rgba(99, 102, 241, 0.3)',
+  accentSecondary: '#8b5cf6',
+  accentSecondaryDim: 'rgba(139, 92, 246, 0.2)',
   border: '#1e1e2e',
 } as const
 

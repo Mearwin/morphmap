@@ -1,0 +1,29 @@
+{
+  "id": "mark-of-the-ninja",
+  "title": "Mark of the Ninja",
+  "date": "2012-09-07",
+  "tags": [
+    "stealth",
+    "side-scrolling",
+    "platformer",
+    "indie",
+    "tight-controls"
+  ],
+  "influencedBy": [
+    {
+      "id": "thief",
+      "through": [
+        "stealth"
+      ]
+    },
+    {
+      "id": "super-meat-boy",
+      "through": [
+        "platformer",
+        "tight-controls",
+        "indie"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2sfv.jpg"
+}

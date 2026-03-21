@@ -1,0 +1,30 @@
+{
+  "id": "heroes-of-might-and-magic-iii",
+  "title": "Heroes of Might and Magic III",
+  "date": "1999-02-28",
+  "tags": [
+    "turn-based-strategy",
+    "fantasy",
+    "exploration",
+    "rpg-elements",
+    "strategy"
+  ],
+  "influencedBy": [
+    {
+      "id": "civilization",
+      "through": [
+        "turn-based-strategy",
+        "exploration",
+        "strategy"
+      ]
+    },
+    {
+      "id": "wizardry",
+      "through": [
+        "fantasy",
+        "rpg-elements"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co218t.jpg"
+}

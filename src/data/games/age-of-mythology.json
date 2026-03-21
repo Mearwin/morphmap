@@ -1,0 +1,31 @@
+{
+  "id": "age-of-mythology",
+  "title": "Age of Mythology",
+  "date": "2002-10-30",
+  "tags": [
+    "rts",
+    "mythology",
+    "base-building",
+    "competitive",
+    "narrative"
+  ],
+  "influencedBy": [
+    {
+      "id": "age-of-empires-ii",
+      "through": [
+        "rts",
+        "base-building",
+        "competitive"
+      ]
+    },
+    {
+      "id": "warcraft-iii",
+      "through": [
+        "rts",
+        "narrative",
+        "mythology"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co907c.jpg"
+}

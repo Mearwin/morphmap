@@ -1,0 +1,31 @@
+{
+  "id": "yakuza-0",
+  "title": "Yakuza 0",
+  "date": "2015-03-12",
+  "tags": [
+    "action-adventure",
+    "open-world",
+    "narrative",
+    "beat-em-up",
+    "crime",
+    "mini-games"
+  ],
+  "influencedBy": [
+    {
+      "id": "shenmue",
+      "through": [
+        "open-world",
+        "narrative",
+        "crime"
+      ]
+    },
+    {
+      "id": "streets-of-rage-2",
+      "through": [
+        "beat-em-up",
+        "action-adventure"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co252x.jpg"
+}

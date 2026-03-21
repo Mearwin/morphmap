@@ -1,0 +1,30 @@
+{
+  "id": "manor-lords",
+  "title": "Manor Lords",
+  "date": "2024-04-26",
+  "tags": [
+    "city-building",
+    "rts",
+    "medieval",
+    "simulation",
+    "management"
+  ],
+  "influencedBy": [
+    {
+      "id": "total-war-shogun-2",
+      "through": [
+        "rts",
+        "medieval"
+      ]
+    },
+    {
+      "id": "cities-skylines",
+      "through": [
+        "city-building",
+        "management",
+        "simulation"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8550.jpg"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "microsoft-flight-simulator",
+  "title": "Microsoft Flight Simulator",
+  "date": "2020-08-18",
+  "tags": [
+    "simulation",
+    "open-world",
+    "sandbox",
+    "realistic",
+    "exploration"
+  ],
+  "influencedBy": [
+    {
+      "id": "elite",
+      "through": [
+        "simulation",
+        "exploration"
+      ]
+    },
+    {
+      "id": "gran-turismo",
+      "through": [
+        "simulation",
+        "realistic"
+      ]
+    }
+  ],
+  "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2dqk.jpg"
+}

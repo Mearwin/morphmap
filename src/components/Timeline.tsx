@@ -74,10 +74,9 @@ function SvgTimeline({ onHover }: TimelineProps) {
   }, [])
 
   const handleBackgroundClick = useCallback(
-    (e: React.MouseEvent) => {
-      if (e.target === svgRef.current) {
-        dispatch({ type: 'SELECT_GAME', id: null })
-      }
+    () => {
+      // Node clicks call stopPropagation, so any click that reaches here is background
+      dispatch({ type: 'SELECT_GAME', id: null })
     },
     [dispatch]
   )
