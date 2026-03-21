@@ -29,6 +29,20 @@ export class ErrorBoundary extends Component<Props, State> {
           <pre style={{ fontSize: '0.85rem', opacity: 0.7 }}>
             {this.state.error.message}
           </pre>
+          <button
+            onClick={() => this.setState({ error: null })}
+            style={{
+              marginTop: '1rem',
+              padding: '0.5rem 1rem',
+              background: 'var(--accent, #4a9eff)',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+            }}
+          >
+            Try again
+          </button>
         </div>
       )
     }
