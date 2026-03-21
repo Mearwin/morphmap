@@ -7,6 +7,7 @@ import { FORCE, TIMELINE, NODE } from '../constants'
 export function useTimeline(games: Entity[], width: number, height: number) {
   const { tagPositions } = useDataset()
   const [nodes, setNodes] = useState<GameNode[]>([])
+  const [settled, setSettled] = useState(false)
   const workerRef = useRef<Worker | null>(null)
 
   const xScale = useMemo(() => {
@@ -44,6 +45,8 @@ export function useTimeline(games: Entity[], width: number, height: number) {
   useEffect(() => {
     if (!gameNodeMap) return
 
+    setSettled(false)
+
     // Create worker
     const worker = new Worker(
       new URL('../workers/forceWorker.ts', import.meta.url),
@@ -68,6 +71,7 @@ export function useTimeline(games: Entity[], width: number, height: number) {
       if (data.type === 'error') {
         console.error('Force worker error:', data.message)
         setNodes(Array.from(gameNodeMap.values()))
+        setSettled(true)
         return
       }
 
@@ -87,11 +91,16 @@ export function useTimeline(games: Entity[], width: number, height: number) {
         }
         return updated
       })
+
+      if (data.type === 'end') {
+        setSettled(true)
+      }
     }
 
     worker.onerror = () => {
       // If the worker crashes at the top level, fall back to pre-simulation positions
       setNodes(Array.from(gameNodeMap.values()))
+      setSettled(true)
     }
 
     worker.postMessage({
@@ -115,5 +124,5 @@ export function useTimeline(games: Entity[], width: number, height: number) {
     }
   }, [gameNodeMap])
 
-  return { nodes, xScale }
+  return { nodes, xScale, settled, initialNodes: gameNodeMap }
 }

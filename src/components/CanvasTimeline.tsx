@@ -50,7 +50,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 
   const { selectedGameId, selectedTag, timeRange } = state
 
-  const { nodes, xScale } = useTimeline(
+  const { nodes, xScale, settled, initialNodes } = useTimeline(
     games,
     dimensions.width || window.innerWidth,
     dimensions.height || window.innerHeight,
@@ -307,11 +307,53 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     }
   }, [scheduleRedraw])
 
-  // Zoom-to-fit: smoothly animate to center on selected node
+  // --- Initial fit-all: runs immediately from pre-simulation positions ---
+  const didInitialFitRef = useRef(false)
+
+  useEffect(() => {
+    if (didInitialFitRef.current || selectedGameId || !initialNodes || !canvasRef.current || !zoomRef.current) return
+    const { width, height } = dimensionsRef.current
+    if (width === 0 || height === 0) return
+
+    didInitialFitRef.current = true
+
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity
+    for (const n of initialNodes.values()) {
+      if (n.x < minX) minX = n.x
+      if (n.x > maxX) maxX = n.x
+      if (n.y < minY) minY = n.y
+      if (n.y > maxY) maxY = n.y
+    }
+
+    const padding = 40
+    const bboxW = maxX - minX || 1
+    const bboxH = maxY - minY || 1
+    const scale = Math.min(
+      (width - padding * 2) / bboxW,
+      (height - padding * 2) / bboxH,
+      TIMELINE.ZOOM_MAX,
+    )
+    const cx = (minX + maxX) / 2
+    const cy = (minY + maxY) / 2
+    const tx = width / 2 - cx * scale
+    const ty = height / 2 - cy * scale
+
+    select(canvasRef.current)
+      .call(zoomRef.current.transform, zoomIdentity.translate(tx, ty).scale(scale))
+  }, [initialNodes, selectedGameId])
+
+  // --- Zoom to selected game: use initialNodes for immediate zoom, no wait ---
+  const lastZoomedIdRef = useRef<string | null>(null)
+
   useEffect(() => {
     if (!selectedGameId || !canvasRef.current || !zoomRef.current) return
-    const node = nodeMap.get(selectedGameId)
+
+    const node = initialNodes?.get(selectedGameId) ?? nodeMap.get(selectedGameId)
     if (!node) return
+
+    if (lastZoomedIdRef.current === selectedGameId) return
+    lastZoomedIdRef.current = selectedGameId
+    didInitialFitRef.current = true
 
     const { width, height } = dimensionsRef.current
     if (width === 0 || height === 0) return
@@ -325,7 +367,11 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
       .transition()
       .duration(500)
       .call(zoomRef.current.transform, targetTransform)
-  }, [selectedGameId, nodeMap])
+  }, [selectedGameId, initialNodes, nodeMap])
+
+  useEffect(() => {
+    if (!selectedGameId) lastZoomedIdRef.current = null
+  }, [selectedGameId])
 
   // Hit testing for click/hover
   const hitTest = useCallback((clientX: number, clientY: number): GameNodeType | null => {

@@ -50,7 +50,7 @@ function SvgTimeline({ onHover }: TimelineProps) {
   const dimensions = useContainerSize(containerRef)
   const [transform, setTransform] = useState<ZoomTransform>(zoomIdentity)
 
-  const { nodes, xScale } = useTimeline(games, dimensions.width, dimensions.height)
+  const { nodes, xScale, settled, initialNodes } = useTimeline(games, dimensions.width, dimensions.height)
   const ready = nodes.length > 0
   const { links, connectedSet, connectedLinks } = derived
 
@@ -103,11 +103,55 @@ function SvgTimeline({ onHover }: TimelineProps) {
 
   const nodeMap = useMemo(() => new Map(nodes.map(n => [n.id, n])), [nodes])
 
-  // Zoom-to-fit: smoothly animate to center on selected node
+  // --- Initial fit-all: runs immediately from pre-simulation positions ---
+  const didInitialFitRef = useRef(false)
+
+  useEffect(() => {
+    if (didInitialFitRef.current || selectedGameId || !initialNodes || !svgRef.current || !zoomRef.current) return
+    const { width, height } = dimensions
+    if (width === 0 || height === 0) return
+
+    didInitialFitRef.current = true
+
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity
+    for (const n of initialNodes.values()) {
+      if (n.x < minX) minX = n.x
+      if (n.x > maxX) maxX = n.x
+      if (n.y < minY) minY = n.y
+      if (n.y > maxY) maxY = n.y
+    }
+
+    const padding = 40
+    const bboxW = maxX - minX || 1
+    const bboxH = maxY - minY || 1
+    const scale = Math.min(
+      (width - padding * 2) / bboxW,
+      (height - padding * 2) / bboxH,
+      TIMELINE.ZOOM_MAX,
+    )
+    const cx = (minX + maxX) / 2
+    const cy = (minY + maxY) / 2
+    const tx = width / 2 - cx * scale
+    const ty = height / 2 - cy * scale
+
+    select(svgRef.current)
+      .call(zoomRef.current.transform, zoomIdentity.translate(tx, ty).scale(scale))
+  }, [initialNodes, dimensions, selectedGameId])
+
+  // --- Zoom to selected game: use initialNodes for immediate zoom, no wait ---
+  const lastZoomedIdRef = useRef<string | null>(null)
+
   useEffect(() => {
     if (!selectedGameId || !svgRef.current || !zoomRef.current) return
-    const node = nodeMap.get(selectedGameId)
+
+    // Use initialNodes (instant) or fall back to nodeMap (after sim ticks)
+    const node = initialNodes?.get(selectedGameId) ?? nodeMap.get(selectedGameId)
     if (!node) return
+
+    // Skip if we already zoomed to this game at roughly the same position
+    if (lastZoomedIdRef.current === selectedGameId) return
+    lastZoomedIdRef.current = selectedGameId
+    didInitialFitRef.current = true
 
     const { width, height } = dimensions
     if (width === 0 || height === 0) return
@@ -121,7 +165,12 @@ function SvgTimeline({ onHover }: TimelineProps) {
       .transition()
       .duration(500)
       .call(zoomRef.current.transform, targetTransform)
-  }, [selectedGameId, nodeMap, dimensions])
+  }, [selectedGameId, initialNodes, nodeMap, dimensions])
+
+  // Reset tracking when game is deselected
+  useEffect(() => {
+    if (!selectedGameId) lastZoomedIdRef.current = null
+  }, [selectedGameId])
 
   const linkLabels = useMemo(() => {
     if (!selectedGameId || !connectedSet) return []
