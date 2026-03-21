@@ -88,10 +88,14 @@ function AppInner() {
   return (
     <div id="app">
       <header className="top-bar">
-        <div className="top-bar-left">
+        <div className="top-bar-group">
           <h1 className="logo">Morphmap</h1>
           <SearchBox ref={searchInputRef} />
+        </div>
+        <div className="top-bar-divider" />
+        <div className="top-bar-group top-bar-center">
           <ViewToggle />
+          <TimeRangeSlider />
           <button
             className={`metrics-toggle${showMetrics ? ' active' : ''}`}
             onClick={() => setShowMetrics(v => !v)}
@@ -105,8 +109,10 @@ function AppInner() {
             </svg>
           </button>
         </div>
-        <TagFilter />
-        <TimeRangeSlider />
+        <div className="top-bar-divider" />
+        <div className="top-bar-group">
+          <TagFilter />
+        </div>
       </header>
 
       <div className="main-area">
