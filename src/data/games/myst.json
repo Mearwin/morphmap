@@ -12,10 +12,10 @@
   ],
   "influencedBy": [
     {
-      "id": "the-secret-of-monkey-island",
+      "id": "zork-i",
       "through": [
-        "narrative",
-        "inventory-puzzles"
+        "puzzle",
+        "exploration"
       ]
     }
   ],

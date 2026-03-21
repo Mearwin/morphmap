@@ -9,21 +9,24 @@
     "roguelike",
     "deck-building",
     "fourth-wall",
-    "narrative"
+    "narrative",
+    "roguelite",
+    "deckbuilding"
   ],
   "influencedBy": [
     {
       "id": "slay-the-spire",
       "through": [
-        "roguelike",
-        "deck-building"
+        "card-game",
+        "roguelite",
+        "deckbuilding"
       ]
     },
     {
       "id": "undertale",
       "through": [
-        "fourth-wall",
-        "narrative"
+        "meta-narrative",
+        "fourth-wall"
       ]
     }
   ],

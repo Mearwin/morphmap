@@ -9,21 +9,24 @@
     "modding",
     "moral-choices",
     "crpg",
-    "narrative"
+    "narrative",
+    "rpg",
+    "first-person"
   ],
   "influencedBy": [
     {
-      "id": "ultima-iv",
+      "id": "the-elder-scrolls-ii-daggerfall",
       "through": [
         "open-world",
-        "moral-choices"
+        "rpg",
+        "first-person"
       ]
     },
     {
-      "id": "baldurs-gate",
+      "id": "ultima-iv",
       "through": [
-        "crpg",
-        "narrative"
+        "rpg",
+        "open-world"
       ]
     }
   ],

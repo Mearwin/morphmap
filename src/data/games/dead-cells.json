@@ -10,28 +10,30 @@
     "permadeath",
     "exploration",
     "difficulty",
-    "action-rpg"
+    "action-rpg",
+    "action-combat",
+    "melee-combat"
   ],
   "influencedBy": [
     {
-      "id": "rogue",
+      "id": "spelunky",
       "through": [
-        "procedural-generation",
-        "permadeath"
+        "roguelike",
+        "procedural-generation"
       ]
     },
     {
       "id": "castlevania-sotn",
       "through": [
         "metroidvania",
-        "exploration"
+        "action-combat"
       ]
     },
     {
       "id": "dark-souls",
       "through": [
         "difficulty",
-        "action-rpg"
+        "melee-combat"
       ]
     }
   ],

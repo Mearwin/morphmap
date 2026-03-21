@@ -14,17 +14,18 @@
   ],
   "influencedBy": [
     {
-      "id": "ultima-iv",
+      "id": "ultima-online",
       "through": [
-        "rpg",
-        "fantasy-world"
+        "mmorpg",
+        "mmo",
+        "persistent-world"
       ]
     },
     {
       "id": "diablo",
       "through": [
-        "online-multiplayer",
-        "loot"
+        "loot",
+        "online-multiplayer"
       ]
     }
   ]

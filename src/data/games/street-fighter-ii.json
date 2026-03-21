@@ -6,8 +6,18 @@
     "fighting",
     "competitive",
     "combo-system",
-    "character-roster"
+    "character-roster",
+    "special-moves"
   ],
-  "influencedBy": [],
+  "influencedBy": [
+    {
+      "id": "street-fighter",
+      "through": [
+        "fighting",
+        "competitive",
+        "special-moves"
+      ]
+    }
+  ],
   "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co55et.jpg"
 }

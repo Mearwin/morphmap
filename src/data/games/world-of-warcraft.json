@@ -10,21 +10,25 @@
     "rts",
     "narrative",
     "loot",
-    "online-multiplayer"
+    "online-multiplayer",
+    "raiding",
+    "persistent-world",
+    "lore"
   ],
   "influencedBy": [
     {
-      "id": "warcraft-iii",
+      "id": "everquest",
       "through": [
-        "rts",
-        "narrative"
+        "mmorpg",
+        "raiding",
+        "persistent-world"
       ]
     },
     {
-      "id": "diablo-ii",
+      "id": "warcraft-iii",
       "through": [
-        "loot",
-        "online-multiplayer"
+        "lore",
+        "rts"
       ]
     }
   ],

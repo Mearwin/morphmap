@@ -8,21 +8,25 @@
     "world-war-ii",
     "scripted-events",
     "narrative-driven",
-    "console-shooter"
+    "console-shooter",
+    "world-war-2",
+    "cinematic-action",
+    "scripted-sequences"
   ],
   "influencedBy": [
     {
-      "id": "half-life",
+      "id": "medal-of-honor",
       "through": [
-        "scripted-events",
-        "narrative-driven"
+        "fps",
+        "world-war-2",
+        "cinematic-action"
       ]
     },
     {
-      "id": "halo",
+      "id": "half-life",
       "through": [
         "fps",
-        "console-shooter"
+        "scripted-sequences"
       ]
     }
   ],

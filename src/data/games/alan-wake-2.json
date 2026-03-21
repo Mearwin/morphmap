@@ -8,22 +8,25 @@
     "atmospheric",
     "dual-protagonists",
     "psychological",
-    "over-the-shoulder"
+    "over-the-shoulder",
+    "narrative",
+    "action-adventure",
+    "atmospheric-world"
   ],
   "influencedBy": [
     {
-      "id": "silent-hill-2",
+      "id": "alan-wake",
       "through": [
+        "narrative",
         "survival-horror",
-        "psychological",
-        "atmospheric"
+        "psychological"
       ]
     },
     {
-      "id": "resident-evil-4",
+      "id": "control",
       "through": [
-        "survival-horror",
-        "over-the-shoulder"
+        "action-adventure",
+        "atmospheric-world"
       ]
     }
   ],

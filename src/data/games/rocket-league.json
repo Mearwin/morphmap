@@ -6,8 +6,18 @@
     "sports",
     "physics",
     "competitive",
-    "multiplayer"
+    "multiplayer",
+    "arcade-sports",
+    "score-attack"
   ],
-  "influencedBy": [],
+  "influencedBy": [
+    {
+      "id": "tony-hawks-pro-skater",
+      "through": [
+        "arcade-sports",
+        "score-attack"
+      ]
+    }
+  ],
   "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/coaiyq.jpg"
 }

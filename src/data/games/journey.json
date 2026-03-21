@@ -7,21 +7,16 @@
     "wordless-narrative",
     "co-op",
     "exploration",
-    "minimalist"
+    "minimalist",
+    "emotional-experience",
+    "art-game"
   ],
   "influencedBy": [
     {
-      "id": "ico",
+      "id": "flower",
       "through": [
-        "atmospheric",
-        "minimalist"
-      ]
-    },
-    {
-      "id": "shadow-of-the-colossus",
-      "through": [
-        "atmospheric",
-        "exploration"
+        "emotional-experience",
+        "art-game"
       ]
     }
   ],

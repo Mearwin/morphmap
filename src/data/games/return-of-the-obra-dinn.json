@@ -9,22 +9,22 @@
     "unique-art",
     "puzzle",
     "exploration",
-    "moral-choices"
+    "moral-choices",
+    "investigation"
   ],
   "influencedBy": [
+    {
+      "id": "papers-please",
+      "through": [
+        "deduction",
+        "investigation"
+      ]
+    },
     {
       "id": "myst",
       "through": [
         "puzzle",
-        "first-person",
-        "exploration"
-      ]
-    },
-    {
-      "id": "papers-please",
-      "through": [
-        "puzzle",
-        "moral-choices"
+        "mystery"
       ]
     }
   ],

@@ -7,19 +7,27 @@
     "time-rewind",
     "parkour",
     "puzzle-platformer",
-    "3d-adventure"
+    "3d-adventure",
+    "platformer",
+    "acrobatics",
+    "traps",
+    "3d-combat",
+    "puzzle"
   ],
   "influencedBy": [
     {
-      "id": "super-mario-64",
+      "id": "prince-of-persia",
       "through": [
-        "3d-platformer"
+        "platformer",
+        "acrobatics",
+        "traps"
       ]
     },
     {
       "id": "ocarina-of-time",
       "through": [
-        "3d-adventure"
+        "3d-combat",
+        "puzzle"
       ]
     }
   ],

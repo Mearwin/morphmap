@@ -10,27 +10,24 @@
     "cinematic",
     "difficulty",
     "action-rpg",
-    "lock-on-targeting"
+    "lock-on-targeting",
+    "melee-combat"
   ],
   "influencedBy": [
     {
-      "id": "the-last-of-us",
+      "id": "god-of-war",
       "through": [
-        "narrative-driven",
-        "cinematic"
+        "action-adventure",
+        "mythology",
+        "melee-combat"
       ]
     },
     {
       "id": "dark-souls",
       "through": [
-        "difficulty",
-        "action-rpg"
-      ]
-    },
-    {
-      "id": "ocarina-of-time",
-      "through": [
-        "lock-on-targeting"
+        "over-the-shoulder",
+        "melee-combat",
+        "difficulty"
       ]
     }
   ],

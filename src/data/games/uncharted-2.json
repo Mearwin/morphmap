@@ -9,21 +9,27 @@
     "narrative-driven",
     "cover-system",
     "3d-platformer",
-    "parkour"
+    "parkour",
+    "action-adventure",
+    "3d-platforming",
+    "exploration",
+    "cinematic-action",
+    "set-piece-design"
   ],
   "influencedBy": [
     {
-      "id": "gears-of-war",
+      "id": "tomb-raider",
       "through": [
-        "cover-system",
-        "cinematic"
+        "action-adventure",
+        "3d-platforming",
+        "exploration"
       ]
     },
     {
-      "id": "prince-of-persia-sot",
+      "id": "half-life-2",
       "through": [
-        "3d-platformer",
-        "parkour"
+        "cinematic-action",
+        "set-piece-design"
       ]
     }
   ],

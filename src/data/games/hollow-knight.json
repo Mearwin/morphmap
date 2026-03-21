@@ -11,23 +11,16 @@
     "nonlinear",
     "rpg-elements",
     "difficulty",
-    "interconnected-world"
+    "interconnected-world",
+    "atmosphere"
   ],
   "influencedBy": [
     {
-      "id": "metroid",
-      "through": [
-        "exploration",
-        "backtracking",
-        "nonlinear"
-      ]
-    },
-    {
-      "id": "castlevania-sotn",
+      "id": "super-metroid",
       "through": [
         "metroidvania",
         "exploration",
-        "rpg-elements"
+        "atmosphere"
       ]
     },
     {

@@ -7,20 +7,23 @@
     "deck-building",
     "strategy",
     "procedural-generation",
-    "permadeath"
+    "permadeath",
+    "card-game",
+    "deckbuilding",
+    "roguelite"
   ],
   "influencedBy": [
     {
-      "id": "rogue",
+      "id": "hearthstone",
       "through": [
-        "procedural-generation",
-        "permadeath"
+        "card-game",
+        "deckbuilding"
       ]
     },
     {
       "id": "ftl",
       "through": [
-        "roguelike",
+        "roguelite",
         "permadeath"
       ]
     }
