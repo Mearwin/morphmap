@@ -30,6 +30,9 @@ const LazyLineageView = lazy(() =>
 const LazyEmbedView = lazy(() =>
   import('./components/EmbedView').then(m => ({ default: m.EmbedView }))
 )
+const LazyMetricsDashboard = lazy(() =>
+  import('./components/MetricsDashboard').then(m => ({ default: m.MetricsDashboard }))
+)
 const games: Game[] = gamesData as Game[]
 
 function AppInner() {
@@ -46,6 +49,7 @@ function AppInner() {
   })
 
   const [showShortcuts, setShowShortcuts] = useState(false)
+  const [showMetrics, setShowMetrics] = useState(false)
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -85,12 +89,30 @@ function AppInner() {
           <h1 className="logo">Morphmap</h1>
           <SearchBox ref={searchInputRef} />
           <ViewToggle />
+          <button
+            className={`metrics-toggle${showMetrics ? ' active' : ''}`}
+            onClick={() => setShowMetrics(v => !v)}
+            aria-label="Toggle metrics dashboard"
+            title="Metrics"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="1" y="8" width="3" height="7" rx="0.5" fill="currentColor" />
+              <rect x="6" y="4" width="3" height="11" rx="0.5" fill="currentColor" />
+              <rect x="11" y="1" width="3" height="14" rx="0.5" fill="currentColor" />
+            </svg>
+          </button>
         </div>
         <TagFilter />
         <TimeRangeSlider />
       </header>
 
       <div className="main-area">
+        <ErrorBoundary fallback={null}>
+          <Suspense fallback={null}>
+            <LazyMetricsDashboard open={showMetrics} onClose={() => setShowMetrics(false)} />
+          </Suspense>
+        </ErrorBoundary>
+
         {state.viewMode === 'lineage' ? (
           <ErrorBoundary fallback={<div style={{ flex: 1 }} />}>
             <Suspense fallback={null}>

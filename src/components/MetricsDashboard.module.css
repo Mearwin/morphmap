@@ -1,0 +1,204 @@
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 100%;
+  padding: 16px;
+  background: rgba(18, 18, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  z-index: 20;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  will-change: opacity, transform;
+}
+
+.panelEntering {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.panelVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.panelExiting {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.closeBtn:hover {
+  color: var(--text);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+.cardTitle {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.decadeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 3px 0;
+  font-size: 12px;
+}
+
+.decadeRow + .decadeRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.decadeLabel {
+  color: var(--text-muted);
+  font-size: 11px;
+  min-width: 40px;
+}
+
+.decadeValue {
+  color: var(--text);
+  text-align: right;
+}
+
+.decadeCount {
+  color: var(--text-muted);
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.rankRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 3px 0;
+  font-size: 12px;
+}
+
+.rankRow + .rankRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.rankIndex {
+  color: var(--text-muted);
+  font-size: 10px;
+  min-width: 16px;
+}
+
+.rankName {
+  color: var(--text);
+  flex: 1;
+  margin: 0 6px;
+}
+
+.rankValue {
+  color: var(--text-muted);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.clusterCard {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 6px;
+}
+
+.clusterStats {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.clusterPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.clusterPill {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 10px;
+  color: var(--text);
+}
+
+.pairRow {
+  display: flex;
+  align-items: baseline;
+  padding: 3px 0;
+  font-size: 12px;
+  gap: 6px;
+}
+
+.pairRow + .pairRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.pairArrow {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.pairDistance {
+  color: var(--text-muted);
+  font-size: 10px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .panel {
+    width: 100%;
+    height: 50%;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: 1px solid var(--border);
+  }
+
+  .panelEntering {
+    transform: translateY(20px);
+  }
+
+  .panelExiting {
+    transform: translateY(20px);
+  }
+}

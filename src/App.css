@@ -82,3 +82,29 @@ html, body, #root {
     font-size: 15px;
   }
 }
+
+.metrics-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+
+.metrics-toggle:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+.metrics-toggle.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(99, 102, 241, 0.1);
+}
