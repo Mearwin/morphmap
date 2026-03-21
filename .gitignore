@@ -34,4 +34,5 @@ docs/plans/
 
 # Generated from individual game files
 src/data/games.json
+src/data/tag-index.json
 src/data/.cache

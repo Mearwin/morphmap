@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "data:build": "tsx scripts/build-games.ts",
-    "dev": "npm run data:build && vite",
-    "build": "npm run data:build && tsc -b && vite build",
+    "data:build-tags": "tsx scripts/build-tag-index.ts",
+    "dev": "npm run data:build && npm run data:build-tags && vite",
+    "build": "npm run data:build && npm run data:build-tags && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
