@@ -55,7 +55,7 @@ function AppInner() {
         e.preventDefault()
         setShowShortcuts(v => !v)
       }
-      if (e.key === 'r' || e.key === 'R') {
+      if ((e.key === 'r' || e.key === 'R') && !e.metaKey && !e.ctrlKey && !e.altKey) {
         e.preventDefault()
         dispatch({ type: 'SET_VIEW_MODE', mode: state.viewMode === 'river' ? 'timeline' : 'river' })
       }
