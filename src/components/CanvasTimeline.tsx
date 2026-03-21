@@ -132,6 +132,19 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     // Draw time axis
     drawTimeAxis(ctx, xScale, height / transform.k)
 
+    // Draw background dot grid
+    const dotSpacing = 20
+    const dotStartX = Math.floor(linkViewport.minX / dotSpacing) * dotSpacing
+    const dotStartY = Math.floor(linkViewport.minY / dotSpacing) * dotSpacing
+    ctx.fillStyle = THEME.textMuted
+    ctx.globalAlpha = 0.15
+    for (let dx = dotStartX; dx < linkViewport.maxX; dx += dotSpacing) {
+      for (let dy = dotStartY; dy < linkViewport.maxY; dy += dotSpacing) {
+        ctx.fillRect(dx - 0.5, dy - 0.5, 1, 1)
+      }
+    }
+    ctx.globalAlpha = 1
+
     // Draw links
     for (const link of filteredLinks) {
       const source = nodeMap.get(link.source)

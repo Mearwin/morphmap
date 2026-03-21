@@ -204,7 +204,13 @@ function SvgTimeline({ onHover }: TimelineProps) {
       role="img"
       aria-label="Interactive timeline of video game influences. Use mouse to zoom and pan, click nodes to explore connections."
     >
+      <defs>
+        <pattern id="bg-dots" width="20" height="20" patternUnits="userSpaceOnUse">
+          <circle cx="10" cy="10" r="0.5" fill="var(--text-muted)" opacity="0.15" />
+        </pattern>
+      </defs>
       <g transform={transform.toString()}>
+        <rect x="-1e5" y="-1e5" width="2e5" height="2e5" fill="url(#bg-dots)" />
         <TimeAxis xScale={xScale} height={dimensions.height} />
 
         {links.map(link => {
