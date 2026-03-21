@@ -2,7 +2,7 @@ import { memo, useId, useMemo } from 'react'
 import type { ZoomTransform } from 'd3-zoom'
 import type { GameNode } from '../types'
 import { MINIMAP } from '../constants'
-import { computeMinimapBounds, computeMinimapLayout, toMinimapX, toMinimapY } from '../utils/minimapLayout'
+import { computeMinimapBounds, computeMinimapLayout, toMinimapX, toMinimapY, type MinimapBounds } from '../utils/minimapLayout'
 
 interface Props {
   nodes: GameNode[]
@@ -15,7 +15,10 @@ interface Props {
 export const Minimap = memo(function Minimap({ nodes, gameColors, transform, viewWidth, viewHeight }: Props) {
   const clipId = useId()
   const bounds = useMemo(() => computeMinimapBounds(nodes), [nodes])
-  const layout = computeMinimapLayout(bounds, transform, viewWidth, viewHeight)
+  const layout = useMemo(
+    () => computeMinimapLayout(bounds, transform, viewWidth, viewHeight),
+    [bounds, transform, viewWidth, viewHeight],
+  )
   const { offsetX, offsetY, scaleX, scaleY, viewportRect } = layout
 
   return (
@@ -35,16 +38,7 @@ export const Minimap = memo(function Minimap({ nodes, gameColors, transform, vie
         <rect x={0} y={0} width={MINIMAP.WIDTH} height={MINIMAP.HEIGHT} rx={MINIMAP.BORDER_RADIUS} />
       </clipPath>
       <g clipPath={`url(#${clipId})`}>
-        {nodes.map(n => (
-          <circle
-            key={n.id}
-            cx={toMinimapX(n.x, bounds, scaleX)}
-            cy={toMinimapY(n.y, bounds, scaleY)}
-            r={1.2}
-            fill={gameColors.get(n.id) ?? '#6b6b80'}
-            opacity={0.7}
-          />
-        ))}
+        <MinimapNodes nodes={nodes} bounds={bounds} scaleX={scaleX} scaleY={scaleY} gameColors={gameColors} />
         <rect
           x={viewportRect.x}
           y={viewportRect.y}
@@ -57,5 +51,30 @@ export const Minimap = memo(function Minimap({ nodes, gameColors, transform, vie
         />
       </g>
     </g>
+  )
+})
+
+const MinimapNodes = memo(function MinimapNodes({
+  nodes, bounds, scaleX, scaleY, gameColors,
+}: {
+  nodes: GameNode[]
+  bounds: MinimapBounds
+  scaleX: number
+  scaleY: number
+  gameColors: Map<string, string>
+}) {
+  return (
+    <>
+      {nodes.map(n => (
+        <circle
+          key={n.id}
+          cx={toMinimapX(n.x, bounds, scaleX)}
+          cy={toMinimapY(n.y, bounds, scaleY)}
+          r={1.2}
+          fill={gameColors.get(n.id) ?? '#6b6b80'}
+          opacity={0.7}
+        />
+      ))}
+    </>
   )
 })

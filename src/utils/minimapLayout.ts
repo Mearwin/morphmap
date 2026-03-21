@@ -5,7 +5,7 @@ interface Point {
   y: number
 }
 
-interface MinimapBounds {
+export interface MinimapBounds {
   minX: number
   maxX: number
   minY: number
