@@ -36,13 +36,14 @@ export function Tooltip({ node, x, y }: Props) {
 
     el.style.left = `${left}px`
     el.style.top = `${top}px`
+    el.style.opacity = '1'
   }, [x, y])
 
   return (
     <div
       ref={positionRef}
       className={styles.tooltip}
-      style={{ left: x + OFFSET, top: y - OFFSET }}
+      style={{ left: x + OFFSET, top: y - OFFSET, opacity: 0 }}
     >
       <div className={styles.header}>
         <span className={styles.dot} style={{ background: gameColors.get(node.id) ?? '#6b6b80' }} />
