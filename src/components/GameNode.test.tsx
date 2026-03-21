@@ -28,7 +28,7 @@ function renderNode(
     onSelect,
     ...render(
       <svg>
-        <GameNode node={n} isSelected={isSelected} isHighlighted={isHighlighted} onSelect={onSelect} />
+        <GameNode node={n} color="#ef4444" isSelected={isSelected} isHighlighted={isHighlighted} onSelect={onSelect} />
       </svg>,
     ),
   }

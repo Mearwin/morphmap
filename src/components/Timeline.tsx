@@ -50,7 +50,7 @@ function SvgTimeline({ onHover }: TimelineProps) {
   const dimensions = useContainerSize(containerRef)
   const [transform, setTransform] = useState<ZoomTransform>(zoomIdentity)
 
-  const { nodes, xScale, settled, initialNodes } = useTimeline(games, dimensions.width, dimensions.height)
+  const { nodes, xScale, initialNodes } = useTimeline(games, dimensions.width, dimensions.height)
   const ready = nodes.length > 0
   const { links, connectedSet, connectedLinks } = derived
 

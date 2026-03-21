@@ -50,7 +50,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 
   const { selectedGameId, selectedTag, timeRange } = state
 
-  const { nodes, xScale, settled, initialNodes } = useTimeline(
+  const { nodes, xScale, initialNodes } = useTimeline(
     games,
     dimensions.width || window.innerWidth,
     dimensions.height || window.innerHeight,

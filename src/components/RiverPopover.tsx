@@ -15,7 +15,7 @@ interface Props {
   onSelectGame: (id: string) => void
 }
 
-export function RiverPopover({ tagId, tagLabel, tagColor, eraLabel, cell, x, y, onClose, onSelectGame }: Props) {
+export function RiverPopover({ tagId: _tagId, tagLabel, tagColor, eraLabel, cell, x, y, onClose, onSelectGame }: Props) {
   const { entityLabelPlural } = useDataset()
 
   useEffect(() => {

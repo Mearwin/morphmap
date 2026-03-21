@@ -4,7 +4,6 @@ import { scaleLinear } from 'd3-scale'
 import { useGameStore } from '../store/useGameStore'
 import { buildLinks } from '../utils/graph'
 import { buildRiverData, type EraCategoryCell } from '../utils/riverData'
-import { useDataset } from '../dataset/DatasetContext'
 import { hslFromPosition } from '../utils/tagColor'
 import { THEME } from '../constants'
 import { RiverPopover } from './RiverPopover'
@@ -30,7 +29,6 @@ type HoverState = {
 
 export function InfluenceRiver() {
   const { games, state, dispatch } = useGameStore()
-  const { gameColors } = useDataset()
   const { selectedTag } = state
   const containerRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
