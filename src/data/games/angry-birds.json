@@ -1,0 +1,28 @@
+{
+  "id": "angry-birds",
+  "title": "Angry Birds",
+  "date": "2009-12-11",
+  "tags": [
+    "physics",
+    "puzzle",
+    "mobile",
+    "accessible",
+    "score-attack"
+  ],
+  "influencedBy": [
+    {
+      "id": "lemmings",
+      "through": [
+        "physics",
+        "puzzle"
+      ]
+    },
+    {
+      "id": "world-of-goo",
+      "through": [
+        "physics",
+        "puzzle"
+      ]
+    }
+  ]
+}

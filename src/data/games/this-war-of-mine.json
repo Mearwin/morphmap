@@ -1,0 +1,22 @@
+{
+  "id": "this-war-of-mine",
+  "title": "This War of Mine",
+  "date": "2014-11-14",
+  "tags": [
+    "survival",
+    "narrative",
+    "moral-choices",
+    "resource-management",
+    "war"
+  ],
+  "influencedBy": [
+    {
+      "id": "papers-please",
+      "through": [
+        "narrative",
+        "moral-choices",
+        "war"
+      ]
+    }
+  ]
+}

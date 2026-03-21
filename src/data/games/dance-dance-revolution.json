@@ -1,0 +1,21 @@
+{
+  "id": "dance-dance-revolution",
+  "title": "Dance Dance Revolution",
+  "date": "1998-11-20",
+  "tags": [
+    "rhythm",
+    "arcade",
+    "score-attack",
+    "multiplayer",
+    "peripheral"
+  ],
+  "influencedBy": [
+    {
+      "id": "parappa-the-rapper",
+      "through": [
+        "rhythm",
+        "arcade"
+      ]
+    }
+  ]
+}

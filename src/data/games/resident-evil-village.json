@@ -25,6 +25,13 @@
         "survival-horror",
         "exploration"
       ]
+    },
+    {
+      "id": "resident-evil-7-biohazard",
+      "through": [
+        "survival-horror",
+        "first-person"
+      ]
     }
   ]
 }

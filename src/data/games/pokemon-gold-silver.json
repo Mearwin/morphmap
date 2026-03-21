@@ -1,0 +1,30 @@
+{
+  "id": "pokemon-gold-silver",
+  "title": "Pokemon Gold/Silver",
+  "date": "1999-11-21",
+  "tags": [
+    "rpg",
+    "creature-collection",
+    "exploration",
+    "overworld",
+    "daily-cycle"
+  ],
+  "influencedBy": [
+    {
+      "id": "pokemon-red-blue",
+      "through": [
+        "rpg",
+        "creature-collection",
+        "exploration",
+        "overworld"
+      ]
+    },
+    {
+      "id": "dragon-quest",
+      "through": [
+        "rpg",
+        "overworld"
+      ]
+    }
+  ]
+}

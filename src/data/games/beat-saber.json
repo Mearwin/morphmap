@@ -1,0 +1,29 @@
+{
+  "id": "beat-saber",
+  "title": "Beat Saber",
+  "date": "2019-05-21",
+  "tags": [
+    "rhythm",
+    "vr",
+    "action",
+    "score-attack",
+    "immersive"
+  ],
+  "influencedBy": [
+    {
+      "id": "guitar-hero",
+      "through": [
+        "rhythm",
+        "score-attack"
+      ]
+    },
+    {
+      "id": "dance-dance-revolution",
+      "through": [
+        "rhythm",
+        "action",
+        "score-attack"
+      ]
+    }
+  ]
+}

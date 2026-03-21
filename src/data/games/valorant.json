@@ -1,0 +1,32 @@
+{
+  "id": "valorant",
+  "title": "Valorant",
+  "date": "2020-06-02",
+  "tags": [
+    "fps",
+    "competitive",
+    "team-based",
+    "tactical",
+    "esports",
+    "class-based"
+  ],
+  "influencedBy": [
+    {
+      "id": "counter-strike",
+      "through": [
+        "fps",
+        "competitive",
+        "tactical",
+        "team-based"
+      ]
+    },
+    {
+      "id": "overwatch",
+      "through": [
+        "class-based",
+        "team-based",
+        "esports"
+      ]
+    }
+  ]
+}

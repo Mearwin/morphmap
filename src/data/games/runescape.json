@@ -1,0 +1,32 @@
+{
+  "id": "runescape",
+  "title": "RuneScape",
+  "date": "2001-01-04",
+  "tags": [
+    "mmorpg",
+    "sandbox",
+    "free-to-play",
+    "persistent-world",
+    "crafting",
+    "social"
+  ],
+  "influencedBy": [
+    {
+      "id": "ultima-online",
+      "through": [
+        "mmorpg",
+        "sandbox",
+        "persistent-world",
+        "crafting"
+      ]
+    },
+    {
+      "id": "everquest",
+      "through": [
+        "mmorpg",
+        "persistent-world",
+        "social"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "super-mario-maker",
+  "title": "Super Mario Maker",
+  "date": "2015-09-11",
+  "tags": [
+    "platformer",
+    "level-editor",
+    "user-generated-content",
+    "creative",
+    "sandbox"
+  ],
+  "influencedBy": [
+    {
+      "id": "littlebigplanet",
+      "through": [
+        "level-editor",
+        "user-generated-content",
+        "creative"
+      ]
+    },
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "platformer",
+        "level-editor"
+      ]
+    }
+  ]
+}

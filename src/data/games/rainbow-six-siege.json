@@ -1,0 +1,32 @@
+{
+  "id": "rainbow-six-siege",
+  "title": "Rainbow Six Siege",
+  "date": "2015-12-01",
+  "tags": [
+    "fps",
+    "tactical",
+    "competitive",
+    "team-based",
+    "destructible-environments",
+    "esports"
+  ],
+  "influencedBy": [
+    {
+      "id": "counter-strike",
+      "through": [
+        "fps",
+        "competitive",
+        "tactical",
+        "team-based"
+      ]
+    },
+    {
+      "id": "call-of-duty-4",
+      "through": [
+        "fps",
+        "competitive",
+        "team-based"
+      ]
+    }
+  ]
+}

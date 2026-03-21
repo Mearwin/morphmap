@@ -1,0 +1,31 @@
+{
+  "id": "grand-theft-auto-v",
+  "title": "Grand Theft Auto V",
+  "date": "2013-09-17",
+  "tags": [
+    "open-world",
+    "action",
+    "narrative",
+    "crime",
+    "multiplayer",
+    "sandbox"
+  ],
+  "influencedBy": [
+    {
+      "id": "gta-san-andreas",
+      "through": [
+        "open-world",
+        "action",
+        "crime",
+        "sandbox"
+      ]
+    },
+    {
+      "id": "red-dead-redemption",
+      "through": [
+        "open-world",
+        "narrative"
+      ]
+    }
+  ]
+}

@@ -21,6 +21,13 @@
       "through": [
         "platformer"
       ]
+    },
+    {
+      "id": "super-mario-world",
+      "through": [
+        "platformer",
+        "level-design"
+      ]
     }
   ]
 }

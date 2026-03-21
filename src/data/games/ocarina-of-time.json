@@ -27,6 +27,13 @@
         "3d-platformer",
         "camera-control"
       ]
+    },
+    {
+      "id": "the-legend-of-zelda-a-link-to-the-past",
+      "through": [
+        "exploration",
+        "dungeons"
+      ]
     }
   ],
   "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3nnx.jpg"

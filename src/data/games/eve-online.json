@@ -1,0 +1,30 @@
+{
+  "id": "eve-online",
+  "title": "EVE Online",
+  "date": "2003-05-06",
+  "tags": [
+    "mmorpg",
+    "sandbox",
+    "persistent-world",
+    "space",
+    "emergent-gameplay",
+    "player-driven-economy"
+  ],
+  "influencedBy": [
+    {
+      "id": "ultima-online",
+      "through": [
+        "mmorpg",
+        "sandbox",
+        "persistent-world"
+      ]
+    },
+    {
+      "id": "elite",
+      "through": [
+        "space",
+        "sandbox"
+      ]
+    }
+  ]
+}

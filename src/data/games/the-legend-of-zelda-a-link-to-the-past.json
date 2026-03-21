@@ -1,0 +1,29 @@
+{
+  "id": "the-legend-of-zelda-a-link-to-the-past",
+  "title": "The Legend of Zelda: A Link to the Past",
+  "date": "1991-11-21",
+  "tags": [
+    "action-adventure",
+    "exploration",
+    "dungeon-design",
+    "overworld",
+    "top-down"
+  ],
+  "influencedBy": [
+    {
+      "id": "the-legend-of-zelda",
+      "through": [
+        "action-adventure",
+        "exploration",
+        "dungeon-design"
+      ]
+    },
+    {
+      "id": "metroid",
+      "through": [
+        "exploration",
+        "top-down"
+      ]
+    }
+  ]
+}

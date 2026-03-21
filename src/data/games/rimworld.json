@@ -1,0 +1,31 @@
+{
+  "id": "rimworld",
+  "title": "RimWorld",
+  "date": "2018-10-17",
+  "tags": [
+    "simulation",
+    "survival",
+    "management",
+    "emergent-narrative",
+    "procedural-generation",
+    "base-building"
+  ],
+  "influencedBy": [
+    {
+      "id": "dwarf-fortress",
+      "through": [
+        "simulation",
+        "emergent-narrative",
+        "management",
+        "base-building"
+      ]
+    },
+    {
+      "id": "xcom-enemy-unknown",
+      "through": [
+        "management",
+        "procedural-generation"
+      ]
+    }
+  ]
+}

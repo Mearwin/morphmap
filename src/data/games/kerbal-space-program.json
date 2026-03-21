@@ -1,0 +1,29 @@
+{
+  "id": "kerbal-space-program",
+  "title": "Kerbal Space Program",
+  "date": "2015-04-27",
+  "tags": [
+    "simulation",
+    "physics",
+    "sandbox",
+    "space",
+    "creative",
+    "emergent-gameplay"
+  ],
+  "influencedBy": [
+    {
+      "id": "simcity",
+      "through": [
+        "simulation",
+        "sandbox"
+      ]
+    },
+    {
+      "id": "minecraft",
+      "through": [
+        "sandbox",
+        "creative"
+      ]
+    }
+  ]
+}

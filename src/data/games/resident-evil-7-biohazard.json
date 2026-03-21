@@ -1,0 +1,30 @@
+{
+  "id": "resident-evil-7-biohazard",
+  "title": "Resident Evil 7: Biohazard",
+  "date": "2017-01-24",
+  "tags": [
+    "survival-horror",
+    "first-person",
+    "atmospheric",
+    "horror",
+    "isolation"
+  ],
+  "influencedBy": [
+    {
+      "id": "resident-evil",
+      "through": [
+        "survival-horror",
+        "horror",
+        "isolation"
+      ]
+    },
+    {
+      "id": "amnesia",
+      "through": [
+        "first-person",
+        "atmospheric",
+        "horror"
+      ]
+    }
+  ]
+}

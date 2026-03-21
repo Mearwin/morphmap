@@ -1,0 +1,32 @@
+{
+  "id": "halo-2",
+  "title": "Halo 2",
+  "date": "2004-11-09",
+  "tags": [
+    "fps",
+    "multiplayer",
+    "competitive",
+    "sci-fi",
+    "console-shooter",
+    "co-op"
+  ],
+  "influencedBy": [
+    {
+      "id": "halo",
+      "through": [
+        "fps",
+        "sci-fi",
+        "console-shooter",
+        "co-op"
+      ]
+    },
+    {
+      "id": "counter-strike",
+      "through": [
+        "fps",
+        "competitive",
+        "multiplayer"
+      ]
+    }
+  ]
+}

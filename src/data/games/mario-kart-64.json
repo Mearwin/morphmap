@@ -1,0 +1,22 @@
+{
+  "id": "mario-kart-64",
+  "title": "Mario Kart 64",
+  "date": "1996-12-14",
+  "tags": [
+    "racing",
+    "multiplayer",
+    "party",
+    "power-ups",
+    "split-screen",
+    "speed"
+  ],
+  "influencedBy": [
+    {
+      "id": "f-zero",
+      "through": [
+        "racing",
+        "speed"
+      ]
+    }
+  ]
+}

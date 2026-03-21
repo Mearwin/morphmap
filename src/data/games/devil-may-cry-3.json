@@ -1,0 +1,30 @@
+{
+  "id": "devil-may-cry-3",
+  "title": "Devil May Cry 3",
+  "date": "2005-02-17",
+  "tags": [
+    "hack-and-slash",
+    "combo-system",
+    "stylish-action",
+    "difficulty",
+    "boss-battles"
+  ],
+  "influencedBy": [
+    {
+      "id": "devil-may-cry",
+      "through": [
+        "hack-and-slash",
+        "stylish-action",
+        "difficulty"
+      ]
+    },
+    {
+      "id": "ninja-gaiden",
+      "through": [
+        "hack-and-slash",
+        "difficulty",
+        "combo-system"
+      ]
+    }
+  ]
+}

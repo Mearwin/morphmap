@@ -6,13 +6,23 @@
     "action",
     "combo-system",
     "spectacle-fighter",
-    "boss-battles"
+    "boss-battles",
+    "hack-and-slash",
+    "stylish-action"
   ],
   "influencedBy": [
     {
       "id": "street-fighter-ii",
       "through": [
         "combo-system"
+      ]
+    },
+    {
+      "id": "devil-may-cry-3",
+      "through": [
+        "hack-and-slash",
+        "combo-system",
+        "stylish-action"
       ]
     }
   ],

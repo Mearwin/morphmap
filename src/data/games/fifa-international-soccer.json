@@ -1,0 +1,22 @@
+{
+  "id": "fifa-international-soccer",
+  "title": "FIFA International Soccer",
+  "date": "1993-12-15",
+  "tags": [
+    "sports",
+    "multiplayer",
+    "simulation",
+    "competitive",
+    "licensed"
+  ],
+  "influencedBy": [
+    {
+      "id": "pong",
+      "through": [
+        "sports",
+        "multiplayer",
+        "competitive"
+      ]
+    }
+  ]
+}

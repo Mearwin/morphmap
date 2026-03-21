@@ -1,0 +1,22 @@
+{
+  "id": "super-mario-world",
+  "title": "Super Mario World",
+  "date": "1990-11-21",
+  "tags": [
+    "platformer",
+    "exploration",
+    "level-design",
+    "side-scrolling",
+    "overworld"
+  ],
+  "influencedBy": [
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "platformer",
+        "side-scrolling",
+        "level-design"
+      ]
+    }
+  ]
+}

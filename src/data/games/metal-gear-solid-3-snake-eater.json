@@ -1,0 +1,31 @@
+{
+  "id": "metal-gear-solid-3-snake-eater",
+  "title": "Metal Gear Solid 3: Snake Eater",
+  "date": "2004-11-17",
+  "tags": [
+    "stealth",
+    "action",
+    "cinematic",
+    "narrative-driven",
+    "survival",
+    "open-level"
+  ],
+  "influencedBy": [
+    {
+      "id": "metal-gear-solid",
+      "through": [
+        "stealth",
+        "action",
+        "cinematic",
+        "narrative-driven"
+      ]
+    },
+    {
+      "id": "thief",
+      "through": [
+        "stealth",
+        "open-level"
+      ]
+    }
+  ]
+}

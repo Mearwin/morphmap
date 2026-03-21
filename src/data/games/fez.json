@@ -1,0 +1,29 @@
+{
+  "id": "fez",
+  "title": "Fez",
+  "date": "2012-04-13",
+  "tags": [
+    "puzzle-platformer",
+    "pixel-art",
+    "exploration",
+    "indie",
+    "perspective-shift"
+  ],
+  "influencedBy": [
+    {
+      "id": "super-mario-bros",
+      "through": [
+        "puzzle-platformer",
+        "pixel-art",
+        "exploration"
+      ]
+    },
+    {
+      "id": "braid",
+      "through": [
+        "indie",
+        "puzzle-platformer"
+      ]
+    }
+  ]
+}

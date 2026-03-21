@@ -1,0 +1,32 @@
+{
+  "id": "cyberpunk-2077",
+  "title": "Cyberpunk 2077",
+  "date": "2020-12-10",
+  "tags": [
+    "open-world",
+    "action-rpg",
+    "first-person",
+    "narrative-driven",
+    "sci-fi",
+    "cyberpunk"
+  ],
+  "influencedBy": [
+    {
+      "id": "deus-ex",
+      "through": [
+        "action-rpg",
+        "first-person",
+        "sci-fi",
+        "cyberpunk"
+      ]
+    },
+    {
+      "id": "the-witcher-3",
+      "through": [
+        "open-world",
+        "narrative-driven",
+        "action-rpg"
+      ]
+    }
+  ]
+}
