@@ -4,7 +4,7 @@ export type GameStoreState = {
   selectedGameId: string | null
   selectedTag: string | null
   timeRange: TimeRange | null
-  viewMode: 'timeline' | 'river' | 'lineage'
+  viewMode: 'timeline' | 'river' | 'lineage' | 'trends'
   embed: boolean
   depth: number | null
 }
@@ -13,7 +13,7 @@ export type GameStoreAction =
   | { type: 'SELECT_GAME'; id: string | null }
   | { type: 'SELECT_TAG'; tag: string | null }
   | { type: 'SET_TIME_RANGE'; range: TimeRange | null }
-  | { type: 'SET_VIEW_MODE'; mode: 'timeline' | 'river' | 'lineage' }
+  | { type: 'SET_VIEW_MODE'; mode: 'timeline' | 'river' | 'lineage' | 'trends' }
 
 export function gameStoreReducer(state: GameStoreState, action: GameStoreAction): GameStoreState {
   switch (action.type) {

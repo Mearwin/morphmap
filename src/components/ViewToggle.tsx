@@ -23,6 +23,14 @@ export function ViewToggle() {
         River
       </button>
       <button
+        className={`${styles.pill} ${state.viewMode === 'trends' ? styles.active : ''}`}
+        role="radio"
+        aria-checked={state.viewMode === 'trends'}
+        onClick={() => dispatch({ type: 'SET_VIEW_MODE', mode: 'trends' })}
+      >
+        Trends
+      </button>
+      <button
         className={`${styles.pill} ${state.viewMode === 'lineage' ? styles.active : ''} ${!state.selectedGameId ? styles.disabled : ''}`}
         role="radio"
         aria-checked={state.viewMode === 'lineage'}

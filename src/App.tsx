@@ -33,6 +33,9 @@ const LazyEmbedView = lazy(() =>
 const LazyMetricsDashboard = lazy(() =>
   import('./components/MetricsDashboard').then(m => ({ default: m.MetricsDashboard }))
 )
+const LazyTagTrendsView = lazy(() =>
+  import('./components/TagTrendsView').then(m => ({ default: m.TagTrendsView }))
+)
 const games: Game[] = gamesData as Game[]
 
 function AppInner() {
@@ -117,6 +120,12 @@ function AppInner() {
           <ErrorBoundary fallback={<div style={{ flex: 1 }} />}>
             <Suspense fallback={null}>
               <LazyLineageView />
+            </Suspense>
+          </ErrorBoundary>
+        ) : state.viewMode === 'trends' ? (
+          <ErrorBoundary fallback={<div style={{ flex: 1 }} />}>
+            <Suspense fallback={null}>
+              <LazyTagTrendsView />
             </Suspense>
           </ErrorBoundary>
         ) : (
