@@ -37,6 +37,15 @@ export const GameNode = memo(function GameNode({ node, color, isSelected, isHigh
       onPointerLeave={(e) => onHover?.(null, { clientX: e.clientX, clientY: e.clientY })}
       style={{ opacity }}
     >
+      {isSelected && (
+        <circle
+          r={node.radius * NODE.SELECTED_SCALE}
+          fill="none"
+          stroke={color}
+          strokeWidth={2}
+          className={styles.ripple}
+        />
+      )}
       <circle
         r={(isSelected ? node.radius * NODE.SELECTED_SCALE : node.radius) + 4}
         fill="none"
