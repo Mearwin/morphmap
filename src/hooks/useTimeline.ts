@@ -24,7 +24,8 @@ export function useTimeline(games: Entity[], width: number, height: number) {
     if (games.length === 0 || width === 0 || height === 0) return null
 
     const padding = TIMELINE.TAG_Y_PADDING
-    const usableHeight = height - padding * 2
+    const virtualHeight = height * TIMELINE.HEIGHT_MULTIPLIER
+    const usableHeight = virtualHeight - padding * 2
 
     const map = new Map<string, GameNode>()
     for (const g of games) {
@@ -65,34 +66,22 @@ export function useTimeline(games: Entity[], width: number, height: number) {
       title: n.title,
     }))
 
+    // Show deterministic positions immediately while worker runs
+    setNodes(Array.from(gameNodeMap.values()))
+
     worker.onmessage = (e) => {
       const data = e.data as { type: string; positions?: { id: string; x: number; y: number }[]; message?: string }
 
       if (data.type === 'error') {
         console.error('Force worker error:', data.message)
-        setNodes(Array.from(gameNodeMap.values()))
         setSettled(true)
         return
       }
 
-      const { positions } = data as { positions: { id: string; x: number; y: number }[] }
-      setNodes(prev => {
-        // Reuse existing GameNode objects, only updating x/y
-        const updated: GameNode[] = new Array(positions.length)
-        for (let i = 0; i < positions.length; i++) {
-          const pos = positions[i]
-          const base = gameNodeMap.get(pos.id)!
-          // Check if position actually changed to avoid unnecessary object creation
-          if (prev.length === positions.length && prev[i]?.id === pos.id && prev[i].x === pos.x && prev[i].y === pos.y) {
-            updated[i] = prev[i]
-          } else {
-            updated[i] = { ...base, x: pos.x, y: pos.y }
-          }
-        }
-        return updated
-      })
-
+      // Only apply final positions — skip intermediate ticks to avoid visible jitter
       if (data.type === 'end') {
+        const { positions } = data as { positions: { id: string; x: number; y: number }[] }
+        setNodes(positions.map(pos => ({ ...gameNodeMap.get(pos.id)!, x: pos.x, y: pos.y })))
         setSettled(true)
       }
     }
