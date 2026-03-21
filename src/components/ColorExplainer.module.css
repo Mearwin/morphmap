@@ -2,6 +2,12 @@
   margin-bottom: 12px;
 }
 
+@media (max-width: 768px) {
+  .container {
+    clear: both;
+  }
+}
+
 .label {
   font-size: 10px;
   text-transform: uppercase;
