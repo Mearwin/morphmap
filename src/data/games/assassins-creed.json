@@ -1,0 +1,32 @@
+{
+  "id": "assassins-creed",
+  "title": "Assassin's Creed",
+  "date": "2007-11-13",
+  "tags": [
+    "open-world",
+    "stealth",
+    "parkour",
+    "historical",
+    "action-adventure"
+  ],
+  "influencedBy": [
+    {
+      "id": "prince-of-persia-sot",
+      "through": [
+        "parkour"
+      ]
+    },
+    {
+      "id": "gta-iii",
+      "through": [
+        "open-world"
+      ]
+    },
+    {
+      "id": "thief",
+      "through": [
+        "stealth"
+      ]
+    }
+  ]
+}

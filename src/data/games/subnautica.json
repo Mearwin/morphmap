@@ -8,21 +8,23 @@
     "exploration",
     "crafting",
     "survival-horror",
-    "atmospheric"
+    "atmospheric",
+    "sci-fi"
   ],
   "influencedBy": [
     {
       "id": "minecraft",
       "through": [
         "survival",
-        "crafting"
+        "crafting",
+        "exploration"
       ]
     },
     {
-      "id": "amnesia",
+      "id": "soma",
       "through": [
-        "survival-horror",
-        "atmospheric"
+        "underwater",
+        "sci-fi"
       ]
     }
   ],

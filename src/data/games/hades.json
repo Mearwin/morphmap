@@ -11,28 +11,32 @@
     "permadeath",
     "item-synergy",
     "action-rpg",
-    "difficulty"
+    "difficulty",
+    "isometric",
+    "narrator",
+    "roguelite",
+    "action-combat"
   ],
   "influencedBy": [
     {
-      "id": "rogue",
+      "id": "bastion",
       "through": [
-        "procedural-generation",
-        "permadeath"
+        "isometric",
+        "action-rpg",
+        "narrator"
       ]
     },
     {
       "id": "the-binding-of-isaac",
       "through": [
-        "roguelike",
-        "item-synergy"
+        "roguelite"
       ]
     },
     {
-      "id": "dark-souls",
+      "id": "dead-cells",
       "through": [
-        "action-rpg",
-        "difficulty"
+        "roguelite",
+        "action-combat"
       ]
     }
   ],

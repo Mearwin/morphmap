@@ -1,0 +1,26 @@
+{
+  "id": "system-shock",
+  "title": "System Shock",
+  "date": "1994-09-23",
+  "tags": [
+    "fps",
+    "immersive-sim",
+    "rpg",
+    "sci-fi-horror",
+    "audio-logs"
+  ],
+  "influencedBy": [
+    {
+      "id": "ultima",
+      "through": [
+        "rpg"
+      ]
+    },
+    {
+      "id": "doom",
+      "through": [
+        "fps"
+      ]
+    }
+  ]
+}

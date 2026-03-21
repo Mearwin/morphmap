@@ -1,0 +1,20 @@
+{
+  "id": "virtua-fighter",
+  "title": "Virtua Fighter",
+  "date": "1993-12-01",
+  "tags": [
+    "fighting",
+    "3d-fighting",
+    "martial-arts",
+    "competitive"
+  ],
+  "influencedBy": [
+    {
+      "id": "street-fighter-ii",
+      "through": [
+        "fighting",
+        "competitive"
+      ]
+    }
+  ]
+}

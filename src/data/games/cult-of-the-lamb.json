@@ -1,0 +1,28 @@
+{
+  "id": "cult-of-the-lamb",
+  "title": "Cult of the Lamb",
+  "date": "2022-08-11",
+  "tags": [
+    "roguelite",
+    "management",
+    "action",
+    "base-building",
+    "cute-horror"
+  ],
+  "influencedBy": [
+    {
+      "id": "the-binding-of-isaac",
+      "through": [
+        "roguelite",
+        "action"
+      ]
+    },
+    {
+      "id": "animal-crossing",
+      "through": [
+        "management",
+        "base-building"
+      ]
+    }
+  ]
+}

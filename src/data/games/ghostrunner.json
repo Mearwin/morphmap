@@ -1,0 +1,35 @@
+{
+  "id": "ghostrunner",
+  "title": "Ghostrunner",
+  "date": "2020-10-27",
+  "tags": [
+    "fps",
+    "parkour",
+    "cyberpunk",
+    "die-and-retry",
+    "one-hit-kill",
+    "first-person"
+  ],
+  "influencedBy": [
+    {
+      "id": "mirrors-edge",
+      "through": [
+        "parkour",
+        "first-person"
+      ]
+    },
+    {
+      "id": "hotline-miami",
+      "through": [
+        "die-and-retry",
+        "one-hit-kill"
+      ]
+    },
+    {
+      "id": "doom-2016",
+      "through": [
+        "fps"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "gauntlet",
+  "title": "Gauntlet",
+  "date": "1985-10-01",
+  "tags": [
+    "arcade",
+    "co-op",
+    "dungeon-crawl",
+    "hack-and-slash"
+  ],
+  "influencedBy": [
+    {
+      "id": "rogue",
+      "through": [
+        "dungeon-crawl"
+      ]
+    }
+  ]
+}

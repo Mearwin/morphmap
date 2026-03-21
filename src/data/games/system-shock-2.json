@@ -8,20 +8,25 @@
     "rpg-elements",
     "survival-horror",
     "narrative-driven",
-    "scripted-events"
+    "scripted-events",
+    "sci-fi-horror",
+    "audio-logs",
+    "narrative"
   ],
   "influencedBy": [
     {
-      "id": "half-life",
+      "id": "system-shock",
       "through": [
-        "narrative-driven",
-        "scripted-events"
+        "immersive-sim",
+        "sci-fi-horror",
+        "audio-logs"
       ]
     },
     {
-      "id": "doom",
+      "id": "half-life",
       "through": [
-        "fps"
+        "fps",
+        "narrative"
       ]
     }
   ],

@@ -8,21 +8,23 @@
     "dungeon-crawl",
     "randomized-items",
     "procedural-generation",
-    "permadeath"
+    "permadeath",
+    "hack-and-slash"
   ],
   "influencedBy": [
     {
-      "id": "rogue",
+      "id": "gauntlet",
       "through": [
-        "procedural-generation",
-        "dungeon-crawl"
+        "dungeon-crawl",
+        "hack-and-slash"
       ]
     },
     {
-      "id": "nethack",
+      "id": "rogue",
       "through": [
         "dungeon-crawl",
-        "permadeath"
+        "procedural-generation",
+        "loot"
       ]
     }
   ],

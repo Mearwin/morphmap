@@ -1,0 +1,35 @@
+{
+  "id": "animal-well",
+  "title": "Animal Well",
+  "date": "2024-05-09",
+  "tags": [
+    "metroidvania",
+    "puzzle",
+    "exploration",
+    "cryptic",
+    "pixel-art",
+    "hidden-knowledge"
+  ],
+  "influencedBy": [
+    {
+      "id": "super-metroid",
+      "through": [
+        "metroidvania",
+        "exploration"
+      ]
+    },
+    {
+      "id": "outer-wilds",
+      "through": [
+        "cryptic",
+        "hidden-knowledge"
+      ]
+    },
+    {
+      "id": "the-witness",
+      "through": [
+        "puzzle"
+      ]
+    }
+  ]
+}

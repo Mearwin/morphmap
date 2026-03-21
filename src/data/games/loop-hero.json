@@ -1,0 +1,27 @@
+{
+  "id": "loop-hero",
+  "title": "Loop Hero",
+  "date": "2021-03-04",
+  "tags": [
+    "roguelite",
+    "auto-battler",
+    "deckbuilding",
+    "retro",
+    "strategy"
+  ],
+  "influencedBy": [
+    {
+      "id": "slay-the-spire",
+      "through": [
+        "roguelite",
+        "deckbuilding"
+      ]
+    },
+    {
+      "id": "darkest-dungeon",
+      "through": [
+        "roguelite"
+      ]
+    }
+  ]
+}

@@ -9,21 +9,22 @@
     "fourth-wall",
     "jrpg",
     "turn-based-combat",
-    "humor"
+    "humor",
+    "quirky"
   ],
   "influencedBy": [
     {
-      "id": "final-fantasy",
+      "id": "earthbound",
       "through": [
         "jrpg",
-        "turn-based-combat"
+        "humor",
+        "quirky"
       ]
     },
     {
       "id": "the-secret-of-monkey-island",
       "through": [
-        "humor",
-        "narrative"
+        "humor"
       ]
     }
   ],

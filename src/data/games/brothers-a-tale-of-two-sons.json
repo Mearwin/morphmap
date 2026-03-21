@@ -1,0 +1,26 @@
+{
+  "id": "brothers-a-tale-of-two-sons",
+  "title": "Brothers: A Tale of Two Sons",
+  "date": "2013-08-07",
+  "tags": [
+    "adventure",
+    "co-op-single-player",
+    "emotional-narrative",
+    "puzzle"
+  ],
+  "influencedBy": [
+    {
+      "id": "ico",
+      "through": [
+        "adventure",
+        "emotional-narrative"
+      ]
+    },
+    {
+      "id": "journey",
+      "through": [
+        "emotional-narrative"
+      ]
+    }
+  ]
+}

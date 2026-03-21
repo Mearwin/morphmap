@@ -1,0 +1,37 @@
+{
+  "id": "prey-2017",
+  "title": "Prey",
+  "date": "2017-05-05",
+  "tags": [
+    "immersive-sim",
+    "fps",
+    "sci-fi",
+    "exploration",
+    "rpg",
+    "emergent-gameplay"
+  ],
+  "influencedBy": [
+    {
+      "id": "system-shock-2",
+      "through": [
+        "immersive-sim",
+        "sci-fi",
+        "rpg"
+      ]
+    },
+    {
+      "id": "deus-ex",
+      "through": [
+        "immersive-sim",
+        "emergent-gameplay"
+      ]
+    },
+    {
+      "id": "bioshock",
+      "through": [
+        "fps",
+        "exploration"
+      ]
+    }
+  ]
+}

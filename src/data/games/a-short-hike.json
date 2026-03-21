@@ -1,0 +1,27 @@
+{
+  "id": "a-short-hike",
+  "title": "A Short Hike",
+  "date": "2019-07-30",
+  "tags": [
+    "exploration",
+    "relaxation",
+    "open-world",
+    "pixel-art",
+    "flying"
+  ],
+  "influencedBy": [
+    {
+      "id": "animal-crossing",
+      "through": [
+        "relaxation"
+      ]
+    },
+    {
+      "id": "breath-of-the-wild",
+      "through": [
+        "exploration",
+        "open-world"
+      ]
+    }
+  ]
+}

@@ -12,23 +12,12 @@
   ],
   "influencedBy": [
     {
-      "id": "gta-iii",
+      "id": "assassins-creed",
       "through": [
         "open-world",
-        "sandbox"
-      ]
-    },
-    {
-      "id": "prince-of-persia-sot",
-      "through": [
+        "stealth",
         "parkour",
-        "3d-platformer"
-      ]
-    },
-    {
-      "id": "thief",
-      "through": [
-        "stealth"
+        "historical"
       ]
     }
   ],

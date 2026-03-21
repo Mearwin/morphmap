@@ -1,0 +1,27 @@
+{
+  "id": "astro-bot",
+  "title": "Astro Bot",
+  "date": "2024-09-06",
+  "tags": [
+    "3d-platformer",
+    "collectathon",
+    "level-variety",
+    "platforming"
+  ],
+  "influencedBy": [
+    {
+      "id": "super-mario-galaxy",
+      "through": [
+        "3d-platformer",
+        "level-variety"
+      ]
+    },
+    {
+      "id": "banjo-kazooie",
+      "through": [
+        "collectathon",
+        "platforming"
+      ]
+    }
+  ]
+}

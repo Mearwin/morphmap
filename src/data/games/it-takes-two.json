@@ -9,14 +9,15 @@
     "split-screen",
     "platforming",
     "level-variety",
-    "puzzle-mechanics"
+    "puzzle-mechanics",
+    "emotional-narrative"
   ],
   "influencedBy": [
     {
-      "id": "littlebigplanet",
+      "id": "brothers-a-tale-of-two-sons",
       "through": [
         "co-op",
-        "platforming"
+        "emotional-narrative"
       ]
     },
     {

@@ -7,14 +7,15 @@
     "moral-choices",
     "party-based",
     "tile-based",
-    "dungeon-crawl"
+    "dungeon-crawl",
+    "rpg"
   ],
   "influencedBy": [
     {
-      "id": "wizardry",
+      "id": "ultima",
       "through": [
-        "dungeon-crawl",
-        "party-based"
+        "rpg",
+        "open-world"
       ]
     }
   ],

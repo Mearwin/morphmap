@@ -1,0 +1,29 @@
+{
+  "id": "mass-effect-2",
+  "title": "Mass Effect 2",
+  "date": "2010-01-26",
+  "tags": [
+    "rpg",
+    "third-person-shooter",
+    "narrative",
+    "choice-consequence",
+    "squad-based"
+  ],
+  "influencedBy": [
+    {
+      "id": "mass-effect",
+      "through": [
+        "rpg",
+        "narrative",
+        "choice-consequence",
+        "squad-based"
+      ]
+    },
+    {
+      "id": "gears-of-war",
+      "through": [
+        "third-person-shooter"
+      ]
+    }
+  ]
+}

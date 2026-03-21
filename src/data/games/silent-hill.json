@@ -1,0 +1,26 @@
+{
+  "id": "silent-hill",
+  "title": "Silent Hill",
+  "date": "1999-01-31",
+  "tags": [
+    "survival-horror",
+    "psychological",
+    "fog",
+    "puzzle"
+  ],
+  "influencedBy": [
+    {
+      "id": "resident-evil",
+      "through": [
+        "survival-horror",
+        "puzzle"
+      ]
+    },
+    {
+      "id": "alone-in-the-dark",
+      "through": [
+        "survival-horror"
+      ]
+    }
+  ]
+}

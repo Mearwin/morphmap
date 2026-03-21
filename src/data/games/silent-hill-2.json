@@ -11,14 +11,14 @@
   ],
   "influencedBy": [
     {
-      "id": "resident-evil",
+      "id": "silent-hill",
       "through": [
         "survival-horror",
-        "puzzle-solving"
+        "psychological"
       ]
     },
     {
-      "id": "alone-in-the-dark",
+      "id": "resident-evil",
       "through": [
         "survival-horror"
       ]

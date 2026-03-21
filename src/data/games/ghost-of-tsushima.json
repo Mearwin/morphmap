@@ -8,22 +8,29 @@
     "samurai",
     "cinematic",
     "historical",
-    "narrative-driven"
+    "narrative-driven",
+    "outpost-capture",
+    "melee-combat"
   ],
   "influencedBy": [
     {
       "id": "assassins-creed-ii",
       "through": [
         "open-world",
-        "stealth",
-        "historical"
+        "stealth"
       ]
     },
     {
-      "id": "red-dead-redemption-2",
+      "id": "far-cry-3",
       "through": [
         "open-world",
-        "narrative-driven"
+        "outpost-capture"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "through": [
+        "melee-combat"
       ]
     }
   ],

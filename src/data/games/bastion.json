@@ -1,0 +1,20 @@
+{
+  "id": "bastion",
+  "title": "Bastion",
+  "date": "2011-07-20",
+  "tags": [
+    "action-rpg",
+    "isometric",
+    "narrator",
+    "art-style"
+  ],
+  "influencedBy": [
+    {
+      "id": "diablo",
+      "through": [
+        "action-rpg",
+        "isometric"
+      ]
+    }
+  ]
+}

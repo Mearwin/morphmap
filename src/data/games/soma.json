@@ -1,0 +1,28 @@
+{
+  "id": "soma",
+  "title": "SOMA",
+  "date": "2015-09-22",
+  "tags": [
+    "survival-horror",
+    "sci-fi",
+    "narrative",
+    "philosophical",
+    "underwater"
+  ],
+  "influencedBy": [
+    {
+      "id": "amnesia",
+      "through": [
+        "survival-horror"
+      ]
+    },
+    {
+      "id": "bioshock",
+      "through": [
+        "sci-fi",
+        "narrative",
+        "philosophical"
+      ]
+    }
+  ]
+}

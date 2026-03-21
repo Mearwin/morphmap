@@ -7,15 +7,22 @@
     "3d-fighting",
     "combo-system",
     "character-roster",
-    "competitive"
+    "competitive",
+    "martial-arts"
   ],
   "influencedBy": [
+    {
+      "id": "virtua-fighter",
+      "through": [
+        "3d-fighting",
+        "martial-arts"
+      ]
+    },
     {
       "id": "street-fighter-ii",
       "through": [
         "fighting",
-        "combo-system",
-        "competitive"
+        "combo-system"
       ]
     }
   ],

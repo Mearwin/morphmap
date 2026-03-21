@@ -10,7 +10,8 @@
     "powers",
     "atmospheric-world",
     "exploration",
-    "environmental-storytelling"
+    "environmental-storytelling",
+    "immersive-sim"
   ],
   "influencedBy": [
     {
@@ -21,10 +22,10 @@
       ]
     },
     {
-      "id": "metroid-prime",
+      "id": "prey-2017",
       "through": [
-        "exploration",
-        "environmental-storytelling"
+        "immersive-sim",
+        "exploration"
       ]
     }
   ]
