@@ -238,8 +238,8 @@ function SvgTimeline({ onHover }: TimelineProps) {
               opacity={opacity}
               isHighlighted={isHighlighted}
               isHovered={isLinkHovered}
-              onHoverLink={handleHoverLink}
-              onLeaveLink={handleLeaveLink}
+              onHoverLink={isHighlighted ? handleHoverLink : undefined}
+              onLeaveLink={isHighlighted ? handleLeaveLink : undefined}
             />
           )
         })}

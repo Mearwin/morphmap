@@ -9,8 +9,9 @@ import type { GameNode as GameNodeType } from '../types'
 import { useDataset } from '../dataset/DatasetContext'
 import { TIMELINE, NODE, LINE, LABEL, MINIMAP, THEME } from '../constants'
 import { isInViewport } from '../hooks/useViewport'
-import { computeLinkLabel, resolveOverlaps, influenceStrokeWidth, type LabelInfo } from '../utils/labelPlacement'
+import { computeLinkLabel, influenceStrokeWidth } from '../utils/labelPlacement'
 import { computeControlPoint } from '../utils/curve'
+import { isPointNearCurve } from '../utils/curveHitTest'
 import { computeMinimapBounds, computeMinimapLayout, toMinimapX, toMinimapY } from '../utils/minimapLayout'
 import { getYear } from '../utils/date'
 import { roundRect, roundRectPath } from '../utils/canvas'
@@ -31,6 +32,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
   const dimensionsRef = useRef({ width: 0, height: 0 })
   const rafRef = useRef<number>(0)
   const hoveredRef = useRef<string | null>(null)
+  const hoveredLinkRef = useRef<{ source: string; target: string } | null>(null)
   const zoomRef = useRef<ReturnType<typeof zoom<HTMLCanvasElement, unknown>> | null>(null)
   const hoverRafRef = useRef<number>(0)
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
@@ -39,7 +41,6 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
   const dataRef = useRef<{
     filteredNodes: GameNodeType[]
     filteredLinks: typeof links
-    linkLabels: LabelInfo[]
     nodeMap: Map<string, GameNodeType>
     nodes: GameNodeType[]
     selectedGameId: string | null
@@ -86,23 +87,9 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     })
   }, [links, selectedTag, timeRange, nodeMap])
 
-  // Link labels for selected game
-  const linkLabels = useMemo(() => {
-    if (!selectedGameId || !derived.connectedSet) return []
-    const raw: LabelInfo[] = []
-    for (const link of filteredLinks) {
-      const source = nodeMap.get(link.source)
-      const target = nodeMap.get(link.target)
-      if (!source || !target) continue
-      if (!derived.connectedSet.has(source.id) || !derived.connectedSet.has(target.id)) continue
-      raw.push(computeLinkLabel(source, target, link.through))
-    }
-    return resolveOverlaps(raw)
-  }, [selectedGameId, filteredLinks, derived.connectedSet, nodeMap])
-
   // Update data ref so the stable draw function always reads current values
   useEffect(() => {
-    dataRef.current = { filteredNodes, filteredLinks, linkLabels, nodeMap, nodes, selectedGameId, derived, xScale, gameColors }
+    dataRef.current = { filteredNodes, filteredLinks, nodeMap, nodes, selectedGameId, derived, xScale, gameColors }
   })
 
   // Stable draw function — reads all mutable data from refs, never changes identity
@@ -112,7 +99,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const { filteredNodes, filteredLinks, linkLabels, nodeMap, nodes, selectedGameId, derived, xScale, gameColors } = dataRef.current
+    const { filteredNodes, filteredLinks, nodeMap, nodes, selectedGameId, derived, xScale, gameColors } = dataRef.current
     const dpr = window.devicePixelRatio || 1
     const { width, height } = dimensionsRef.current
     const transform = transformRef.current
@@ -162,9 +149,13 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 
       const { midX, controlY } = computeControlPoint(source, target)
 
-      ctx.globalAlpha = opacity
+      const isLinkHovered = hoveredLinkRef.current
+        && hoveredLinkRef.current.source === source.id
+        && hoveredLinkRef.current.target === target.id
+
+      ctx.globalAlpha = isLinkHovered ? 0.9 : opacity
       ctx.strokeStyle = THEME.textMuted
-      ctx.lineWidth = strokeWidth
+      ctx.lineWidth = isLinkHovered ? Math.max(strokeWidth, 3) : strokeWidth
       ctx.beginPath()
       ctx.moveTo(source.x, source.y)
       ctx.quadraticCurveTo(midX, controlY, target.x, target.y)
@@ -218,28 +209,34 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     }
     ctx.globalAlpha = 1
 
-    // Draw link labels
-    for (const label of linkLabels) {
-      if (!isInViewport(label.x, label.y, viewport)) continue
+    // Draw hovered link label
+    const hl = hoveredLinkRef.current
+    if (hl) {
+      const hlSource = nodeMap.get(hl.source)
+      const hlTarget = nodeMap.get(hl.target)
+      const hlLink = filteredLinks.find(l => l.source === hl.source && l.target === hl.target)
+      if (hlSource && hlTarget && hlLink) {
+        const label = computeLinkLabel(hlSource, hlTarget, hlLink.through)
 
-      // Pill background
-      const pillX = label.x - label.width / 2
-      const pillY = label.y - LABEL.PILL_HALF_HEIGHT
-      ctx.globalAlpha = LABEL.PILL_OPACITY
-      ctx.fillStyle = THEME.surface
-      ctx.strokeStyle = THEME.border
-      ctx.lineWidth = LABEL.PILL_STROKE_WIDTH
-      roundRect(ctx, pillX, pillY, label.width, LABEL.HEIGHT, LABEL.PILL_RADIUS)
-      ctx.fill()
-      ctx.stroke()
+        // Pill background
+        const pillX = label.x - label.width / 2
+        const pillY = label.y - LABEL.PILL_HALF_HEIGHT
+        ctx.globalAlpha = LABEL.PILL_OPACITY
+        ctx.fillStyle = THEME.surface
+        ctx.strokeStyle = THEME.border
+        ctx.lineWidth = LABEL.PILL_STROKE_WIDTH
+        roundRect(ctx, pillX, pillY, label.width, LABEL.HEIGHT, LABEL.PILL_RADIUS)
+        ctx.fill()
+        ctx.stroke()
 
-      // Pill text
-      ctx.globalAlpha = 1
-      ctx.font = `${LABEL.FONT_WEIGHT} ${LABEL.FONT_SIZE}px Inter, -apple-system, sans-serif`
-      ctx.textAlign = 'center'
-      ctx.textBaseline = 'middle'
-      ctx.fillStyle = THEME.accent
-      ctx.fillText(label.text, label.x, label.y + LABEL.TEXT_Y_OFFSET - LABEL.PILL_HALF_HEIGHT + LABEL.HEIGHT / 2)
+        // Pill text
+        ctx.globalAlpha = 1
+        ctx.font = `${LABEL.FONT_WEIGHT} ${LABEL.FONT_SIZE}px Inter, -apple-system, sans-serif`
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'middle'
+        ctx.fillStyle = THEME.accent
+        ctx.fillText(label.text, label.x, label.y + LABEL.TEXT_Y_OFFSET - LABEL.PILL_HALF_HEIGHT + LABEL.HEIGHT / 2)
+      }
     }
 
     ctx.restore() // pop zoom transform
@@ -258,7 +255,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
   // Redraw when data changes
   useEffect(() => {
     scheduleRedraw()
-  }, [filteredNodes, filteredLinks, linkLabels, nodeMap, nodes, selectedGameId, derived, xScale, scheduleRedraw])
+  }, [filteredNodes, filteredLinks, nodeMap, nodes, selectedGameId, derived, xScale, scheduleRedraw])
 
   // Resize handling via ResizeObserver on container
   useEffect(() => {
@@ -419,11 +416,46 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
       const prevHovered = hoveredRef.current
       hoveredRef.current = hit?.id ?? null
 
-      if (canvasRef.current) {
-        canvasRef.current.style.cursor = hit ? 'pointer' : ''
+      // Link hit-testing (only when no node is hovered)
+      let newHoveredLink: { source: string; target: string } | null = null
+      if (!hit) {
+        const canvas = canvasRef.current
+        if (canvas) {
+          const rect = canvas.getBoundingClientRect()
+          const screenX = clientX - rect.left
+          const screenY = clientY - rect.top
+          const transform = transformRef.current
+          const worldX = (screenX - transform.x) / transform.k
+          const worldY = (screenY - transform.y) / transform.k
+          const tolerance = 8 / transform.k
+
+          const { filteredLinks, nodeMap, selectedGameId, derived } = dataRef.current
+          for (const link of filteredLinks) {
+            // Only hoverable on highlighted (connected) links
+            const isHighlighted = selectedGameId != null
+              && (derived.connectedLinks?.has(`${link.source}->${link.target}`) ?? false)
+            if (!isHighlighted) continue
+
+            const source = nodeMap.get(link.source)
+            const target = nodeMap.get(link.target)
+            if (!source || !target) continue
+            if (isPointNearCurve(worldX, worldY, source, target, tolerance)) {
+              newHoveredLink = { source: link.source, target: link.target }
+              break
+            }
+          }
+        }
       }
 
-      if (hit?.id !== prevHovered) {
+      const prevLink = hoveredLinkRef.current
+      hoveredLinkRef.current = newHoveredLink
+      const linkChanged = prevLink?.source !== newHoveredLink?.source || prevLink?.target !== newHoveredLink?.target
+
+      if (canvasRef.current) {
+        canvasRef.current.style.cursor = (hit || newHoveredLink) ? 'pointer' : ''
+      }
+
+      if (hit?.id !== prevHovered || linkChanged) {
         scheduleRedraw()
       }
 
@@ -436,8 +468,10 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
   const handleMouseLeave = useCallback((e: React.MouseEvent) => {
     cancelAnimationFrame(hoverRafRef.current)
     hoverRafRef.current = 0
-    if (hoveredRef.current) {
-      hoveredRef.current = null
+    const needRedraw = hoveredRef.current != null || hoveredLinkRef.current != null
+    hoveredRef.current = null
+    hoveredLinkRef.current = null
+    if (needRedraw) {
       scheduleRedraw()
     }
     onHover?.(null, { clientX: e.clientX, clientY: e.clientY })

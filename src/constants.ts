@@ -51,10 +51,8 @@ export const LINE = {
 // Link label rendering
 export const LABEL = {
   HEIGHT: 18,
-  GAP: 6,
   CHAR_WIDTH: 5.6,
   PADDING: 12,
-  OVERLAP_PASSES: 5,
   Y_OFFSET: 12,
   PILL_HALF_HEIGHT: 9,
   PILL_RADIUS: 4,
