@@ -75,6 +75,35 @@ export function InfluenceRiver() {
     return s(rows)
   }, [riverData])
 
+  // Memoize data-dependent scale inputs (shared between draw and hitTest)
+  const scaleParams = useMemo(() => {
+    const { slices } = riverData
+    const eraMids = slices.map(s => s.eraMid)
+    let yMin = Infinity
+    let yMax = -Infinity
+    for (const layer of stackData) {
+      for (const point of layer) {
+        if (point[0] < yMin) yMin = point[0]
+        if (point[1] > yMax) yMax = point[1]
+      }
+    }
+    const yPad = (yMax - yMin) * 0.08 || 1
+    return { eraMids, yMin: yMin - yPad, yMax: yMax + yPad }
+  }, [riverData, stackData])
+
+  function buildScales(width: number, height: number) {
+    const plotW = width - MARGINS.left - MARGINS.right
+    const plotH = height - MARGINS.top - MARGINS.bottom
+    const { eraMids, yMin, yMax } = scaleParams
+    const xScale = scaleLinear()
+      .domain([eraMids[0], eraMids[eraMids.length - 1]])
+      .range([MARGINS.left, MARGINS.left + plotW])
+    const yScale = scaleLinear()
+      .domain([yMin, yMax])
+      .range([MARGINS.top + plotH, MARGINS.top])
+    return { xScale, yScale, plotW, plotH, eraMids }
+  }
+
   const scheduleRedraw = useCallback(() => {
     cancelAnimationFrame(rafRef.current)
     rafRef.current = requestAnimationFrame(() => drawRef.current())
@@ -98,26 +127,7 @@ export function InfluenceRiver() {
     ctx.fillStyle = THEME.bg
     ctx.fillRect(0, 0, width, height)
 
-    const plotW = width - MARGINS.left - MARGINS.right
-    const plotH = height - MARGINS.top - MARGINS.bottom
-
-    const eraMids = slices.map(s => s.eraMid)
-    const xScale = scaleLinear()
-      .domain([eraMids[0], eraMids[eraMids.length - 1]])
-      .range([MARGINS.left, MARGINS.left + plotW])
-
-    let yMin = Infinity
-    let yMax = -Infinity
-    for (const layer of stackData) {
-      for (const point of layer) {
-        if (point[0] < yMin) yMin = point[0]
-        if (point[1] > yMax) yMax = point[1]
-      }
-    }
-    const yPad = (yMax - yMin) * 0.08 || 1
-    const yScale = scaleLinear()
-      .domain([yMin - yPad, yMax + yPad])
-      .range([MARGINS.top + plotH, MARGINS.top])
+    const { xScale, yScale, plotW, plotH, eraMids } = buildScales(width, height)
 
     const areaGen = area<[number, number]>()
       .x((_d, i) => xScale(eraMids[i]))
@@ -219,25 +229,7 @@ export function InfluenceRiver() {
     const screenX = clientX - rect.left
     const screenY = clientY - rect.top
     const { width, height } = dimensionsRef.current
-    const { slices } = riverData
-    const plotW = width - MARGINS.left - MARGINS.right
-    const plotH = height - MARGINS.top - MARGINS.bottom
-    const eraMids = slices.map(s => s.eraMid)
-    const xScale = scaleLinear()
-      .domain([eraMids[0], eraMids[eraMids.length - 1]])
-      .range([MARGINS.left, MARGINS.left + plotW])
-    let yMin = Infinity
-    let yMax = -Infinity
-    for (const layer of stackData) {
-      for (const point of layer) {
-        if (point[0] < yMin) yMin = point[0]
-        if (point[1] > yMax) yMax = point[1]
-      }
-    }
-    const yPad = (yMax - yMin) * 0.08 || 1
-    const yScale = scaleLinear()
-      .domain([yMin - yPad, yMax + yPad])
-      .range([MARGINS.top + plotH, MARGINS.top])
+    const { xScale, yScale, plotW, plotH, eraMids } = buildScales(width, height)
     let bestEraIdx = 0
     let bestEraDist = Infinity
     for (let i = 0; i < eraMids.length; i++) {
@@ -257,7 +249,7 @@ export function InfluenceRiver() {
       }
     }
     return null
-  }, [riverData, stackData])
+  }, [stackData, scaleParams])
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     const hit = hitTest(e.clientX, e.clientY)
