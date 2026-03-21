@@ -1,0 +1,31 @@
+{
+  "id": "starfield",
+  "title": "Starfield",
+  "date": "2023-09-06",
+  "tags": [
+    "open-world",
+    "rpg",
+    "exploration",
+    "sci-fi",
+    "space",
+    "crafting"
+  ],
+  "influencedBy": [
+    {
+      "id": "skyrim",
+      "through": [
+        "open-world",
+        "rpg",
+        "exploration"
+      ]
+    },
+    {
+      "id": "no-mans-sky",
+      "through": [
+        "space",
+        "exploration",
+        "crafting"
+      ]
+    }
+  ]
+}

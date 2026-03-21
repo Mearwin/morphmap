@@ -1,0 +1,38 @@
+{
+  "id": "final-fantasy-xvi",
+  "title": "Final Fantasy XVI",
+  "date": "2023-06-22",
+  "tags": [
+    "action-rpg",
+    "cinematic",
+    "narrative-driven",
+    "hack-and-slash",
+    "set-pieces",
+    "jrpg"
+  ],
+  "influencedBy": [
+    {
+      "id": "devil-may-cry",
+      "through": [
+        "action-rpg",
+        "hack-and-slash"
+      ]
+    },
+    {
+      "id": "final-fantasy-vii",
+      "through": [
+        "cinematic",
+        "narrative-driven",
+        "jrpg"
+      ]
+    },
+    {
+      "id": "god-of-war-2018",
+      "through": [
+        "cinematic",
+        "set-pieces",
+        "action-rpg"
+      ]
+    }
+  ]
+}

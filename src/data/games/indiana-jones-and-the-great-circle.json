@@ -1,0 +1,32 @@
+{
+  "id": "indiana-jones-and-the-great-circle",
+  "title": "Indiana Jones and the Great Circle",
+  "date": "2024-12-09",
+  "tags": [
+    "action-adventure",
+    "first-person",
+    "puzzle",
+    "stealth",
+    "exploration",
+    "cinematic",
+    "adventure"
+  ],
+  "influencedBy": [
+    {
+      "id": "dishonored",
+      "through": [
+        "first-person",
+        "stealth",
+        "exploration"
+      ]
+    },
+    {
+      "id": "the-secret-of-monkey-island",
+      "through": [
+        "puzzle",
+        "adventure",
+        "exploration"
+      ]
+    }
+  ]
+}

@@ -20,6 +20,9 @@ export function createGamesDatasetConfig(games: Entity[]): DatasetConfig {
     normRange,
     influenceLabel: 'Influenced by',
     influencedLabel: 'Influenced',
-    timeRange: { min: 1972, max: 2024 },
+    timeRange: {
+      min: Math.min(...games.map(g => parseInt(g.date.slice(0, 4)))),
+      max: Math.max(...games.map(g => parseInt(g.date.slice(0, 4)))),
+    },
   }
 }

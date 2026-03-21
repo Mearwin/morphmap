@@ -1,0 +1,31 @@
+{
+  "id": "rain-world",
+  "title": "Rain World",
+  "date": "2017-03-28",
+  "tags": [
+    "survival",
+    "platformer",
+    "ecosystem-simulation",
+    "difficulty",
+    "exploration",
+    "atmospheric"
+  ],
+  "influencedBy": [
+    {
+      "id": "metroid",
+      "through": [
+        "exploration",
+        "atmospheric",
+        "survival"
+      ]
+    },
+    {
+      "id": "dark-souls",
+      "through": [
+        "difficulty",
+        "exploration",
+        "survival"
+      ]
+    }
+  ]
+}

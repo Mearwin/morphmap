@@ -1,0 +1,31 @@
+{
+  "id": "katana-zero",
+  "title": "Katana ZERO",
+  "date": "2019-04-18",
+  "tags": [
+    "action",
+    "side-scrolling",
+    "narrative",
+    "time-manipulation",
+    "precision",
+    "stylish"
+  ],
+  "influencedBy": [
+    {
+      "id": "hotline-miami",
+      "through": [
+        "action",
+        "precision",
+        "stylish"
+      ]
+    },
+    {
+      "id": "mega-man-x",
+      "through": [
+        "action",
+        "side-scrolling",
+        "precision"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "final-fantasy-xiv",
+  "title": "Final Fantasy XIV",
+  "date": "2013-08-27",
+  "tags": [
+    "mmorpg",
+    "rpg",
+    "narrative-driven",
+    "class-system",
+    "raids",
+    "open-world"
+  ],
+  "influencedBy": [
+    {
+      "id": "everquest",
+      "through": [
+        "mmorpg",
+        "raids",
+        "class-system"
+      ]
+    },
+    {
+      "id": "world-of-warcraft",
+      "through": [
+        "mmorpg",
+        "raids",
+        "open-world"
+      ]
+    },
+    {
+      "id": "final-fantasy",
+      "through": [
+        "rpg",
+        "narrative-driven",
+        "class-system"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "wipeout",
+  "title": "Wipeout",
+  "date": "1995-09-29",
+  "tags": [
+    "racing",
+    "futuristic",
+    "anti-gravity",
+    "electronic-soundtrack",
+    "speed"
+  ],
+  "influencedBy": [
+    {
+      "id": "f-zero",
+      "through": [
+        "racing",
+        "futuristic",
+        "anti-gravity",
+        "speed"
+      ]
+    }
+  ]
+}

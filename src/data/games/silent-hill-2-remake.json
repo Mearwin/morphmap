@@ -1,0 +1,31 @@
+{
+  "id": "silent-hill-2-remake",
+  "title": "Silent Hill 2 Remake",
+  "date": "2024-10-08",
+  "tags": [
+    "survival-horror",
+    "psychological-horror",
+    "narrative-driven",
+    "atmospheric",
+    "over-the-shoulder",
+    "puzzle"
+  ],
+  "influencedBy": [
+    {
+      "id": "silent-hill-2",
+      "through": [
+        "survival-horror",
+        "psychological-horror",
+        "narrative-driven",
+        "atmospheric"
+      ]
+    },
+    {
+      "id": "resident-evil-2-remake",
+      "through": [
+        "survival-horror",
+        "over-the-shoulder"
+      ]
+    }
+  ]
+}

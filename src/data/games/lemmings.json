@@ -1,0 +1,21 @@
+{
+  "id": "lemmings",
+  "title": "Lemmings",
+  "date": "1991-02-14",
+  "tags": [
+    "puzzle",
+    "strategy",
+    "real-time",
+    "crowd-control",
+    "level-design"
+  ],
+  "influencedBy": [
+    {
+      "id": "pac-man",
+      "through": [
+        "puzzle",
+        "level-design"
+      ]
+    }
+  ]
+}

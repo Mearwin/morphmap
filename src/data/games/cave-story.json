@@ -1,0 +1,37 @@
+{
+  "id": "cave-story",
+  "title": "Cave Story",
+  "date": "2004-12-20",
+  "tags": [
+    "metroidvania",
+    "platformer",
+    "narrative",
+    "side-scrolling",
+    "exploration",
+    "indie"
+  ],
+  "influencedBy": [
+    {
+      "id": "metroid",
+      "through": [
+        "metroidvania",
+        "exploration",
+        "side-scrolling"
+      ]
+    },
+    {
+      "id": "castlevania-sotn",
+      "through": [
+        "metroidvania",
+        "exploration"
+      ]
+    },
+    {
+      "id": "mega-man",
+      "through": [
+        "platformer",
+        "side-scrolling"
+      ]
+    }
+  ]
+}

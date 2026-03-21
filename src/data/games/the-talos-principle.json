@@ -1,0 +1,29 @@
+{
+  "id": "the-talos-principle",
+  "title": "The Talos Principle",
+  "date": "2014-12-11",
+  "tags": [
+    "puzzle",
+    "philosophical",
+    "first-person",
+    "exploration",
+    "narrative"
+  ],
+  "influencedBy": [
+    {
+      "id": "portal",
+      "through": [
+        "puzzle",
+        "first-person"
+      ]
+    },
+    {
+      "id": "myst",
+      "through": [
+        "puzzle",
+        "exploration",
+        "philosophical"
+      ]
+    }
+  ]
+}

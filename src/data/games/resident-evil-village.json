@@ -1,0 +1,30 @@
+{
+  "id": "resident-evil-village",
+  "title": "Resident Evil Village",
+  "date": "2021-05-07",
+  "tags": [
+    "survival-horror",
+    "first-person",
+    "action",
+    "gothic",
+    "exploration",
+    "combat"
+  ],
+  "influencedBy": [
+    {
+      "id": "resident-evil-4",
+      "through": [
+        "survival-horror",
+        "action",
+        "combat"
+      ]
+    },
+    {
+      "id": "resident-evil-2-remake",
+      "through": [
+        "survival-horror",
+        "exploration"
+      ]
+    }
+  ]
+}

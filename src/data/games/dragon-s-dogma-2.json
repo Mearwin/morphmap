@@ -1,0 +1,32 @@
+{
+  "id": "dragon-s-dogma-2",
+  "title": "Dragon's Dogma 2",
+  "date": "2024-03-22",
+  "tags": [
+    "action-rpg",
+    "open-world",
+    "party-based",
+    "exploration",
+    "combat",
+    "fantasy"
+  ],
+  "influencedBy": [
+    {
+      "id": "dragons-dogma",
+      "through": [
+        "action-rpg",
+        "open-world",
+        "party-based",
+        "combat"
+      ]
+    },
+    {
+      "id": "elden-ring",
+      "through": [
+        "open-world",
+        "exploration",
+        "combat"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "noita",
+  "title": "Noita",
+  "date": "2020-10-15",
+  "tags": [
+    "roguelite",
+    "physics-simulation",
+    "pixel-art",
+    "procedural-generation",
+    "emergent-gameplay"
+  ],
+  "influencedBy": [
+    {
+      "id": "spelunky",
+      "through": [
+        "roguelite",
+        "procedural-generation",
+        "emergent-gameplay"
+      ]
+    },
+    {
+      "id": "the-binding-of-isaac",
+      "through": [
+        "roguelite",
+        "procedural-generation"
+      ]
+    }
+  ]
+}

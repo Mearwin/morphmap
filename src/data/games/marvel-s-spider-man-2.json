@@ -1,0 +1,30 @@
+{
+  "id": "marvel-s-spider-man-2",
+  "title": "Marvel's Spider-Man 2",
+  "date": "2023-10-20",
+  "tags": [
+    "action-adventure",
+    "open-world",
+    "cinematic",
+    "traversal",
+    "combat",
+    "superhero"
+  ],
+  "influencedBy": [
+    {
+      "id": "god-of-war-2018",
+      "through": [
+        "action-adventure",
+        "cinematic",
+        "combat"
+      ]
+    },
+    {
+      "id": "gta-san-andreas",
+      "through": [
+        "open-world",
+        "traversal"
+      ]
+    }
+  ]
+}

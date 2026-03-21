@@ -1,0 +1,31 @@
+{
+  "id": "diablo-iv",
+  "title": "Diablo IV",
+  "date": "2023-06-06",
+  "tags": [
+    "action-rpg",
+    "loot",
+    "open-world",
+    "multiplayer",
+    "dark-fantasy",
+    "isometric"
+  ],
+  "influencedBy": [
+    {
+      "id": "diablo-ii",
+      "through": [
+        "action-rpg",
+        "loot",
+        "isometric"
+      ]
+    },
+    {
+      "id": "path-of-exile",
+      "through": [
+        "action-rpg",
+        "loot",
+        "open-world"
+      ]
+    }
+  ]
+}
