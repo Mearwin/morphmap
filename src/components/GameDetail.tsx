@@ -85,7 +85,9 @@ export function GameDetail({ game }: Props) {
       const shared = g.tags.filter(t => selectedTags.has(t))
       if (shared.length === 0) continue
       const union = new Set([...displayedGame.tags, ...g.tags]).size
-      scored.push({ game: g, score: shared.length / union, shared })
+      const score = shared.length / union
+      if (score < 1 / 3) continue
+      scored.push({ game: g, score, shared })
     }
     scored.sort((a, b) => b.score - a.score)
     return scored.slice(0, 5)
