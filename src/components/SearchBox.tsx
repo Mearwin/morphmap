@@ -1,4 +1,4 @@
-import { useState, useMemo, forwardRef, useCallback } from 'react'
+import { useState, useMemo, forwardRef, useCallback, useRef, useEffect } from 'react'
 import { useGameStore } from '../store/useGameStore'
 import { useDataset } from '../dataset/DatasetContext'
 import { fuzzyFilter } from '../utils/fuzzy'
@@ -7,8 +7,22 @@ import styles from './SearchBox.module.css'
 export const SearchBox = forwardRef<HTMLInputElement>(function SearchBox(_props, ref) {
   const { games, dispatch } = useGameStore()
   const { entityLabelPlural } = useDataset()
+  const containerRef = useRef<HTMLDivElement>(null)
   const [query, setQuery] = useState('')
   const [activeIndex, setActiveIndex] = useState(-1)
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    if (query.length < 1) return
+    function handleClick(e: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setQuery('')
+        setActiveIndex(-1)
+      }
+    }
+    document.addEventListener('pointerdown', handleClick)
+    return () => document.removeEventListener('pointerdown', handleClick)
+  }, [query])
 
   const results = useMemo(() => {
     if (query.length < 1) return []
@@ -37,7 +51,7 @@ export const SearchBox = forwardRef<HTMLInputElement>(function SearchBox(_props,
   }, [results, activeIndex, selectResult])
 
   return (
-    <div className={styles.container} role="search">
+    <div ref={containerRef} className={styles.container} role="search">
       <input
         ref={ref}
         className={styles.input}
