@@ -74,6 +74,23 @@ export function GameDetail({ game }: Props) {
     [displayedGame, derived.adjacency, gameMap]
   )
 
+  const similarGames = useMemo(() => {
+    if (!displayedGame) return []
+    const selectedTags = new Set(displayedGame.tags)
+    const ancestorIds = new Set(ancestors.map(a => a.id))
+    const descendantIds = new Set(descendants.map(d => d.id))
+    const scored: { game: Entity; score: number; shared: string[] }[] = []
+    for (const g of games) {
+      if (g.id === displayedGame.id || ancestorIds.has(g.id) || descendantIds.has(g.id)) continue
+      const shared = g.tags.filter(t => selectedTags.has(t))
+      if (shared.length === 0) continue
+      const union = new Set([...displayedGame.tags, ...g.tags]).size
+      scored.push({ game: g, score: shared.length / union, shared })
+    }
+    scored.sort((a, b) => b.score - a.score)
+    return scored.slice(0, 5)
+  }, [displayedGame, games, ancestors, descendants])
+
   const handleExport = useCallback(() => {
     if (!displayedGame) return
     exportSubgraphAsPng(displayedGame.id, games, derived.links, gameColors)
@@ -165,6 +182,23 @@ export function GameDetail({ game }: Props) {
               onClick={() => dispatch({ type: 'SELECT_GAME', id: d.id })}
             >
               {d.title} ({d.date.slice(0, 4)})
+            </button>
+          ))}
+        </div>
+      )}
+
+      {similarGames.length > 0 && (
+        <div className={styles.section}>
+          <div className={styles.sectionLabel}>Similar</div>
+          {similarGames.map(({ game: g, score, shared }) => (
+            <button
+              key={g.id}
+              className={styles.ancestor}
+              onClick={() => dispatch({ type: 'SELECT_GAME', id: g.id })}
+              title={shared.join(', ')}
+            >
+              {g.title} ({g.date.slice(0, 4)})
+              <span className={styles.similarScore}>{Math.round(score * 100)}%</span>
             </button>
           ))}
         </div>

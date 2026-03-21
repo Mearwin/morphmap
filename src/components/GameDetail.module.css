@@ -113,6 +113,13 @@
   color: var(--accent);
 }
 
+.similarScore {
+  float: right;
+  font-size: 11px;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
 .exportBtn {
   display: block;
   width: 100%;
