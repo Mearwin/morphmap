@@ -17,12 +17,6 @@
         "action",
         "power-ups"
       ]
-    },
-    {
-      "id": "super-metroid",
-      "through": [
-        "wall-jumping"
-      ]
     }
   ]
 }
