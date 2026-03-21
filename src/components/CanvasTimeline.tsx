@@ -177,6 +177,20 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 
       ctx.globalAlpha = opacity
 
+      // Glow behind selected node
+      if (isSelected) {
+        ctx.save()
+        ctx.shadowColor = color
+        ctx.shadowBlur = 16
+        ctx.beginPath()
+        ctx.arc(node.x, node.y, radius, 0, Math.PI * 2)
+        ctx.fillStyle = color
+        ctx.globalAlpha = 0.2
+        ctx.fill()
+        ctx.restore()
+        ctx.globalAlpha = opacity
+      }
+
       // Node circle
       ctx.beginPath()
       ctx.arc(node.x, node.y, radius, 0, Math.PI * 2)

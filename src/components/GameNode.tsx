@@ -46,6 +46,14 @@ export const GameNode = memo(function GameNode({ node, color, isSelected, isHigh
           className={styles.ripple}
         />
       )}
+      {isSelected && (
+        <circle
+          r={node.radius * NODE.SELECTED_SCALE * 2}
+          fill={color}
+          opacity={0.2}
+          className={styles.glow}
+        />
+      )}
       <circle
         r={(isSelected ? node.radius * NODE.SELECTED_SCALE : node.radius) + 4}
         fill="none"
