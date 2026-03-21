@@ -12,7 +12,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "fetch-covers": "tsx scripts/fetch-covers.ts",
-    "data:add": "tsx scripts/add-game.ts",
+    "data:add": "tsx scripts/data-add.ts",
+    "data:link": "tsx scripts/data-link.ts",
+    "data:audit": "tsx scripts/data-audit.ts",
     "data:validate": "tsx scripts/validate-games.ts"
   },
   "dependencies": {

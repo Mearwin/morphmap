@@ -1,16 +1,6 @@
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
-
-const DATE_RE = /^\d{4}-\d{2}-\d{2}$/
-
-interface GameFile {
-  id: string
-  title: string
-  date: string
-  tags: string[]
-  influencedBy: { id: string; through: string[] }[]
-  imageUrl?: string
-}
+import { type GameFile, DATE_RE } from './lib/games.js'
 
 export function buildGames(gamesDir: string): GameFile[] {
   const files = readdirSync(gamesDir).filter(f => f.endsWith('.json')).sort()

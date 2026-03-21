@@ -1,25 +1,5 @@
-import { readdirSync, readFileSync } from 'node:fs'
-import { join } from 'node:path'
 import { searchGame, delay } from './lib/wikidata.js'
-
-const GAMES_DIR = join(import.meta.dirname, '..', 'src', 'data', 'games')
-const DATE_RE = /^\d{4}-\d{2}-\d{2}$/
-
-interface GameFile {
-  id: string
-  title: string
-  date: string
-  tags: string[]
-  influencedBy: { id: string; through: string[] }[]
-}
-
-function loadAllGames(): GameFile[] {
-  const files = readdirSync(GAMES_DIR).filter(f => f.endsWith('.json')).sort()
-  return files.map(f => {
-    const raw = readFileSync(join(GAMES_DIR, f), 'utf-8')
-    return JSON.parse(raw) as GameFile
-  })
-}
+import { loadAllGames, DATE_RE, type GameFile } from './lib/games.js'
 
 function validateStructural(games: GameFile[]): string[] {
   const errors: string[] = []
