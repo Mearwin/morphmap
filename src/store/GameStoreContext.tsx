@@ -35,8 +35,8 @@ export function GameStoreProvider({ games, children }: { games: Entity[]; childr
     }
 
     const adj = adjacency
-    const ancestors = getAncestors(selectedGameId, links, adj)
-    const descendants = getDescendants(selectedGameId, links, adj)
+    const ancestors = getAncestors(selectedGameId, links, adj, 2)
+    const descendants = getDescendants(selectedGameId, links, adj, 2)
     const connectedSet = new Set([selectedGameId, ...ancestors, ...descendants])
     const ancestorsWithSelected = new Set([selectedGameId, ...ancestors])
     const descendantsWithSelected = new Set([selectedGameId, ...descendants])

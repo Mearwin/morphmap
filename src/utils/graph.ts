@@ -30,32 +30,34 @@ export function buildAdjacency(links: Link[]): Adjacency {
   return { forward, reverse }
 }
 
-export function getAncestors(gameId: string, links: Link[], adj?: Adjacency): Set<string> {
+export function getAncestors(gameId: string, links: Link[], adj?: Adjacency, maxDepth?: number): Set<string> {
   const { reverse } = adj ?? buildAdjacency(links)
   const ancestors = new Set<string>()
-  const queue = [gameId]
+  const queue: [string, number][] = [[gameId, 0]]
   while (queue.length > 0) {
-    const current = queue.pop()!
+    const [current, depth] = queue.shift()!
+    if (maxDepth !== undefined && depth >= maxDepth) continue
     for (const source of reverse.get(current) ?? []) {
       if (!ancestors.has(source)) {
         ancestors.add(source)
-        queue.push(source)
+        queue.push([source, depth + 1])
       }
     }
   }
   return ancestors
 }
 
-export function getDescendants(gameId: string, links: Link[], adj?: Adjacency): Set<string> {
+export function getDescendants(gameId: string, links: Link[], adj?: Adjacency, maxDepth?: number): Set<string> {
   const { forward } = adj ?? buildAdjacency(links)
   const descendants = new Set<string>()
-  const queue = [gameId]
+  const queue: [string, number][] = [[gameId, 0]]
   while (queue.length > 0) {
-    const current = queue.pop()!
+    const [current, depth] = queue.shift()!
+    if (maxDepth !== undefined && depth >= maxDepth) continue
     for (const target of forward.get(current) ?? []) {
       if (!descendants.has(target)) {
         descendants.add(target)
-        queue.push(target)
+        queue.push([target, depth + 1])
       }
     }
   }

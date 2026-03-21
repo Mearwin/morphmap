@@ -9,7 +9,7 @@
 }
 
 .label {
-  font-size: 10px;
+  font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
@@ -75,7 +75,7 @@
   top: 0;
   transform: translateX(-50%) rotate(-35deg);
   transform-origin: top center;
-  font-size: 9px;
+  font-size: var(--text-xs);
   white-space: nowrap;
   opacity: 0.8;
 }
@@ -95,6 +95,6 @@
 }
 
 .resultText {
-  font-size: 10px;
+  font-size: var(--text-xs);
   color: var(--text-muted);
 }

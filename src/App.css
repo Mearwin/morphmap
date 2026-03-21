@@ -61,7 +61,7 @@ html, body, #root {
 }
 
 .logo {
-  font-size: 14px;
+  font-size: var(--text-base);
   font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -70,7 +70,7 @@ html, body, #root {
 
 .stats {
   text-align: center;
-  font-size: 10px;
+  font-size: var(--text-xs);
   color: var(--text-muted);
   padding: 2px 16px 4px;
   background: var(--surface);
@@ -95,7 +95,7 @@ html, body, #root {
   }
 
   .logo {
-    font-size: 13px;
+    font-size: var(--text-base);
   }
 }
 

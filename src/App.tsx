@@ -123,7 +123,7 @@ function AppInner() {
         {state.viewMode === 'lineage' ? (
           <ErrorBoundary fallback={<div style={{ flex: 1 }} />}>
             <Suspense fallback={null}>
-              <LazyLineageView />
+              <LazyLineageView maxDepth={2} />
             </Suspense>
           </ErrorBoundary>
         ) : state.viewMode === 'trends' ? (

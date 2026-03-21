@@ -9,7 +9,7 @@
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text);
-  font-size: 13px;
+  font-size: var(--text-base);
   outline: none;
   transition: border-color 0.15s ease;
 }
@@ -47,7 +47,7 @@
   border: none;
   background: none;
   color: var(--text);
-  font-size: 13px;
+  font-size: var(--text-base);
   cursor: pointer;
   text-align: left;
 }
@@ -64,13 +64,13 @@
 
 .year {
   color: var(--text-muted);
-  font-size: 11px;
+  font-size: var(--text-xs);
 }
 
 .noResults {
   padding: 8px 12px;
   color: var(--text-muted);
-  font-size: 13px;
+  font-size: var(--text-base);
 }
 
 @media (max-width: 768px) {

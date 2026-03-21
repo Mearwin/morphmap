@@ -38,7 +38,7 @@
 }
 
 .title {
-  font-size: 14px;
+  font-size: var(--text-base);
   font-weight: 600;
   color: var(--text);
 }
@@ -49,7 +49,7 @@
   color: var(--text-muted);
   cursor: pointer;
   padding: 4px;
-  font-size: 18px;
+  font-size: var(--text-xl);
   line-height: 1;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .cardTitle {
-  font-size: 11px;
+  font-size: var(--text-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -78,7 +78,7 @@
   justify-content: space-between;
   align-items: baseline;
   padding: 3px 0;
-  font-size: 12px;
+  font-size: var(--text-sm);
 }
 
 .decadeRow + .decadeRow {
@@ -87,7 +87,7 @@
 
 .decadeLabel {
   color: var(--text-muted);
-  font-size: 11px;
+  font-size: var(--text-xs);
   min-width: 40px;
 }
 
@@ -98,7 +98,7 @@
 
 .decadeCount {
   color: var(--text-muted);
-  font-size: 10px;
+  font-size: var(--text-xs);
   margin-left: 4px;
 }
 
@@ -107,7 +107,7 @@
   justify-content: space-between;
   align-items: baseline;
   padding: 3px 0;
-  font-size: 12px;
+  font-size: var(--text-sm);
 }
 
 .rankRow + .rankRow {
@@ -116,7 +116,7 @@
 
 .rankIndex {
   color: var(--text-muted);
-  font-size: 10px;
+  font-size: var(--text-xs);
   min-width: 16px;
 }
 
@@ -128,7 +128,7 @@
 
 .rankValue {
   color: var(--text-muted);
-  font-size: 10px;
+  font-size: var(--text-xs);
   white-space: nowrap;
 }
 
@@ -140,7 +140,7 @@
 }
 
 .clusterStats {
-  font-size: 10px;
+  font-size: var(--text-xs);
   color: var(--text-muted);
   margin-bottom: 6px;
 }
@@ -155,7 +155,7 @@
   background: rgba(255, 255, 255, 0.06);
   border-radius: 4px;
   padding: 2px 6px;
-  font-size: 10px;
+  font-size: var(--text-xs);
   color: var(--text);
 }
 
@@ -169,7 +169,7 @@
   display: flex;
   align-items: baseline;
   padding: 3px 0;
-  font-size: 12px;
+  font-size: var(--text-sm);
   gap: 6px;
 }
 
@@ -179,12 +179,12 @@
 
 .pairArrow {
   color: var(--text-muted);
-  font-size: 10px;
+  font-size: var(--text-xs);
 }
 
 .pairDistance {
   color: var(--text-muted);
-  font-size: 10px;
+  font-size: var(--text-xs);
   margin-left: auto;
   white-space: nowrap;
 }

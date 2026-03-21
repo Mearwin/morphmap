@@ -46,14 +46,14 @@
 }
 
 .title {
-  font-size: 16px;
+  font-size: var(--text-lg);
   font-weight: 600;
   flex: 1;
 }
 
 .year {
   color: var(--text-muted);
-  font-size: 13px;
+  font-size: var(--text-base);
 }
 
 .closeBtn {
@@ -61,7 +61,7 @@
   background: none;
   border: none;
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: var(--text-xl);
   line-height: 1;
   cursor: pointer;
   padding: 0 4px;
@@ -93,7 +93,7 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
   color: var(--text-muted);
-  font-size: 11px;
+  font-size: var(--text-xs);
 }
 
 .card:nth-child(n+2) {
@@ -125,7 +125,7 @@
 }
 
 .sectionLabel {
-  font-size: 10px;
+  font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
@@ -134,7 +134,7 @@
 
 .ancestor {
   display: block;
-  font-size: 13px;
+  font-size: var(--text-base);
   color: var(--text);
   padding: 4px 8px;
   margin: 0;
@@ -156,7 +156,7 @@
 
 .similarScore {
   float: right;
-  font-size: 11px;
+  font-size: var(--text-xs);
   color: var(--text-muted);
   opacity: 0.7;
 }
@@ -169,7 +169,7 @@
   border-radius: 6px;
   background: none;
   color: var(--text-muted);
-  font-size: 12px;
+  font-size: var(--text-sm);
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }

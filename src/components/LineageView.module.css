@@ -26,7 +26,7 @@
 }
 
 .depthLabel {
-  font-size: 10px;
+  font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
@@ -50,7 +50,7 @@
 }
 
 .tagPill {
-  font-size: 9px;
+  font-size: var(--text-xs);
   fill: var(--text-muted);
 }
 
@@ -63,7 +63,7 @@
 
 .emptyMessage {
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: var(--text-base);
   text-align: center;
   padding: 48px 24px;
   margin: auto;
