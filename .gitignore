@@ -27,7 +27,7 @@ dist-ssr
 # Personal notes and plans
 TODO.md
 a.todo
-docs/
+docs/plans/
 
 # Generated from individual game files
 src/data/games.json
