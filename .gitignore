@@ -24,6 +24,9 @@ dist-ssr
 *.sln
 *.sw?
 
+# Claude Code local config
+.claude/
+
 # Personal notes and plans
 TODO.md
 a.todo
