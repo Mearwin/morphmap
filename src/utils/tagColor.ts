@@ -162,12 +162,13 @@ export function buildTagIndex(games: Entity[]): { tagIndex: Map<string, number>;
 }
 
 /**
- * Compute a normalized tag position [0, 1] for each game.
- * Average index of its tags in the spectrally-ordered tag list,
- * then stretched to fill the full [0, 1] range for maximum spread.
+ * Compute a normalized tag position [0, 1] for each game using a pre-computed tag index.
  */
-export function computeTagPositions(games: Entity[]): Map<string, number> {
-  const { tagIndex, totalTags } = buildTagIndex(games)
+export function computeTagPositionsFromIndex(
+  games: Entity[],
+  tagIndex: Map<string, number>,
+  totalTags: number,
+): Map<string, number> {
   if (games.length === 0) return new Map()
 
   // First pass: compute raw average positions
@@ -194,6 +195,14 @@ export function computeTagPositions(games: Entity[]): Map<string, number> {
     positions.set(id, (pos - min) / range)
   }
   return positions
+}
+
+/**
+ * Convenience wrapper — builds tag index internally.
+ */
+export function computeTagPositions(games: Entity[]): Map<string, number> {
+  const { tagIndex, totalTags } = buildTagIndex(games)
+  return computeTagPositionsFromIndex(games, tagIndex, totalTags)
 }
 
 /**
@@ -232,11 +241,13 @@ export function explainGameColor(
 }
 
 /**
- * Compute the normalization parameters (min, range) for the tag position stretch.
- * Needed by explainGameColor.
+ * Compute normalization params using a pre-computed tag index.
  */
-export function computeNormParams(games: Entity[]): { min: number; range: number } {
-  const { tagIndex, totalTags } = buildTagIndex(games)
+export function computeNormParamsFromIndex(
+  games: Entity[],
+  tagIndex: Map<string, number>,
+  totalTags: number,
+): { min: number; range: number } {
   let min = Infinity
   let max = -Infinity
   for (const g of games) {
@@ -251,14 +262,27 @@ export function computeNormParams(games: Entity[]): { min: number; range: number
 }
 
 /**
- * Compute a deterministic HSL color for each game based on its tags.
- * Games sharing tags get similar hues.
+ * Convenience wrapper — builds tag index internally.
  */
-export function computeTagColors(games: Entity[]): Map<string, string> {
-  const positions = computeTagPositions(games)
+export function computeNormParams(games: Entity[]): { min: number; range: number } {
+  const { tagIndex, totalTags } = buildTagIndex(games)
+  return computeNormParamsFromIndex(games, tagIndex, totalTags)
+}
+
+/**
+ * Compute colors from pre-computed positions.
+ */
+export function computeTagColorsFromPositions(positions: Map<string, number>): Map<string, string> {
   const colors = new Map<string, string>()
   for (const [id, pos] of positions) {
     colors.set(id, hslFromPosition(pos))
   }
   return colors
+}
+
+/**
+ * Convenience wrapper — computes positions internally.
+ */
+export function computeTagColors(games: Entity[]): Map<string, string> {
+  return computeTagColorsFromPositions(computeTagPositions(games))
 }

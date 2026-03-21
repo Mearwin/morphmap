@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import type { Entity } from '../types'
-import { useGameStore } from '../store/useGameStore'
-import { buildTagIndex, explainGameColor, computeNormParams, hslFromPosition } from '../utils/tagColor'
+import { useDataset } from '../dataset/DatasetContext'
+import { explainGameColor, hslFromPosition } from '../utils/tagColor'
 import styles from './ColorExplainer.module.css'
 
 interface Props {
@@ -9,13 +9,11 @@ interface Props {
 }
 
 export function ColorExplainer({ game }: Props) {
-  const { games } = useGameStore()
+  const { tagIndex, totalTags, normMin, normRange } = useDataset()
 
   const explanation = useMemo(() => {
-    const { tagIndex, totalTags } = buildTagIndex(games)
-    const { min, range } = computeNormParams(games)
-    return explainGameColor(game.tags, tagIndex, totalTags, min, range)
-  }, [games, game.tags])
+    return explainGameColor(game.tags, tagIndex, totalTags, normMin, normRange)
+  }, [game.tags, tagIndex, totalTags, normMin, normRange])
 
   // Build the same gradient as the legend
   const gradient = `linear-gradient(to right, ${
