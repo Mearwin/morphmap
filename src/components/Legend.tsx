@@ -13,8 +13,7 @@ export const Legend = memo(function Legend() {
     const counts: Record<string, number> = {}
     for (const g of games) for (const t of g.tags) counts[t] = (counts[t] || 0) + 1
 
-    // For each top tag, compute its average position across games that have it.
-    // This matches where those games actually appear on screen.
+    // For each tag, compute its average position across games that have it.
     const tagAvgPos: Record<string, { sum: number; count: number }> = {}
     for (const g of games) {
       const pos = tagPositions.get(g.id) ?? 0.5
@@ -25,18 +24,32 @@ export const Legend = memo(function Legend() {
       }
     }
 
-    const labels = Object.entries(counts)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 8)
-      .map(([tag]) => {
+    // Build tag list with positions, filtering out very rare tags
+    const minCount = 3
+    const allTags = Object.entries(counts)
+      .filter(([, c]) => c >= minCount)
+      .map(([tag, count]) => {
         const avg = tagAvgPos[tag]
-        const colorPosition = avg ? avg.sum / avg.count : 0.5
-        return { tag, colorPosition }
+        return { tag, count, colorPosition: avg ? avg.sum / avg.count : 0.5 }
       })
-      .sort((a, b) => a.colorPosition - b.colorPosition)
+
+    // Pick one representative tag per bin across the spectrum.
+    // This ensures labels span the full color range.
+    const NUM_BINS = 8
+    const labels: typeof allTags = []
+    for (let bin = 0; bin < NUM_BINS; bin++) {
+      const lo = bin / NUM_BINS
+      const hi = (bin + 1) / NUM_BINS
+      const candidates = allTags.filter(t => t.colorPosition >= lo && t.colorPosition < hi)
+      if (candidates.length === 0) continue
+      // Pick the most frequent tag in this bin
+      candidates.sort((a, b) => b.count - a.count)
+      labels.push(candidates[0])
+    }
+
+    labels.sort((a, b) => a.colorPosition - b.colorPosition)
 
     // Evenly space labels across the bar so they never overlap.
-    // Color still reflects actual tag position on the spectrum.
     const n = labels.length
     return labels.map((l, i) => ({
       ...l,
