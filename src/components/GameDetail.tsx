@@ -115,7 +115,7 @@ export function GameDetail({ game }: Props) {
 
   return (
     <div
-      className={styles.panel}
+      className={`${styles.panel}${isVisible ? ` ${styles.panelVisible}` : ''}`}
       role="region"
       aria-label={`Details for ${displayedGame.title}`}
       style={{

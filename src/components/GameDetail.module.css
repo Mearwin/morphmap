@@ -11,8 +11,15 @@
   border-left: 1px solid var(--border);
   overflow-y: auto;
   z-index: 20;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  /* Default exit: fast ease-in */
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in;
   will-change: opacity, transform;
+}
+
+.panelVisible {
+  /* Entry: spring overshoot */
+  transition: opacity 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .header {
@@ -83,6 +90,30 @@
 .section {
   border-top: 1px solid var(--border);
   padding-top: 10px;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: section-cascade 0.2s ease-out forwards;
+}
+
+.section:nth-child(2) { animation-delay: 30ms; }
+.section:nth-child(3) { animation-delay: 60ms; }
+.section:nth-child(4) { animation-delay: 90ms; }
+.section:nth-child(5) { animation-delay: 120ms; }
+.section:nth-child(6) { animation-delay: 150ms; }
+
+@keyframes section-cascade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .sectionLabel {
