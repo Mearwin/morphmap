@@ -1,12 +1,14 @@
 import { useRef, useState, useCallback, useEffect, useMemo, lazy, Suspense } from 'react'
 import { ViewToggle } from './components/ViewToggle'
 import gamesData from './data/games.json'
+import tagIndexData from './data/tag-index.json'
 import type { Game } from './types'
 import { GameStoreProvider } from './store/GameStoreContext'
 import { useGameStore } from './store/useGameStore'
 import { DatasetProvider } from './dataset/DatasetContext'
 import { useDataset } from './dataset/DatasetContext'
 import { createGamesDatasetConfig } from './dataset/games'
+import type { PrecomputedTagIndex } from './dataset/games'
 import { Timeline } from './components/Timeline'
 import { TagFilter } from './components/TagFilter'
 import { SearchBox } from './components/SearchBox'
@@ -62,14 +64,10 @@ function AppInner() {
         e.preventDefault()
         setShowShortcuts(v => !v)
       }
-      if ((e.key === 'r' || e.key === 'R') && !e.metaKey && !e.ctrlKey && !e.altKey) {
-        e.preventDefault()
-        dispatch({ type: 'SET_VIEW_MODE', mode: state.viewMode === 'river' ? 'timeline' : 'river' })
-      }
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [dispatch, state.viewMode])
+  }, [])
 
   const [hovered, setHovered] = useState<{ node: GameNode; x: number; y: number } | null>(null)
 
@@ -140,13 +138,11 @@ function AppInner() {
               <Timeline onHover={handleHover} />
             </ErrorBoundary>
 
-            {state.viewMode !== 'river' && (
-              <ErrorBoundary fallback={null}>
-                <Suspense fallback={null}>
-                  <LazyGameDetail game={selectedGame ?? null} />
-                </Suspense>
-              </ErrorBoundary>
-            )}
+            <ErrorBoundary fallback={null}>
+              <Suspense fallback={null}>
+                <LazyGameDetail game={selectedGame ?? null} />
+              </Suspense>
+            </ErrorBoundary>
           </>
         )}
       </div>
@@ -193,7 +189,10 @@ function EmbedOrApp() {
 }
 
 function App() {
-  const datasetConfig = useMemo(() => createGamesDatasetConfig(games), [])
+  const datasetConfig = useMemo(
+    () => createGamesDatasetConfig(games, tagIndexData as PrecomputedTagIndex),
+    [],
+  )
 
   return (
     <ErrorBoundary>
