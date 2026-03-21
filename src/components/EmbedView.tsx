@@ -20,7 +20,12 @@ export function EmbedView() {
     )
   }
 
-  const fullUrl = window.location.href.replace(/[&?]embed=true/, '').replace(/[&?]depth=\d+/, '')
+  const url = new URL(window.location.href)
+  const hashParams = new URLSearchParams(url.hash.slice(1))
+  hashParams.delete('embed')
+  hashParams.delete('depth')
+  const cleanHash = hashParams.toString()
+  const fullUrl = url.origin + url.pathname + (cleanHash ? '#' + cleanHash : '')
 
   return (
     <div className={styles.container}>
