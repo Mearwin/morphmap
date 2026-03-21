@@ -1,0 +1,31 @@
+{
+  "id": "blueprince",
+  "title": "BluePrince",
+  "date": "2025-04-10",
+  "tags": [
+    "puzzle",
+    "exploration",
+    "roguelite",
+    "mystery",
+    "first-person",
+    "room-layout",
+    "hidden-knowledge"
+  ],
+  "influencedBy": [
+    {
+      "id": "outer-wilds",
+      "through": [
+        "exploration",
+        "mystery",
+        "hidden-knowledge"
+      ]
+    },
+    {
+      "id": "the-witness",
+      "through": [
+        "puzzle",
+        "exploration"
+      ]
+    }
+  ]
+}

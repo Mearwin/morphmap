@@ -1,0 +1,23 @@
+{
+  "id": "roller-coaster-tycoon",
+  "title": "RollerCoaster Tycoon",
+  "date": "1999-03-31",
+  "tags": [
+    "management",
+    "simulation",
+    "theme-park",
+    "building",
+    "isometric",
+    "city-builder"
+  ],
+  "influencedBy": [
+    {
+      "id": "simcity",
+      "through": [
+        "management",
+        "simulation",
+        "city-builder"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "frostpunk",
+  "title": "Frostpunk",
+  "date": "2018-04-24",
+  "tags": [
+    "city-builder",
+    "survival",
+    "management",
+    "moral-choice",
+    "post-apocalyptic",
+    "simulation",
+    "resource-management"
+  ],
+  "influencedBy": [
+    {
+      "id": "sim-city-2000",
+      "through": [
+        "city-builder",
+        "simulation"
+      ]
+    },
+    {
+      "id": "civilization",
+      "through": [
+        "management",
+        "resource-management"
+      ]
+    }
+  ]
+}

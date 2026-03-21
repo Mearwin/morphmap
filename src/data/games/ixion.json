@@ -1,0 +1,33 @@
+{
+  "id": "ixion",
+  "title": "Ixion",
+  "date": "2022-12-07",
+  "tags": [
+    "city-builder",
+    "survival",
+    "management",
+    "sci-fi",
+    "space",
+    "resource-management",
+    "moral-choice",
+    "simulation"
+  ],
+  "influencedBy": [
+    {
+      "id": "frostpunk",
+      "through": [
+        "city-builder",
+        "survival",
+        "management",
+        "moral-choice"
+      ]
+    },
+    {
+      "id": "cities-skylines",
+      "through": [
+        "city-builder",
+        "simulation"
+      ]
+    }
+  ]
+}
