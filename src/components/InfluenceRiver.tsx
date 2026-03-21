@@ -2,6 +2,7 @@ import { useEffect, useRef, useCallback, useMemo, useState } from 'react'
 import { stack, area, curveMonotoneX, stackOffsetWiggle, stackOrderInsideOut } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
 import { useGameStore } from '../store/useGameStore'
+import { useDataset } from '../dataset/DatasetContext'
 import { buildLinks } from '../utils/graph'
 import { buildRiverData, type EraCategoryCell } from '../utils/riverData'
 import { hslFromPosition } from '../utils/tagColor'
@@ -29,6 +30,7 @@ type HoverState = {
 
 export function InfluenceRiver() {
   const { games, state, dispatch } = useGameStore()
+  const { tagIndex, totalTags } = useDataset()
   const { selectedTag } = state
   const containerRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -44,19 +46,14 @@ export function InfluenceRiver() {
     [games, links, selectedTag],
   )
 
-  // Compute tag colors for streams
+  // Compute tag colors for streams using spectral ordering (same as timeline)
   const tagColorMap = useMemo(() => {
-    const allTags = new Set<string>()
-    for (const g of games) for (const t of g.tags) allTags.add(t)
-    const sortedTags = [...allTags].sort()
-    const tagIndex = new Map(sortedTags.map((t, i) => [t, i]))
-    const totalTags = sortedTags.length
     const colors = new Map<string, string>()
-    for (const tag of sortedTags) {
-      colors.set(tag, hslFromPosition(tagIndex.get(tag)! / totalTags))
+    for (const [tag, idx] of tagIndex) {
+      colors.set(tag, hslFromPosition(idx / totalTags))
     }
     return colors
-  }, [games])
+  }, [tagIndex, totalTags])
 
   // Build D3 stack data
   const stackData = useMemo(() => {
