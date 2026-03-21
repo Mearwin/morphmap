@@ -8,6 +8,14 @@
     "peripheral",
     "party-game"
   ],
-  "influencedBy": [],
+  "influencedBy": [
+    {
+      "id": "parappa-the-rapper",
+      "through": [
+        "rhythm",
+        "music"
+      ]
+    }
+  ],
   "imageUrl": "https://images.igdb.com/igdb/image/upload/t_cover_big/co97zc.jpg"
 }

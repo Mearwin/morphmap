@@ -1,0 +1,22 @@
+{
+  "id": "transistor",
+  "title": "Transistor",
+  "date": "2014-05-20",
+  "tags": [
+    "action-rpg",
+    "isometric",
+    "sci-fi",
+    "narrator",
+    "tactical-pause"
+  ],
+  "influencedBy": [
+    {
+      "id": "bastion",
+      "through": [
+        "action-rpg",
+        "isometric",
+        "narrator"
+      ]
+    }
+  ]
+}

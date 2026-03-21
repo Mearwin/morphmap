@@ -7,14 +7,15 @@
     "sandbox",
     "third-person",
     "crime",
-    "exploration"
+    "exploration",
+    "action-adventure"
   ],
   "influencedBy": [
     {
-      "id": "the-legend-of-zelda",
+      "id": "shenmue",
       "through": [
         "open-world",
-        "exploration"
+        "action-adventure"
       ]
     }
   ],

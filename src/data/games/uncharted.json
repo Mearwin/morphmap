@@ -1,0 +1,33 @@
+{
+  "id": "uncharted",
+  "title": "Uncharted: Drake's Fortune",
+  "date": "2007-11-19",
+  "tags": [
+    "action-adventure",
+    "third-person-shooter",
+    "cinematic",
+    "platforming",
+    "narrative"
+  ],
+  "influencedBy": [
+    {
+      "id": "tomb-raider",
+      "through": [
+        "action-adventure",
+        "platforming"
+      ]
+    },
+    {
+      "id": "gears-of-war",
+      "through": [
+        "third-person-shooter"
+      ]
+    },
+    {
+      "id": "prince-of-persia-sot",
+      "through": [
+        "platforming"
+      ]
+    }
+  ]
+}

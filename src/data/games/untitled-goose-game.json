@@ -1,0 +1,26 @@
+{
+  "id": "untitled-goose-game",
+  "title": "Untitled Goose Game",
+  "date": "2019-09-20",
+  "tags": [
+    "stealth",
+    "puzzle",
+    "humor",
+    "sandbox"
+  ],
+  "influencedBy": [
+    {
+      "id": "katamari-damacy",
+      "through": [
+        "humor"
+      ]
+    },
+    {
+      "id": "hitman",
+      "through": [
+        "stealth",
+        "sandbox"
+      ]
+    }
+  ]
+}

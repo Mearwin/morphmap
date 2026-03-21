@@ -14,22 +14,23 @@
     "3d-platforming",
     "exploration",
     "cinematic-action",
-    "set-piece-design"
+    "set-piece-design",
+    "platforming"
   ],
   "influencedBy": [
+    {
+      "id": "uncharted",
+      "through": [
+        "action-adventure",
+        "cinematic",
+        "platforming"
+      ]
+    },
     {
       "id": "tomb-raider",
       "through": [
         "action-adventure",
-        "3d-platforming",
         "exploration"
-      ]
-    },
-    {
-      "id": "half-life-2",
-      "through": [
-        "cinematic-action",
-        "set-piece-design"
       ]
     }
   ],

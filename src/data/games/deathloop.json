@@ -7,21 +7,23 @@
     "time-loop",
     "immersive-sim",
     "stealth",
-    "first-person"
+    "first-person",
+    "assassination",
+    "sandbox"
   ],
   "influencedBy": [
     {
       "id": "dishonored",
       "through": [
         "immersive-sim",
-        "stealth",
-        "first-person"
+        "stealth"
       ]
     },
     {
-      "id": "majoras-mask",
+      "id": "hitman",
       "through": [
-        "time-loop"
+        "assassination",
+        "sandbox"
       ]
     }
   ],

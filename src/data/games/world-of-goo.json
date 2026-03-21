@@ -1,0 +1,19 @@
+{
+  "id": "world-of-goo",
+  "title": "World of Goo",
+  "date": "2008-10-13",
+  "tags": [
+    "puzzle",
+    "physics",
+    "indie",
+    "building"
+  ],
+  "influencedBy": [
+    {
+      "id": "the-secret-of-monkey-island",
+      "through": [
+        "puzzle"
+      ]
+    }
+  ]
+}

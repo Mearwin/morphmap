@@ -15,8 +15,7 @@
       "id": "wolfenstein-3d",
       "through": [
         "fps",
-        "first-person",
-        "fast-paced"
+        "first-person"
       ]
     }
   ],

@@ -1,0 +1,23 @@
+{
+  "id": "psychonauts-2",
+  "title": "Psychonauts 2",
+  "date": "2021-08-25",
+  "tags": [
+    "3d-platformer",
+    "narrative",
+    "humor",
+    "level-variety",
+    "3d-platforming"
+  ],
+  "influencedBy": [
+    {
+      "id": "psychonauts",
+      "through": [
+        "3d-platformer",
+        "narrative",
+        "humor",
+        "level-variety"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "metaphor-refantazio",
+  "title": "Metaphor: ReFantazio",
+  "date": "2024-10-11",
+  "tags": [
+    "jrpg",
+    "turn-based",
+    "social-sim",
+    "fantasy",
+    "narrative",
+    "time-management"
+  ],
+  "influencedBy": [
+    {
+      "id": "persona-5",
+      "through": [
+        "jrpg",
+        "social-sim",
+        "turn-based",
+        "time-management"
+      ]
+    },
+    {
+      "id": "final-fantasy-vii",
+      "through": [
+        "jrpg",
+        "narrative"
+      ]
+    }
+  ]
+}

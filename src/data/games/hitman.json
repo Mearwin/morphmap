@@ -1,0 +1,26 @@
+{
+  "id": "hitman",
+  "title": "Hitman: Blood Money",
+  "date": "2006-05-26",
+  "tags": [
+    "stealth",
+    "sandbox",
+    "assassination",
+    "emergent-gameplay",
+    "disguise"
+  ],
+  "influencedBy": [
+    {
+      "id": "thief",
+      "through": [
+        "stealth"
+      ]
+    },
+    {
+      "id": "deus-ex",
+      "through": [
+        "emergent-gameplay"
+      ]
+    }
+  ]
+}

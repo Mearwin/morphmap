@@ -1,0 +1,28 @@
+{
+  "id": "mega-man-x",
+  "title": "Mega Man X",
+  "date": "1993-12-17",
+  "tags": [
+    "platformer",
+    "action",
+    "wall-jumping",
+    "power-ups",
+    "level-design"
+  ],
+  "influencedBy": [
+    {
+      "id": "mega-man",
+      "through": [
+        "platformer",
+        "action",
+        "power-ups"
+      ]
+    },
+    {
+      "id": "super-metroid",
+      "through": [
+        "wall-jumping"
+      ]
+    }
+  ]
+}

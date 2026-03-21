@@ -1,0 +1,22 @@
+{
+  "id": "grim-fandango",
+  "title": "Grim Fandango",
+  "date": "1998-10-30",
+  "tags": [
+    "adventure",
+    "puzzle",
+    "narrative",
+    "humor",
+    "noir"
+  ],
+  "influencedBy": [
+    {
+      "id": "the-secret-of-monkey-island",
+      "through": [
+        "adventure",
+        "puzzle",
+        "humor"
+      ]
+    }
+  ]
+}

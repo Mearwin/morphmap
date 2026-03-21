@@ -1,0 +1,30 @@
+{
+  "id": "black-myth-wukong",
+  "title": "Black Myth: Wukong",
+  "date": "2024-08-20",
+  "tags": [
+    "action-rpg",
+    "soulslike",
+    "mythology",
+    "boss-battles",
+    "melee-combat"
+  ],
+  "influencedBy": [
+    {
+      "id": "dark-souls",
+      "through": [
+        "soulslike",
+        "melee-combat",
+        "boss-battles"
+      ]
+    },
+    {
+      "id": "god-of-war-2018",
+      "through": [
+        "action-rpg",
+        "mythology",
+        "melee-combat"
+      ]
+    }
+  ]
+}

@@ -8,22 +8,30 @@
     "boss-battles",
     "level-design",
     "nonlinear",
-    "tight-controls"
+    "tight-controls",
+    "platformer",
+    "action"
   ],
   "influencedBy": [
     {
       "id": "mega-man",
       "through": [
-        "side-scrolling",
-        "boss-battles",
-        "nonlinear"
+        "platformer",
+        "boss-battles"
       ]
     },
     {
-      "id": "super-mario-bros",
+      "id": "castlevania-sotn",
       "through": [
-        "side-scrolling",
-        "tight-controls"
+        "retro",
+        "side-scrolling"
+      ]
+    },
+    {
+      "id": "mega-man-x",
+      "through": [
+        "action",
+        "level-design"
       ]
     }
   ],

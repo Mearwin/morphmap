@@ -7,15 +7,24 @@
     "procedural-generation",
     "exploration",
     "survival",
-    "sandbox"
+    "sandbox",
+    "space-sim",
+    "crafting"
   ],
   "influencedBy": [
     {
+      "id": "elite",
+      "through": [
+        "space-sim",
+        "procedural-generation",
+        "exploration"
+      ]
+    },
+    {
       "id": "minecraft",
       "through": [
-        "sandbox",
-        "procedural-generation",
-        "survival"
+        "survival",
+        "crafting"
       ]
     }
   ],

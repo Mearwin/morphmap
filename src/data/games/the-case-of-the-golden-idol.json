@@ -1,0 +1,29 @@
+{
+  "id": "the-case-of-the-golden-idol",
+  "title": "The Case of the Golden Idol",
+  "date": "2022-10-13",
+  "tags": [
+    "puzzle",
+    "deduction",
+    "mystery",
+    "investigation",
+    "pixel-art"
+  ],
+  "influencedBy": [
+    {
+      "id": "return-of-the-obra-dinn",
+      "through": [
+        "deduction",
+        "investigation",
+        "mystery"
+      ]
+    },
+    {
+      "id": "papers-please",
+      "through": [
+        "deduction",
+        "puzzle"
+      ]
+    }
+  ]
+}

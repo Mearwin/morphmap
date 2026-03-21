@@ -1,0 +1,21 @@
+{
+  "id": "shenmue",
+  "title": "Shenmue",
+  "date": "1999-12-29",
+  "tags": [
+    "open-world",
+    "action-adventure",
+    "qte",
+    "life-sim",
+    "narrative"
+  ],
+  "influencedBy": [
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "open-world",
+        "action-adventure"
+      ]
+    }
+  ]
+}

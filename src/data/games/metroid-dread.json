@@ -1,0 +1,28 @@
+{
+  "id": "metroid-dread",
+  "title": "Metroid Dread",
+  "date": "2021-10-08",
+  "tags": [
+    "metroidvania",
+    "action",
+    "exploration",
+    "stealth",
+    "boss-battles"
+  ],
+  "influencedBy": [
+    {
+      "id": "super-metroid",
+      "through": [
+        "metroidvania",
+        "exploration"
+      ]
+    },
+    {
+      "id": "hollow-knight",
+      "through": [
+        "metroidvania",
+        "boss-battles"
+      ]
+    }
+  ]
+}

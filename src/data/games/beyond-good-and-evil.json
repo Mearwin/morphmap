@@ -1,0 +1,28 @@
+{
+  "id": "beyond-good-and-evil",
+  "title": "Beyond Good & Evil",
+  "date": "2003-11-11",
+  "tags": [
+    "action-adventure",
+    "stealth",
+    "photography",
+    "narrative",
+    "exploration"
+  ],
+  "influencedBy": [
+    {
+      "id": "ocarina-of-time",
+      "through": [
+        "action-adventure",
+        "exploration"
+      ]
+    },
+    {
+      "id": "metal-gear-solid",
+      "through": [
+        "stealth",
+        "narrative"
+      ]
+    }
+  ]
+}
