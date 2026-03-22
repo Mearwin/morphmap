@@ -299,6 +299,14 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     rafRef.current = requestAnimationFrame(draw)
   }, [draw])
 
+  // Cancel pending RAFs on unmount
+  useEffect(() => {
+    return () => {
+      cancelAnimationFrame(rafRef.current)
+      cancelAnimationFrame(hoverRafRef.current)
+    }
+  }, [])
+
   // Redraw when data changes
   useEffect(() => {
     scheduleRedraw()
