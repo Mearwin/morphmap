@@ -85,16 +85,16 @@ export function TagFilter() {
       <div className={styles.inline}>
         {visibleTags.map(renderChip)}
         {selectedInOverflow && renderChip(state.selectedTag!)}
-        {overflowTags.length > 0 && (
-          <button
-            className={`${styles.chip} ${styles.moreBtn} ${expanded ? styles.active : ''}`}
-            onClick={() => { setExpanded(!expanded); if (expanded) setSearch('') }}
-            aria-expanded={expanded}
-          >
-            +{overflowTags.length} more
-          </button>
-        )}
       </div>
+      {overflowTags.length > 0 && (
+        <button
+          className={`${styles.chip} ${styles.moreBtn} ${expanded ? styles.active : ''}`}
+          onClick={() => { setExpanded(!expanded); if (expanded) setSearch('') }}
+          aria-expanded={expanded}
+        >
+          +{overflowTags.length} more
+        </button>
+      )}
       {expanded && (
         <div className={styles.dropdown}>
           <input
