@@ -265,7 +265,7 @@ function SvgTimeline({ onHover }: TimelineProps) {
       {selectionCSS && <style>{selectionCSS}</style>}
       <g ref={zoomGroupRef} transform={transform.toString()}>
         <rect x="-1e5" y="-1e5" width="2e5" height="2e5" fill="url(#bg-dots)" />
-        <TimeAxisLines xScale={xScale} height={dimensions.height} />
+        <TimeAxisLines xScale={xScale} height={dimensions.height * TIMELINE.HEIGHT_MULTIPLIER} />
 
         {links.map(link => {
           const source = nodeMap.get(link.source)
@@ -373,8 +373,7 @@ function TimeAxisLines({ xScale, height }: { xScale: ScaleTime<number, number>; 
         g
           .selectAll('.tick line')
           .attr('stroke', THEME.textMuted)
-          .attr('stroke-opacity', 0.25)
-          .attr('stroke-dasharray', '4,6')
+          .attr('stroke-opacity', 0.6)
       )
       .call(g => g.selectAll('.tick text').remove())
   }, [xScale, height])

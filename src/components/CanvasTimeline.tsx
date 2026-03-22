@@ -130,7 +130,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     ctx.scale(transform.k * dpr, transform.k * dpr)
 
     // Draw time axis guide lines (in world space, inside zoom transform)
-    drawTimeAxisLines(ctx, xScale, height / transform.k)
+    drawTimeAxisLines(ctx, xScale, linkViewport.minY, linkViewport.maxY)
 
     // Draw background dot grid
     const dotSpacing = 20
@@ -560,20 +560,18 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 }
 
 /** Dashed vertical guide lines — drawn inside zoom transform (world space) */
-function drawTimeAxisLines(ctx: CanvasRenderingContext2D, xScale: ScaleTime<number, number>, height: number) {
+function drawTimeAxisLines(ctx: CanvasRenderingContext2D, xScale: ScaleTime<number, number>, minY: number, maxY: number) {
   const ticks = xScale.ticks(10)
   ctx.strokeStyle = THEME.textMuted
-  ctx.globalAlpha = 0.25
+  ctx.globalAlpha = 0.6
   ctx.lineWidth = 1
-  ctx.setLineDash([4, 6])
   for (const tick of ticks) {
     const x = xScale(tick)
     ctx.beginPath()
-    ctx.moveTo(x, 0)
-    ctx.lineTo(x, height)
+    ctx.moveTo(x, minY)
+    ctx.lineTo(x, maxY)
     ctx.stroke()
   }
-  ctx.setLineDash([])
   ctx.globalAlpha = 1
 }
 
