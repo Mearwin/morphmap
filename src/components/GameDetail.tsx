@@ -53,16 +53,16 @@ export function GameDetail({ game }: Props) {
     }
   }, [animState])
 
+  const gameMap = useMemo(() => new Map(games.map(g => [g.id, g])), [games])
+
   const ancestors = useMemo(
     () => displayedGame
       ? displayedGame.influencedBy
-          .map(inf => games.find(g => g.id === inf.id))
+          .map(inf => gameMap.get(inf.id))
           .filter(Boolean) as Entity[]
       : [],
-    [displayedGame, games]
+    [displayedGame, gameMap]
   )
-
-  const gameMap = useMemo(() => new Map(games.map(g => [g.id, g])), [games])
 
   const descendants = useMemo(
     () => {
@@ -77,15 +77,15 @@ export function GameDetail({ game }: Props) {
   const similarGames = useMemo(() => {
     if (!displayedGame) return []
     const selectedTags = new Set(displayedGame.tags)
-    const ancestorIds = new Set(ancestors.map(a => a.id))
-    const descendantIds = new Set(descendants.map(d => d.id))
+    const selectedTagCount = displayedGame.tags.length
+    const excludeIds = new Set([displayedGame.id, ...ancestors.map(a => a.id), ...descendants.map(d => d.id)])
     const scored: { game: Entity; score: number; shared: string[] }[] = []
     for (const g of games) {
-      if (g.id === displayedGame.id || ancestorIds.has(g.id) || descendantIds.has(g.id)) continue
+      if (excludeIds.has(g.id)) continue
       const shared = g.tags.filter(t => selectedTags.has(t))
       if (shared.length === 0) continue
-      const union = new Set([...displayedGame.tags, ...g.tags]).size
-      const score = shared.length / union
+      // Jaccard = intersection / union, union = |A| + |B| - |intersection|
+      const score = shared.length / (selectedTagCount + g.tags.length - shared.length)
       if (score < 1 / 3) continue
       scored.push({ game: g, score, shared })
     }

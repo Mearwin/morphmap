@@ -417,7 +417,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 
     select(canvasRef.current)
       .transition()
-      .duration(500)
+      .duration(300)
       .call(zoomRef.current.transform, targetTransform)
       .on('end', () => { zoomingToRef.current = null; scheduleRedraw() })
       .on('interrupt', () => { zoomingToRef.current = null; scheduleRedraw() })
