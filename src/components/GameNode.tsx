@@ -47,8 +47,11 @@ export const GameNode = memo(function GameNode({ node, color, isSelected, isHigh
           fill="none"
           stroke={color}
           strokeWidth={2}
-          className={styles.ripple}
-        />
+          pointerEvents="none"
+        >
+          <animate attributeName="r" from={node.radius * NODE.SELECTED_SCALE} to={node.radius * NODE.SELECTED_SCALE * 3} dur="400ms" fill="freeze" />
+          <animate attributeName="opacity" from="0.5" to="0" dur="400ms" fill="freeze" />
+        </circle>
       )}
       {isSelected && (
         <circle

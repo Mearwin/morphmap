@@ -64,7 +64,7 @@ export const LABEL = {
 } as const
 
 // Theme colors — single source of truth for CSS vars and Canvas rendering
-export const THEME = {
+const DARK_DEFAULTS = {
   bg: '#0a0a0f',
   surface: '#12121a',
   text: '#e0e0e8',
@@ -74,7 +74,31 @@ export const THEME = {
   accentSecondary: '#8b5cf6',
   accentSecondaryDim: 'rgba(139, 92, 246, 0.2)',
   border: '#1e1e2e',
-} as const
+}
+
+function getThemeColors() {
+  if (typeof getComputedStyle === 'undefined') return { ...DARK_DEFAULTS }
+  const s = getComputedStyle(document.documentElement)
+  return {
+    bg: s.getPropertyValue('--bg').trim() || DARK_DEFAULTS.bg,
+    surface: s.getPropertyValue('--surface').trim() || DARK_DEFAULTS.surface,
+    text: s.getPropertyValue('--text').trim() || DARK_DEFAULTS.text,
+    textMuted: s.getPropertyValue('--text-muted').trim() || DARK_DEFAULTS.textMuted,
+    accent: s.getPropertyValue('--accent').trim() || DARK_DEFAULTS.accent,
+    accentDim: s.getPropertyValue('--accent-dim').trim() || DARK_DEFAULTS.accentDim,
+    accentSecondary: s.getPropertyValue('--accent-secondary').trim() || DARK_DEFAULTS.accentSecondary,
+    accentSecondaryDim: s.getPropertyValue('--accent-secondary-dim').trim() || DARK_DEFAULTS.accentSecondaryDim,
+    border: s.getPropertyValue('--border').trim() || DARK_DEFAULTS.border,
+  }
+}
+
+/** Live theme colors — reads from CSS variables. Cache-bust on theme switch by calling getThemeColors(). */
+export let THEME = getThemeColors()
+
+/** Re-read theme colors from CSS variables. Call after changing data-theme. */
+export function refreshTheme() {
+  THEME = getThemeColors()
+}
 
 // Minimap rendering
 export const MINIMAP = {

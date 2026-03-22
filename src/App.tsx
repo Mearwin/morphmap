@@ -16,6 +16,7 @@ import { Legend } from './components/Legend'
 import { ErrorBoundary } from './components/ErrorBoundary'
 import { TimeRangeSlider } from './components/TimeRangeSlider'
 import { useKeyboardNav } from './hooks/useKeyboardNav'
+import { useTheme } from './hooks/useTheme'
 import { ShortcutOverlay } from './components/ShortcutOverlay'
 import type { GameNode } from './types'
 import './App.css'
@@ -55,6 +56,7 @@ function AppInner() {
 
   const [showShortcuts, setShowShortcuts] = useState(false)
   const [showMetrics, setShowMetrics] = useState(false)
+  const { theme, toggle: toggleTheme } = useTheme()
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -110,6 +112,23 @@ function AppInner() {
         <div className="top-bar-divider" />
         <div className="top-bar-group">
           <TagFilter />
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+          >
+            {theme === 'dark' ? (
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.5 9.5a5.5 5.5 0 01-7-7 5.5 5.5 0 107 7z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+              </svg>
+            )}
+          </button>
         </div>
       </header>
 

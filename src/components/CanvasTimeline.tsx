@@ -301,6 +301,13 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     scheduleRedraw()
   }, [filteredNodes, filteredLinks, nodeMap, nodes, selectedGameId, derived, xScale, scheduleRedraw])
 
+  // Redraw on theme change
+  useEffect(() => {
+    const handler = () => scheduleRedraw()
+    window.addEventListener('themechange', handler)
+    return () => window.removeEventListener('themechange', handler)
+  }, [scheduleRedraw])
+
   // Resize handling via ResizeObserver on container
   useEffect(() => {
     const container = containerRef.current
