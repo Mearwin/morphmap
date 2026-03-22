@@ -26,7 +26,7 @@ interface TimelineProps {
 }
 
 export function Timeline({ onHover }: TimelineProps = {}) {
-  const { games, state } = useGameStore()
+  const { games } = useGameStore()
 
   if (games.length >= TIMELINE.CANVAS_THRESHOLD) {
     return <CanvasTimeline onHover={onHover} />
@@ -46,27 +46,33 @@ function buildSelectionCSS(
   connectedLinks: Set<string> | null,
   selectedGameId: string | null,
 ): string {
-  if (!selectedGameId) return ''
-
-  // Dim all nodes/links by default, then un-dim connected ones
-  const connectedNodeSelectors = connectedSet
-    ? Array.from(connectedSet).map(id => `[data-node-id="${CSS.escape(id)}"]`).join(',')
-    : ''
-  const connectedLinkSelectors = connectedLinks
-    ? Array.from(connectedLinks).map(id => `[data-link-id="${CSS.escape(id)}"]`).join(',')
-    : ''
-
-  // Use the draw-in animation class for highlighted links
-  let css = `
-[data-node-id] { opacity: 0.1; transition: opacity 0.3s ease; }
-[data-link-id] > path:first-child { opacity: ${LINE.OPACITY_DIMMED}; transition: opacity 0.3s ease; }
+  // Base: default link opacity + no hover on links
+  let css = `[data-link-id] > path:first-child { opacity: ${LINE.OPACITY_DEFAULT}; transition: opacity 0.3s ease; }
+[data-link-id] > path:last-child { pointer-events: none; }
 `
+
+  if (!selectedGameId) return css
+
+  // Dim all nodes/links, then un-dim connected ones
+  css += `[data-node-id] { opacity: 0.1; transition: opacity 0.3s ease; }
+[data-link-id] > path:first-child { opacity: ${LINE.OPACITY_DIMMED}; }
+`
+
+  const connectedNodeSelectors = connectedSet
+    ? Array.from(connectedSet).map(id => `[data-node-id="${id}"]`).join(',')
+    : ''
+  // connectedLinks stores "source->target" but data-link-id uses "--" separator
+  const connectedLinkSelectors = connectedLinks
+    ? Array.from(connectedLinks).map(id => `[data-link-id="${id.replace('->', '--')}"]`).join(',')
+    : ''
 
   if (connectedNodeSelectors) {
     css += `${connectedNodeSelectors} { opacity: 1; }\n`
   }
   if (connectedLinkSelectors) {
     css += `${connectedLinkSelectors} > path:first-child { opacity: ${LINE.OPACITY_HIGHLIGHTED}; stroke-width: ${LINE.STROKE_HIGHLIGHTED}; }\n`
+    // Enable hover hit area only on connected links
+    css += `${connectedLinkSelectors} > path:last-child { pointer-events: stroke; }\n`
   }
 
   return css
@@ -278,8 +284,8 @@ function SvgTimeline({ onHover }: TimelineProps) {
               target={target}
               through={link.through}
               isHovered={isLinkHovered}
-              onHoverLink={connectedLinks?.has(`${source.id}->${target.id}`) ? handleHoverLink : undefined}
-              onLeaveLink={connectedLinks?.has(`${source.id}->${target.id}`) ? handleLeaveLink : undefined}
+              onHoverLink={handleHoverLink}
+              onLeaveLink={handleLeaveLink}
             />
           )
         })}

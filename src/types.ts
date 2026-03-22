@@ -13,15 +13,6 @@ export interface Entity {
   [key: string]: unknown
 }
 
-/** Layout-positioned entity for rendering */
-export interface EntityNode extends Entity {
-  x: number
-  y: number
-  vx?: number
-  vy?: number
-  radius: number
-}
-
 export interface Game extends Entity {
   imageUrl?: string
 }
