@@ -1,4 +1,5 @@
 import { useMemo, useState, useCallback, useRef } from 'react'
+import { useContainerSize } from '../hooks/useContainerSize'
 import { line, curveMonotoneX } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
 import { useGameStore } from '../store/useGameStore'
@@ -23,17 +24,8 @@ export function TagTrendsView() {
   const svgRef = useRef<SVGSVGElement>(null)
   const [hovered, setHovered] = useState<HoverState | null>(null)
   const [hoveredTag, setHoveredTag] = useState<string | null>(null)
-  const [size, setSize] = useState({ width: 0, height: 0 })
-
-  const containerRef = useCallback((el: HTMLDivElement | null) => {
-    if (!el) return
-    const obs = new ResizeObserver(entries => {
-      const { width, height } = entries[0].contentRect
-      setSize({ width, height })
-    })
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [])
+  const containerRef = useRef<HTMLDivElement>(null)
+  const size = useContainerSize(containerRef)
 
   const trends = useMemo(() => buildTagTrends(games), [games])
 
