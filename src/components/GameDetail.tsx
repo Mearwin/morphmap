@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect, useRef, useCallback } from 'react'
+import { useMemo, useState, useEffect, useRef, useCallback, type SyntheticEvent } from 'react'
 import type { Entity } from '../types'
 import { useGameStore } from '../store/useGameStore'
 import { useDataset } from '../dataset/DatasetContext'
@@ -143,11 +143,10 @@ export function GameDetail({ game }: Props) {
         </div>
 
         {typeof displayedGame.imageUrl === 'string' && displayedGame.imageUrl && !imgFailed && (
-          <img
+          <CoverImage
+            key={displayedGame.id}
             src={displayedGame.imageUrl}
             alt={`${displayedGame.title} cover art`}
-            className={styles.coverImage}
-            loading="lazy"
             onError={() => setImgFailedForId(displayedGame.id)}
           />
         )}
@@ -236,5 +235,27 @@ export function GameDetail({ game }: Props) {
         </div>
       )}
     </div>
+  )
+}
+
+function CoverImage({ src, alt, onError }: { src: string; alt: string; onError: () => void }) {
+  const [loaded, setLoaded] = useState(false)
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={styles.coverImage}
+      // decode async so the browser doesn't block paint on decode
+      decoding="async"
+      // fetchpriority low so it doesn't compete with more important requests
+      fetchPriority="low"
+      onLoad={(e: SyntheticEvent<HTMLImageElement>) => {
+        e.currentTarget.style.opacity = '1'
+        setLoaded(true)
+      }}
+      onError={onError}
+      style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.2s ease' }}
+    />
   )
 }

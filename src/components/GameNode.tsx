@@ -7,21 +7,19 @@ interface Props {
   node: GameNodeType
   color: string
   isSelected: boolean
-  isHighlighted: boolean
   onSelect: (id: string | null) => void
   onHover?: (node: GameNodeType | null, pos: { clientX: number; clientY: number }) => void
 }
 
-export const GameNode = memo(function GameNode({ node, color, isSelected, isHighlighted, onSelect, onHover }: Props) {
-  const opacity = isHighlighted ? 1 : 0.1
-  const gradId = `ng-${node.id}`
-  const glowGradId = `glow-${node.id}`
+export const GameNode = memo(function GameNode({ node, color, isSelected, onSelect, onHover }: Props) {
   const radius = isSelected ? node.radius * NODE.SELECTED_SCALE : node.radius
   const glowRadius = node.radius * NODE.SELECTED_SCALE * 3
+  const glowGradId = `glow-${node.id}`
 
   return (
     <g
       className={styles.node}
+      data-node-id={node.id}
       transform={`translate(${node.x},${node.y})`}
       role="button"
       tabIndex={0}
@@ -39,7 +37,6 @@ export const GameNode = memo(function GameNode({ node, color, isSelected, isHigh
       }}
       onPointerEnter={(e) => onHover?.(node, { clientX: e.clientX, clientY: e.clientY })}
       onPointerLeave={(e) => onHover?.(null, { clientX: e.clientX, clientY: e.clientY })}
-      style={{ opacity }}
     >
       {isSelected && (
         <circle
@@ -54,22 +51,20 @@ export const GameNode = memo(function GameNode({ node, color, isSelected, isHigh
         </circle>
       )}
       {isSelected && (
-        <circle
-          r={glowRadius}
-          fill={`url(#${glowGradId})`}
-          opacity={0.25}
-        />
+        <>
+          <defs>
+            <radialGradient id={glowGradId}>
+              <stop offset="0%" stopColor={color} stopOpacity={1} />
+              <stop offset="100%" stopColor={color} stopOpacity={0} />
+            </radialGradient>
+          </defs>
+          <circle
+            r={glowRadius}
+            fill={`url(#${glowGradId})`}
+            opacity={0.25}
+          />
+        </>
       )}
-      <defs>
-        <radialGradient id={glowGradId}>
-          <stop offset="0%" stopColor={color} stopOpacity={1} />
-          <stop offset="100%" stopColor={color} stopOpacity={0} />
-        </radialGradient>
-        <radialGradient id={gradId} cx="35%" cy="35%" r="65%">
-          <stop offset="0%" stopColor="#fff" stopOpacity={0.25} />
-          <stop offset="100%" stopColor={color} stopOpacity={0} />
-        </radialGradient>
-      </defs>
       <circle
         r={radius + 4}
         fill="none"
@@ -86,7 +81,7 @@ export const GameNode = memo(function GameNode({ node, color, isSelected, isHigh
       />
       <circle
         r={radius}
-        fill={`url(#${gradId})`}
+        fill="url(#node-highlight)"
         pointerEvents="none"
       />
       <text

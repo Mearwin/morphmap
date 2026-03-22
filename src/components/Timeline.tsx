@@ -61,18 +61,20 @@ function buildSelectionCSS(
   const connectedNodeSelectors = connectedSet
     ? Array.from(connectedSet).map(id => `[data-node-id="${id}"]`).join(',')
     : ''
-  // connectedLinks stores "source->target" but data-link-id uses "--" separator
-  const connectedLinkSelectors = connectedLinks
-    ? Array.from(connectedLinks).map(id => `[data-link-id="${id.replace('->', '--')}"]`).join(',')
-    : ''
 
   if (connectedNodeSelectors) {
     css += `${connectedNodeSelectors} { opacity: 1; }\n`
   }
-  if (connectedLinkSelectors) {
-    css += `${connectedLinkSelectors} > path:first-child { opacity: ${LINE.OPACITY_HIGHLIGHTED}; stroke-width: ${LINE.STROKE_HIGHLIGHTED}; }\n`
-    // Enable hover hit area only on connected links
-    css += `${connectedLinkSelectors} > path:last-child { pointer-events: stroke; }\n`
+  // Each link selector needs its own "> path" suffix — comma-separated selectors are independent
+  if (connectedLinks && connectedLinks.size > 0) {
+    const pathSelectors = Array.from(connectedLinks)
+      .map(id => `[data-link-id="${id.replace('->', '--')}"] > path:first-child`)
+      .join(',')
+    const hitSelectors = Array.from(connectedLinks)
+      .map(id => `[data-link-id="${id.replace('->', '--')}"] > path:last-child`)
+      .join(',')
+    css += `${pathSelectors} { opacity: ${LINE.OPACITY_HIGHLIGHTED}; stroke-width: ${LINE.STROKE_HIGHLIGHTED}; }\n`
+    css += `${hitSelectors} { pointer-events: stroke; }\n`
   }
 
   return css
@@ -255,6 +257,10 @@ function SvgTimeline({ onHover }: TimelineProps) {
         <pattern id="bg-dots" width="20" height="20" patternUnits="userSpaceOnUse">
           <circle cx="10" cy="10" r="0.5" fill="var(--text-muted)" opacity="0.15" />
         </pattern>
+        <radialGradient id="node-highlight" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stopColor="#fff" stopOpacity={0.25} />
+          <stop offset="100%" stopColor="#fff" stopOpacity={0} />
+        </radialGradient>
       </defs>
       {selectionCSS && <style>{selectionCSS}</style>}
       <g ref={zoomGroupRef} transform={transform.toString()}>

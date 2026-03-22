@@ -17,18 +17,16 @@ function renderNode(
     onSelect: (id: string | null) => void
     nodeOverride: GameNodeType
     isSelected: boolean
-    isHighlighted: boolean
   }> = {},
 ) {
   const onSelect = overrides.onSelect ?? vi.fn()
   const n = overrides.nodeOverride ?? node
   const isSelected = overrides.isSelected ?? false
-  const isHighlighted = overrides.isHighlighted ?? true
   return {
     onSelect,
     ...render(
       <svg>
-        <GameNode node={n} color="#ef4444" isSelected={isSelected} isHighlighted={isHighlighted} onSelect={onSelect} />
+        <GameNode node={n} color="#ef4444" isSelected={isSelected} onSelect={onSelect} />
       </svg>,
     ),
   }

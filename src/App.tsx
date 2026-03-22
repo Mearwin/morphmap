@@ -21,9 +21,7 @@ import { ShortcutOverlay } from './components/ShortcutOverlay'
 import type { GameNode } from './types'
 import './App.css'
 
-const LazyGameDetail = lazy(() =>
-  import('./components/GameDetail').then(m => ({ default: m.GameDetail }))
-)
+import { GameDetail } from './components/GameDetail'
 const LazyTooltip = lazy(() =>
   import('./components/Tooltip').then(m => ({ default: m.Tooltip }))
 )
@@ -158,9 +156,7 @@ function AppInner() {
             </ErrorBoundary>
 
             <ErrorBoundary fallback={null} resetKey={state.selectedGameId}>
-              <Suspense fallback={null}>
-                <LazyGameDetail game={selectedGame ?? null} />
-              </Suspense>
+              <GameDetail game={selectedGame ?? null} />
             </ErrorBoundary>
           </>
         )}
