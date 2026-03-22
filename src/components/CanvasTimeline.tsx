@@ -226,13 +226,8 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
         ctx.fillStyle = grad
         ctx.fill()
       }
-      if (isSelected) {
-        ctx.strokeStyle = '#fff'
-        ctx.lineWidth = NODE.STROKE_SELECTED
-      } else {
-        ctx.strokeStyle = color
-        ctx.lineWidth = NODE.STROKE_DEFAULT
-      }
+      ctx.strokeStyle = color
+      ctx.lineWidth = isSelected ? NODE.STROKE_SELECTED : NODE.STROKE_DEFAULT
       ctx.stroke()
 
       // Label

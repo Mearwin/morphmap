@@ -75,8 +75,9 @@ export const GameNode = memo(function GameNode({ node, color, isSelected, onSele
       <circle
         r={radius}
         fill={color}
-        stroke={isSelected ? '#fff' : color}
+        stroke={color}
         strokeWidth={isSelected ? NODE.STROKE_SELECTED : NODE.STROKE_DEFAULT}
+        strokeOpacity={isSelected ? 0.8 : 1}
         className={styles.circle}
       />
       <circle
