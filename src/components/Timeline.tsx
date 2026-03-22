@@ -372,8 +372,9 @@ function TimeAxisLines({ xScale, height }: { xScale: ScaleTime<number, number>; 
       .call(g =>
         g
           .selectAll('.tick line')
-          .attr('stroke', THEME.border)
-          .attr('stroke-dasharray', '2,4')
+          .attr('stroke', THEME.textMuted)
+          .attr('stroke-opacity', 0.25)
+          .attr('stroke-dasharray', '4,6')
       )
       .call(g => g.selectAll('.tick text').remove())
   }, [xScale, height])

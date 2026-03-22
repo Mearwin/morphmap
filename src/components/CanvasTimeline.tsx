@@ -562,9 +562,10 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
 /** Dashed vertical guide lines — drawn inside zoom transform (world space) */
 function drawTimeAxisLines(ctx: CanvasRenderingContext2D, xScale: ScaleTime<number, number>, height: number) {
   const ticks = xScale.ticks(10)
-  ctx.strokeStyle = THEME.border
+  ctx.strokeStyle = THEME.textMuted
+  ctx.globalAlpha = 0.25
   ctx.lineWidth = 1
-  ctx.setLineDash([2, 4])
+  ctx.setLineDash([4, 6])
   for (const tick of ticks) {
     const x = xScale(tick)
     ctx.beginPath()
@@ -573,6 +574,7 @@ function drawTimeAxisLines(ctx: CanvasRenderingContext2D, xScale: ScaleTime<numb
     ctx.stroke()
   }
   ctx.setLineDash([])
+  ctx.globalAlpha = 1
 }
 
 /** Year labels — drawn in screen space, fixed at top of viewport */
