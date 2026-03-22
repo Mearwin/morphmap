@@ -35,19 +35,64 @@ export function Timeline({ onHover }: TimelineProps = {}) {
   return <SvgTimeline onHover={onHover} />
 }
 
+/**
+ * Build a CSS string that dims non-connected nodes/links when a game is selected.
+ * This avoids passing isHighlighted/opacity as props to every child (which would
+ * force all 363 GameNodes + all InfluenceLines to re-render on each selection change).
+ * Instead, only the <style> text changes — the browser's CSS engine handles the rest.
+ */
+function buildSelectionCSS(
+  connectedSet: Set<string> | null,
+  connectedLinks: Set<string> | null,
+  selectedGameId: string | null,
+): string {
+  if (!selectedGameId) return ''
+
+  // Dim all nodes/links by default, then un-dim connected ones
+  const connectedNodeSelectors = connectedSet
+    ? Array.from(connectedSet).map(id => `[data-node-id="${CSS.escape(id)}"]`).join(',')
+    : ''
+  const connectedLinkSelectors = connectedLinks
+    ? Array.from(connectedLinks).map(id => `[data-link-id="${CSS.escape(id)}"]`).join(',')
+    : ''
+
+  // Use the draw-in animation class for highlighted links
+  let css = `
+[data-node-id] { opacity: 0.1; transition: opacity 0.3s ease; }
+[data-link-id] > path:first-child { opacity: ${LINE.OPACITY_DIMMED}; transition: opacity 0.3s ease; }
+`
+
+  if (connectedNodeSelectors) {
+    css += `${connectedNodeSelectors} { opacity: 1; }\n`
+  }
+  if (connectedLinkSelectors) {
+    css += `${connectedLinkSelectors} > path:first-child { opacity: ${LINE.OPACITY_HIGHLIGHTED}; stroke-width: ${LINE.STROKE_HIGHLIGHTED}; }\n`
+  }
+
+  return css
+}
+
 function SvgTimeline({ onHover }: TimelineProps) {
   const { games, derived, dispatch, state } = useGameStore()
   const { gameColors } = useDataset()
   const { selectedGameId, selectedTag, timeRange } = state
   const containerRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
+  const zoomGroupRef = useRef<SVGGElement>(null)
   const zoomRef = useRef<ReturnType<typeof zoom<SVGSVGElement, unknown>> | null>(null)
   const dimensions = useContainerSize(containerRef)
   const [transform, setTransform] = useState<ZoomTransform>(zoomIdentity)
+  const transformRef = useRef<ZoomTransform>(zoomIdentity)
 
   const { nodes, xScale, initialNodes } = useTimeline(games, dimensions.width, dimensions.height)
   const ready = nodes.length > 0
   const { links, connectedSet, connectedLinks } = derived
+
+  // CSS-driven dimming: only the style text changes on selection, not props on every child
+  const selectionCSS = useMemo(
+    () => buildSelectionCSS(connectedSet, connectedLinks, selectedGameId),
+    [connectedSet, connectedLinks, selectedGameId],
+  )
 
   useEffect(() => {
     if (!svgRef.current) return
@@ -56,7 +101,13 @@ function SvgTimeline({ onHover }: TimelineProps) {
     const zoomBehavior = zoom<SVGSVGElement, unknown>()
       .scaleExtent([TIMELINE.ZOOM_MIN, TIMELINE.ZOOM_MAX])
       .on('zoom', (event) => {
-        setTransform(event.transform)
+        transformRef.current = event.transform
+        if (zoomGroupRef.current) {
+          zoomGroupRef.current.setAttribute('transform', event.transform.toString())
+        }
+      })
+      .on('end', () => {
+        setTransform(transformRef.current)
       })
 
     zoomRef.current = zoomBehavior
@@ -70,7 +121,6 @@ function SvgTimeline({ onHover }: TimelineProps) {
 
   const handleBackgroundClick = useCallback(
     () => {
-      // Node clicks call stopPropagation, so any click that reaches here is background
       dispatch({ type: 'SELECT_GAME', id: null })
     },
     [dispatch]
@@ -138,11 +188,9 @@ function SvgTimeline({ onHover }: TimelineProps) {
   useEffect(() => {
     if (!selectedGameId || !svgRef.current || !zoomRef.current) return
 
-    // Use initialNodes (instant) or fall back to nodeMap (after sim ticks)
     const node = initialNodes?.get(selectedGameId) ?? nodeMap.get(selectedGameId)
     if (!node) return
 
-    // Skip if we already zoomed to this game at roughly the same position
     if (lastZoomedIdRef.current === selectedGameId) return
     lastZoomedIdRef.current = selectedGameId
     didInitialFitRef.current = true
@@ -161,7 +209,6 @@ function SvgTimeline({ onHover }: TimelineProps) {
       .call(zoomRef.current.transform, targetTransform)
   }, [selectedGameId, initialNodes, nodeMap, dimensions])
 
-  // Reset tracking when game is deselected
   useEffect(() => {
     if (!selectedGameId) lastZoomedIdRef.current = null
   }, [selectedGameId])
@@ -203,9 +250,10 @@ function SvgTimeline({ onHover }: TimelineProps) {
           <circle cx="10" cy="10" r="0.5" fill="var(--text-muted)" opacity="0.15" />
         </pattern>
       </defs>
-      <g transform={transform.toString()}>
+      {selectionCSS && <style>{selectionCSS}</style>}
+      <g ref={zoomGroupRef} transform={transform.toString()}>
         <rect x="-1e5" y="-1e5" width="2e5" height="2e5" fill="url(#bg-dots)" />
-        <TimeAxis xScale={xScale} height={dimensions.height} />
+        <TimeAxisLines xScale={xScale} height={dimensions.height} />
 
         {links.map(link => {
           const source = nodeMap.get(link.source)
@@ -221,12 +269,6 @@ function SvgTimeline({ onHover }: TimelineProps) {
               && (targetYear >= timeRange.from && targetYear <= timeRange.to))
           if (!isTagVisible || !isTimeVisible) return null
 
-          const isHighlighted = selectedGameId != null
-            && (connectedLinks?.has(`${source.id}->${target.id}`) ?? false)
-          const opacity = selectedGameId
-            ? (isHighlighted ? LINE.OPACITY_HIGHLIGHTED : LINE.OPACITY_DIMMED)
-            : LINE.OPACITY_DEFAULT
-
           const isLinkHovered = hoveredLink?.source === source.id && hoveredLink?.target === target.id
 
           return (
@@ -235,11 +277,9 @@ function SvgTimeline({ onHover }: TimelineProps) {
               source={source}
               target={target}
               through={link.through}
-              opacity={opacity}
-              isHighlighted={isHighlighted}
               isHovered={isLinkHovered}
-              onHoverLink={isHighlighted ? handleHoverLink : undefined}
-              onLeaveLink={isHighlighted ? handleLeaveLink : undefined}
+              onHoverLink={connectedLinks?.has(`${source.id}->${target.id}`) ? handleHoverLink : undefined}
+              onLeaveLink={connectedLinks?.has(`${source.id}->${target.id}`) ? handleLeaveLink : undefined}
             />
           )
         })}
@@ -251,7 +291,6 @@ function SvgTimeline({ onHover }: TimelineProps) {
           if (!isTagVisible || !isTimeVisible) return null
 
           const isSelected = node.id === selectedGameId
-          const isHighlighted = !selectedGameId || isSelected || (connectedSet?.has(node.id) ?? false)
 
           return (
             <GameNode
@@ -259,7 +298,6 @@ function SvgTimeline({ onHover }: TimelineProps) {
               node={node}
               color={gameColors.get(node.id) ?? '#6b6b80'}
               isSelected={isSelected}
-              isHighlighted={isHighlighted}
               onSelect={handleSelectGame}
               onHover={onHover}
             />
@@ -293,6 +331,8 @@ function SvgTimeline({ onHover }: TimelineProps) {
         )}
       </g>
 
+      <TimeAxisLabels xScale={xScale} transform={transform} />
+
       {nodes.length > 0 && (
         <Minimap
           nodes={nodes}
@@ -307,7 +347,8 @@ function SvgTimeline({ onHover }: TimelineProps) {
   )
 }
 
-function TimeAxis({ xScale, height }: { xScale: ScaleTime<number, number>; height: number }) {
+/** Dashed vertical guide lines — rendered inside zoom group (world space) */
+function TimeAxisLines({ xScale, height }: { xScale: ScaleTime<number, number>; height: number }) {
   const ref = useRef<SVGGElement>(null)
 
   useEffect(() => {
@@ -322,10 +363,34 @@ function TimeAxis({ xScale, height }: { xScale: ScaleTime<number, number>; heigh
           .attr('stroke', THEME.border)
           .attr('stroke-dasharray', '2,4')
       )
-      .call(g =>
-        g.selectAll('.tick text').attr('fill', THEME.textMuted).attr('font-size', '11px')
-      )
+      .call(g => g.selectAll('.tick text').remove())
   }, [xScale, height])
 
   return <g ref={ref} />
+}
+
+/** Year labels — rendered outside zoom group (screen space, fixed at top) */
+function TimeAxisLabels({ xScale, transform }: { xScale: ScaleTime<number, number>; transform: ZoomTransform }) {
+  const ticks = xScale.ticks(10)
+  return (
+    <g pointerEvents="none">
+      {ticks.map(tick => {
+        const worldX = xScale(tick)
+        const screenX = worldX * transform.k + transform.x
+        return (
+          <text
+            key={tick.getFullYear()}
+            x={screenX}
+            y={18}
+            textAnchor="middle"
+            fill="var(--text-muted)"
+            fontSize="11px"
+            opacity={0.7}
+          >
+            {tick.getFullYear()}
+          </text>
+        )
+      })}
+    </g>
+  )
 }

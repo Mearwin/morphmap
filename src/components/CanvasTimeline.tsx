@@ -129,8 +129,8 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     ctx.translate(transform.x * dpr, transform.y * dpr)
     ctx.scale(transform.k * dpr, transform.k * dpr)
 
-    // Draw time axis
-    drawTimeAxis(ctx, xScale, height / transform.k)
+    // Draw time axis guide lines (in world space, inside zoom transform)
+    drawTimeAxisLines(ctx, xScale, height / transform.k)
 
     // Draw background dot grid
     const dotSpacing = 20
@@ -284,6 +284,9 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     }
 
     ctx.restore() // pop zoom transform
+
+    // Draw time axis labels (in screen space, fixed at top)
+    drawTimeAxisLabels(ctx, xScale, transform)
 
     // Draw minimap (in screen space)
     if (nodes.length > 0) {
@@ -553,30 +556,36 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
   )
 }
 
-function drawTimeAxis(ctx: CanvasRenderingContext2D, xScale: ScaleTime<number, number>, height: number) {
+/** Dashed vertical guide lines — drawn inside zoom transform (world space) */
+function drawTimeAxisLines(ctx: CanvasRenderingContext2D, xScale: ScaleTime<number, number>, height: number) {
   const ticks = xScale.ticks(10)
-
+  ctx.strokeStyle = THEME.border
+  ctx.lineWidth = 1
+  ctx.setLineDash([2, 4])
   for (const tick of ticks) {
     const x = xScale(tick)
-
-    // Tick line
-    ctx.strokeStyle = THEME.border
-    ctx.lineWidth = 1
-    ctx.setLineDash([2, 4])
     ctx.beginPath()
     ctx.moveTo(x, 0)
     ctx.lineTo(x, height)
     ctx.stroke()
-    ctx.setLineDash([])
-
-    // Tick label
-    const year = tick.getFullYear()
-    ctx.fillStyle = THEME.textMuted
-    ctx.font = '11px Inter, -apple-system, sans-serif'
-    ctx.textAlign = 'center'
-    ctx.textBaseline = 'top'
-    ctx.fillText(String(year), x, height - 20)
   }
+  ctx.setLineDash([])
+}
+
+/** Year labels — drawn in screen space, fixed at top of viewport */
+function drawTimeAxisLabels(ctx: CanvasRenderingContext2D, xScale: ScaleTime<number, number>, transform: ZoomTransform) {
+  const ticks = xScale.ticks(10)
+  ctx.fillStyle = THEME.textMuted
+  ctx.font = '11px Inter, -apple-system, sans-serif'
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'top'
+  ctx.globalAlpha = 0.7
+  for (const tick of ticks) {
+    const worldX = xScale(tick)
+    const screenX = worldX * transform.k + transform.x
+    ctx.fillText(String(tick.getFullYear()), screenX, 8)
+  }
+  ctx.globalAlpha = 1
 }
 
 function drawMinimap(
