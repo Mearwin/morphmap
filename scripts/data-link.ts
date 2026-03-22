@@ -1,4 +1,4 @@
-import { loadGame, saveGame, gameExists, loadAllGames, type GameFile } from './lib/games.js'
+import { saveGame, gameExists, loadAllGames, type GameFile } from './lib/games.js'
 import { parseFlags, getPositional, prompt, promptChoice, promptYesNo, closeRL } from './lib/args.js'
 
 function findGame(games: GameFile[], id: string): GameFile | undefined {

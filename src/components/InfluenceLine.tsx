@@ -35,7 +35,7 @@ export const InfluenceLine = memo(function InfluenceLine({
         strokeWidth={isHovered ? Math.max(baseWidth, 3) : baseWidth}
         opacity={isHovered ? 0.9 : undefined}
         style={{
-          transition: 'opacity 0.3s ease, stroke-width 0.2s ease',
+          transition: 'stroke-width 0.2s ease',
           ['--path-length' as string]: pathLength,
         }}
         pointerEvents="none"

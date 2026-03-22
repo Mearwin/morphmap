@@ -2,8 +2,8 @@ import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { searchGame, type WikidataGame } from './lib/wikidata.js'
 import { mapGenres } from './lib/genre-map.js'
-import { loadAllGames, saveGame, toSlug, GAMES_DIR, validateDate, type GameFile } from './lib/games.js'
-import { parseFlags, getPositional, prompt, promptChoice, promptYesNo, closeRL } from './lib/args.js'
+import { saveGame, toSlug, GAMES_DIR, validateDate, type GameFile } from './lib/games.js'
+import { parseFlags, getPositional, prompt, promptYesNo, closeRL } from './lib/args.js'
 import { execSync } from 'node:child_process'
 
 async function main() {

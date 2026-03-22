@@ -3,7 +3,6 @@ import { loadAllGames, GAMES_DIR } from './lib/games.js'
 
 function main() {
   const games = loadAllGames()
-  const allIds = new Set(games.map(g => g.id))
   let totalIssues = 0
 
   // Build reverse map: who does each game influence?

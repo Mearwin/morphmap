@@ -45,16 +45,19 @@ function buildSelectionCSS(
   connectedSet: Set<string> | null,
   connectedLinks: Set<string> | null,
   selectedGameId: string | null,
+  animate: boolean,
 ): string {
+  const transition = animate ? 'transition: opacity 0.3s ease; ' : ''
+
   // Base: default link opacity + no hover on links
-  let css = `[data-link-id] > path:first-child { opacity: ${LINE.OPACITY_DEFAULT}; transition: opacity 0.3s ease; }
+  let css = `[data-link-id] > path:first-child { opacity: ${LINE.OPACITY_DEFAULT}; ${transition}}
 [data-link-id] > path:last-child { pointer-events: none; }
 `
 
   if (!selectedGameId) return css
 
   // Dim all nodes/links, then un-dim connected ones
-  css += `[data-node-id] { opacity: 0.1; transition: opacity 0.3s ease; }
+  css += `[data-node-id] { opacity: 0.1; ${transition}}
 [data-link-id] > path:first-child { opacity: ${LINE.OPACITY_DIMMED}; }
 `
 
@@ -96,11 +99,18 @@ function SvgTimeline({ onHover }: TimelineProps) {
   const ready = nodes.length > 0
   const { links, connectedSet, connectedLinks } = derived
 
+  // Only animate opacity transitions when switching between two selections.
+  // Entering/leaving selection mode (null↔id) affects all ~1000 SVG elements
+  // simultaneously, which causes a visible freeze from mass CSS transitions.
+  const prevSelectedRef = useRef<string | null>(selectedGameId)
+
   // CSS-driven dimming: only the style text changes on selection, not props on every child
-  const selectionCSS = useMemo(
-    () => buildSelectionCSS(connectedSet, connectedLinks, selectedGameId),
-    [connectedSet, connectedLinks, selectedGameId],
-  )
+  const selectionCSS = useMemo(() => {
+    const wasSelected = prevSelectedRef.current
+    const animate = wasSelected !== null && selectedGameId !== null
+    return buildSelectionCSS(connectedSet, connectedLinks, selectedGameId, animate)
+  }, [connectedSet, connectedLinks, selectedGameId])
+  prevSelectedRef.current = selectedGameId
 
   useEffect(() => {
     if (!svgRef.current) return
