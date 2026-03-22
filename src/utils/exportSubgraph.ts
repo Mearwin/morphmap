@@ -180,7 +180,7 @@ export function exportSubgraphAsPng(
     ctx.fillStyle = color
     ctx.fill()
     if (node.isSelected) {
-      ctx.strokeStyle = '#fff'
+      ctx.strokeStyle = THEME.text
       ctx.lineWidth = 2
       ctx.stroke()
     }
