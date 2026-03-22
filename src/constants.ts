@@ -6,7 +6,7 @@ export const FORCE = {
   COLLIDE_STRENGTH: 0.7,
   CHARGE_STRENGTH: -20,
   CHARGE_DISTANCE_MAX: 80,
-  ALPHA_DECAY: 0.02,
+  ALPHA_DECAY: 0.04,
 } as const
 
 // Timeline scale / layout

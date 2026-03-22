@@ -40,7 +40,7 @@ type IncomingMessage = InitMessage | StopMessage
 
 let simulation: ReturnType<typeof forceSimulation<NodeData>> | null = null
 
-function postPositions(type: 'tick' | 'end') {
+function postPositions(type: 'end') {
   const positions = simulation!.nodes().map(n => ({ id: n.id, x: n.x, y: n.y }))
   self.postMessage({ type, positions })
 }
@@ -66,13 +66,6 @@ self.onmessage = (e: MessageEvent<IncomingMessage>) => {
         .force('collide', forceCollide<NodeData>().radius(d => d.radius + config.collidePadding).strength(config.collideStrength))
         .force('charge', forceManyBody().strength(config.chargeStrength).distanceMax(config.chargeDistanceMax))
         .alphaDecay(config.alphaDecay)
-        .on('tick', () => {
-          try {
-            postPositions('tick')
-          } catch (err) {
-            self.postMessage({ type: 'error', message: err instanceof Error ? err.message : String(err) })
-          }
-        })
         .on('end', () => {
           try {
             postPositions('end')
