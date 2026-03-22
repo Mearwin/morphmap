@@ -156,7 +156,13 @@ export function GameDetail({ game }: Props) {
       <div className={styles.card}>
         <div className={styles.tags}>
           {displayedGame.tags.map(tag => (
-            <span key={tag} className={styles.tag}>{tag}</span>
+            <button
+              key={tag}
+              className={styles.tag}
+              onClick={() => dispatch({ type: 'SELECT_TAG', tag })}
+            >
+              {tag}
+            </button>
           ))}
         </div>
 
