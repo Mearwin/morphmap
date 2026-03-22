@@ -86,7 +86,6 @@ export function useTimeline(games: Entity[], width: number, height: number) {
     worker.onerror = () => {
       // If the worker crashes at the top level, fall back to pre-simulation positions
       setNodes(Array.from(gameNodeMap.values()))
-      setSettled(true)
     }
 
     worker.postMessage({

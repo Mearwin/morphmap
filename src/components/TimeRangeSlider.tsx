@@ -55,10 +55,11 @@ export function TimeRangeSlider() {
           value={fromYear}
           onChange={handleFromChange}
           className={styles.thumb}
-          aria-label={`Start year: ${fromYear}`}
+          aria-label="Start year"
           aria-valuemin={MIN_YEAR}
           aria-valuemax={MAX_YEAR}
           aria-valuenow={fromYear}
+          aria-valuetext={`Year ${fromYear}`}
         />
         <input
           type="range"
@@ -67,10 +68,11 @@ export function TimeRangeSlider() {
           value={toYear}
           onChange={handleToChange}
           className={styles.thumb}
-          aria-label={`End year: ${toYear}`}
+          aria-label="End year"
           aria-valuemin={MIN_YEAR}
           aria-valuemax={MAX_YEAR}
           aria-valuenow={toYear}
+          aria-valuetext={`Year ${toYear}`}
         />
       </div>
       <span className={styles.label} aria-hidden="true">{toYear}</span>

@@ -36,6 +36,14 @@ export const SearchBox = forwardRef<HTMLInputElement>(function SearchBox(_props,
   }, [dispatch])
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      e.preventDefault()
+      setQuery('')
+      setActiveIndex(-1)
+      ;(e.target as HTMLElement).blur()
+      return
+    }
+
     if (results.length === 0) return
 
     if (e.key === 'ArrowDown') {
