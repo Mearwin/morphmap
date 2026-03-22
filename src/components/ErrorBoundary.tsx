@@ -3,17 +3,26 @@ import { Component, type ErrorInfo, type ReactNode } from 'react'
 type Props = {
   fallback?: ReactNode
   children: ReactNode
+  resetKey?: unknown
 }
 
 type State = {
   error: Error | null
+  prevResetKey: unknown
 }
 
 export class ErrorBoundary extends Component<Props, State> {
-  state: State = { error: null }
+  state: State = { error: null, prevResetKey: this.props.resetKey }
 
-  static getDerivedStateFromError(error: Error): State {
+  static getDerivedStateFromError(error: Error): Partial<State> {
     return { error }
+  }
+
+  static getDerivedStateFromProps(props: Props, state: State): Partial<State> | null {
+    if (props.resetKey !== state.prevResetKey) {
+      return { error: null, prevResetKey: props.resetKey }
+    }
+    return null
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {

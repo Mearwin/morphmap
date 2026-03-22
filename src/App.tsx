@@ -140,24 +140,24 @@ function AppInner() {
         </ErrorBoundary>
 
         {state.viewMode === 'lineage' ? (
-          <ErrorBoundary fallback={<div style={{ flex: 1 }} />}>
+          <ErrorBoundary fallback={<div style={{ flex: 1 }} />} resetKey={state.selectedGameId}>
             <Suspense fallback={null}>
               <LazyLineageView maxDepth={2} />
             </Suspense>
           </ErrorBoundary>
         ) : state.viewMode === 'trends' ? (
-          <ErrorBoundary fallback={<div style={{ flex: 1 }} />}>
+          <ErrorBoundary fallback={<div style={{ flex: 1 }} />} resetKey={state.selectedTag}>
             <Suspense fallback={null}>
               <LazyTagTrendsView />
             </Suspense>
           </ErrorBoundary>
         ) : (
           <>
-            <ErrorBoundary fallback={<div style={{ flex: 1 }} />}>
+            <ErrorBoundary fallback={<div style={{ flex: 1 }} />} resetKey={state.viewMode}>
               <Timeline onHover={handleHover} />
             </ErrorBoundary>
 
-            <ErrorBoundary fallback={null}>
+            <ErrorBoundary fallback={null} resetKey={state.selectedGameId}>
               <Suspense fallback={null}>
                 <LazyGameDetail game={selectedGame ?? null} />
               </Suspense>
