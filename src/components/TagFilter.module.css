@@ -55,6 +55,13 @@
   opacity: 0.6;
 }
 
+.dismiss {
+  font-size: var(--text-base);
+  line-height: 1;
+  opacity: 0.8;
+  margin-left: 2px;
+}
+
 .dropdown {
   position: absolute;
   top: 100%;

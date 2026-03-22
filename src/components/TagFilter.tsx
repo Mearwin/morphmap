@@ -31,11 +31,30 @@ export function TagFilter() {
     [tags, tagCounts]
   )
 
-  const visibleTags = sortedTags.slice(0, VISIBLE_COUNT)
-  const overflowTags = sortedTags.slice(VISIBLE_COUNT)
+  // If the selected tag isn't in the top N, place it first and drop the last visible tag
+  const visibleTags = useMemo(() => {
+    const top = sortedTags.slice(0, VISIBLE_COUNT)
+    if (!state.selectedTag || top.includes(state.selectedTag)) {
+      // Selected tag already visible (or none selected) — just move it to front
+      if (state.selectedTag) {
+        const idx = top.indexOf(state.selectedTag)
+        if (idx > 0) {
+          const reordered = [...top]
+          reordered.splice(idx, 1)
+          reordered.unshift(state.selectedTag)
+          return reordered
+        }
+      }
+      return top
+    }
+    // Selected tag is in overflow — put it first, drop last visible
+    return [state.selectedTag, ...top.slice(0, VISIBLE_COUNT - 1)]
+  }, [sortedTags, state.selectedTag])
 
-  // If the selected tag is in overflow, swap it into visible
-  const selectedInOverflow = state.selectedTag && overflowTags.includes(state.selectedTag)
+  const overflowTags = useMemo(
+    () => sortedTags.filter(t => !visibleTags.includes(t)),
+    [sortedTags, visibleTags],
+  )
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -64,11 +83,12 @@ export function TagFilter() {
   }, [overflowTags, search])
 
   function renderChip(tag: string) {
+    const isActive = state.selectedTag === tag
     return (
       <button
         key={tag}
-        className={`${styles.chip} ${state.selectedTag === tag ? styles.active : ''}`}
-        aria-pressed={state.selectedTag === tag}
+        className={`${styles.chip} ${isActive ? styles.active : ''}`}
+        aria-pressed={isActive}
         onClick={() => {
           dispatch({ type: 'SELECT_TAG', tag })
           setExpanded(false)
@@ -76,6 +96,7 @@ export function TagFilter() {
       >
         {tag}
         <span className={styles.count}>{tagCounts[tag]}</span>
+        {isActive && <span className={styles.dismiss} aria-hidden="true">&times;</span>}
       </button>
     )
   }
@@ -84,7 +105,6 @@ export function TagFilter() {
     <div className={styles.container} role="group" aria-label={`Filter by ${entityLabel} tag`} ref={dropdownRef}>
       <div className={styles.inline}>
         {visibleTags.map(renderChip)}
-        {selectedInOverflow && renderChip(state.selectedTag!)}
       </div>
       {overflowTags.length > 0 && (
         <button
