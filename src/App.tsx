@@ -87,7 +87,7 @@ function AppInner() {
     <div id="app">
       <header className="top-bar">
         <div className="top-bar-group">
-          <h1 className="logo">Morphmap <span className="tagline">Video game influence, 1972–2024</span></h1>
+          <h1 className="logo">Morphmap <span className="tagline">Video game influence</span></h1>
           <SearchBox ref={searchInputRef} />
         </div>
         <div className="top-bar-divider" />
