@@ -67,6 +67,7 @@ export const Legend = memo(function Legend() {
 
   return (
     <div className={styles.legend} role="img" aria-label="Tag color spectrum">
+      <div className={styles.title}>Colors by tags</div>
       <div className={styles.gradientBar} style={{ background: gradient }} />
       <div className={styles.labels}>
         {tagLabels.map(t => (

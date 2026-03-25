@@ -103,6 +103,7 @@ export function TagFilter() {
 
   return (
     <div className={styles.container} role="group" aria-label={`Filter by ${entityLabel} tag`} ref={dropdownRef}>
+      <span className={styles.filterLabel}>Filter</span>
       <div className={styles.inline}>
         {visibleTags.map(renderChip)}
       </div>

@@ -7,6 +7,13 @@
   flex: 1;
 }
 
+.filterLabel {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .inline {
   display: flex;
   flex-wrap: nowrap;

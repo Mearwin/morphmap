@@ -64,7 +64,7 @@ export const SearchBox = forwardRef<HTMLInputElement>(function SearchBox(_props,
         ref={ref}
         className={styles.input}
         type="text"
-        placeholder={`Search ${entityLabelPlural}... ( / )`}
+        placeholder={`Search ${games.length} ${entityLabelPlural}... ( / )`}
         aria-label={`Search ${entityLabelPlural}`}
         aria-expanded={query.length >= 1}
         aria-controls={query.length >= 1 ? 'search-results' : undefined}

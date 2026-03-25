@@ -4,21 +4,21 @@ An interactive visualization of video game history and influence. Explore how id
 
 ## Overview
 
-Morphmap renders games from 1972 to today on a zoomable timeline. Curved influence lines connect games to their ancestors, showing which specific mechanics and ideas were inherited. Select a game to reveal its full lineage; filter by tag to trace a single concept across decades.
+Morphmap renders games from 1972 to today on a zoomable timeline. Curved influence lines connect games to their ancestors, showing which specific ideas were inherited. Select a game to reveal its full lineage; filter by tag to trace a single concept across decades.
 
 ## Features
 
 - **Zoomable timeline** -- games plotted by release date on X, arranged by tag similarity on Y
 - **Influence graph** -- curated influence relationships with "through" tags describing inherited ideas
 - **Game selection** -- click a node to highlight its full ancestor/descendant tree, dim everything else
-- **Tag filtering** -- mechanic tags (permadeath, open-world, stamina-combat...) to filter the view
+- **Tag filtering** -- tags describing mechanics, art styles, themes, and more (permadeath, open-world, pixel-art...) to filter the view
 - **Fuzzy search** -- find any game instantly with match highlighting
 - **Time range slider** -- filter to a specific era (e.g., 1990-2005)
 - **Keyboard navigation** -- arrow keys traverse the influence graph (closest in time), `/` focuses search, `?` shows shortcuts
 - **Shareable URLs** -- selected game, tag, time range, view mode encoded in the URL hash
 - **Minimap** -- corner overview for orientation in a large graph
 - **Hover tooltips** -- quick game info before committing to a click
-- **Influence strength** -- line thickness reflects how many mechanics a connection carries
+- **Influence strength** -- line thickness reflects how many shared tags a connection carries
 - **Lineage view** -- dedicated column layout showing a game's full ancestor/descendant tree with SVG connectors
 - **Embeddable subgraphs** -- iframe-friendly embed mode via URL hash (`#game=doom&embed=true&depth=2`) with compact header and depth-limited lineage
 - **Export** -- export a game's lineage subgraph as PNG, or copy an `<iframe>` embed snippet to clipboard
@@ -81,7 +81,7 @@ A game file looks like this:
 - **id** -- URL-safe slug, must match the filename
 - **title** -- display name
 - **date** -- release date in YYYY-MM-DD format
-- **tags** -- freeform mechanic/concept tags describing what the game is known for
+- **tags** -- freeform tags describing what the game is known for (mechanics, art style, themes, design philosophy, etc.)
 - **influencedBy** -- list of ancestor games with `through` tags describing which ideas were inherited
 - **imageUrl** -- optional IGDB cover art URL
 

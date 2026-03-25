@@ -87,7 +87,7 @@ function AppInner() {
     <div id="app">
       <header className="top-bar">
         <div className="top-bar-group">
-          <h1 className="logo">Morphmap</h1>
+          <h1 className="logo">Morphmap <span className="tagline">Video game influence, 1972–2024</span></h1>
           <SearchBox ref={searchInputRef} />
         </div>
         <div className="top-bar-divider" />
@@ -163,7 +163,10 @@ function AppInner() {
       </div>
 
       <Legend />
-      <div className="stats">{games.length} {dataset.entityLabelPlural}, {derived.links.length} connections</div>
+      <div className="stats">
+        {games.length} {dataset.entityLabelPlural}, {derived.links.length} connections
+        {!state.selectedGameId && <span className="stats-hint"> — click a game to explore its influences</span>}
+      </div>
 
       {hovered && (
         <ErrorBoundary fallback={null}>

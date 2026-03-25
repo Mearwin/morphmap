@@ -111,6 +111,17 @@ html, body, #root {
   white-space: nowrap;
 }
 
+.tagline {
+  font-weight: 400;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+
+.stats-hint {
+  color: var(--text-muted);
+}
+
 .stats {
   text-align: center;
   font-size: var(--text-xs);
@@ -139,6 +150,10 @@ html, body, #root {
 
   .logo {
     font-size: var(--text-base);
+  }
+
+  .tagline {
+    display: none;
   }
 }
 

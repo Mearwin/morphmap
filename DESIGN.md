@@ -45,7 +45,7 @@ interface Game {
   id: string            // URL-safe slug, e.g. "dark-souls"
   title: string         // Display name
   date: string          // ISO date YYYY-MM-DD (real release date)
-  tags: string[]        // Fine-grained mechanic/concept tags
+  tags: string[]        // Freeform tags (mechanics, art style, themes, design philosophy, etc.)
   primaryTag: string    // One of 10 broad categories for Y-axis clustering
   influencedBy: {
     id: string          // ID of the ancestor game
@@ -58,7 +58,7 @@ interface Game {
 
 Tags serve two purposes:
 
-1. **`tags`** -- fine-grained descriptors of what a game is known for (e.g., "permadeath", "stamina-combat", "open-world"). Used for filtering.
+1. **`tags`** -- freeform descriptors of what a game is known for: mechanics, art style, themes, design philosophy, etc. (e.g., "permadeath", "pixel-art", "open-world", "cyberpunk"). Used for filtering.
 2. **`primaryTag`** -- one of 10 fixed categories. Used for Y-axis visual clustering and color coding.
 
 The 10 categories are defined in `src/data/categories.ts` as `TAG_CATEGORIES`, each with an `id`, `label`, and `color`. They are re-exported from `src/types.ts` for convenience. `TAG_COLORS` (a derived `Record<string, string>` lookup) is also exported from the same file. These are the single source of truth for category colors -- injected as CSS custom properties (`--cat-{id}`) at startup in `main.tsx`.
@@ -81,7 +81,7 @@ Important: `through` tags don't have to match either game's `tags` array. A game
 | Known primaryTag | Typo in category assignment |
 | Valid influencedBy refs | Dangling references to removed games |
 | No self-references | Game referencing itself |
-| Non-empty through arrays | Influence with no mechanic description |
+| Non-empty through arrays | Influence with no tag description |
 | At least one tag per game | Empty tags array |
 | No mutual influence cycles | A influenced by B and B influenced by A |
 
