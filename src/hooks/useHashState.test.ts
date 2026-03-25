@@ -8,7 +8,7 @@ beforeEach(() => {
 
 describe('parseHash', () => {
   it('returns nulls when hash is empty', () => {
-    expect(parseHash()).toEqual({ game: null, tag: null, timeRange: null, view: null, embed: false, depth: null })
+    expect(parseHash()).toEqual({ game: null, tag: null, view: null, embed: false, depth: null })
   })
 
   it('parses game id', () => {
@@ -21,27 +21,11 @@ describe('parseHash', () => {
     expect(parseHash().tag).toBe('action-rpg')
   })
 
-  it('parses time range', () => {
-    window.location.hash = '#from=1990&to=2005'
-    expect(parseHash().timeRange).toEqual({ from: 1990, to: 2005 })
-  })
-
   it('parses all params together', () => {
-    window.location.hash = '#game=doom&tag=fps&from=1993&to=2000'
+    window.location.hash = '#game=doom&tag=fps'
     const result = parseHash()
     expect(result.game).toBe('doom')
     expect(result.tag).toBe('fps')
-    expect(result.timeRange).toEqual({ from: 1993, to: 2000 })
-  })
-
-  it('returns null timeRange for non-numeric values', () => {
-    window.location.hash = '#from=abc&to=xyz'
-    expect(parseHash().timeRange).toBeNull()
-  })
-
-  it('returns null timeRange if only one bound is set', () => {
-    window.location.hash = '#from=1990'
-    expect(parseHash().timeRange).toBeNull()
   })
 
   it('parses view=lineage', () => {
@@ -81,7 +65,7 @@ describe('parseHash', () => {
 })
 
 describe('buildHash', () => {
-  const empty = { selectedGameId: null, selectedTag: null, timeRange: null, viewMode: 'timeline' as const, embed: false, depth: null }
+  const empty = { selectedGameId: null, selectedTag: null, viewMode: 'timeline' as const, embed: false, depth: null }
 
   it('returns empty string for empty state', () => {
     expect(buildHash(empty)).toBe('')
@@ -93,12 +77,6 @@ describe('buildHash', () => {
 
   it('encodes tag', () => {
     expect(buildHash({ ...empty, selectedTag: 'fps' })).toBe('#tag=fps')
-  })
-
-  it('encodes time range', () => {
-    const hash = buildHash({ ...empty, timeRange: { from: 1990, to: 2000 } })
-    expect(hash).toContain('from=1990')
-    expect(hash).toContain('to=2000')
   })
 
   it('encodes lineage view', () => {
@@ -113,15 +91,12 @@ describe('buildHash', () => {
     const hash = buildHash({
       selectedGameId: 'doom',
       selectedTag: 'fps',
-      timeRange: { from: 1993, to: 2000 },
       viewMode: 'timeline',
       embed: false,
       depth: null,
     })
     expect(hash).toContain('game=doom')
     expect(hash).toContain('tag=fps')
-    expect(hash).toContain('from=1993')
-    expect(hash).toContain('to=2000')
     expect(hash.startsWith('#')).toBe(true)
   })
 
@@ -153,11 +128,10 @@ describe('readInitialStateFromHash', () => {
   })
 
   it('returns all fields when all present', () => {
-    window.location.hash = '#game=doom&tag=fps&from=1993&to=2000'
+    window.location.hash = '#game=doom&tag=fps'
     expect(readInitialStateFromHash()).toEqual({
       selectedGameId: 'doom',
       selectedTag: 'fps',
-      timeRange: { from: 1993, to: 2000 },
     })
   })
 

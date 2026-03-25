@@ -4,7 +4,6 @@ import { gameStoreReducer, type GameStoreState } from './gameStoreReducer'
 const initial: GameStoreState = {
   selectedGameId: null,
   selectedTag: null,
-  timeRange: null,
   viewMode: 'timeline' as const,
   embed: false,
   depth: null,
@@ -37,17 +36,6 @@ describe('gameStoreReducer', () => {
     const state = { ...initial, selectedTag: 'fps' }
     const next = gameStoreReducer(state, { type: 'SELECT_TAG', tag: 'fps' })
     expect(next.selectedTag).toBeNull()
-  })
-
-  it('sets a time range', () => {
-    const next = gameStoreReducer(initial, { type: 'SET_TIME_RANGE', range: { from: 1990, to: 2010 } })
-    expect(next.timeRange).toEqual({ from: 1990, to: 2010 })
-  })
-
-  it('clears time range with null', () => {
-    const state = { ...initial, timeRange: { from: 1990, to: 2010 } }
-    const next = gameStoreReducer(state, { type: 'SET_TIME_RANGE', range: null })
-    expect(next.timeRange).toBeNull()
   })
 
   it('sets view mode to lineage', () => {

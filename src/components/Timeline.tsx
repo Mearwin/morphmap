@@ -15,7 +15,6 @@ import { useDataset } from '../dataset/DatasetContext'
 import { TIMELINE, LABEL, LINE, THEME } from '../constants'
 import { useViewport, isInViewport } from '../hooks/useViewport'
 import { computeLinkLabel } from '../utils/labelPlacement'
-import { getYear } from '../utils/date'
 import { CanvasTimeline } from './CanvasTimeline'
 import styles from './Timeline.module.css'
 
@@ -86,7 +85,7 @@ function buildSelectionCSS(
 function SvgTimeline({ onHover }: TimelineProps) {
   const { games, derived, dispatch, state } = useGameStore()
   const { gameColors } = useDataset()
-  const { selectedGameId, selectedTag, timeRange } = state
+  const { selectedGameId, selectedTag } = state
   const containerRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const zoomGroupRef = useRef<SVGGElement>(null)
@@ -284,12 +283,7 @@ function SvgTimeline({ onHover }: TimelineProps) {
           if (!visibleNodeIds.has(source.id) && !visibleNodeIds.has(target.id)) return null
 
           const isTagVisible = !selectedTag || link.through.includes(selectedTag)
-          const sourceYear = getYear(source.date)
-          const targetYear = getYear(target.date)
-          const isTimeVisible = !timeRange
-            || ((sourceYear >= timeRange.from && sourceYear <= timeRange.to)
-              && (targetYear >= timeRange.from && targetYear <= timeRange.to))
-          if (!isTagVisible || !isTimeVisible) return null
+          if (!isTagVisible) return null
 
           const isLinkHovered = hoveredLink?.source === source.id && hoveredLink?.target === target.id
 
@@ -308,9 +302,7 @@ function SvgTimeline({ onHover }: TimelineProps) {
 
         {visibleNodes.map(node => {
           const isTagVisible = !selectedTag || node.tags.includes(selectedTag)
-          const year = getYear(node.date)
-          const isTimeVisible = !timeRange || (year >= timeRange.from && year <= timeRange.to)
-          if (!isTagVisible || !isTimeVisible) return null
+          if (!isTagVisible) return null
 
           const isSelected = node.id === selectedGameId
 

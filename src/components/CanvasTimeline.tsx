@@ -13,7 +13,6 @@ import { computeLinkLabel, influenceStrokeWidth } from '../utils/labelPlacement'
 import { computeControlPoint } from '../utils/curve'
 import { isPointNearCurve } from '../utils/curveHitTest'
 import { computeMinimapBounds, computeMinimapLayout, toMinimapX, toMinimapY } from '../utils/minimapLayout'
-import { getYear } from '../utils/date'
 import { roundRect, roundRectPath } from '../utils/canvas'
 import styles from './Timeline.module.css'
 
@@ -49,7 +48,7 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
     gameColors: Map<string, string>
   }>(null!)
 
-  const { selectedGameId, selectedTag, timeRange } = state
+  const { selectedGameId, selectedTag } = state
 
   const { nodes, xScale, initialNodes } = useTimeline(
     games,
@@ -64,12 +63,9 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
   // Determine visible nodes based on filters
   const filteredNodes = useMemo(() => {
     return nodes.filter(n => {
-      const isTagVisible = !selectedTag || n.tags.includes(selectedTag)
-      const year = getYear(n.date)
-      const isTimeVisible = !timeRange || (year >= timeRange.from && year <= timeRange.to)
-      return isTagVisible && isTimeVisible
+      return !selectedTag || n.tags.includes(selectedTag)
     })
-  }, [nodes, selectedTag, timeRange])
+  }, [nodes, selectedTag])
 
   const filteredLinks = useMemo(() => {
     return links.filter(l => {
@@ -77,15 +73,9 @@ export function CanvasTimeline({ onHover }: CanvasTimelineProps) {
       if (!isTagVisible) return false
       const source = nodeMap.get(l.source)
       const target = nodeMap.get(l.target)
-      if (!source || !target) return false
-      const sourceYear = getYear(source.date)
-      const targetYear = getYear(target.date)
-      const isTimeVisible = !timeRange
-        || ((sourceYear >= timeRange.from && sourceYear <= timeRange.to)
-          && (targetYear >= timeRange.from && targetYear <= timeRange.to))
-      return isTimeVisible
+      return !!source && !!target
     })
-  }, [links, selectedTag, timeRange, nodeMap])
+  }, [links, selectedTag, nodeMap])
 
   // Update data ref so the stable draw function always reads current values
   useEffect(() => {

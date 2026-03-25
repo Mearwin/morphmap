@@ -15,7 +15,6 @@ export function GameStoreProvider({ games, children }: { games: Entity[]; childr
     return {
       selectedGameId: null,
       selectedTag: null,
-      timeRange: null,
       viewMode: 'timeline' as const,
       embed: false,
       depth: null,

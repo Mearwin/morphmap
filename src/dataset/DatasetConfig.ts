@@ -20,6 +20,4 @@ export interface DatasetConfig {
   influenceLabel: string
   /** Label for the forward relationship, e.g. "Influenced" */
   influencedLabel: string
-  /** Time axis extent for this dataset */
-  timeRange: { min: number; max: number }
 }
