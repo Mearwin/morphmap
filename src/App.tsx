@@ -14,7 +14,6 @@ import { TagFilter } from './components/TagFilter'
 import { SearchBox } from './components/SearchBox'
 import { Legend } from './components/Legend'
 import { ErrorBoundary } from './components/ErrorBoundary'
-import { TimeRangeSlider } from './components/TimeRangeSlider'
 import { useKeyboardNav } from './hooks/useKeyboardNav'
 import { useTheme } from './hooks/useTheme'
 import { ShortcutOverlay } from './components/ShortcutOverlay'
@@ -54,7 +53,21 @@ function AppInner() {
 
   const [showShortcuts, setShowShortcuts] = useState(false)
   const [showMetrics, setShowMetrics] = useState(false)
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
   const { theme, toggle: toggleTheme } = useTheme()
+
+  // Close mobile menu on outside click
+  useEffect(() => {
+    if (!showMobileMenu) return
+    function handleClick(e: MouseEvent) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target as Node)) {
+        setShowMobileMenu(false)
+      }
+    }
+    document.addEventListener('pointerdown', handleClick)
+    return () => document.removeEventListener('pointerdown', handleClick)
+  }, [showMobileMenu])
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -91,9 +104,8 @@ function AppInner() {
           <SearchBox ref={searchInputRef} />
         </div>
         <div className="top-bar-divider" />
-        <div className="top-bar-group top-bar-center">
+        <div className="top-bar-group top-bar-center desktop-only">
           <ViewToggle />
-          <TimeRangeSlider />
           <button
             className={`metrics-toggle${showMetrics ? ' active' : ''}`}
             onClick={() => setShowMetrics(v => !v)}
@@ -107,8 +119,8 @@ function AppInner() {
             </svg>
           </button>
         </div>
-        <div className="top-bar-divider" />
-        <div className="top-bar-group">
+        <div className="top-bar-divider desktop-only" />
+        <div className="top-bar-group top-bar-tags desktop-only">
           <TagFilter />
           <button
             className="theme-toggle"
@@ -127,6 +139,61 @@ function AppInner() {
               </svg>
             )}
           </button>
+        </div>
+        <div className="mobile-menu-wrapper mobile-only" ref={mobileMenuRef}>
+          <button
+            className={`mobile-menu-btn${showMobileMenu ? ' active' : ''}`}
+            onClick={() => setShowMobileMenu(v => !v)}
+            aria-label="Toggle menu"
+            aria-expanded={showMobileMenu}
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3 5h12M3 9h12M3 13h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </button>
+          {showMobileMenu && (
+            <div className="mobile-menu-panel">
+              <div className="mobile-menu-row">
+                <span className="mobile-menu-label">View</span>
+                <ViewToggle />
+              </div>
+              <div className="mobile-menu-row">
+                <span className="mobile-menu-label">Filter</span>
+                <TagFilter />
+              </div>
+              <div className="mobile-menu-row">
+                <button
+                  className={`metrics-toggle${showMetrics ? ' active' : ''}`}
+                  onClick={() => { setShowMetrics(v => !v); setShowMobileMenu(false) }}
+                  aria-label="Toggle metrics dashboard"
+                >
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect x="1" y="8" width="3" height="7" rx="0.5" fill="currentColor" />
+                    <rect x="6" y="4" width="3" height="11" rx="0.5" fill="currentColor" />
+                    <rect x="11" y="1" width="3" height="14" rx="0.5" fill="currentColor" />
+                  </svg>
+                  <span>Metrics</span>
+                </button>
+                <button
+                  className="theme-toggle"
+                  onClick={toggleTheme}
+                  aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+                >
+                  {theme === 'dark' ? (
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.5" />
+                      <path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+                    </svg>
+                  ) : (
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M13.5 9.5a5.5 5.5 0 01-7-7 5.5 5.5 0 107 7z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                  <span>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </header>
 

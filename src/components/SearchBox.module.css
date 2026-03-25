@@ -3,7 +3,8 @@
 }
 
 .input {
-  width: 220px;
+  width: 200px;
+  min-width: 120px;
   padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -74,7 +75,11 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    flex: 1;
+  }
+
   .input {
-    width: 140px;
+    width: 100%;
   }
 }

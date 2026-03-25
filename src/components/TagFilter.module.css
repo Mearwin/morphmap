@@ -119,16 +119,20 @@
 }
 
 @media (max-width: 768px) {
+  .filterLabel {
+    display: none;
+  }
+
   .inline {
-    padding: 0 8px;
+    padding: 0;
     overflow-x: auto;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     -webkit-overflow-scrolling: touch;
   }
 
   .dropdown {
-    right: 8px;
-    left: 8px;
+    right: 0;
+    left: 0;
     max-width: none;
   }
 }

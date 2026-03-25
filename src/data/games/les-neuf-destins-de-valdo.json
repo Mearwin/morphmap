@@ -1,0 +1,24 @@
+{
+  "id": "les-neuf-destins-de-valdo",
+  "title": "Les Neuf Destins de Valdo",
+  "date": "1996-01-01",
+  "tags": [
+    "point-and-click",
+    "adventure",
+    "narrative",
+    "exploration",
+    "educational",
+    "branching-narrative",
+    "puzzle"
+  ],
+  "influencedBy": [
+    {
+      "id": "myst",
+      "through": [
+        "point-and-click",
+        "exploration",
+        "puzzle"
+      ]
+    }
+  ]
+}
